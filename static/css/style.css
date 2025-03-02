@@ -1,0 +1,102 @@
+*{
+    font-family: Arial;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    color: #2D0F12;
+}
+
+/* Шапка (навигационная панель) */
+.header{
+    position: fixed;
+}
+
+.basic{
+    margin-left: 153px;
+    margin-right: 153px;
+}
+
+/* Заголовок 1го уровня */
+h1{
+    font-size: 64px;
+}
+
+/* Заголовок 1го уровня, но оранжевый */
+#orange-headline{
+    color: #FF4A01;
+}
+
+/* Заголовок 2го уровня */
+h2{
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+h3{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Ссылки */
+a{
+    color: #2D0F12;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* Кнопка поиска */
+button{
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: url('/static/image/icon/search.svg') no-repeat center;
+    width: 27px;
+    height: 27px;
+}
+
+/* Хлебные крошки */
+.navigation{
+    color: #878787;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+}
+
+/* Кнопки оранжевые с белым текстом */
+.volunteer-button{
+    display: inline-block;
+    padding: 20px 20px;
+    margin-top: 70px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: #FF4A01;
+    border-radius: 10px;
+}
+
+footer{
+    background-color: #FF4A01;
+    height: 142px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.footer-content p{
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer-content a{
+    font-size: 16px;
+    color: #ffffff;
+}

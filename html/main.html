@@ -4,32 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Главная</title>
-  <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="stylesheet" href="/static/css/for-main.css">
+  <link rel="stylesheet" href="/static/css/style_var1.css">
+  <link rel="stylesheet" href="/static/css/for-main_var1.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <img src="/static/image/logo.svg" alt="logo">
-
-        <nav class="header-nav">
-            <ul class="header-list">
-                <li><a href="#">Мероприятия</a></li>
-                <div class="search-box">
-                    <form action="#">
-                      <input type="text" placeholder="Найти" name="search">
-                      <button type="submit"></button>
-                    </form>
-                </div>
-                <li><img src="/static/image/icon/man.svg" alt="Иконка войти"><a href="#">Войти</a></li>
-                <li><a href="#">Зарегистрироваться</a></li>
-            </ul>
-        </nav>
+    <header>
+        
+        
+        <img src="pictures/Logo.svg" alt="Логотип" class="logo">
+      
+        <div class="center-container">
+            <div class="events">Мероприятия</div>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Найти">
+                <button class="search-button"></button>
+            </div>
+        </div>
+        
+        <div class="login-container">
+            <img src="pictures/iconin.png" alt="Войти" class="login-icon">
+            <span class="login-text">Войти</span>
+        </div>
+        
+        <button class="register-button">Зарегистрироваться</button>
     </header>
     
     <div class="basic">
-        <div>
+        <div class="start-main">
             <p class="navigation">Главная</p>
             <h1 id="orange-headline">Крупнейшая платформа<br>открытых сердец!</h1>
             <h3>Присоединяйся к нам и начни творить добро!</h3>

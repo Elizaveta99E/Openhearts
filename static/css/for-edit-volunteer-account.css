@@ -49,6 +49,7 @@
 }
 
 #start-edit-volunteer-account h2{
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -79,11 +80,8 @@
 
     .footer-edit-volunteer{
         display: grid;
-        gap: 30px;
-    }
-
-    #button-change-password{
-        margin-left: -115px;
+        text-align: center;
+        gap: 20px;
     }
 
 }

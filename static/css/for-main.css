@@ -18,6 +18,8 @@ img{
     border-radius: 40px;
     box-sizing: border-box;
     padding-left: 50px;
+    padding-right: 15px;
+    padding-bottom: 15px;
 }
 
 #our-values-images img{
@@ -65,6 +67,7 @@ img{
 .directions-of-activity h3{
     margin-top: 30px;
     margin-left: 40px;
+    padding-right: 15px;
 } 
 
 .list-of-directions{
@@ -212,11 +215,27 @@ iframe{
         display: none;
     }
 
+    #orange-bottom-headline{
+        font-size: 38px;
+    }
+
 }
 
 @media (max-width: 1280px){
 
+    img{
+        display: none;
+    }
+
     .images-grid{
         display: none;
     }
+}
+
+@media (max-width: 450px){
+
+    .bottom-main{
+        text-align: left;
+    }
+
 }

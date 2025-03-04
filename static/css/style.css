@@ -70,11 +70,6 @@ a{
     cursor: pointer;
 }
 
-/* Параграфы */
-p{
-    
-}
-
 /* Инпуты */
 .container-input{
     display: flex;
@@ -113,4 +108,12 @@ p{
     .navigation{
         margin-left: 0;
     }
+}
+
+@media (max-width: 405px){
+    
+    .inputs{
+        width: 300px;
+    }
+
 }

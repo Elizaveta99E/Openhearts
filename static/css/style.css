@@ -6,6 +6,11 @@
     padding: 0px;
 }
 
+.container{
+    margin-left: 153px;
+    margin-right: 153px;
+}
+
 /* Хлебные крошки (навигация) */
 .navigation{
     color: #878787;
@@ -26,8 +31,6 @@ h1{
 }
 
 h2{
-    margin-left: 153px;
-    margin-right: 153px;
     margin-top: 45px;
     font-size: 48px;
 }
@@ -46,15 +49,25 @@ a{
     color: #ffffff;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 55px;
+    margin-top: 45px;
     background-color: #FF4A01;
     border-radius: 10px;
     padding: 20px 23px;
-    margin-top: 55px;
 }
 
 /* Параграфы */
 p{
-    margin-left: 153px;
-    margin-right: 153px;
+    
+}
+
+@media (max-width: 700px){
+
+    .container{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .navigation{
+        margin-left: 0;
+    }
 }

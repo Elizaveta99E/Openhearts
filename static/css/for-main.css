@@ -2,43 +2,11 @@
     color: #FF4A01;
 }
 
-#start-main{
-    
-}
-
-#text-with-image_1-3 img, #text-with-image_2-3 img{
-    height: 324px;
+img{
     border-radius: 40px;
-    position: relative;
 }
 
-#text-with-image_1-3 img{
-    position: relative;
-    left: 280px;
-    top: 94.4px;
-}
-
-#text-with-image_1-3{
-    display: flex;
-}
-
-#text-with-image_2-3 img{
-    position: relative;
-    top: 45px;
-    left: 746px;
-    bottom: 0;
-}
-
-#text-with-image_2-3{
-    display: flex;
-    gap: 45px;
-    height: 369px;
-}
-
-#image_2{
-    object-fit: cover;
-    width: 665px;
-}
+/* картинки */
 
 .orange-accents{
     font-weight: bold;
@@ -56,7 +24,6 @@
     height: 324px;
     width: 493px;
     object-fit: cover;
-    border-radius: 40px;
     margin-left: 45px;
 }
 
@@ -174,14 +141,52 @@ iframe{
     text-align: center;
 }
 
-.bottom-main img{
-    display: grid (3,4);
-    width: 398px;
-    height: 264px;
-    border-radius: 35px;
-    margin-top: 100px;
-    margin-left: 45px;
+#images-bottom img{
+    height: auto;
+    width: 22%;
+    object-fit: fill;
+    margin-top: 45px;
+}
+
+.images-grid {
+    display: grid;
+    width: 100%;
+    height: 370px;
     margin-bottom: 45px;
+    gap: 45px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "image7 . . image10"
+        "image7 image8 image9 image10"
+        ". image8 image9 .";
+}
+
+.image7{
+    grid-area: image7;
+    background: url(/static/image/photo/image_7.jpg);
+}
+
+.image8{
+    grid-area: image8;
+    background: url(/static/image/photo/image_8.jpg);
+}
+
+.image9{
+    grid-area: image9;
+    background: url(/static/image/photo/image_9.jpg);
+}
+
+.image10{
+    background-color: chartreuse;
+    grid-area: image10;
+    background: url(/static/image/photo/image_10.jpg);
+}
+
+.image7, .image8, .image9, .image10{
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
 }
 
 @media (max-width: 700px){
@@ -203,4 +208,15 @@ iframe{
         padding-left: 15px;
     }
 
+    .images-grid{
+        display: none;
+    }
+
+}
+
+@media (max-width: 1280px){
+
+    .images-grid{
+        display: none;
+    }
 }

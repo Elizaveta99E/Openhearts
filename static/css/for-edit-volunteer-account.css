@@ -52,19 +52,6 @@
     text-align: center;
 }
 
-.save-button{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 24px;
-    background-color: #FF4A01;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    color: #ffffff;
-    cursor: pointer;
-}
-
 .footer-edit-volunteer{
     display: flex;
     justify-content: center;

@@ -12,15 +12,42 @@
 <body>
     
     <header>
-
+      
     </header>
 
     <div class="container">
+      
       <div id="start-edit-volunteer-account">
         <p class="navigation">Личная страничка/</p>
         <h2>Сменить пароль</h2>
         <p id="comment">Для смены пароля воспользуйтесь формой ниже</p>
-    </div>
+      </div>
+
+      <div class="password-input">
+        <input type="password" id="password" placeholder="Введите пароль">
+        <button type="button" id="show-password" class="password-toggle">
+            <img src="/static/image/icon/eye-open.svg" alt="Показать пароль">
+        </button>
+        <button type="button" id="hide-password" class="password-toggle" style="display: none;">
+            <img src="/static/image/icon/eye-closed.svg" alt="Скрыть пароль">
+        </button>
+      </div>
+      <script>
+        document.getElementById('show-password').addEventListener('click', function() {
+          const passwordInput = document.getElementById('password');
+          passwordInput.type = 'text'; // Показываем пароль
+          document.getElementById('show-password').style.display = 'none'; // Скрываем кнопку "Показать"
+          document.getElementById('hide-password').style.display = 'block'; // Показываем кнопку "Скрыть"
+      });
+
+      document.getElementById('hide-password').addEventListener('click', function() {
+          const passwordInput = document.getElementById('password');
+          passwordInput.type = 'password'; // Скрываем пароль
+          document.getElementById('hide-password').style.display = 'none'; // Скрываем кнопку "Скрыть"
+          document.getElementById('show-password').style.display = 'block'; // Показываем кнопку "Показать"
+      });
+      </script>
+
     </div>
 
 </body>

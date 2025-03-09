@@ -20,3 +20,159 @@ header {
     align-items: center; /* Выравнивание по вертикали */
     padding: 25px 30px; /* Отступы внутри хедера */
   }
+
+  /* Основные стили для шапки */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-wrap: nowrap; /* Запрет переноса элементов на новую строку */
+}
+
+/* Стили для иконки */
+.logo {
+    position: sticky;
+    top: 20px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+
+/* Центрированный блок для "Мероприятия" и поисковой строки */
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Занимает всё доступное пространство */
+    margin: 0 20px; /* Отступы слева и справа */
+}
+
+/* Стили для текста "Мероприятия" */
+.events {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: normal;
+    margin-right: 15px; /* Отступ */
+    font-size: 16px; /* Размер шрифта */
+    white-space: nowrap; /* Запрет переноса текста */
+}
+
+.events a{
+    text-decoration: none;
+    color: #2D0F12;
+}
+
+/* Стили для поля ввода */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-family: 'Instrument Sans', sans-serif;
+    color: #878787;
+    outline: none;
+    width: 250px; /* Ширина поля ввода */
+    font-size: 14px; /* Размер шрифта */
+}
+
+.search-button {
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin-left: -32px;
+    cursor: pointer;
+    background-repeat : no-repeat;
+    border: none;
+    border-radius: 5px;
+    background-image: url("c:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\search.svg");
+}
+
+/* Стили для иконки "Войти" */
+.login-container {
+    display: flex;
+    align-items: center;
+    margin-right: 15px; /* Отступ */
+}
+
+.login-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.login-text {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: normal;
+    font-size: 16px; /* Размер шрифта */
+    white-space: nowrap; /* Запрет переноса текста */
+}
+
+.login-text a{
+    color: #2D0F12;
+    text-decoration: none;
+}
+
+/* Стили для кнопки "Зарегистрироваться" */
+.register-button {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: normal;
+    color: #2D0F12;
+    background-color: white;
+    border: 1px solid #FF4A01;
+    border-radius: 10px;
+    padding: 8px 12px; /* Отступ внутри кнопки */
+    cursor: pointer;
+    font-size: 14px; /* Размер шрифта */
+    white-space: nowrap; /* Запрет переноса текста */
+    margin-left: auto; /* Прижимает кнопку к правому краю */
+    margin-right: 50px; /* Отступ от правого края */
+}
+
+.register-button:hover {
+    background-color: #FF4A01;
+    color: white;
+}
+
+.pass_buttons {
+    display: none;
+}
+
+.pass_buttons + label{
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 24px;
+    background-color: #FF4A01;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pass_buttons + label::after {
+    content: "Отправить заявку";
+}
+
+.pass_buttons:checked + label {
+    background-color:#b2b2b2;
+    color: #878787;
+}
+
+.pass_buttons:checked + label::after {
+    content: "Заявка отправлена";
+}
+

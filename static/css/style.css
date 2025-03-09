@@ -16,14 +16,17 @@
 
 /* Хлебные крошки (навигация) */
 .breadcrumbs {
-    font-family: Arial, sans-serif;
     padding: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+
   }
 
   .breadcrumbs ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding-right: 15px;
+    padding-top: 5px;
     display: flex;
     align-items: center;
   }
@@ -72,6 +75,11 @@ h3{
     font-size: 32px;
 }
 
+h4{
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
 a{
     font-size: 18px;
     color: #FF4A01;
@@ -103,6 +111,7 @@ a{
     padding-right: 30px;
     color: #ffffff;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* Инпуты */

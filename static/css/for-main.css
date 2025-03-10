@@ -6,7 +6,45 @@ img{
     border-radius: 40px;
 }
 
-/* картинки */
+#image_1, #image_2, #image_3{
+    height: 324px;
+    object-fit: cover;
+}
+
+#image_1{
+    width: 728px;
+}
+
+#image_2{
+    width: 665px;
+}
+
+#image_3{
+    width: 308px;
+}
+
+#card-text-with-image_1-3{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#card-text-with-image_1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between; /* Распределяем пространство между элементами */
+}
+
+#images_2-3{
+    display: flex;
+    box-sizing: border-box;
+    gap: 45px;
+    margin-top: 45px;
+    margin-right: 0;
+    margin-left: auto;
+}
 
 .orange-accents{
     font-weight: bold;
@@ -14,6 +52,7 @@ img{
 }
 
 #our-values{
+    max-width: 1057.32px;
     border: 1px solid #878787; 
     border-radius: 40px;
     box-sizing: border-box;
@@ -37,7 +76,16 @@ img{
 
 #all-our-values{
     display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: center;
     margin-top: 45px;
+}
+
+.step{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .steps{
@@ -46,12 +94,23 @@ img{
     padding: 12px 48px;
     border-radius: 35px;
     margin-right: 45px;
+    word-break: normal;
+    justify-content: center;
 }
 
 #how-is-it-work-steps{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap:23px;
+}
+
+#how-is-it-work-steps p{
+    margin-bottom:30px;
+}
+
+.step-header{
+    width: 46%;
 }
 
 #link-registration{
@@ -192,50 +251,40 @@ iframe{
     border-radius: 40px;
 }
 
-@media (max-width: 700px){
 
-    img, #text-with-image_2-3{
-        display: none;
+
+@media (max-width: 1200px){
+
+    #all-our-values{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 45px;
+        justify-content: center;
     }
 
-    #our-values{
-        padding-left: 20px;
-        padding-right: 20px;
+    #our-values-images{
+        flex-direction: row;
     }
 
-    iframe{
-        height: 265px;
-    }
-
-    .connection{
-        padding-left: 15px;
-    }
-
-    .images-grid{
-        display: none;
-    }
-
-    #orange-bottom-headline{
-        font-size: 38px;
+    #our-values-images img{
+        height: 100%;
+        width: 350px;
+        box-sizing: border-box;
+        margin-left: 0px;
     }
 
 }
 
-@media (max-width: 1280px){
+@media (max-width: 800px){
 
-    img{
+    #our-values-images img{
         display: none;
     }
 
-    .images-grid{
-        display: none;
-    }
 }
 
-@media (max-width: 450px){
-
-    .bottom-main{
-        text-align: left;
+@media (max-width: 1560px){
+    #card-text-with-image_1-3 img{
+        display: none;
     }
-
 }

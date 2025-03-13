@@ -1,0 +1,66 @@
+.start-volunteer-account{
+    display: flex;
+    
+}
+
+.main-info-container{
+    max-width: 438px;
+    align-items: center;
+    padding: 24px 20px;
+    border: 1px solid #878787;
+    border-radius: 30px;
+}
+
+.profile-info-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-info-container .avatar{
+    width: 339px;
+    height: 339px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-info-container *{
+    font-size: 20px;
+}
+
+.main-info-container h4{
+    margin-top: 43px;
+    margin-bottom: 15px;
+}
+
+.info-button-container{
+    max-width: 438px;
+    align-items: center;
+}
+
+#link{
+    font-size: 24px;
+    color: #FF4A01;
+}
+
+#out-button{
+    border: 1px solid #878787;
+    border-radius: 10px;
+    padding: 10px 65px;
+    font-size: 20px;
+    color: #878787;
+    background-color: #ffffff;
+}
+
+#link-and-button{
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+#link-a{
+    margin-top: 15px;
+    margin-bottom: 25px;
+}

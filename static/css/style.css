@@ -87,7 +87,7 @@ header .sign-in{
 }
 
 /* Заголовки */
-h1, h2, h3{
+h1, h2, h3, h4{
     margin-bottom: 15px;
     font-weight: bold;
 }

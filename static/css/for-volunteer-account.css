@@ -1,6 +1,21 @@
-.start-volunteer-account{
+
+.first-column{
     display: flex;
-    
+    flex-direction: column;
+    max-width: 438px;
+}
+
+.second-column{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 1123px;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
 }
 
 .main-info-container{
@@ -14,6 +29,7 @@
 .profile-info-container{
     display: flex;
     flex-direction: column;
+    max-width: 1fr;
 }
 
 .main-info-container .avatar{
@@ -34,7 +50,6 @@
 
 .info-button-container{
     max-width: 438px;
-    align-items: center;
 }
 
 #link{
@@ -63,4 +78,12 @@
 #link-a{
     margin-top: 15px;
     margin-bottom: 25px;
+}
+
+.info-container{
+    max-width: auto;
+    height: auto;
+    border: 1px solid #878787;
+    border-radius: 30px;
+    padding: 23px 34px;
 }

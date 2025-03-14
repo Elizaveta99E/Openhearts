@@ -16,51 +16,79 @@
     </header>
 
     <div class="container">
-      <div id="start-volunteer-account">
-        <p class="navigation">Личная страничка</p>
-        <div class="info-button-container">
-          <div class="main-info-container">
-            <div class="avatar">
-              <img id="avatar" src="placeholder-avatar.jpg" alt="Аватарка пользователя">
+      <p class="navigation">Личная страничка</p>
+        <div class="columns">
+          <div class="first-column">
+            <div class="info-button-container">
+              <div class="main-info-container">
+                <div class="avatar">
+                  <img id="avatar" src="placeholder-avatar.jpg" alt="Аватарка пользователя">
+                </div>
+                <h4>Основная информация</h4>
+                <div class="profile-info-container">
+                  <div class="profile-info">
+                    <label>Дата регистрации:</label>
+                    <span id="registration-date">Загрузка...</span>
+                  </div>
+                  <div class="profile-info">
+                      <label>Дата рождения:</label>
+                      <span id="birth-date">Загрузка...</span>
+                  </div>
+                  <div class="profile-info">
+                      <label>Номер телефона:</label>
+                      <span id="phone">Загрузка...</span>
+                  </div>
+                  <div class="profile-info">
+                      <label>Почта:</label>
+                      <span id="email">Загрузка...</span>
+                  </div>
+                </div>
+                <script src="/script.js"></script> <!-- Подключаем JavaScript -->
+              </div>
+              <div id="link-and-button">
+                <div id="link-a">
+                  <a href="#" id="link">Редактировать профиль</a>
+                </div>
+                <div>
+                  <button id="out-button">Выйти</button>
+                </div>
+              </div>
             </div>
-            <h4>Основная информация</h4>
-            <div class="profile-info-container">
-              <div class="profile-info">
-                <label>Дата регистрации:</label>
-                <span id="registration-date">Загрузка...</span>
-              </div>
-              <div class="profile-info">
-                  <label>Дата рождения:</label>
-                  <span id="birth-date">Загрузка...</span>
-              </div>
-              <div class="profile-info">
-                  <label>Номер телефона:</label>
-                  <span id="phone">Загрузка...</span>
-              </div>
-              <div class="profile-info">
-                  <label>Почта:</label>
-                  <span id="email">Загрузка...</span>
-              </div>
-            </div>
-            <script src="/script.js"></script> <!-- Подключаем JavaScript -->
           </div>
-          <div id="link-and-button">
-            <div id="link-a">
-              <a href="#" id="link">Редактировать профиль</a>
-            </div>
-            <div>
-              <button id="out-button">Выйти</button>
-            </div>
+  
+          <div class="second-column">
+            <div id="volunteer-info">
+              <h4><span id="full-name"></span></h4>
+              <h4>ID волонтера: <span id="volunteer-id"></span></h4>
           </div>
-        </div>
+          <!-- <script>
+            // Пример данных волонтера
+            const volunteerData = {
+                fullName: "Иванов Иван Иванович",
+                volunteerId: "123456"
+            };
 
-        <div id="">
-          <div>
-            ФИО
-            ID волонтера:
-          </div>
-        </div>
+            // Функция для загрузки данных волонтера
+            function loadVolunteerData() {
+                document.getElementById('full-name').textContent = volunteerData.fullName;
+                document.getElementById('volunteer-id').textContent = volunteerData.volunteerId;
+            }
 
+            // Загружаем данные при загрузке страницы
+            window.onload = loadVolunteerData;
+          </script>
+             -->
+            <div class="info-container">
+              <h4>Ближайшие мероприятия</h4>
+              
+            </div>
+  
+            <div class="info-container">
+              <h4>Список пройденных мероприятия</h4>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 

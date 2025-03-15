@@ -123,14 +123,19 @@ img{
     margin-top: 45px;
 }
 
-.directions-of-activity h3{
-    margin-top: 30px;
-    margin-left: 40px;
-    padding-right: 15px;
-} 
+.directions-of-activity h3, .list-directions-of-activity{
+    margin: 30px 20px 20px 40px;
+}
 
-.list-of-directions{
-    
+.list-directions-of-activity{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.direction{
+    list-style: none;
+    padding: 15px 17px;
 }
 
 .direction{
@@ -203,55 +208,23 @@ iframe{
     text-align: center;
 }
 
-#images-bottom img{
-    height: auto;
-    width: 22%;
-    object-fit: fill;
-    margin-top: 45px;
+.images-flex img{
+    max-width: 370px;
+    max-height: auto;
 }
 
-.images-grid {
-    display: grid;
-    width: 100%;
-    height: 370px;
-    margin-bottom: 45px;
+.images-flex{
+    display: flex;
     gap: 45px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-        "image7 . . image10"
-        "image7 image8 image9 image10"
-        ". image8 image9 .";
 }
 
-.image7{
-    grid-area: image7;
-    background: url(/static/image/photo/image_7.jpg);
+.images-flex .image7{
+    padding-bottom: 120px;
 }
 
-.image8{
-    grid-area: image8;
-    background: url(/static/image/photo/image_8.jpg);
+.images-flex .image8, .image9{
+    padding-top: 120px;
 }
-
-.image9{
-    grid-area: image9;
-    background: url(/static/image/photo/image_9.jpg);
-}
-
-.image10{
-    background-color: chartreuse;
-    grid-area: image10;
-    background: url(/static/image/photo/image_10.jpg);
-}
-
-.image7, .image8, .image9, .image10{
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px;
-}
-
-
 
 @media (max-width: 1200px){
 

@@ -1,0 +1,87 @@
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFAFEE; /* Фон круга, если фото отсутствует */
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-edit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование текста */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.avatar-text {
+    color: #878787; /* Цвет текста */
+    font-size: 14px;
+    text-align: center;
+    opacity: 1; /* Текст всегда виден, если фото отсутствует */
+    transition: opacity 0.3s ease; /* Плавное изменение прозрачности */
+}
+
+#start-edit-volunteer-account h2{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-edit-volunteer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin-top: 30px;
+}
+
+#button-change-password{
+    color: #FF4A01;
+    font-size: 14px;
+}
+
+#delete-account{
+    font-size: 14px;
+    color: #878787;
+    padding: 5px 15px;
+    border: 1px solid #878787;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 700px){
+
+    .footer-edit-volunteer{
+        display: grid;
+        text-align: center;
+        gap: 20px;
+    }
+
+}

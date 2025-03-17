@@ -168,11 +168,98 @@ header {
 }
 
 .pass_buttons:checked + label {
-    background-color:#b2b2b2;
+    background-color:#d6d6d6;
     color: #878787;
 }
 
 .pass_buttons:checked + label::after {
     content: "Заявка отправлена";
+}
+
+/* Хлебные крошки (навигация) */
+.breadcrumbs {
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+
+  }
+
+  .breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 15px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+    margin-right: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  /* Разделитель между пунктами */
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a {
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #878787;
+  }
+
+  /* Хлебные крошки (навигация) */
+.breadcrumbs {
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+
+  }
+
+  .breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 15px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+    margin-right: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  /* Разделитель между пунктами */
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a {
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #878787;
+  }
+
+  a{
+    font-size: 18px;
+    color: #FF4A01;
 }
 

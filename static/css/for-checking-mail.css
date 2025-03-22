@@ -55,3 +55,8 @@ border-radius: 10px;
 padding: 20px 23px;
 
 }
+.mail-image2 {
+    width: 500px; /* Настройте размер картинки */
+    height: auto; /* Сохраняем пропорции */
+    margin-bottom: 20px; /* Отступ снизу */
+}

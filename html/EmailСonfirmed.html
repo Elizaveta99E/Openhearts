@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checking mail</title>
-  <link rel="stylesheet" href="static\css\style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Шапка</title>
+    <link rel="icon" href="/static/image/mini_logo.svg">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/for-checking-mail.css">
 </head>
 <body>
 	<header>
-        <!-- Иконка -->
-        <img src="pictures/Hands.png" alt="Логотип" class="logo">
-        
-        <!-- Название "ОТКРЫТЫЕ СЕРДЦА" -->
-        <div class="title">ОТКРЫТЫЕ СЕРДЦА</div>
-        
-        <!-- Центрированный блок для "Мероприятия" и поисковой строки -->
-        <div class="center-container">
-            <!-- Текст "Мероприятия" -->
-            <div class="events">Мероприятия</div>
-            
-            <!-- Поле ввода и кнопка поиска -->
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Найти">
-                <button class="search-button"></button>
+        <div class="container">
+            <div class="header-container">
+                <div class="container-for-logo">
+                    <a href="#"><img src="/static/image/logo.svg" alt="logo"></a>
+                </div>
+                <div class="header-text">
+                    <a href="#">Мероприятия</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Найти" class="header-text">
+                    <button class="header-text"></button>
+                </div>
+                <div class="sign-in-container">
+                    <a href="#" class="header-text"><img src="/static/image/icon/man.svg" alt="man"><div></div>Войти</a>
+                </div>
+                <div class="sign-up">
+                    <a href="#" class="header-text">Зарегистрироваться</a>
+                </div>
             </div>
         </div>
-        
-        <!-- Иконка и текст "Войти" -->
-        <div class="login-container">
-            <img src="pictures/iconin.png" alt="Войти" class="login-icon">
-            <span class="login-text">Войти</span>
-        </div>
-        
-        <!-- Кнопка "Зарегистрироваться" -->
-        <button class="register-button">Зарегистрироваться</button>
     </header>
 
-    <div class="container">
-        <img src="pictures/EmailСonfirmed.png" alt="Почта" class="mail-image">
+    <div class="containerchecking">
+        
+        <img src="/static/image/EmailСonfirmed.svg" alt="Почта" class="mail-image2">
         <div class="content">
             
             <p class="main-text">Электронная почта подтверждена!</p>

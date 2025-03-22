@@ -16,6 +16,31 @@
                 icon.src = "/static/images/eye-closed.svg"; // Меняем иконку на закрытую
             }
         }
+        function validateForm() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.style.display = 'none'; // Скрываем сообщение об ошибках
+
+    // Проверка условий для пароля
+    const passwordConditions = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+    if (!passwordConditions.test(password)) {
+        errorMessage.textContent = 'Пароль должен содержать минимум 6 символов, включая заглавные и строчные буквы, цифры и специальные символы.';
+        errorMessage.style.display = 'block'; // Показываем сообщение об ошибках
+        return;
+    }
+
+    // Проверка на совпадение паролей
+    if (password !== confirmPassword) {
+        errorMessage.textContent = 'Пароли не совпадают.';
+        errorMessage.style.display = 'block'; // Показываем сообщение об ошибках
+        return;
+    }
+
+    // Если все проверки пройдены, можно отправить форму или выполнить другие действия
+    alert('Форма успешно отправлена!'); // Замените это на вашу логику отправки формы
+}
         </script>
 </head>
 <body>
@@ -65,6 +90,7 @@
         <input type="password" id="confirm-password" placeholder="Повторите пароль (обязательное поле)" required>
         <img src="/static/images/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
     </div>
+    <div id="error-message" class="error-message"></div>
     <div class="agreement">
         <input type="checkbox" id="agreement-checkbox" required>
         <label for="agreement-checkbox" class="custom-checkbox"></label>
@@ -75,6 +101,6 @@
             <a href="#" class="login-link">Пользовательское соглашение*</a>
         </div>
     </div>
-    <button class="register-button">Зарегистрироваться</button>
+    <button class="register-button" onclick="validateForm()">Зарегистрироваться</button>
 </body>
 </html>

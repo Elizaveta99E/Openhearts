@@ -1,0 +1,45 @@
+/* Контент страницы */
+/* Основные стили для контейнера */
+.containerchecking {
+    display: flex;
+    flex-direction: column; /* Элементы в колонку */
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    text-align: center; /* Центрирование текста */
+    height: calc(100vh - 90px); /* Высота контейнера минус высота шапки */
+    
+}
+
+/* Стили для картинки */
+.mail-image {
+    width: 500px; /* Настройте размер картинки */
+    height: auto; /* Сохраняем пропорции */
+    margin-bottom: -20px; /* Отступ снизу */
+}
+
+/* Стили для текста */
+.content {
+    font-family: 'Instrument Sans', sans-serif; /* Шрифт */
+    color: #2D0F12; /* Цвет текста */
+}
+
+.main-text {
+    font-size: 48px; /* Размер основного текста */
+    font-weight: bold; /* Жирный текст */
+    margin-bottom: 5px; /* Отступ снизу */
+}
+
+.secondary-text {
+    font-size: 24px; /* Размер дополнительного текста */
+    color: #878787; /* Цвет текста */
+}
+
+.secondary-text a {
+    color: #FF4A01; /* Цвет ссылки */
+    font-weight: bold; /* Жирный текст */
+    text-decoration: none; /* Убираем подчёркивание */
+}
+
+.secondary-text a:hover {
+    text-decoration: underline; /* Подчёркивание при наведении */
+}

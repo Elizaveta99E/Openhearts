@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/static/css/for-registration.css">
+</head>
+<body>
+    <div class="header-container">
+        <img src="/static/image/logo.svg" alt="Логотип" class="logo">
+        <div class="back-link-container">
+            <a href="#" class="back-link">&lt; Назад</a>
+        </div>
+    </div>
+
+    <h1>Регистрация</h1>
+    <p class="subtext">Уже есть аккаунт? <a href="#" class="login-link">Войти</a></p>
+    
+    <div class="form-field">
+        <input type="text" placeholder="ФИО*" required>
+    </div>
+    <div class="form-field">
+        <input type="text" placeholder="Страна">
+    </div>
+    <div class="form-field">
+        <input type="text" placeholder="Город">
+    </div>
+    <div class="form-field">
+        <input type="date" placeholder="Дата рождения*" required>
+    </div>
+    <div class="form-field">
+        <input type="email" placeholder="Электронная почта*" required>
+    </div>
+    <div class="form-field">
+        <input type="tel" placeholder="Телефон">
+    </div>
+    <div class="form-field">
+        <input type="password" placeholder="Пароль*" required>
+    </div>
+    <div class="password-hint">
+        Пароль должен содержать:
+        <ul>
+            <li>минимум 6 символов</li>
+            <li>заглавные буквы</li>
+            <li>строчные буквы</li>
+            <li>цифры</li>
+            <li>знаки пунктуации - спецсимволы</li>
+        </ul>
+    </div>
+    <div class="form-field">
+        <input type="password" placeholder="Повторите пароль (обязательное поле)" required>
+    </div>
+    <div class="agreement">
+        <input type="checkbox" id="agreement-checkbox" required>
+        <label for="agreement-checkbox" class="custom-checkbox"></label>
+        <div class="form-field">
+            Соглашаюсь на обработку моих персональных данных, с 
+            <a href="#" class="login-link">правилами пользования сайтом</a>  
+            и принимаю 
+            <a href="#" class="login-link">Пользовательское соглашение*</a>
+        </div>
+    </div>
+    <button class="register-button">Зарегистрироваться</button>
+</body>
+</html>

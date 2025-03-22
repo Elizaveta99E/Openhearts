@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="/static/css/for-registration.css">
+    <script>
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text"; // Показываем пароль
+                icon.src = "/static/images/eye-open.svg"; // Меняем иконку на открытую
+            } else {
+                input.type = "password"; // Скрываем пароль
+                icon.src = "/static/images/eye-closed.svg"; // Меняем иконку на закрытую
+            }
+        }
+        </script>
 </head>
 <body>
     <div class="header-container">
@@ -36,7 +48,8 @@
         <input type="tel" placeholder="Телефон">
     </div>
     <div class="form-field">
-        <input type="password" placeholder="Пароль*" required>
+        <input type="password" id="password" placeholder="Пароль*" required>
+        <img src="/static/images/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('password', this)">
     </div>
     <div class="password-hint">
         Пароль должен содержать:
@@ -49,7 +62,8 @@
         </ul>
     </div>
     <div class="form-field">
-        <input type="password" placeholder="Повторите пароль (обязательное поле)" required>
+        <input type="password" id="confirm-password" placeholder="Повторите пароль (обязательное поле)" required>
+        <img src="/static/images/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
     </div>
     <div class="agreement">
         <input type="checkbox" id="agreement-checkbox" required>

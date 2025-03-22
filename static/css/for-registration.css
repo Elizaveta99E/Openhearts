@@ -10,7 +10,7 @@ body {
 .header-container {
     display: flex;
     flex-direction: column; /* Вертикальное выравнивание */
-    align-items: center; /* Выровнять по левому краю */
+    align-items: flex-start; /* Выровнять по левому краю */
     width: 100%; /* Занимает всю ширину */
     padding: 20px; /* Отступы для визуального разделения */
 }
@@ -29,6 +29,7 @@ body {
     margin-top: 25px;
     margin-bottom: 20px;
 }
+
 .header-container {
     display: flex;
     flex-direction: column; /* Вертикальное выравнивание */
@@ -138,4 +139,19 @@ border: solid white; /* Цвет галочки */
 border-width: 0 2px 2px 0; /* Формирование галочки */
 transform: rotate(45deg); /* Поворот для создания галочки */
 border-radius: 2px; /* Закругление углов */
+}
+.form-field {
+    position: relative; /* Позволяет позиционировать иконку относительно поля ввода */
+    margin-bottom: 15px;
+    width: 400px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Отступ от правого края */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    cursor: pointer; /* Курсор при наведении */
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
 }

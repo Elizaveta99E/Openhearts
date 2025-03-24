@@ -1,7 +1,0 @@
-.super-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; /* Занимает всё доступное пространство */
-    margin: 0 20px;
-}

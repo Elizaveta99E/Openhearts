@@ -12,6 +12,7 @@
     outline: none;
     width: 250px; /* Ширина поля ввода */
     font-size: 14px; /* Размер шрифта */
+    color: #2D0F12;
 }
 
 .for-button {
@@ -38,6 +39,8 @@
 h4 {
     padding: 15px;
     margin-left:  10px;
+    color: #2D0F12;
+    margin-bottom: -10px;
 }
 
 .container_form {
@@ -46,6 +49,7 @@ h4 {
     margin-left: 12px;
     padding: 8px 12px;
     margin-top: -20px;
+    color: #2D0F12;
 }
 
 .form_buttons {
@@ -123,6 +127,7 @@ h4 {
     grid-template-columns: 250px 1fr;
     gap: 30px;
     margin-bottom: 25px;
+    color: #2D0F12;
 }
 
   .events-page {
@@ -132,6 +137,7 @@ h4 {
     max-width: 1400px;
     margin: 20px auto;
     padding: 0 20px;
+    color: #2D0F12;
 }
 
 /* Фильтры */
@@ -214,6 +220,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    color: #2D0F12;
 }
 
         /* Управление сортировкой */
@@ -225,10 +232,24 @@ h4 {
             margin-right: 15px;
         }
 
+        .view-controls option{
+            color: #2D0F12;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
         .select-group {
             display: flex;
             gap: 12px;
             align-items: center;
+        }
+        
+        .select-group option{
+            color: #2D0F12;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
         }
 
         select {

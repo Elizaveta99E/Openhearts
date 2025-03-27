@@ -89,12 +89,13 @@ header {
     background-size: cover;
     width: 25px;
     height: 25px;
-    margin-left: -32px;
+    margin-left: -50px;
     cursor: pointer;
     background-repeat : no-repeat;
     border: none;
     border-radius: 5px;
-    background-image: url("c:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\search.svg");
+    background-image: url("\static\images\search.svg");
+    background-color: #FF4A01;
 }
 
 /* Стили для иконки "Войти" */

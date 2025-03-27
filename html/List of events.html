@@ -5,22 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1">
   <title>Open heaarts</title>
-  <link rel = 'icon' href = "C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\mini_logo.svg">
-  <link href="/static/css/style.css" rel="stylesheet">
-  <link href="/static/css/style 2.0.css" rel="stylesheet">
-  <link href="/static/css/wow.css" rel="stylesheet">
+  <link rel = 'icon' href = "\static\images\mini_logo.svg">
+  <link href="\static\css\style.css" rel="stylesheet">
+  <link href="\static\css\style 2.0.css" rel="stylesheet">
+  <link href="\static\css\wow.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <!-- Иконка -->
-        <img src="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\logo.svg" alt="Логотип">
+        <img src="\static\image\logo.svg" alt="Логотип">
                 
         <!-- Центрированный блок для "Мероприятия" и поисковой строки -->
         <div class="center-container">
             <!-- Текст "Мероприятия" -->
-            <div class="events" href = "C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\List of events.html">
-              <a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\List of events.html">Мероприятия</a>
+            <div class="events">
+              <a href="\html\List of events.html">Мероприятия</a>
             </div>
             
             <!-- Поле ввода и кнопка поиска -->
@@ -32,9 +32,9 @@
         
         <!-- Иконка и текст "Войти" -->
         <div class="login-container">
-            <img src="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\man.svg" alt="Войти" class="login-icon">
+            <img src="\static\images\man.svg" alt="Войти" class="login-icon">
             <span class="login-text">
-              <a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\Log in.html">Войти</a>
+              <a href="\html\Log in.html">Войти</a>
             </span>
         </div>
         
@@ -44,7 +44,7 @@
   
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <ul>
-        <li><a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\main.html">Главная</a></li>
+        <li><a href="\html\main.html">Главная</a></li>
         <li><a>Мероприятия</a></li>
       </ul>
     </nav>
@@ -52,6 +52,28 @@
     <div id="start_log_in">
     <h2>Мероприятия</h2>
     </div>
+    <div class="pagination">
+      <span class="page-item active">1</span>
+    </div>
+
+    <div class="view-controls">
+      <div class="select-group">
+          <select id="sort">
+              <option> Не сортировать</option>
+              <option>По дате</option>
+              <option>По городу</option>
+              <option>По названию</option>
+          </select>
+          
+          <select id="per-page">
+              <option>Показывать все</option>
+              <option>10 на странице</option>
+              <option>25 на странице</option>
+              <option>50 на странице</option>
+          </select>
+      </div>
+  </div>
+</div>
     
     <div class="for">
         <div class="container_for">
@@ -70,20 +92,19 @@
         </div>
       </div>
       <div>
-        <a href="#zatemnenie" class="bee"><img src="c:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\Vector.svg"></a>
+        <a href="#zatemnenie" class="bee"><img src="\static\images\Vector.svg"></a>
         <a href="#zatemnenie" class="bee">Направления</a>
       </div>
     </div>
 
     <div class="container_form">
       <div>
-        <a href="!!!" class="bee"><img src="c:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\Vector.svg"></a>
+        <a href="!!!" class="bee"><img src="\static\images\Vector.svg"></a>
         <a href="!!!" class="bee">Дата</a>
       </div>
     </div>
     
     <div class="container_form">
-      
     </div>
 
     <h4>Формат проведения</h4>
@@ -101,8 +122,139 @@
     </div>
 
     <h4>Условия проведения</h4>
-    <h4>Особенности</h4>
+    <div class="filter-group">
+      
+      <label class="filter-item" id = "1">
+        <input type="checkbox" for = "1">
+        <span class="custom-checkbox"></span>
+        Бесплатное питание
+      </label>
+
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Билеты в театр
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Благодарности
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Оплата проживания
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Персональное обучение
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Оплачиваемый проезд
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Психологическая консультация
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Сувенирная продукция
+      </label>
+      
+      <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          СИЗ
+      </label>
+  </div>
+
+          <!-- Список мероприятий -->
+          <div class="events-list">
+              <!-- Здесь повторяются карточки мероприятий -->
+              <div class="event-card">
+                  <!-- Вставить карточку мероприятия из предыдущего примера -->
+              </div>
+              <div class="event-card">
+                  <!-- Еще одна карточка -->
+              </div>
+          </div>
+      </main>
+  </div>
+
+  
+  <h4>Особенности проведения</h4>
+  <div class="filter-group">
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Младше 18 лет
+    </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Можно как посетитель
+    </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Адресная помощь
+    </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Доступно для людей с инвалидностью
+    </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Можно приходить с детьми
+    </label>
+
+    <label class="filter-item">
+      <input type="checkbox">
+      <span class="custom-checkbox"></span>
+      Строго 18 +
+  </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Образовательное мероприятие
+    </label>
+    
+    <label class="filter-item">
+        <input type="checkbox">
+        <span class="custom-checkbox"></span>
+        Идет набор в резерв
+    </label>
+</div>
+
+<div class="filter-group">  
+  <div>
+    <a class="other-buttons">Найти</a>
+  </div>
+</div>
+
+    <!-- Пагинация -->
+  <div class="pagination">
+    <span class="page-item active">1</span>
+  </div>
 
 </body>
-
 </html>

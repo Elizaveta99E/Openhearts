@@ -11,6 +11,7 @@ import { theme } from "./theme";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MantineProvider theme={theme} defaultColorScheme="dark">
   <BrowserRouter>
+  
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="staff">

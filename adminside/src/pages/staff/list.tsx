@@ -1,4 +1,4 @@
-import { Title, TextInput, Select,  Group, Stack, Center  } from '@mantine/core';
+import { Title, TextInput, Select,  Group, Stack, Center, Container  } from '@mantine/core';
 import { Table } from '@mantine/core';
 import { Pagination } from '@mantine/core';
 
@@ -17,7 +17,8 @@ const icon = <IconAt size={16} />;
 export function StaffList() {
     const icon = <IconAt size={16} />;
     return <>
-        <Center w="auto" >
+        
+        <Container size="xl" >
         <Stack
         
         >
@@ -43,7 +44,7 @@ export function StaffList() {
         <Demo />  {/*Таблица*/}        
         <Pagination total={10} /> {/*переключние страниц*/}
         </Stack>
-        </Center>
+        </Container>
     </>
 }
 

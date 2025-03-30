@@ -41,7 +41,7 @@ export function StaffList() {
        <Pagination total={10} /> {/*переключние страниц*/}
        </Group>
         <Demo />  {/*Таблица*/}        
-        <Pagination total={10} /> {/*переключние страниц*/}
+        <Pagination total={10} /> {/*переключние страниц....*/}
         </Stack>
         </Container>
     </>

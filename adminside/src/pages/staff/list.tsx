@@ -1,4 +1,4 @@
-import { Title, TextInput, Select,  Group, Stack, Center, Container  } from '@mantine/core';
+import { Title, TextInput, Select,  Group, Stack, Button, Container  } from '@mantine/core';
 import { Table } from '@mantine/core';
 import { Pagination } from '@mantine/core';
 
@@ -32,15 +32,17 @@ export function StaffList() {
         />
         
         <Group gap="lg" grow>
-         <Select
-          label="Your favorite library"
+        <Select
+          label="Количество записей на странице"
           placeholder="Pick value"
-          data={['React', 'Angular', 'Vue', 'Svelte']} 
+          data={['1', '2', '5', '10']} 
           />
       
        <Pagination total={10} /> {/*переключние страниц*/}
+       <Button variant="filled">Добавить</Button>
        </Group>
         <Demo />  {/*Таблица*/}        
+        <Button variant="filled">Добавить</Button>
         <Pagination total={10} /> {/*переключние страниц....*/}
         </Stack>
         </Container>

@@ -9,6 +9,7 @@
   <link href="\static\css\style.css" rel="stylesheet">
   <link href="\static\css\style 2.0.css" rel="stylesheet">
   <link href="\static\css\wow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -85,24 +86,106 @@
     <h4>Фильтры</h4> 
     
     <div class="container_form">
-      <div id="zatemnenie">
-        <div id="okno">
-          Всплывающее окошко!<br>
-          <a href="#" class="close">Закрыть</a>
-        </div>
-      </div>
       <div>
-        <a href="#zatemnenie" class="bee"><img src="\static\images\Vector.svg"></a>
-        <a href="#zatemnenie" class="bee">Направления</a>
+        <a><img src="\static\images\Vector.svg"></a>
+        <a class="event-directions"  style="cursor: pointer; color: #2D0F12;">Направления</a>
       </div>
+      <div class="directions-modal" id="directionsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Выберите направления</h4>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="directions-list">
+                <div class="direction-item">Дети и молодежь</div>
+                <div class="direction-item">Образование</div>
+                <div class="direction-item">Поиск пропавших</div>
+                <div class="direction-item">СВО</div>
+                <div class="direction-item">Урбанистика</div>
+                <div class="direction-item">Срочная помощь (ЧС)</div>
+                <div class="direction-item">Экология</div>
+                <div class="direction-item">Животные</div>
+                <div class="direction-item">Ветераны и историческая память</div>
+                <div class="direction-item">Спорт и события</div>
+                <div class="direction-item">Здравоохранение</div>
+                <div class="direction-item">Права человека</div>
+                <div class="direction-item">Помощь лицам с ОВЗ</div>
+                <div class="direction-item">Старшее поколение</div>
+                <div class="direction-item">Культура и искусство</div>
+                <div class="direction-item">Интеллектуальная помощь</div>
+                <div class="direction-item">Наука</div>
+                <div class="direction-item">Наставничество</div>
+                <div class="direction-item">Другое</div>
+            </div>
+        </div>
     </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const directionsTrigger = document.querySelector('.event-directions');
+          const modal = document.getElementById('directionsModal');
+          const closeModal = document.querySelector('.close-modal');
+      
+          // Обработчик открытия модального окна
+          directionsTrigger?.addEventListener('click', () => {
+              modal.style.display = 'block';
+          });
+      
+          // Обработчик закрытия
+          closeModal?.addEventListener('click', () => {
+              modal.style.display = 'none';
+          });
+      
+          // Закрытие при клике вне модального окна
+          window.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                  modal.style.display = 'none';
+              }
+          });
+      
+          // Обработчик выбора направления
+          document.querySelectorAll('.direction-item').forEach(item => {
+              item.addEventListener('click', function() {
+                  // Логика обработки выбора направления
+                  this.classList.toggle('selected');
+              });
+          });
+          // После создания элементов направлений
+document.querySelectorAll('.direction-item').forEach(item => {
+    // Автоматический перенос текста при необходимости
+    if (item.scrollWidth > item.offsetWidth) {
+        item.style.whiteSpace = 'normal';
+        item.style.textAlign = 'left';
+        item.style.justifyContent = 'flex-start';
+    }});
+      });
+      </script>
 
     <div class="container_form">
       <div>
-        <a href="!!!" class="bee"><img src="\static\images\Vector.svg"></a>
-        <a href="!!!" class="bee">Дата</a>
+        <a><img src="\static\images\Vector.svg"></a>
+        <a style="color: #2D0F12;">Дата</a>
+        <input type="text" id="dateRangePicker" placeholder="Дата" class="flatpickr-input">
+      </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+<script>
+  flatpickr("#dateRangePicker", {
+    mode: "range",
+    locale: "ru",
+    dateFormat: "d.m.Y",
+    altInput: true,
+    altFormat: "j F Y",
+    static: true,
+    monthSelectorType: "static",
+    minDate: "today",
+    showMonths: 1
+  });
+</script>
     
     <div class="container_form">
     </div>

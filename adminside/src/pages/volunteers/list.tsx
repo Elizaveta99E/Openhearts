@@ -13,7 +13,7 @@ const elements = [
 
 import { IconAt } from '@tabler/icons-react';
 const icon = <IconAt size={16} />;
-export function StaffList() {
+export function VolunteersList() {
     const icon = <IconAt size={16} />;
     return <>
         
@@ -21,7 +21,7 @@ export function StaffList() {
         <Stack
         
         >
-        <Title order={1}>Сотрудники</Title>
+        <Title order={1}>Волонтеры</Title>
         
         <TextInput                                 //поиск
             
@@ -32,14 +32,21 @@ export function StaffList() {
         />
         
         <Group gap="lg" grow>
-        <Select
+         <Select
           label="Количество записей на странице"
           placeholder="Pick value"
           data={['1', '2', '5', '10']} 
           />
       
        <Pagination total={10} /> {/*переключние страниц*/}
+       <Button variant="filled">Взрослые</Button>
+       <Button variant="filled">Дети</Button>
        <Button variant="filled">Добавить</Button>
+       <Select
+          label="Сортировать"
+          placeholder="Pick value"
+          data={['От А-Я', 'От Я-А', 'Самые молодые', 'Взрослые']} 
+          />
        </Group>
         <Demo />  {/*Таблица*/}        
         <Button variant="filled">Добавить</Button>

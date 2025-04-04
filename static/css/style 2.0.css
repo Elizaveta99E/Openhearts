@@ -12,7 +12,7 @@
 
 #buttion{
     text-align: center;
-    overflow: auto;
+    margin-top: 20px;
 }
 
 header {
@@ -89,12 +89,13 @@ header {
     background-size: cover;
     width: 25px;
     height: 25px;
-    margin-left: -32px;
+    margin-left: -50px;
     cursor: pointer;
     background-repeat : no-repeat;
     border: none;
     border-radius: 5px;
-    background-image: url("c:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\search.svg");
+    background-image: url("\static\images\search.svg");
+    background-color: #FF4A01;
 }
 
 /* Стили для иконки "Войти" */
@@ -168,11 +169,98 @@ header {
 }
 
 .pass_buttons:checked + label {
-    background-color:#b2b2b2;
+    background-color:#d6d6d6;
     color: #878787;
 }
 
 .pass_buttons:checked + label::after {
     content: "Заявка отправлена";
+}
+
+/* Хлебные крошки (навигация) */
+.breadcrumbs {
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+
+  }
+
+  .breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 15px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+    margin-right: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  /* Разделитель между пунктами */
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a {
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #878787;
+  }
+
+  /* Хлебные крошки (навигация) */
+.breadcrumbs {
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+
+  }
+
+  .breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 15px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+    margin-right: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  /* Разделитель между пунктами */
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 2px;
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a {
+    color: #878787;
+    font-size: 16px;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #878787;
+  }
+
+  a{
+    font-size: 18px;
+    color: #FF4A01;
 }
 

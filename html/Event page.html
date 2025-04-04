@@ -4,23 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1">
-  <title>Open heaarts</title>
-  <link rel = 'icon' href = "static\images\mini_logo.svg">
+  <title>Информация о мероприятии</title>
+  <link rel="icon" href="/static/image/logos/mini_logo.svg">
   <link href="/static/css/style.css" rel="stylesheet">
-  <link href="/static/css/style 2.0.css" rel="stylesheet">
-  <link href="/static/css/help.css" rel="stylesheet">
+  <link href="/static\css\style 2.0.css" rel="stylesheet">
+  <link href="\static\css\help.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <!-- Иконка -->
-    <img src="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\logo.svg" alt="Логотип">
+    <img src="/static/image/logos/logo.svg" alt="Логотип">
             
     <!-- Центрированный блок для "Мероприятия" и поисковой строки -->
     <div class="center-container">
         <!-- Текст "Мероприятия" -->
-        <div class="events" href = "C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\List of events.html">
-          <a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\List of events.html">Мероприятия</a>
+        <div class="events">
+          <a href="\html\List of events.html">Мероприятия</a>
         </div>
         
         <!-- Поле ввода и кнопка поиска -->
@@ -32,9 +32,9 @@
     
     <!-- Иконка и текст "Войти" -->
     <div class="login-container">
-        <img src="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\static\images\man.svg" alt="Войти" class="login-icon">
+        <img src="/static/image/icon/man.svg" alt="Войти" class="login-icon">
         <span class="login-text">
-          <a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\Log in.html">Войти</a>
+          <a href="\html\Log in.html">Войти</a>
         </span>
     </div>
     
@@ -44,23 +44,62 @@
   
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <ul>
-        <li><a href="!!!">Главная</a></li>
-        <li><a href="C:\Users\stefa\OneDrive\Документы\GitHub\Openhearts\html\List of events.html">Мероприятия</a></li>
-        <li>Название мероприятия</li>
+        <li><a href="\html\main.html">Главная</a></li>
+        <li><a href="\html\List of events.html">Мероприятия</a></li>
+        <li>Информация о мероприятии</li>
       </ul>
     </nav>
 
-  <div id="start_log_in">
-    <h2>Информация о мероприятии</h2>
-  </div>
+    <div id="start_log_in">
+      <h2>Информация о мероприятии</h2>
+      </div>
+    <!-- Верхний блок с изображением и основной информацией -->
+    <div class="event-card-head">
+    <div class="event-header">
+        <img src="!!!" alt="Изображение мероприятия" class="event-image">
+        
+        <div class="event-info">
+            <div class="name">Помощь животным</div>
+            <div class="city">Москва</div>
+            <div class="dates">15 — 20 сентября 2023</div>
+            <div class="responsible">Ответственное лицо: Иванов И.И.</div>
+        </div>
+    </div>
+    
+    <!-- Формат проведения и направления -->
+    <div class="event-details">
+      <div class="event-format">Формат проведения: Офлайн</div>
+      <button class="other-buttons">Принять участие</button>
+      </div>
+      <div class="event-details">
+          <div class="event-format hybrid">Направление</div>
+    </div>
 
-  <div class="super-container">
-    <div>
-        <h3>Название мероприятия</h3>
+    <div class="event-card">
+    <!-- Описание и дополнительные блоки -->
+    <div class="event-description">
+        <h3>Описание</h3>
+        <div class="description-content">
+            <p>Текст Текст Текст</p>
+            <p>Текст Текст Текст</p>
+            <p>Текст Текст Текст</p>
+            
+            <div class="conditions">
+                <h4>Условия проведения:</h4>
+                <p>Текст условий проведения мероприятия</p>
+            </div>
+            
+            <div class="features">
+                <h4>Особенности:</h4>
+                <p>Текст особенностей мероприятия</p>
+            </div>
+        </div>
     </div>
   </div>
-    <div id="start_log_in">
-    <h2>Информация о мероприятии</h2>
+
+    <!-- Нижняя кнопка (Надо разобраться с отступами)-->
+    <div class="action-container">
+      <button class="other-buttons">Принять участие</button>
   </div>
 
 </body>

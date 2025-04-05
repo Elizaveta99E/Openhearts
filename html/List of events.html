@@ -10,6 +10,7 @@
   <link href="\static\css\style 2.0.css" rel="stylesheet">
   <link href="\static\css\wow.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
 </head>
 
 <body>
@@ -174,6 +175,7 @@ document.querySelectorAll('.direction-item').forEach(item => {
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
 <script>
+ document.addEventListener('DOMContentLoaded', function() {
   flatpickr("#dateRangePicker", {
     mode: "range",
     locale: "ru",
@@ -181,10 +183,20 @@ document.querySelectorAll('.direction-item').forEach(item => {
     altInput: true,
     altFormat: "j F Y",
     static: true,
-    monthSelectorType: "static",
-    minDate: "today",
-    showMonths: 1
+    minDate: null, // Разрешаем выбор прошлых дат
+    maxDate: null, // Разрешаем выбор будущих дат
+    showMonths: 1,
+    monthSelectorType: "dropdown", // Добавляем dropdown для выбора месяца
+    yearSelectorType: "dropdown",  // Добавляем dropdown для выбора года
+    dropdowns: {
+      minYear: 2000,              // Минимальный год в выпадающем списке
+      maxYear: new Date().getFullYear() + 5, // Максимальный год (+5 лет от текущего)
+      months: true,               // Включить выбор месяцев
+      years: true                 // Включить выбор годов
+    },
+    appendTo: document.querySelector('.date-filter')
   });
+});
 </script>
     
     <div class="container_form">

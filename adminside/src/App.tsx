@@ -52,6 +52,6 @@ export default function App() {
           </Grid.Col>  
         </Grid>
         </Container> 
-          
+                  
   </>
 }

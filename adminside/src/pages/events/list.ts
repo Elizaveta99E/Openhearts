@@ -1,7 +1,7 @@
 {/* id,  Наименование мероприятия, Отвественное лицо, Дата начала,
   Дата окончания, Список волонтеров (id), город, Описание, формат проведения,  условия проведения, Особенности мероприятия,
-  статус*/}
-export const lose = [
+  Статус, время место*/}
+  export const events = [
     {
         id: "1",
         name: "Мероприятие 1",
@@ -28,8 +28,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image1.jpg"
-      }, {
+        pic: "path/to/image1.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "2",
         name: "Мероприятие 2",
         idStaff: "10",
@@ -51,8 +51,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image2.jpg"
-      }, {
+        pic: "path/to/image2.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "3",
         name: "Мероприятие 3",
         idStaff: "2",
@@ -75,8 +75,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image3.jpg"
-      }, {
+        pic: "path/to/image3.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "4",
         name: "Мероприятие 4",
         idStaff: "9",
@@ -103,8 +103,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image4.jpg"
-      }, {
+        pic: "path/to/image4.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "5",
         name: "Мероприятие 5",
         idStaff: "6",
@@ -135,8 +135,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image5.jpg"
-      }, {
+        pic: "path/to/image5.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "6",
         name: "Мероприятие 6",
         idStaff: "2",
@@ -167,8 +167,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image6.jpg"
-      }, {
+        pic: "path/to/image6.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "7",
         name: "Мероприятие 7",
         idStaff: "7",
@@ -198,8 +198,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image7.jpg"
-      }, {
+        pic: "path/to/image7.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "8",
         name: "Мероприятие 8",
         idStaff: "7",
@@ -227,8 +227,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image8.jpg"
-      }, {
+        pic: "path/to/image8.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "9",
         name: "Мероприятие 9",
         idStaff: "4",
@@ -255,8 +255,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image9.jpg"
-      }, {
+        pic: "path/to/image9.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "10",
         name: "Мероприятие 10",
         idStaff: "9",
@@ -281,8 +281,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image10.jpg"
-      }, {
+        pic: "path/to/image10.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "11",
         name: "Мероприятие 11",
         idStaff: "3",
@@ -308,8 +308,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image11.jpg"
-      }, {
+        pic: "path/to/image11.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "12",
         name: "Мероприятие 12",
         idStaff: "2",
@@ -346,8 +346,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image12.jpg"
-      }, {
+        pic: "path/to/image12.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "13",
         name: "Мероприятие 13",
         idStaff: "10",
@@ -372,8 +372,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image13.jpg"
-      }, {
+        pic: "path/to/image13.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "14",
         name: "Мероприятие 14",
         idStaff: "8",
@@ -401,8 +401,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image14.jpg"
-      }, {
+        pic: "path/to/image14.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "15",
         name: "Мероприятие 15",
         idStaff: "6",
@@ -430,8 +430,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image15.jpg"
-      }, {
+        pic: "path/to/image15.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "16",
         name: "Мероприятие 16",
         idStaff: "7",
@@ -467,8 +467,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image16.jpg"
-      }, {
+        pic: "path/to/image16.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "17",
         name: "Мероприятие 17",
         idStaff: "10",
@@ -495,8 +495,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image17.jpg"
-      }, {
+        pic: "path/to/image17.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "18",
         name: "Мероприятие 18",
         idStaff: "9",
@@ -527,8 +527,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image18.jpg"
-      }, {
+        pic: "path/to/image18.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "19",
         name: "Мероприятие 19",
         idStaff: "1",
@@ -564,8 +564,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image19.jpg"
-      }, {
+        pic: "path/to/image19.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "20",
         name: "Мероприятие 20",
         idStaff: "8",
@@ -598,8 +598,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image20.jpg"
-      }, {
+        pic: "path/to/image20.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "21",
         name: "Мероприятие 21",
         idStaff: "3",
@@ -622,8 +622,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image21.jpg"
-      }, {
+        pic: "path/to/image21.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "22",
         name: "Мероприятие 22",
         idStaff: "6",
@@ -645,8 +645,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image22.jpg"
-      }, {
+        pic: "path/to/image22.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "23",
         name: "Мероприятие 23",
         idStaff: "9",
@@ -680,8 +680,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image23.jpg"
-      }, {
+        pic: "path/to/image23.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "24",
         name: "Мероприятие 24",
         idStaff: "8",
@@ -715,8 +715,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image24.jpg"
-      }, {
+        pic: "path/to/image24.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "25",
         name: "Мероприятие 25",
         idStaff: "6",
@@ -747,8 +747,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image25.jpg"
-      }, {
+        pic: "path/to/image25.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "26",
         name: "Мероприятие 26",
         idStaff: "4",
@@ -782,8 +782,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image26.jpg"
-      }, {
+        pic: "path/to/image26.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "27",
         name: "Мероприятие 27",
         idStaff: "3",
@@ -818,8 +818,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image27.jpg"
-      }, {
+        pic: "path/to/image27.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "28",
         name: "Мероприятие 28",
         idStaff: "2",
@@ -852,8 +852,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image28.jpg"
-      }, {
+        pic: "path/to/image28.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "29",
         name: "Мероприятие 29",
         idStaff: "7",
@@ -885,8 +885,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image29.jpg"
-      }, {
+        pic: "path/to/image29.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "30",
         name: "Мероприятие 30",
         idStaff: "1",
@@ -916,8 +916,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image30.jpg"
-      }, {
+        pic: "path/to/image30.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "31",
         name: "Мероприятие 31",
         idStaff: "2",
@@ -945,8 +945,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image31.jpg"
-      }, {
+        pic: "path/to/image31.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "32",
         name: "Мероприятие 32",
         idStaff: "9",
@@ -967,8 +967,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image32.jpg"
-      }, {
+        pic: "path/to/image32.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "33",
         name: "Мероприятие 33",
         idStaff: "7",
@@ -992,8 +992,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image33.jpg"
-      }, {
+        pic: "path/to/image33.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "34",
         name: "Мероприятие 34",
         idStaff: "3",
@@ -1017,8 +1017,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image34.jpg"
-      }, {
+        pic: "path/to/image34.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "35",
         name: "Мероприятие 35",
         idStaff: "7",
@@ -1048,8 +1048,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image35.jpg"
-      }, {
+        pic: "path/to/image35.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "36",
         name: "Мероприятие 36",
         idStaff: "7",
@@ -1072,8 +1072,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image36.jpg"
-      }, {
+        pic: "path/to/image36.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "37",
         name: "Мероприятие 37",
         idStaff: "4",
@@ -1095,8 +1095,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image37.jpg"
-      }, {
+        pic: "path/to/image37.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "38",
         name: "Мероприятие 38",
         idStaff: "7",
@@ -1129,8 +1129,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image38.jpg"
-      }, {
+        pic: "path/to/image38.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "39",
         name: "Мероприятие 39",
         idStaff: "4",
@@ -1161,8 +1161,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image39.jpg"
-      }, {
+        pic: "path/to/image39.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "40",
         name: "Мероприятие 40",
         idStaff: "8",
@@ -1201,8 +1201,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image40.jpg"
-      }, {
+        pic: "path/to/image40.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "41",
         name: "Мероприятие 41",
         idStaff: "9",
@@ -1229,8 +1229,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image41.jpg"
-      }, {
+        pic: "path/to/image41.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "42",
         name: "Мероприятие 42",
         idStaff: "4",
@@ -1257,8 +1257,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image42.jpg"
-      }, {
+        pic: "path/to/image42.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "43",
         name: "Мероприятие 43",
         idStaff: "9",
@@ -1285,8 +1285,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image43.jpg"
-      }, {
+        pic: "path/to/image43.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "44",
         name: "Мероприятие 44",
         idStaff: "10",
@@ -1305,8 +1305,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image44.jpg"
-      }, {
+        pic: "path/to/image44.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "45",
         name: "Мероприятие 45",
         idStaff: "8",
@@ -1333,8 +1333,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image45.jpg"
-      }, {
+        pic: "path/to/image45.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "46",
         name: "Мероприятие 46",
         idStaff: "4",
@@ -1370,8 +1370,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image46.jpg"
-      }, {
+        pic: "path/to/image46.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "47",
         name: "Мероприятие 47",
         idStaff: "8",
@@ -1392,8 +1392,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image47.jpg"
-      }, {
+        pic: "path/to/image47.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "48",
         name: "Мероприятие 48",
         idStaff: "4",
@@ -1417,8 +1417,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image48.jpg"
-      }, {
+        pic: "path/to/image48.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "49",
         name: "Мероприятие 49",
         idStaff: "3",
@@ -1452,8 +1452,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image49.jpg"
-      }, {
+        pic: "path/to/image49.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "50",
         name: "Мероприятие 50",
         idStaff: "3",
@@ -1485,8 +1485,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image50.jpg"
-      }, {
+        pic: "path/to/image50.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "51",
         name: "Мероприятие 51",
         idStaff: "3",
@@ -1522,8 +1522,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image51.jpg"
-      }, {
+        pic: "path/to/image51.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "52",
         name: "Мероприятие 52",
         idStaff: "4",
@@ -1551,8 +1551,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image52.jpg"
-      }, {
+        pic: "path/to/image52.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "53",
         name: "Мероприятие 53",
         idStaff: "4",
@@ -1585,8 +1585,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image53.jpg"
-      }, {
+        pic: "path/to/image53.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "54",
         name: "Мероприятие 54",
         idStaff: "2",
@@ -1616,8 +1616,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image54.jpg"
-      }, {
+        pic: "path/to/image54.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "55",
         name: "Мероприятие 55",
         idStaff: "1",
@@ -1645,8 +1645,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image55.jpg"
-      }, {
+        pic: "path/to/image55.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "56",
         name: "Мероприятие 56",
         idStaff: "1",
@@ -1672,8 +1672,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image56.jpg"
-      }, {
+        pic: "path/to/image56.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "57",
         name: "Мероприятие 57",
         idStaff: "8",
@@ -1707,8 +1707,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image57.jpg"
-      }, {
+        pic: "path/to/image57.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "58",
         name: "Мероприятие 58",
         idStaff: "10",
@@ -1731,8 +1731,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image58.jpg"
-      }, {
+        pic: "path/to/image58.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "59",
         name: "Мероприятие 59",
         idStaff: "10",
@@ -1766,8 +1766,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image59.jpg"
-      }, {
+        pic: "path/to/image59.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "60",
         name: "Мероприятие 60",
         idStaff: "3",
@@ -1798,8 +1798,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image60.jpg"
-      }, {
+        pic: "path/to/image60.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "61",
         name: "Мероприятие 61",
         idStaff: "9",
@@ -1819,8 +1819,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image61.jpg"
-      }, {
+        pic: "path/to/image61.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "62",
         name: "Мероприятие 62",
         idStaff: "5",
@@ -1842,8 +1842,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image62.jpg"
-      }, {
+        pic: "path/to/image62.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "63",
         name: "Мероприятие 63",
         idStaff: "3",
@@ -1875,8 +1875,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image63.jpg"
-      }, {
+        pic: "path/to/image63.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "64",
         name: "Мероприятие 64",
         idStaff: "6",
@@ -1900,8 +1900,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image64.jpg"
-      }, {
+        pic: "path/to/image64.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "65",
         name: "Мероприятие 65",
         idStaff: "3",
@@ -1927,8 +1927,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image65.jpg"
-      }, {
+        pic: "path/to/image65.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "66",
         name: "Мероприятие 66",
         idStaff: "8",
@@ -1963,8 +1963,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image66.jpg"
-      }, {
+        pic: "path/to/image66.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "67",
         name: "Мероприятие 67",
         idStaff: "3",
@@ -1992,8 +1992,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image67.jpg"
-      }, {
+        pic: "path/to/image67.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "68",
         name: "Мероприятие 68",
         idStaff: "4",
@@ -2014,8 +2014,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image68.jpg"
-      }, {
+        pic: "path/to/image68.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "69",
         name: "Мероприятие 69",
         idStaff: "6",
@@ -2043,8 +2043,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image69.jpg"
-      }, {
+        pic: "path/to/image69.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "70",
         name: "Мероприятие 70",
         idStaff: "5",
@@ -2068,8 +2068,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image70.jpg"
-      }, {
+        pic: "path/to/image70.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "71",
         name: "Мероприятие 71",
         idStaff: "6",
@@ -2094,8 +2094,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image71.jpg"
-      }, {
+        pic: "path/to/image71.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "72",
         name: "Мероприятие 72",
         idStaff: "2",
@@ -2124,8 +2124,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image72.jpg"
-      }, {
+        pic: "path/to/image72.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "73",
         name: "Мероприятие 73",
         idStaff: "2",
@@ -2158,8 +2158,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image73.jpg"
-      }, {
+        pic: "path/to/image73.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "74",
         name: "Мероприятие 74",
         idStaff: "5",
@@ -2183,8 +2183,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image74.jpg"
-      }, {
+        pic: "path/to/image74.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "75",
         name: "Мероприятие 75",
         idStaff: "4",
@@ -2204,8 +2204,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image75.jpg"
-      }, {
+        pic: "path/to/image75.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "76",
         name: "Мероприятие 76",
         idStaff: "8",
@@ -2228,8 +2228,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image76.jpg"
-      }, {
+        pic: "path/to/image76.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "77",
         name: "Мероприятие 77",
         idStaff: "9",
@@ -2251,8 +2251,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image77.jpg"
-      }, {
+        pic: "path/to/image77.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "78",
         name: "Мероприятие 78",
         idStaff: "9",
@@ -2282,8 +2282,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image78.jpg"
-      }, {
+        pic: "path/to/image78.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "79",
         name: "Мероприятие 79",
         idStaff: "4",
@@ -2306,8 +2306,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image79.jpg"
-      }, {
+        pic: "path/to/image79.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "80",
         name: "Мероприятие 80",
         idStaff: "3",
@@ -2341,8 +2341,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image80.jpg"
-      }, {
+        pic: "path/to/image80.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "81",
         name: "Мероприятие 81",
         idStaff: "7",
@@ -2370,8 +2370,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image81.jpg"
-      }, {
+        pic: "path/to/image81.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "82",
         name: "Мероприятие 82",
         idStaff: "5",
@@ -2398,8 +2398,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image82.jpg"
-      }, {
+        pic: "path/to/image82.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "83",
         name: "Мероприятие 83",
         idStaff: "3",
@@ -2428,8 +2428,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image83.jpg"
-      }, {
+        pic: "path/to/image83.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "84",
         name: "Мероприятие 84",
         idStaff: "1",
@@ -2459,8 +2459,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image84.jpg"
-      }, {
+        pic: "path/to/image84.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "85",
         name: "Мероприятие 85",
         idStaff: "8",
@@ -2478,8 +2478,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image85.jpg"
-      }, {
+        pic: "path/to/image85.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "86",
         name: "Мероприятие 86",
         idStaff: "7",
@@ -2501,8 +2501,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image86.jpg"
-      }, {
+        pic: "path/to/image86.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "87",
         name: "Мероприятие 87",
         idStaff: "6",
@@ -2527,8 +2527,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image87.jpg"
-      }, {
+        pic: "path/to/image87.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "88",
         name: "Мероприятие 88",
         idStaff: "5",
@@ -2551,8 +2551,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image88.jpg"
-      }, {
+        pic: "path/to/image88.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "89",
         name: "Мероприятие 89",
         idStaff: "3",
@@ -2583,8 +2583,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image89.jpg"
-      }, {
+        pic: "path/to/image89.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "90",
         name: "Мероприятие 90",
         idStaff: "4",
@@ -2620,8 +2620,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image90.jpg"
-      }, {
+        pic: "path/to/image90.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "91",
         name: "Мероприятие 91",
         idStaff: "6",
@@ -2648,8 +2648,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image91.jpg"
-      }, {
+        pic: "path/to/image91.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "92",
         name: "Мероприятие 92",
         idStaff: "9",
@@ -2680,8 +2680,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image92.jpg"
-      }, {
+        pic: "path/to/image92.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "93",
         name: "Мероприятие 93",
         idStaff: "7",
@@ -2708,8 +2708,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image93.jpg"
-      }, {
+        pic: "path/to/image93.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "94",
         name: "Мероприятие 94",
         idStaff: "3",
@@ -2733,8 +2733,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image94.jpg"
-      }, {
+        pic: "path/to/image94.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "95",
         name: "Мероприятие 95",
         idStaff: "5",
@@ -2763,8 +2763,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image95.jpg"
-      }, {
+        pic: "path/to/image95.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "96",
         name: "Мероприятие 96",
         idStaff: "1",
@@ -2796,8 +2796,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image96.jpg"
-      }, {
+        pic: "path/to/image96.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "97",
         name: "Мероприятие 97",
         idStaff: "3",
@@ -2826,8 +2826,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image97.jpg"
-      }, {
+        pic: "path/to/image97.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "98",
         name: "Мероприятие 98",
         idStaff: "7",
@@ -2858,8 +2858,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image98.jpg"
-      }, {
+        pic: "path/to/image98.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "99",
         name: "Мероприятие 99",
         idStaff: "7",
@@ -2881,8 +2881,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image99.jpg"
-      }, {
+        pic: "path/to/image99.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "100",
         name: "Мероприятие 100",
         idStaff: "8",
@@ -2908,8 +2908,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image100.jpg"
-      }, {
+        pic: "path/to/image100.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "101",
         name: "Мероприятие 101",
         idStaff: "3",
@@ -2938,8 +2938,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image101.jpg"
-      }, {
+        pic: "path/to/image101.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "102",
         name: "Мероприятие 102",
         idStaff: "9",
@@ -2969,8 +2969,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image102.jpg"
-      }, {
+        pic: "path/to/image102.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "103",
         name: "Мероприятие 103",
         idStaff: "9",
@@ -3003,8 +3003,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image103.jpg"
-      }, {
+        pic: "path/to/image103.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "104",
         name: "Мероприятие 104",
         idStaff: "10",
@@ -3034,8 +3034,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image104.jpg"
-      }, {
+        pic: "path/to/image104.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "105",
         name: "Мероприятие 105",
         idStaff: "5",
@@ -3054,8 +3054,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image105.jpg"
-      }, {
+        pic: "path/to/image105.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "106",
         name: "Мероприятие 106",
         idStaff: "8",
@@ -3078,8 +3078,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image106.jpg"
-      }, {
+        pic: "path/to/image106.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "107",
         name: "Мероприятие 107",
         idStaff: "3",
@@ -3107,8 +3107,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image107.jpg"
-      }, {
+        pic: "path/to/image107.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "108",
         name: "Мероприятие 108",
         idStaff: "3",
@@ -3142,8 +3142,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image108.jpg"
-      }, {
+        pic: "path/to/image108.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "109",
         name: "Мероприятие 109",
         idStaff: "8",
@@ -3168,8 +3168,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image109.jpg"
-      }, {
+        pic: "path/to/image109.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "110",
         name: "Мероприятие 110",
         idStaff: "8",
@@ -3197,8 +3197,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image110.jpg"
-      }, {
+        pic: "path/to/image110.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "111",
         name: "Мероприятие 111",
         idStaff: "8",
@@ -3222,8 +3222,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image111.jpg"
-      }, {
+        pic: "path/to/image111.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "112",
         name: "Мероприятие 112",
         idStaff: "1",
@@ -3251,8 +3251,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image112.jpg"
-      }, {
+        pic: "path/to/image112.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "113",
         name: "Мероприятие 113",
         idStaff: "3",
@@ -3274,8 +3274,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image113.jpg"
-      }, {
+        pic: "path/to/image113.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "114",
         name: "Мероприятие 114",
         idStaff: "8",
@@ -3306,8 +3306,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image114.jpg"
-      }, {
+        pic: "path/to/image114.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "115",
         name: "Мероприятие 115",
         idStaff: "2",
@@ -3337,8 +3337,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image115.jpg"
-      }, {
+        pic: "path/to/image115.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "116",
         name: "Мероприятие 116",
         idStaff: "8",
@@ -3363,8 +3363,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image116.jpg"
-      }, {
+        pic: "path/to/image116.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "117",
         name: "Мероприятие 117",
         idStaff: "3",
@@ -3396,8 +3396,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image117.jpg"
-      }, {
+        pic: "path/to/image117.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "118",
         name: "Мероприятие 118",
         idStaff: "2",
@@ -3425,8 +3425,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image118.jpg"
-      }, {
+        pic: "path/to/image118.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "119",
         name: "Мероприятие 119",
         idStaff: "9",
@@ -3454,8 +3454,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image119.jpg"
-      }, {
+        pic: "path/to/image119.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "120",
         name: "Мероприятие 120",
         idStaff: "4",
@@ -3490,8 +3490,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image120.jpg"
-      }, {
+        pic: "path/to/image120.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "121",
         name: "Мероприятие 121",
         idStaff: "9",
@@ -3521,8 +3521,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image121.jpg"
-      }, {
+        pic: "path/to/image121.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "122",
         name: "Мероприятие 122",
         idStaff: "7",
@@ -3556,8 +3556,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image122.jpg"
-      }, {
+        pic: "path/to/image122.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "123",
         name: "Мероприятие 123",
         idStaff: "2",
@@ -3588,8 +3588,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image123.jpg"
-      }, {
+        pic: "path/to/image123.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "124",
         name: "Мероприятие 124",
         idStaff: "8",
@@ -3617,8 +3617,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image124.jpg"
-      }, {
+        pic: "path/to/image124.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "125",
         name: "Мероприятие 125",
         idStaff: "8",
@@ -3647,8 +3647,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image125.jpg"
-      }, {
+        pic: "path/to/image125.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "126",
         name: "Мероприятие 126",
         idStaff: "8",
@@ -3668,8 +3668,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image126.jpg"
-      }, {
+        pic: "path/to/image126.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "127",
         name: "Мероприятие 127",
         idStaff: "3",
@@ -3703,8 +3703,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image127.jpg"
-      }, {
+        pic: "path/to/image127.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "128",
         name: "Мероприятие 128",
         idStaff: "10",
@@ -3729,8 +3729,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image128.jpg"
-      }, {
+        pic: "path/to/image128.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "129",
         name: "Мероприятие 129",
         idStaff: "3",
@@ -3754,8 +3754,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image129.jpg"
-      }, {
+        pic: "path/to/image129.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "130",
         name: "Мероприятие 130",
         idStaff: "8",
@@ -3788,8 +3788,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image130.jpg"
-      }, {
+        pic: "path/to/image130.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "131",
         name: "Мероприятие 131",
         idStaff: "5",
@@ -3828,8 +3828,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image131.jpg"
-      }, {
+        pic: "path/to/image131.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "132",
         name: "Мероприятие 132",
         idStaff: "5",
@@ -3861,8 +3861,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image132.jpg"
-      }, {
+        pic: "path/to/image132.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "133",
         name: "Мероприятие 133",
         idStaff: "2",
@@ -3893,8 +3893,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image133.jpg"
-      }, {
+        pic: "path/to/image133.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "134",
         name: "Мероприятие 134",
         idStaff: "1",
@@ -3918,8 +3918,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image134.jpg"
-      }, {
+        pic: "path/to/image134.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "135",
         name: "Мероприятие 135",
         idStaff: "3",
@@ -3950,8 +3950,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image135.jpg"
-      }, {
+        pic: "path/to/image135.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "136",
         name: "Мероприятие 136",
         idStaff: "5",
@@ -3975,8 +3975,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image136.jpg"
-      }, {
+        pic: "path/to/image136.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "137",
         name: "Мероприятие 137",
         idStaff: "1",
@@ -4009,8 +4009,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image137.jpg"
-      }, {
+        pic: "path/to/image137.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "138",
         name: "Мероприятие 138",
         idStaff: "10",
@@ -4032,8 +4032,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image138.jpg"
-      }, {
+        pic: "path/to/image138.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "139",
         name: "Мероприятие 139",
         idStaff: "10",
@@ -4064,8 +4064,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image139.jpg"
-      }, {
+        pic: "path/to/image139.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "140",
         name: "Мероприятие 140",
         idStaff: "2",
@@ -4097,8 +4097,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image140.jpg"
-      }, {
+        pic: "path/to/image140.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "141",
         name: "Мероприятие 141",
         idStaff: "9",
@@ -4126,8 +4126,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image141.jpg"
-      }, {
+        pic: "path/to/image141.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "142",
         name: "Мероприятие 142",
         idStaff: "8",
@@ -4161,8 +4161,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image142.jpg"
-      }, {
+        pic: "path/to/image142.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "143",
         name: "Мероприятие 143",
         idStaff: "3",
@@ -4182,8 +4182,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image143.jpg"
-      }, {
+        pic: "path/to/image143.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "144",
         name: "Мероприятие 144",
         idStaff: "9",
@@ -4206,8 +4206,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image144.jpg"
-      }, {
+        pic: "path/to/image144.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "145",
         name: "Мероприятие 145",
         idStaff: "10",
@@ -4233,8 +4233,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image145.jpg"
-      }, {
+        pic: "path/to/image145.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "146",
         name: "Мероприятие 146",
         idStaff: "10",
@@ -4263,8 +4263,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image146.jpg"
-      }, {
+        pic: "path/to/image146.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "147",
         name: "Мероприятие 147",
         idStaff: "1",
@@ -4283,8 +4283,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image147.jpg"
-      }, {
+        pic: "path/to/image147.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "148",
         name: "Мероприятие 148",
         idStaff: "3",
@@ -4309,8 +4309,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image148.jpg"
-      }, {
+        pic: "path/to/image148.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "149",
         name: "Мероприятие 149",
         idStaff: "10",
@@ -4337,8 +4337,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image149.jpg"
-      }, {
+        pic: "path/to/image149.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "150",
         name: "Мероприятие 150",
         idStaff: "3",
@@ -4368,8 +4368,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image150.jpg"
-      }, {
+        pic: "path/to/image150.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "151",
         name: "Мероприятие 151",
         idStaff: "6",
@@ -4407,8 +4407,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image151.jpg"
-      }, {
+        pic: "path/to/image151.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "152",
         name: "Мероприятие 152",
         idStaff: "3",
@@ -4436,8 +4436,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image152.jpg"
-      }, {
+        pic: "path/to/image152.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "153",
         name: "Мероприятие 153",
         idStaff: "4",
@@ -4468,8 +4468,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image153.jpg"
-      }, {
+        pic: "path/to/image153.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "154",
         name: "Мероприятие 154",
         idStaff: "6",
@@ -4496,8 +4496,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image154.jpg"
-      }, {
+        pic: "path/to/image154.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "155",
         name: "Мероприятие 155",
         idStaff: "5",
@@ -4529,8 +4529,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image155.jpg"
-      }, {
+        pic: "path/to/image155.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "156",
         name: "Мероприятие 156",
         idStaff: "4",
@@ -4557,8 +4557,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image156.jpg"
-      }, {
+        pic: "path/to/image156.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "157",
         name: "Мероприятие 157",
         idStaff: "7",
@@ -4585,8 +4585,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image157.jpg"
-      }, {
+        pic: "path/to/image157.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "158",
         name: "Мероприятие 158",
         idStaff: "2",
@@ -4612,8 +4612,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image158.jpg"
-      }, {
+        pic: "path/to/image158.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "159",
         name: "Мероприятие 159",
         idStaff: "4",
@@ -4640,8 +4640,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image159.jpg"
-      }, {
+        pic: "path/to/image159.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "160",
         name: "Мероприятие 160",
         idStaff: "9",
@@ -4662,8 +4662,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image160.jpg"
-      }, {
+        pic: "path/to/image160.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "161",
         name: "Мероприятие 161",
         idStaff: "8",
@@ -4691,8 +4691,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image161.jpg"
-      }, {
+        pic: "path/to/image161.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "162",
         name: "Мероприятие 162",
         idStaff: "2",
@@ -4729,8 +4729,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image162.jpg"
-      }, {
+        pic: "path/to/image162.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "163",
         name: "Мероприятие 163",
         idStaff: "9",
@@ -4764,8 +4764,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image163.jpg"
-      }, {
+        pic: "path/to/image163.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "164",
         name: "Мероприятие 164",
         idStaff: "6",
@@ -4792,8 +4792,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image164.jpg"
-      }, {
+        pic: "path/to/image164.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "165",
         name: "Мероприятие 165",
         idStaff: "10",
@@ -4817,8 +4817,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image165.jpg"
-      }, {
+        pic: "path/to/image165.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "166",
         name: "Мероприятие 166",
         idStaff: "10",
@@ -4847,8 +4847,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image166.jpg"
-      }, {
+        pic: "path/to/image166.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "167",
         name: "Мероприятие 167",
         idStaff: "8",
@@ -4870,8 +4870,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image167.jpg"
-      }, {
+        pic: "path/to/image167.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "168",
         name: "Мероприятие 168",
         idStaff: "4",
@@ -4899,8 +4899,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image168.jpg"
-      }, {
+        pic: "path/to/image168.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "169",
         name: "Мероприятие 169",
         idStaff: "4",
@@ -4928,8 +4928,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image169.jpg"
-      }, {
+        pic: "path/to/image169.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "170",
         name: "Мероприятие 170",
         idStaff: "7",
@@ -4958,8 +4958,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image170.jpg"
-      }, {
+        pic: "path/to/image170.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "171",
         name: "Мероприятие 171",
         idStaff: "7",
@@ -4986,8 +4986,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image171.jpg"
-      }, {
+        pic: "path/to/image171.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "172",
         name: "Мероприятие 172",
         idStaff: "2",
@@ -5011,8 +5011,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image172.jpg"
-      }, {
+        pic: "path/to/image172.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "173",
         name: "Мероприятие 173",
         idStaff: "2",
@@ -5043,8 +5043,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image173.jpg"
-      }, {
+        pic: "path/to/image173.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "174",
         name: "Мероприятие 174",
         idStaff: "7",
@@ -5063,8 +5063,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image174.jpg"
-      }, {
+        pic: "path/to/image174.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "175",
         name: "Мероприятие 175",
         idStaff: "9",
@@ -5089,8 +5089,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image175.jpg"
-      }, {
+        pic: "path/to/image175.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "176",
         name: "Мероприятие 176",
         idStaff: "4",
@@ -5122,8 +5122,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image176.jpg"
-      }, {
+        pic: "path/to/image176.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "177",
         name: "Мероприятие 177",
         idStaff: "5",
@@ -5146,8 +5146,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image177.jpg"
-      }, {
+        pic: "path/to/image177.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "178",
         name: "Мероприятие 178",
         idStaff: "5",
@@ -5176,8 +5176,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image178.jpg"
-      }, {
+        pic: "path/to/image178.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "179",
         name: "Мероприятие 179",
         idStaff: "7",
@@ -5199,8 +5199,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image179.jpg"
-      }, {
+        pic: "path/to/image179.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "180",
         name: "Мероприятие 180",
         idStaff: "10",
@@ -5226,8 +5226,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image180.jpg"
-      }, {
+        pic: "path/to/image180.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "181",
         name: "Мероприятие 181",
         idStaff: "8",
@@ -5253,8 +5253,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image181.jpg"
-      }, {
+        pic: "path/to/image181.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "182",
         name: "Мероприятие 182",
         idStaff: "4",
@@ -5281,8 +5281,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image182.jpg"
-      }, {
+        pic: "path/to/image182.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "183",
         name: "Мероприятие 183",
         idStaff: "5",
@@ -5311,8 +5311,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image183.jpg"
-      }, {
+        pic: "path/to/image183.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "184",
         name: "Мероприятие 184",
         idStaff: "2",
@@ -5342,8 +5342,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image184.jpg"
-      }, {
+        pic: "path/to/image184.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "185",
         name: "Мероприятие 185",
         idStaff: "6",
@@ -5376,8 +5376,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image185.jpg"
-      }, {
+        pic: "path/to/image185.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "186",
         name: "Мероприятие 186",
         idStaff: "4",
@@ -5413,8 +5413,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image186.jpg"
-      }, {
+        pic: "path/to/image186.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "187",
         name: "Мероприятие 187",
         idStaff: "6",
@@ -5444,8 +5444,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image187.jpg"
-      }, {
+        pic: "path/to/image187.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "188",
         name: "Мероприятие 188",
         idStaff: "6",
@@ -5477,8 +5477,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image188.jpg"
-      }, {
+        pic: "path/to/image188.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "189",
         name: "Мероприятие 189",
         idStaff: "4",
@@ -5502,8 +5502,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image189.jpg"
-      }, {
+        pic: "path/to/image189.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "190",
         name: "Мероприятие 190",
         idStaff: "3",
@@ -5530,8 +5530,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image190.jpg"
-      }, {
+        pic: "path/to/image190.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "191",
         name: "Мероприятие 191",
         idStaff: "2",
@@ -5555,8 +5555,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image191.jpg"
-      }, {
+        pic: "path/to/image191.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "192",
         name: "Мероприятие 192",
         idStaff: "4",
@@ -5587,8 +5587,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image192.jpg"
-      }, {
+        pic: "path/to/image192.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "193",
         name: "Мероприятие 193",
         idStaff: "8",
@@ -5613,8 +5613,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image193.jpg"
-      }, {
+        pic: "path/to/image193.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "194",
         name: "Мероприятие 194",
         idStaff: "5",
@@ -5641,8 +5641,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image194.jpg"
-      }, {
+        pic: "path/to/image194.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "195",
         name: "Мероприятие 195",
         idStaff: "4",
@@ -5678,8 +5678,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image195.jpg"
-      }, {
+        pic: "path/to/image195.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "196",
         name: "Мероприятие 196",
         idStaff: "7",
@@ -5705,8 +5705,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image196.jpg"
-      }, {
+        pic: "path/to/image196.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "197",
         name: "Мероприятие 197",
         idStaff: "4",
@@ -5740,8 +5740,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image197.jpg"
-      }, {
+        pic: "path/to/image197.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "198",
         name: "Мероприятие 198",
         idStaff: "1",
@@ -5774,8 +5774,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image198.jpg"
-      }, {
+        pic: "path/to/image198.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "199",
         name: "Мероприятие 199",
         idStaff: "7",
@@ -5799,8 +5799,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image199.jpg"
-      }, {
+        pic: "path/to/image199.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "200",
         name: "Мероприятие 200",
         idStaff: "1",
@@ -5829,8 +5829,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image200.jpg"
-      }, {
+        pic: "path/to/image200.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "201",
         name: "Мероприятие 201",
         idStaff: "6",
@@ -5852,8 +5852,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image201.jpg"
-      }, {
+        pic: "path/to/image201.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "202",
         name: "Мероприятие 202",
         idStaff: "8",
@@ -5876,8 +5876,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image202.jpg"
-      }, {
+        pic: "path/to/image202.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "203",
         name: "Мероприятие 203",
         idStaff: "2",
@@ -5905,8 +5905,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image203.jpg"
-      }, {
+        pic: "path/to/image203.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "204",
         name: "Мероприятие 204",
         idStaff: "2",
@@ -5926,8 +5926,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image204.jpg"
-      }, {
+        pic: "path/to/image204.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "205",
         name: "Мероприятие 205",
         idStaff: "5",
@@ -5950,8 +5950,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image205.jpg"
-      }, {
+        pic: "path/to/image205.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "206",
         name: "Мероприятие 206",
         idStaff: "5",
@@ -5974,8 +5974,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image206.jpg"
-      }, {
+        pic: "path/to/image206.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "207",
         name: "Мероприятие 207",
         idStaff: "1",
@@ -6007,8 +6007,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image207.jpg"
-      }, {
+        pic: "path/to/image207.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "208",
         name: "Мероприятие 208",
         idStaff: "2",
@@ -6036,8 +6036,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image208.jpg"
-      }, {
+        pic: "path/to/image208.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "209",
         name: "Мероприятие 209",
         idStaff: "6",
@@ -6068,8 +6068,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image209.jpg"
-      }, {
+        pic: "path/to/image209.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "210",
         name: "Мероприятие 210",
         idStaff: "8",
@@ -6091,8 +6091,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image210.jpg"
-      }, {
+        pic: "path/to/image210.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "211",
         name: "Мероприятие 211",
         idStaff: "1",
@@ -6129,8 +6129,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image211.jpg"
-      }, {
+        pic: "path/to/image211.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "212",
         name: "Мероприятие 212",
         idStaff: "2",
@@ -6160,8 +6160,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image212.jpg"
-      }, {
+        pic: "path/to/image212.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "213",
         name: "Мероприятие 213",
         idStaff: "6",
@@ -6184,8 +6184,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image213.jpg"
-      }, {
+        pic: "path/to/image213.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "214",
         name: "Мероприятие 214",
         idStaff: "8",
@@ -6211,8 +6211,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image214.jpg"
-      }, {
+        pic: "path/to/image214.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "215",
         name: "Мероприятие 215",
         idStaff: "6",
@@ -6237,8 +6237,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image215.jpg"
-      }, {
+        pic: "path/to/image215.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "216",
         name: "Мероприятие 216",
         idStaff: "9",
@@ -6260,8 +6260,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image216.jpg"
-      }, {
+        pic: "path/to/image216.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "217",
         name: "Мероприятие 217",
         idStaff: "6",
@@ -6281,8 +6281,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image217.jpg"
-      }, {
+        pic: "path/to/image217.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "218",
         name: "Мероприятие 218",
         idStaff: "5",
@@ -6308,8 +6308,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image218.jpg"
-      }, {
+        pic: "path/to/image218.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "219",
         name: "Мероприятие 219",
         idStaff: "1",
@@ -6338,8 +6338,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image219.jpg"
-      }, {
+        pic: "path/to/image219.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "220",
         name: "Мероприятие 220",
         idStaff: "9",
@@ -6365,8 +6365,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image220.jpg"
-      }, {
+        pic: "path/to/image220.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "221",
         name: "Мероприятие 221",
         idStaff: "7",
@@ -6397,8 +6397,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image221.jpg"
-      }, {
+        pic: "path/to/image221.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "222",
         name: "Мероприятие 222",
         idStaff: "4",
@@ -6428,8 +6428,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image222.jpg"
-      }, {
+        pic: "path/to/image222.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "223",
         name: "Мероприятие 223",
         idStaff: "6",
@@ -6449,8 +6449,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image223.jpg"
-      }, {
+        pic: "path/to/image223.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "224",
         name: "Мероприятие 224",
         idStaff: "7",
@@ -6479,8 +6479,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image224.jpg"
-      }, {
+        pic: "path/to/image224.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "225",
         name: "Мероприятие 225",
         idStaff: "7",
@@ -6508,8 +6508,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image225.jpg"
-      }, {
+        pic: "path/to/image225.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "226",
         name: "Мероприятие 226",
         idStaff: "9",
@@ -6540,8 +6540,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image226.jpg"
-      }, {
+        pic: "path/to/image226.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "227",
         name: "Мероприятие 227",
         idStaff: "8",
@@ -6577,8 +6577,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image227.jpg"
-      }, {
+        pic: "path/to/image227.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "228",
         name: "Мероприятие 228",
         idStaff: "6",
@@ -6605,8 +6605,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image228.jpg"
-      }, {
+        pic: "path/to/image228.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "229",
         name: "Мероприятие 229",
         idStaff: "3",
@@ -6634,8 +6634,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image229.jpg"
-      }, {
+        pic: "path/to/image229.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "230",
         name: "Мероприятие 230",
         idStaff: "5",
@@ -6662,8 +6662,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image230.jpg"
-      }, {
+        pic: "path/to/image230.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "231",
         name: "Мероприятие 231",
         idStaff: "10",
@@ -6689,8 +6689,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image231.jpg"
-      }, {
+        pic: "path/to/image231.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "232",
         name: "Мероприятие 232",
         idStaff: "8",
@@ -6718,8 +6718,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image232.jpg"
-      }, {
+        pic: "path/to/image232.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "233",
         name: "Мероприятие 233",
         idStaff: "3",
@@ -6737,8 +6737,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image233.jpg"
-      }, {
+        pic: "path/to/image233.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "234",
         name: "Мероприятие 234",
         idStaff: "9",
@@ -6770,8 +6770,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image234.jpg"
-      }, {
+        pic: "path/to/image234.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "235",
         name: "Мероприятие 235",
         idStaff: "3",
@@ -6795,8 +6795,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image235.jpg"
-      }, {
+        pic: "path/to/image235.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "236",
         name: "Мероприятие 236",
         idStaff: "8",
@@ -6825,8 +6825,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image236.jpg"
-      }, {
+        pic: "path/to/image236.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "237",
         name: "Мероприятие 237",
         idStaff: "2",
@@ -6854,8 +6854,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image237.jpg"
-      }, {
+        pic: "path/to/image237.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "238",
         name: "Мероприятие 238",
         idStaff: "1",
@@ -6884,8 +6884,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image238.jpg"
-      }, {
+        pic: "path/to/image238.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "239",
         name: "Мероприятие 239",
         idStaff: "7",
@@ -6907,8 +6907,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image239.jpg"
-      }, {
+        pic: "path/to/image239.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "240",
         name: "Мероприятие 240",
         idStaff: "8",
@@ -6944,8 +6944,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image240.jpg"
-      }, {
+        pic: "path/to/image240.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "241",
         name: "Мероприятие 241",
         idStaff: "4",
@@ -6970,8 +6970,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image241.jpg"
-      }, {
+        pic: "path/to/image241.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "242",
         name: "Мероприятие 242",
         idStaff: "10",
@@ -6997,8 +6997,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image242.jpg"
-      }, {
+        pic: "path/to/image242.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "243",
         name: "Мероприятие 243",
         idStaff: "3",
@@ -7023,8 +7023,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image243.jpg"
-      }, {
+        pic: "path/to/image243.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "244",
         name: "Мероприятие 244",
         idStaff: "4",
@@ -7060,8 +7060,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image244.jpg"
-      }, {
+        pic: "path/to/image244.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "245",
         name: "Мероприятие 245",
         idStaff: "9",
@@ -7093,8 +7093,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image245.jpg"
-      }, {
+        pic: "path/to/image245.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "246",
         name: "Мероприятие 246",
         idStaff: "7",
@@ -7120,8 +7120,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image246.jpg"
-      }, {
+        pic: "path/to/image246.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "247",
         name: "Мероприятие 247",
         idStaff: "6",
@@ -7141,8 +7141,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image247.jpg"
-      }, {
+        pic: "path/to/image247.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "248",
         name: "Мероприятие 248",
         idStaff: "8",
@@ -7175,8 +7175,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image248.jpg"
-      }, {
+        pic: "path/to/image248.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "249",
         name: "Мероприятие 249",
         idStaff: "4",
@@ -7212,8 +7212,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image249.jpg"
-      }, {
+        pic: "path/to/image249.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "250",
         name: "Мероприятие 250",
         idStaff: "3",
@@ -7243,8 +7243,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image250.jpg"
-      }, {
+        pic: "path/to/image250.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "251",
         name: "Мероприятие 251",
         idStaff: "7",
@@ -7272,8 +7272,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image251.jpg"
-      }, {
+        pic: "path/to/image251.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "252",
         name: "Мероприятие 252",
         idStaff: "6",
@@ -7298,8 +7298,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image252.jpg"
-      }, {
+        pic: "path/to/image252.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "253",
         name: "Мероприятие 253",
         idStaff: "6",
@@ -7336,8 +7336,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image253.jpg"
-      }, {
+        pic: "path/to/image253.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "254",
         name: "Мероприятие 254",
         idStaff: "2",
@@ -7366,8 +7366,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image254.jpg"
-      }, {
+        pic: "path/to/image254.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "255",
         name: "Мероприятие 255",
         idStaff: "9",
@@ -7398,8 +7398,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image255.jpg"
-      }, {
+        pic: "path/to/image255.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "256",
         name: "Мероприятие 256",
         idStaff: "4",
@@ -7426,8 +7426,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image256.jpg"
-      }, {
+        pic: "path/to/image256.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "257",
         name: "Мероприятие 257",
         idStaff: "7",
@@ -7448,8 +7448,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image257.jpg"
-      }, {
+        pic: "path/to/image257.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "258",
         name: "Мероприятие 258",
         idStaff: "3",
@@ -7486,8 +7486,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image258.jpg"
-      }, {
+        pic: "path/to/image258.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "259",
         name: "Мероприятие 259",
         idStaff: "4",
@@ -7519,8 +7519,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image259.jpg"
-      }, {
+        pic: "path/to/image259.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "260",
         name: "Мероприятие 260",
         idStaff: "7",
@@ -7540,8 +7540,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 6,
-        pic: "path/to/image260.jpg"
-      }, {
+        pic: "path/to/image260.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "261",
         name: "Мероприятие 261",
         idStaff: "8",
@@ -7567,8 +7567,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image261.jpg"
-      }, {
+        pic: "path/to/image261.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "262",
         name: "Мероприятие 262",
         idStaff: "4",
@@ -7601,8 +7601,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 6,
-        pic: "path/to/image262.jpg"
-      }, {
+        pic: "path/to/image262.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "263",
         name: "Мероприятие 263",
         idStaff: "8",
@@ -7630,8 +7630,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 6,
-        pic: "path/to/image263.jpg"
-      }, {
+        pic: "path/to/image263.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "264",
         name: "Мероприятие 264",
         idStaff: "2",
@@ -7666,8 +7666,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 3,
-        pic: "path/to/image264.jpg"
-      }, {
+        pic: "path/to/image264.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "265",
         name: "Мероприятие 265",
         idStaff: "4",
@@ -7691,8 +7691,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image265.jpg"
-      }, {
+        pic: "path/to/image265.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "266",
         name: "Мероприятие 266",
         idStaff: "1",
@@ -7723,8 +7723,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image266.jpg"
-      }, {
+        pic: "path/to/image266.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "267",
         name: "Мероприятие 267",
         idStaff: "4",
@@ -7760,8 +7760,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image267.jpg"
-      }, {
+        pic: "path/to/image267.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "268",
         name: "Мероприятие 268",
         idStaff: "6",
@@ -7784,8 +7784,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image268.jpg"
-      }, {
+        pic: "path/to/image268.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "269",
         name: "Мероприятие 269",
         idStaff: "1",
@@ -7819,8 +7819,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image269.jpg"
-      }, 
+        pic: "path/to/image269.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, 
       {
         id: "1",
         name: "Мероприятие 1",
@@ -7859,8 +7859,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image1.jpg"
-      }, {
+        pic: "path/to/image1.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "2",
         name: "Мероприятие 2",
         idStaff: "10",
@@ -7896,8 +7896,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image2.jpg"
-      }, {
+        pic: "path/to/image2.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "3",
         name: "Мероприятие 3",
         idStaff: "6",
@@ -7917,8 +7917,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image3.jpg"
-      }, {
+        pic: "path/to/image3.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "4",
         name: "Мероприятие 4",
         idStaff: "9",
@@ -7948,8 +7948,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image4.jpg"
-      }, {
+        pic: "path/to/image4.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "5",
         name: "Мероприятие 5",
         idStaff: "5",
@@ -7982,8 +7982,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image5.jpg"
-      }, {
+        pic: "path/to/image5.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "6",
         name: "Мероприятие 6",
         idStaff: "3",
@@ -8008,8 +8008,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image6.jpg"
-      }, {
+        pic: "path/to/image6.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "7",
         name: "Мероприятие 7",
         idStaff: "8",
@@ -8039,8 +8039,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image7.jpg"
-      }, {
+        pic: "path/to/image7.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "8",
         name: "Мероприятие 8",
         idStaff: "5",
@@ -8077,8 +8077,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image8.jpg"
-      }, {
+        pic: "path/to/image8.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "9",
         name: "Мероприятие 9",
         idStaff: "8",
@@ -8108,8 +8108,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image9.jpg"
-      }, {
+        pic: "path/to/image9.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "10",
         name: "Мероприятие 10",
         idStaff: "2",
@@ -8135,8 +8135,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image10.jpg"
-      }, {
+        pic: "path/to/image10.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "11",
         name: "Мероприятие 11",
         idStaff: "10",
@@ -8161,8 +8161,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image11.jpg"
-      }, {
+        pic: "path/to/image11.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "12",
         name: "Мероприятие 12",
         idStaff: "6",
@@ -8193,8 +8193,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image12.jpg"
-      }, {
+        pic: "path/to/image12.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "13",
         name: "Мероприятие 13",
         idStaff: "5",
@@ -8222,8 +8222,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image13.jpg"
-      }, {
+        pic: "path/to/image13.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "14",
         name: "Мероприятие 14",
         idStaff: "7",
@@ -8253,8 +8253,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image14.jpg"
-      }, {
+        pic: "path/to/image14.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "15",
         name: "Мероприятие 15",
         idStaff: "7",
@@ -8286,8 +8286,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image15.jpg"
-      }, {
+        pic: "path/to/image15.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "16",
         name: "Мероприятие 16",
         idStaff: "5",
@@ -8318,8 +8318,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image16.jpg"
-      }, {
+        pic: "path/to/image16.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "17",
         name: "Мероприятие 17",
         idStaff: "7",
@@ -8345,8 +8345,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image17.jpg"
-      }, {
+        pic: "path/to/image17.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "18",
         name: "Мероприятие 18",
         idStaff: "10",
@@ -8379,8 +8379,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image18.jpg"
-      }, {
+        pic: "path/to/image18.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "19",
         name: "Мероприятие 19",
         idStaff: "2",
@@ -8408,8 +8408,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image19.jpg"
-      }, {
+        pic: "path/to/image19.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "20",
         name: "Мероприятие 20",
         idStaff: "10",
@@ -8427,8 +8427,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image20.jpg"
-      }, {
+        pic: "path/to/image20.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "21",
         name: "Мероприятие 21",
         idStaff: "6",
@@ -8460,8 +8460,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image21.jpg"
-      }, {
+        pic: "path/to/image21.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "22",
         name: "Мероприятие 22",
         idStaff: "2",
@@ -8495,8 +8495,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image22.jpg"
-      }, {
+        pic: "path/to/image22.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "23",
         name: "Мероприятие 23",
         idStaff: "1",
@@ -8535,8 +8535,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image23.jpg"
-      }, {
+        pic: "path/to/image23.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "24",
         name: "Мероприятие 24",
         idStaff: "2",
@@ -8568,8 +8568,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image24.jpg"
-      }, {
+        pic: "path/to/image24.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "25",
         name: "Мероприятие 25",
         idStaff: "7",
@@ -8600,8 +8600,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image25.jpg"
-      }, {
+        pic: "path/to/image25.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "26",
         name: "Мероприятие 26",
         idStaff: "5",
@@ -8634,8 +8634,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image26.jpg"
-      }, {
+        pic: "path/to/image26.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "27",
         name: "Мероприятие 27",
         idStaff: "7",
@@ -8660,8 +8660,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image27.jpg"
-      }, {
+        pic: "path/to/image27.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "28",
         name: "Мероприятие 28",
         idStaff: "4",
@@ -8688,8 +8688,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image28.jpg"
-      }, {
+        pic: "path/to/image28.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "29",
         name: "Мероприятие 29",
         idStaff: "2",
@@ -8711,8 +8711,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image29.jpg"
-      }, {
+        pic: "path/to/image29.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "30",
         name: "Мероприятие 30",
         idStaff: "9",
@@ -8737,8 +8737,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image30.jpg"
-      }, {
+        pic: "path/to/image30.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "31",
         name: "Мероприятие 31",
         idStaff: "3",
@@ -8768,8 +8768,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image31.jpg"
-      }, {
+        pic: "path/to/image31.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "32",
         name: "Мероприятие 32",
         idStaff: "6",
@@ -8792,8 +8792,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image32.jpg"
-      }, {
+        pic: "path/to/image32.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "33",
         name: "Мероприятие 33",
         idStaff: "3",
@@ -8824,8 +8824,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image33.jpg"
-      }, {
+        pic: "path/to/image33.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "34",
         name: "Мероприятие 34",
         idStaff: "2",
@@ -8857,8 +8857,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image34.jpg"
-      }, {
+        pic: "path/to/image34.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "35",
         name: "Мероприятие 35",
         idStaff: "4",
@@ -8879,8 +8879,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image35.jpg"
-      }, {
+        pic: "path/to/image35.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "36",
         name: "Мероприятие 36",
         idStaff: "1",
@@ -8909,8 +8909,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image36.jpg"
-      }, {
+        pic: "path/to/image36.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "37",
         name: "Мероприятие 37",
         idStaff: "6",
@@ -8935,8 +8935,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image37.jpg"
-      }, {
+        pic: "path/to/image37.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "38",
         name: "Мероприятие 38",
         idStaff: "5",
@@ -8972,8 +8972,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image38.jpg"
-      }, {
+        pic: "path/to/image38.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "39",
         name: "Мероприятие 39",
         idStaff: "9",
@@ -8992,8 +8992,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image39.jpg"
-      }, {
+        pic: "path/to/image39.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "40",
         name: "Мероприятие 40",
         idStaff: "8",
@@ -9017,8 +9017,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image40.jpg"
-      }, {
+        pic: "path/to/image40.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "41",
         name: "Мероприятие 41",
         idStaff: "3",
@@ -9046,8 +9046,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image41.jpg"
-      }, {
+        pic: "path/to/image41.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "42",
         name: "Мероприятие 42",
         idStaff: "1",
@@ -9083,8 +9083,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image42.jpg"
-      }, {
+        pic: "path/to/image42.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "43",
         name: "Мероприятие 43",
         idStaff: "6",
@@ -9106,8 +9106,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image43.jpg"
-      }, {
+        pic: "path/to/image43.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "44",
         name: "Мероприятие 44",
         idStaff: "2",
@@ -9137,8 +9137,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image44.jpg"
-      }, {
+        pic: "path/to/image44.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "45",
         name: "Мероприятие 45",
         idStaff: "7",
@@ -9165,8 +9165,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image45.jpg"
-      }, {
+        pic: "path/to/image45.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "46",
         name: "Мероприятие 46",
         idStaff: "6",
@@ -9186,8 +9186,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image46.jpg"
-      }, {
+        pic: "path/to/image46.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "47",
         name: "Мероприятие 47",
         idStaff: "1",
@@ -9218,8 +9218,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image47.jpg"
-      }, {
+        pic: "path/to/image47.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "48",
         name: "Мероприятие 48",
         idStaff: "5",
@@ -9248,8 +9248,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image48.jpg"
-      }, {
+        pic: "path/to/image48.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "49",
         name: "Мероприятие 49",
         idStaff: "3",
@@ -9279,8 +9279,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image49.jpg"
-      }, {
+        pic: "path/to/image49.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "50",
         name: "Мероприятие 50",
         idStaff: "8",
@@ -9307,8 +9307,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image50.jpg"
-      }, {
+        pic: "path/to/image50.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "51",
         name: "Мероприятие 51",
         idStaff: "1",
@@ -9333,8 +9333,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image51.jpg"
-      }, {
+        pic: "path/to/image51.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "52",
         name: "Мероприятие 52",
         idStaff: "5",
@@ -9359,8 +9359,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image52.jpg"
-      }, {
+        pic: "path/to/image52.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "53",
         name: "Мероприятие 53",
         idStaff: "3",
@@ -9391,8 +9391,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image53.jpg"
-      }, {
+        pic: "path/to/image53.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "54",
         name: "Мероприятие 54",
         idStaff: "1",
@@ -9419,8 +9419,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image54.jpg"
-      }, {
+        pic: "path/to/image54.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "55",
         name: "Мероприятие 55",
         idStaff: "1",
@@ -9449,8 +9449,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image55.jpg"
-      }, {
+        pic: "path/to/image55.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "56",
         name: "Мероприятие 56",
         idStaff: "5",
@@ -9483,8 +9483,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image56.jpg"
-      }, {
+        pic: "path/to/image56.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "57",
         name: "Мероприятие 57",
         idStaff: "2",
@@ -9515,8 +9515,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image57.jpg"
-      }, {
+        pic: "path/to/image57.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "58",
         name: "Мероприятие 58",
         idStaff: "2",
@@ -9550,8 +9550,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image58.jpg"
-      }, {
+        pic: "path/to/image58.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "59",
         name: "Мероприятие 59",
         idStaff: "3",
@@ -9589,8 +9589,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image59.jpg"
-      }, {
+        pic: "path/to/image59.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "60",
         name: "Мероприятие 60",
         idStaff: "2",
@@ -9614,8 +9614,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image60.jpg"
-      }, {
+        pic: "path/to/image60.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "61",
         name: "Мероприятие 61",
         idStaff: "10",
@@ -9641,8 +9641,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image61.jpg"
-      }, {
+        pic: "path/to/image61.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "62",
         name: "Мероприятие 62",
         idStaff: "9",
@@ -9661,8 +9661,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image62.jpg"
-      }, {
+        pic: "path/to/image62.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "63",
         name: "Мероприятие 63",
         idStaff: "7",
@@ -9698,8 +9698,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image63.jpg"
-      }, {
+        pic: "path/to/image63.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "64",
         name: "Мероприятие 64",
         idStaff: "3",
@@ -9722,8 +9722,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image64.jpg"
-      }, {
+        pic: "path/to/image64.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "65",
         name: "Мероприятие 65",
         idStaff: "10",
@@ -9751,8 +9751,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image65.jpg"
-      }, {
+        pic: "path/to/image65.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "66",
         name: "Мероприятие 66",
         idStaff: "7",
@@ -9778,8 +9778,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image66.jpg"
-      }, {
+        pic: "path/to/image66.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "67",
         name: "Мероприятие 67",
         idStaff: "4",
@@ -9810,8 +9810,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image67.jpg"
-      }, {
+        pic: "path/to/image67.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "68",
         name: "Мероприятие 68",
         idStaff: "4",
@@ -9831,8 +9831,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image68.jpg"
-      }, {
+        pic: "path/to/image68.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "69",
         name: "Мероприятие 69",
         idStaff: "3",
@@ -9859,8 +9859,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image69.jpg"
-      }, {
+        pic: "path/to/image69.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "70",
         name: "Мероприятие 70",
         idStaff: "1",
@@ -9890,8 +9890,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image70.jpg"
-      }, {
+        pic: "path/to/image70.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "71",
         name: "Мероприятие 71",
         idStaff: "4",
@@ -9920,8 +9920,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image71.jpg"
-      }, {
+        pic: "path/to/image71.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "72",
         name: "Мероприятие 72",
         idStaff: "6",
@@ -9949,8 +9949,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image72.jpg"
-      }, {
+        pic: "path/to/image72.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "73",
         name: "Мероприятие 73",
         idStaff: "5",
@@ -9974,8 +9974,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image73.jpg"
-      }, {
+        pic: "path/to/image73.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "74",
         name: "Мероприятие 74",
         idStaff: "4",
@@ -10003,8 +10003,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image74.jpg"
-      }, {
+        pic: "path/to/image74.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "75",
         name: "Мероприятие 75",
         idStaff: "6",
@@ -10025,8 +10025,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image75.jpg"
-      }, {
+        pic: "path/to/image75.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "76",
         name: "Мероприятие 76",
         idStaff: "8",
@@ -10051,8 +10051,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image76.jpg"
-      }, {
+        pic: "path/to/image76.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "77",
         name: "Мероприятие 77",
         idStaff: "3",
@@ -10078,8 +10078,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image77.jpg"
-      }, {
+        pic: "path/to/image77.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "78",
         name: "Мероприятие 78",
         idStaff: "2",
@@ -10113,8 +10113,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image78.jpg"
-      }, {
+        pic: "path/to/image78.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "79",
         name: "Мероприятие 79",
         idStaff: "6",
@@ -10137,8 +10137,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image79.jpg"
-      }, {
+        pic: "path/to/image79.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "80",
         name: "Мероприятие 80",
         idStaff: "5",
@@ -10160,8 +10160,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image80.jpg"
-      }, {
+        pic: "path/to/image80.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "81",
         name: "Мероприятие 81",
         idStaff: "5",
@@ -10182,8 +10182,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image81.jpg"
-      }, {
+        pic: "path/to/image81.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "82",
         name: "Мероприятие 82",
         idStaff: "4",
@@ -10217,8 +10217,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image82.jpg"
-      }, {
+        pic: "path/to/image82.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "83",
         name: "Мероприятие 83",
         idStaff: "8",
@@ -10249,8 +10249,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image83.jpg"
-      }, {
+        pic: "path/to/image83.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "84",
         name: "Мероприятие 84",
         idStaff: "2",
@@ -10271,8 +10271,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image84.jpg"
-      }, {
+        pic: "path/to/image84.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "85",
         name: "Мероприятие 85",
         idStaff: "5",
@@ -10296,8 +10296,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image85.jpg"
-      }, {
+        pic: "path/to/image85.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "86",
         name: "Мероприятие 86",
         idStaff: "7",
@@ -10328,8 +10328,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image86.jpg"
-      }, {
+        pic: "path/to/image86.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "87",
         name: "Мероприятие 87",
         idStaff: "5",
@@ -10364,8 +10364,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image87.jpg"
-      }, {
+        pic: "path/to/image87.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "88",
         name: "Мероприятие 88",
         idStaff: "6",
@@ -10393,8 +10393,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image88.jpg"
-      }, {
+        pic: "path/to/image88.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "89",
         name: "Мероприятие 89",
         idStaff: "3",
@@ -10430,8 +10430,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image89.jpg"
-      }, {
+        pic: "path/to/image89.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "90",
         name: "Мероприятие 90",
         idStaff: "2",
@@ -10458,8 +10458,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image90.jpg"
-      }, {
+        pic: "path/to/image90.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "91",
         name: "Мероприятие 91",
         idStaff: "4",
@@ -10483,8 +10483,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image91.jpg"
-      }, {
+        pic: "path/to/image91.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "92",
         name: "Мероприятие 92",
         idStaff: "8",
@@ -10515,8 +10515,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image92.jpg"
-      }, {
+        pic: "path/to/image92.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "93",
         name: "Мероприятие 93",
         idStaff: "3",
@@ -10539,8 +10539,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image93.jpg"
-      }, {
+        pic: "path/to/image93.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "94",
         name: "Мероприятие 94",
         idStaff: "8",
@@ -10577,8 +10577,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image94.jpg"
-      }, {
+        pic: "path/to/image94.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "95",
         name: "Мероприятие 95",
         idStaff: "8",
@@ -10610,8 +10610,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image95.jpg"
-      }, {
+        pic: "path/to/image95.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "96",
         name: "Мероприятие 96",
         idStaff: "5",
@@ -10642,8 +10642,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image96.jpg"
-      }, {
+        pic: "path/to/image96.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "97",
         name: "Мероприятие 97",
         idStaff: "8",
@@ -10671,8 +10671,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image97.jpg"
-      }, {
+        pic: "path/to/image97.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "98",
         name: "Мероприятие 98",
         idStaff: "4",
@@ -10697,8 +10697,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image98.jpg"
-      }, {
+        pic: "path/to/image98.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "99",
         name: "Мероприятие 99",
         idStaff: "8",
@@ -10726,8 +10726,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image99.jpg"
-      }, {
+        pic: "path/to/image99.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "100",
         name: "Мероприятие 100",
         idStaff: "3",
@@ -10762,8 +10762,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image100.jpg"
-      }, {
+        pic: "path/to/image100.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "101",
         name: "Мероприятие 101",
         idStaff: "1",
@@ -10785,8 +10785,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image101.jpg"
-      }, {
+        pic: "path/to/image101.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "102",
         name: "Мероприятие 102",
         idStaff: "1",
@@ -10813,8 +10813,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image102.jpg"
-      }, {
+        pic: "path/to/image102.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "103",
         name: "Мероприятие 103",
         idStaff: "5",
@@ -10849,8 +10849,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image103.jpg"
-      }, {
+        pic: "path/to/image103.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "104",
         name: "Мероприятие 104",
         idStaff: "3",
@@ -10871,8 +10871,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image104.jpg"
-      }, {
+        pic: "path/to/image104.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "105",
         name: "Мероприятие 105",
         idStaff: "1",
@@ -10899,8 +10899,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image105.jpg"
-      }, {
+        pic: "path/to/image105.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "106",
         name: "Мероприятие 106",
         idStaff: "3",
@@ -10928,8 +10928,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image106.jpg"
-      }, {
+        pic: "path/to/image106.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "107",
         name: "Мероприятие 107",
         idStaff: "7",
@@ -10953,8 +10953,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image107.jpg"
-      }, {
+        pic: "path/to/image107.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "108",
         name: "Мероприятие 108",
         idStaff: "9",
@@ -10976,8 +10976,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image108.jpg"
-      }, {
+        pic: "path/to/image108.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "109",
         name: "Мероприятие 109",
         idStaff: "7",
@@ -11010,8 +11010,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image109.jpg"
-      }, {
+        pic: "path/to/image109.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "110",
         name: "Мероприятие 110",
         idStaff: "4",
@@ -11030,8 +11030,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image110.jpg"
-      }, {
+        pic: "path/to/image110.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "111",
         name: "Мероприятие 111",
         idStaff: "1",
@@ -11057,8 +11057,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image111.jpg"
-      }, {
+        pic: "path/to/image111.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "112",
         name: "Мероприятие 112",
         idStaff: "10",
@@ -11090,8 +11090,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image112.jpg"
-      }, {
+        pic: "path/to/image112.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "113",
         name: "Мероприятие 113",
         idStaff: "4",
@@ -11119,8 +11119,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image113.jpg"
-      }, {
+        pic: "path/to/image113.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "114",
         name: "Мероприятие 114",
         idStaff: "7",
@@ -11141,8 +11141,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image114.jpg"
-      }, {
+        pic: "path/to/image114.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "115",
         name: "Мероприятие 115",
         idStaff: "9",
@@ -11174,8 +11174,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image115.jpg"
-      }, {
+        pic: "path/to/image115.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "116",
         name: "Мероприятие 116",
         idStaff: "6",
@@ -11209,8 +11209,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image116.jpg"
-      }, {
+        pic: "path/to/image116.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "117",
         name: "Мероприятие 117",
         idStaff: "4",
@@ -11241,8 +11241,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image117.jpg"
-      }, {
+        pic: "path/to/image117.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "118",
         name: "Мероприятие 118",
         idStaff: "2",
@@ -11265,8 +11265,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image118.jpg"
-      }, {
+        pic: "path/to/image118.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "119",
         name: "Мероприятие 119",
         idStaff: "10",
@@ -11291,8 +11291,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image119.jpg"
-      }, {
+        pic: "path/to/image119.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "120",
         name: "Мероприятие 120",
         idStaff: "10",
@@ -11324,8 +11324,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image120.jpg"
-      }, {
+        pic: "path/to/image120.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "121",
         name: "Мероприятие 121",
         idStaff: "4",
@@ -11353,8 +11353,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image121.jpg"
-      }, {
+        pic: "path/to/image121.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "122",
         name: "Мероприятие 122",
         idStaff: "1",
@@ -11379,8 +11379,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image122.jpg"
-      }, {
+        pic: "path/to/image122.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "123",
         name: "Мероприятие 123",
         idStaff: "2",
@@ -11403,8 +11403,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image123.jpg"
-      }, {
+        pic: "path/to/image123.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "124",
         name: "Мероприятие 124",
         idStaff: "5",
@@ -11427,8 +11427,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image124.jpg"
-      }, {
+        pic: "path/to/image124.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "125",
         name: "Мероприятие 125",
         idStaff: "10",
@@ -11460,8 +11460,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image125.jpg"
-      }, {
+        pic: "path/to/image125.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "126",
         name: "Мероприятие 126",
         idStaff: "10",
@@ -11482,8 +11482,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image126.jpg"
-      }, {
+        pic: "path/to/image126.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "127",
         name: "Мероприятие 127",
         idStaff: "7",
@@ -11508,8 +11508,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image127.jpg"
-      }, {
+        pic: "path/to/image127.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "128",
         name: "Мероприятие 128",
         idStaff: "5",
@@ -11539,8 +11539,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image128.jpg"
-      }, {
+        pic: "path/to/image128.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "129",
         name: "Мероприятие 129",
         idStaff: "2",
@@ -11567,8 +11567,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image129.jpg"
-      }, {
+        pic: "path/to/image129.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "130",
         name: "Мероприятие 130",
         idStaff: "2",
@@ -11595,8 +11595,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image130.jpg"
-      }, {
+        pic: "path/to/image130.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "131",
         name: "Мероприятие 131",
         idStaff: "2",
@@ -11620,8 +11620,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image131.jpg"
-      }, {
+        pic: "path/to/image131.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "132",
         name: "Мероприятие 132",
         idStaff: "1",
@@ -11651,8 +11651,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image132.jpg"
-      }, {
+        pic: "path/to/image132.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "133",
         name: "Мероприятие 133",
         idStaff: "2",
@@ -11679,8 +11679,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image133.jpg"
-      }, {
+        pic: "path/to/image133.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "134",
         name: "Мероприятие 134",
         idStaff: "2",
@@ -11706,8 +11706,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image134.jpg"
-      }, {
+        pic: "path/to/image134.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "135",
         name: "Мероприятие 135",
         idStaff: "9",
@@ -11744,8 +11744,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image135.jpg"
-      }, {
+        pic: "path/to/image135.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "136",
         name: "Мероприятие 136",
         idStaff: "8",
@@ -11771,8 +11771,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image136.jpg"
-      }, {
+        pic: "path/to/image136.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "137",
         name: "Мероприятие 137",
         idStaff: "10",
@@ -11794,8 +11794,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image137.jpg"
-      }, {
+        pic: "path/to/image137.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "138",
         name: "Мероприятие 138",
         idStaff: "8",
@@ -11816,8 +11816,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image138.jpg"
-      }, {
+        pic: "path/to/image138.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "139",
         name: "Мероприятие 139",
         idStaff: "2",
@@ -11845,8 +11845,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image139.jpg"
-      }, {
+        pic: "path/to/image139.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "140",
         name: "Мероприятие 140",
         idStaff: "8",
@@ -11877,8 +11877,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image140.jpg"
-      }, {
+        pic: "path/to/image140.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "141",
         name: "Мероприятие 141",
         idStaff: "10",
@@ -11907,8 +11907,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image141.jpg"
-      }, {
+        pic: "path/to/image141.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "142",
         name: "Мероприятие 142",
         idStaff: "3",
@@ -11942,8 +11942,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image142.jpg"
-      }, {
+        pic: "path/to/image142.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "143",
         name: "Мероприятие 143",
         idStaff: "1",
@@ -11974,8 +11974,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image143.jpg"
-      }, {
+        pic: "path/to/image143.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "144",
         name: "Мероприятие 144",
         idStaff: "2",
@@ -12013,8 +12013,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image144.jpg"
-      }, {
+        pic: "path/to/image144.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "145",
         name: "Мероприятие 145",
         idStaff: "5",
@@ -12044,8 +12044,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image145.jpg"
-      }, {
+        pic: "path/to/image145.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "146",
         name: "Мероприятие 146",
         idStaff: "5",
@@ -12077,8 +12077,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image146.jpg"
-      }, {
+        pic: "path/to/image146.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "147",
         name: "Мероприятие 147",
         idStaff: "8",
@@ -12110,8 +12110,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image147.jpg"
-      }, {
+        pic: "path/to/image147.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "148",
         name: "Мероприятие 148",
         idStaff: "8",
@@ -12138,8 +12138,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image148.jpg"
-      }, {
+        pic: "path/to/image148.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "149",
         name: "Мероприятие 149",
         idStaff: "9",
@@ -12161,8 +12161,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image149.jpg"
-      }, {
+        pic: "path/to/image149.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "150",
         name: "Мероприятие 150",
         idStaff: "3",
@@ -12191,8 +12191,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image150.jpg"
-      }, {
+        pic: "path/to/image150.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "151",
         name: "Мероприятие 151",
         idStaff: "9",
@@ -12219,8 +12219,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image151.jpg"
-      }, {
+        pic: "path/to/image151.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "152",
         name: "Мероприятие 152",
         idStaff: "4",
@@ -12248,8 +12248,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image152.jpg"
-      }, {
+        pic: "path/to/image152.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "153",
         name: "Мероприятие 153",
         idStaff: "5",
@@ -12282,8 +12282,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image153.jpg"
-      }, {
+        pic: "path/to/image153.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "154",
         name: "Мероприятие 154",
         idStaff: "10",
@@ -12306,8 +12306,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image154.jpg"
-      }, {
+        pic: "path/to/image154.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "155",
         name: "Мероприятие 155",
         idStaff: "1",
@@ -12341,8 +12341,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image155.jpg"
-      }, {
+        pic: "path/to/image155.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "156",
         name: "Мероприятие 156",
         idStaff: "1",
@@ -12368,8 +12368,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image156.jpg"
-      }, {
+        pic: "path/to/image156.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "157",
         name: "Мероприятие 157",
         idStaff: "1",
@@ -12396,8 +12396,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image157.jpg"
-      }, {
+        pic: "path/to/image157.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "158",
         name: "Мероприятие 158",
         idStaff: "3",
@@ -12436,8 +12436,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image158.jpg"
-      }, {
+        pic: "path/to/image158.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "159",
         name: "Мероприятие 159",
         idStaff: "7",
@@ -12470,8 +12470,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image159.jpg"
-      }, {
+        pic: "path/to/image159.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "160",
         name: "Мероприятие 160",
         idStaff: "1",
@@ -12505,8 +12505,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image160.jpg"
-      }, {
+        pic: "path/to/image160.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "161",
         name: "Мероприятие 161",
         idStaff: "5",
@@ -12532,8 +12532,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image161.jpg"
-      }, {
+        pic: "path/to/image161.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "162",
         name: "Мероприятие 162",
         idStaff: "8",
@@ -12552,8 +12552,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image162.jpg"
-      }, {
+        pic: "path/to/image162.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "163",
         name: "Мероприятие 163",
         idStaff: "7",
@@ -12585,8 +12585,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image163.jpg"
-      }, {
+        pic: "path/to/image163.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "164",
         name: "Мероприятие 164",
         idStaff: "7",
@@ -12608,8 +12608,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image164.jpg"
-      }, {
+        pic: "path/to/image164.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "165",
         name: "Мероприятие 165",
         idStaff: "4",
@@ -12632,8 +12632,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image165.jpg"
-      }, {
+        pic: "path/to/image165.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "166",
         name: "Мероприятие 166",
         idStaff: "9",
@@ -12663,8 +12663,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image166.jpg"
-      }, {
+        pic: "path/to/image166.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "167",
         name: "Мероприятие 167",
         idStaff: "7",
@@ -12702,8 +12702,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image167.jpg"
-      }, {
+        pic: "path/to/image167.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "168",
         name: "Мероприятие 168",
         idStaff: "7",
@@ -12734,8 +12734,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image168.jpg"
-      }, {
+        pic: "path/to/image168.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "169",
         name: "Мероприятие 169",
         idStaff: "7",
@@ -12756,8 +12756,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image169.jpg"
-      }, {
+        pic: "path/to/image169.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "170",
         name: "Мероприятие 170",
         idStaff: "5",
@@ -12784,8 +12784,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image170.jpg"
-      }, {
+        pic: "path/to/image170.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "171",
         name: "Мероприятие 171",
         idStaff: "4",
@@ -12809,8 +12809,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image171.jpg"
-      }, {
+        pic: "path/to/image171.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "172",
         name: "Мероприятие 172",
         idStaff: "2",
@@ -12839,8 +12839,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image172.jpg"
-      }, {
+        pic: "path/to/image172.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "173",
         name: "Мероприятие 173",
         idStaff: "1",
@@ -12866,8 +12866,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image173.jpg"
-      }, {
+        pic: "path/to/image173.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "174",
         name: "Мероприятие 174",
         idStaff: "3",
@@ -12900,8 +12900,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image174.jpg"
-      }, {
+        pic: "path/to/image174.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "175",
         name: "Мероприятие 175",
         idStaff: "1",
@@ -12922,8 +12922,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image175.jpg"
-      }, {
+        pic: "path/to/image175.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "176",
         name: "Мероприятие 176",
         idStaff: "8",
@@ -12958,8 +12958,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image176.jpg"
-      }, {
+        pic: "path/to/image176.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "177",
         name: "Мероприятие 177",
         idStaff: "7",
@@ -12990,8 +12990,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image177.jpg"
-      }, {
+        pic: "path/to/image177.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "178",
         name: "Мероприятие 178",
         idStaff: "4",
@@ -13023,8 +13023,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image178.jpg"
-      }, {
+        pic: "path/to/image178.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "179",
         name: "Мероприятие 179",
         idStaff: "9",
@@ -13050,8 +13050,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image179.jpg"
-      }, {
+        pic: "path/to/image179.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "180",
         name: "Мероприятие 180",
         idStaff: "7",
@@ -13077,8 +13077,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image180.jpg"
-      }, {
+        pic: "path/to/image180.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "181",
         name: "Мероприятие 181",
         idStaff: "7",
@@ -13108,8 +13108,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image181.jpg"
-      }, {
+        pic: "path/to/image181.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "182",
         name: "Мероприятие 182",
         idStaff: "10",
@@ -13142,8 +13142,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image182.jpg"
-      }, {
+        pic: "path/to/image182.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "183",
         name: "Мероприятие 183",
         idStaff: "1",
@@ -13171,8 +13171,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image183.jpg"
-      }, {
+        pic: "path/to/image183.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "184",
         name: "Мероприятие 184",
         idStaff: "5",
@@ -13191,8 +13191,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image184.jpg"
-      }, {
+        pic: "path/to/image184.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "185",
         name: "Мероприятие 185",
         idStaff: "6",
@@ -13227,8 +13227,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image185.jpg"
-      }, {
+        pic: "path/to/image185.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "186",
         name: "Мероприятие 186",
         idStaff: "6",
@@ -13257,8 +13257,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image186.jpg"
-      }, {
+        pic: "path/to/image186.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "187",
         name: "Мероприятие 187",
         idStaff: "5",
@@ -13289,8 +13289,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image187.jpg"
-      }, {
+        pic: "path/to/image187.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "188",
         name: "Мероприятие 188",
         idStaff: "1",
@@ -13325,8 +13325,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image188.jpg"
-      }, {
+        pic: "path/to/image188.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "189",
         name: "Мероприятие 189",
         idStaff: "9",
@@ -13365,8 +13365,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image189.jpg"
-      }, {
+        pic: "path/to/image189.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "190",
         name: "Мероприятие 190",
         idStaff: "8",
@@ -13391,8 +13391,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image190.jpg"
-      }, {
+        pic: "path/to/image190.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "191",
         name: "Мероприятие 191",
         idStaff: "8",
@@ -13423,8 +13423,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image191.jpg"
-      }, {
+        pic: "path/to/image191.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "192",
         name: "Мероприятие 192",
         idStaff: "3",
@@ -13453,8 +13453,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image192.jpg"
-      }, {
+        pic: "path/to/image192.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "193",
         name: "Мероприятие 193",
         idStaff: "3",
@@ -13480,8 +13480,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image193.jpg"
-      }, {
+        pic: "path/to/image193.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "194",
         name: "Мероприятие 194",
         idStaff: "4",
@@ -13519,8 +13519,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image194.jpg"
-      }, {
+        pic: "path/to/image194.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "195",
         name: "Мероприятие 195",
         idStaff: "1",
@@ -13544,8 +13544,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image195.jpg"
-      }, {
+        pic: "path/to/image195.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "196",
         name: "Мероприятие 196",
         idStaff: "6",
@@ -13568,8 +13568,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image196.jpg"
-      }, {
+        pic: "path/to/image196.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "197",
         name: "Мероприятие 197",
         idStaff: "5",
@@ -13598,8 +13598,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image197.jpg"
-      }, {
+        pic: "path/to/image197.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "198",
         name: "Мероприятие 198",
         idStaff: "3",
@@ -13624,8 +13624,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image198.jpg"
-      }, {
+        pic: "path/to/image198.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "199",
         name: "Мероприятие 199",
         idStaff: "2",
@@ -13657,8 +13657,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image199.jpg"
-      }, {
+        pic: "path/to/image199.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "200",
         name: "Мероприятие 200",
         idStaff: "2",
@@ -13688,8 +13688,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image200.jpg"
-      }, {
+        pic: "path/to/image200.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "201",
         name: "Мероприятие 201",
         idStaff: "4",
@@ -13716,8 +13716,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image201.jpg"
-      }, {
+        pic: "path/to/image201.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "202",
         name: "Мероприятие 202",
         idStaff: "4",
@@ -13750,8 +13750,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image202.jpg"
-      }, {
+        pic: "path/to/image202.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "203",
         name: "Мероприятие 203",
         idStaff: "4",
@@ -13780,8 +13780,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image203.jpg"
-      }, {
+        pic: "path/to/image203.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "204",
         name: "Мероприятие 204",
         idStaff: "9",
@@ -13804,8 +13804,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image204.jpg"
-      }, {
+        pic: "path/to/image204.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "205",
         name: "Мероприятие 205",
         idStaff: "10",
@@ -13828,8 +13828,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image205.jpg"
-      }, {
+        pic: "path/to/image205.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "206",
         name: "Мероприятие 206",
         idStaff: "8",
@@ -13864,8 +13864,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image206.jpg"
-      }, {
+        pic: "path/to/image206.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "207",
         name: "Мероприятие 207",
         idStaff: "10",
@@ -13892,8 +13892,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image207.jpg"
-      }, {
+        pic: "path/to/image207.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "208",
         name: "Мероприятие 208",
         idStaff: "8",
@@ -13921,8 +13921,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image208.jpg"
-      }, {
+        pic: "path/to/image208.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "209",
         name: "Мероприятие 209",
         idStaff: "5",
@@ -13951,8 +13951,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image209.jpg"
-      }, {
+        pic: "path/to/image209.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "210",
         name: "Мероприятие 210",
         idStaff: "8",
@@ -13983,8 +13983,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image210.jpg"
-      }, {
+        pic: "path/to/image210.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "211",
         name: "Мероприятие 211",
         idStaff: "9",
@@ -14012,8 +14012,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image211.jpg"
-      }, {
+        pic: "path/to/image211.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "212",
         name: "Мероприятие 212",
         idStaff: "10",
@@ -14036,8 +14036,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image212.jpg"
-      }, {
+        pic: "path/to/image212.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "213",
         name: "Мероприятие 213",
         idStaff: "5",
@@ -14061,8 +14061,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image213.jpg"
-      }, {
+        pic: "path/to/image213.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "214",
         name: "Мероприятие 214",
         idStaff: "7",
@@ -14086,8 +14086,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image214.jpg"
-      }, {
+        pic: "path/to/image214.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "215",
         name: "Мероприятие 215",
         idStaff: "2",
@@ -14115,8 +14115,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image215.jpg"
-      }, {
+        pic: "path/to/image215.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "216",
         name: "Мероприятие 216",
         idStaff: "6",
@@ -14151,8 +14151,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image216.jpg"
-      }, {
+        pic: "path/to/image216.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "217",
         name: "Мероприятие 217",
         idStaff: "7",
@@ -14177,8 +14177,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image217.jpg"
-      }, {
+        pic: "path/to/image217.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "218",
         name: "Мероприятие 218",
         idStaff: "6",
@@ -14215,8 +14215,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image218.jpg"
-      }, {
+        pic: "path/to/image218.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "219",
         name: "Мероприятие 219",
         idStaff: "4",
@@ -14244,8 +14244,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image219.jpg"
-      }, {
+        pic: "path/to/image219.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "220",
         name: "Мероприятие 220",
         idStaff: "9",
@@ -14276,8 +14276,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image220.jpg"
-      }, {
+        pic: "path/to/image220.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "221",
         name: "Мероприятие 221",
         idStaff: "7",
@@ -14297,8 +14297,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image221.jpg"
-      }, {
+        pic: "path/to/image221.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "222",
         name: "Мероприятие 222",
         idStaff: "10",
@@ -14331,8 +14331,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image222.jpg"
-      }, {
+        pic: "path/to/image222.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "223",
         name: "Мероприятие 223",
         idStaff: "7",
@@ -14353,8 +14353,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image223.jpg"
-      }, {
+        pic: "path/to/image223.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "224",
         name: "Мероприятие 224",
         idStaff: "6",
@@ -14381,8 +14381,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image224.jpg"
-      }, {
+        pic: "path/to/image224.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "225",
         name: "Мероприятие 225",
         idStaff: "9",
@@ -14412,8 +14412,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image225.jpg"
-      }, {
+        pic: "path/to/image225.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "226",
         name: "Мероприятие 226",
         idStaff: "7",
@@ -14443,8 +14443,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image226.jpg"
-      }, {
+        pic: "path/to/image226.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "227",
         name: "Мероприятие 227",
         idStaff: "3",
@@ -14470,8 +14470,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image227.jpg"
-      }, {
+        pic: "path/to/image227.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "228",
         name: "Мероприятие 228",
         idStaff: "4",
@@ -14497,8 +14497,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image228.jpg"
-      }, {
+        pic: "path/to/image228.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "229",
         name: "Мероприятие 229",
         idStaff: "8",
@@ -14519,8 +14519,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image229.jpg"
-      }, {
+        pic: "path/to/image229.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "230",
         name: "Мероприятие 230",
         idStaff: "10",
@@ -14545,8 +14545,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image230.jpg"
-      }, {
+        pic: "path/to/image230.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "231",
         name: "Мероприятие 231",
         idStaff: "6",
@@ -14574,8 +14574,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image231.jpg"
-      }, {
+        pic: "path/to/image231.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "232",
         name: "Мероприятие 232",
         idStaff: "2",
@@ -14602,8 +14602,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image232.jpg"
-      }, {
+        pic: "path/to/image232.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "233",
         name: "Мероприятие 233",
         idStaff: "2",
@@ -14630,8 +14630,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image233.jpg"
-      }, {
+        pic: "path/to/image233.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "234",
         name: "Мероприятие 234",
         idStaff: "10",
@@ -14664,8 +14664,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image234.jpg"
-      }, {
+        pic: "path/to/image234.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "235",
         name: "Мероприятие 235",
         idStaff: "3",
@@ -14690,8 +14690,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image235.jpg"
-      }, {
+        pic: "path/to/image235.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "236",
         name: "Мероприятие 236",
         idStaff: "7",
@@ -14714,8 +14714,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image236.jpg"
-      }, {
+        pic: "path/to/image236.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "237",
         name: "Мероприятие 237",
         idStaff: "1",
@@ -14745,8 +14745,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image237.jpg"
-      }, {
+        pic: "path/to/image237.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "238",
         name: "Мероприятие 238",
         idStaff: "4",
@@ -14779,8 +14779,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image238.jpg"
-      }, {
+        pic: "path/to/image238.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "239",
         name: "Мероприятие 239",
         idStaff: "5",
@@ -14815,8 +14815,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image239.jpg"
-      }, {
+        pic: "path/to/image239.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "240",
         name: "Мероприятие 240",
         idStaff: "5",
@@ -14841,8 +14841,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image240.jpg"
-      }, {
+        pic: "path/to/image240.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "241",
         name: "Мероприятие 241",
         idStaff: "3",
@@ -14873,8 +14873,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image241.jpg"
-      }, {
+        pic: "path/to/image241.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "242",
         name: "Мероприятие 242",
         idStaff: "3",
@@ -14910,8 +14910,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image242.jpg"
-      }, {
+        pic: "path/to/image242.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "243",
         name: "Мероприятие 243",
         idStaff: "10",
@@ -14940,8 +14940,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image243.jpg"
-      }, {
+        pic: "path/to/image243.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "244",
         name: "Мероприятие 244",
         idStaff: "10",
@@ -14978,8 +14978,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image244.jpg"
-      }, {
+        pic: "path/to/image244.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "245",
         name: "Мероприятие 245",
         idStaff: "2",
@@ -15009,8 +15009,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image245.jpg"
-      }, {
+        pic: "path/to/image245.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "246",
         name: "Мероприятие 246",
         idStaff: "9",
@@ -15047,8 +15047,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image246.jpg"
-      }, {
+        pic: "path/to/image246.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "247",
         name: "Мероприятие 247",
         idStaff: "10",
@@ -15087,8 +15087,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image247.jpg"
-      }, {
+        pic: "path/to/image247.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "248",
         name: "Мероприятие 248",
         idStaff: "8",
@@ -15114,8 +15114,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image248.jpg"
-      }, {
+        pic: "path/to/image248.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "249",
         name: "Мероприятие 249",
         idStaff: "9",
@@ -15146,8 +15146,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image249.jpg"
-      }, {
+        pic: "path/to/image249.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "250",
         name: "Мероприятие 250",
         idStaff: "9",
@@ -15184,8 +15184,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image250.jpg"
-      }, {
+        pic: "path/to/image250.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "251",
         name: "Мероприятие 251",
         idStaff: "6",
@@ -15213,8 +15213,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image251.jpg"
-      }, {
+        pic: "path/to/image251.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "252",
         name: "Мероприятие 252",
         idStaff: "10",
@@ -15250,8 +15250,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image252.jpg"
-      }, {
+        pic: "path/to/image252.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "253",
         name: "Мероприятие 253",
         idStaff: "2",
@@ -15275,8 +15275,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image253.jpg"
-      }, {
+        pic: "path/to/image253.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "254",
         name: "Мероприятие 254",
         idStaff: "7",
@@ -15305,8 +15305,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image254.jpg"
-      }, {
+        pic: "path/to/image254.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "255",
         name: "Мероприятие 255",
         idStaff: "10",
@@ -15340,8 +15340,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image255.jpg"
-      }, {
+        pic: "path/to/image255.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "256",
         name: "Мероприятие 256",
         idStaff: "1",
@@ -15363,8 +15363,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image256.jpg"
-      }, {
+        pic: "path/to/image256.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "257",
         name: "Мероприятие 257",
         idStaff: "4",
@@ -15394,8 +15394,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image257.jpg"
-      }, {
+        pic: "path/to/image257.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "258",
         name: "Мероприятие 258",
         idStaff: "10",
@@ -15421,8 +15421,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image258.jpg"
-      }, {
+        pic: "path/to/image258.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "259",
         name: "Мероприятие 259",
         idStaff: "2",
@@ -15446,8 +15446,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image259.jpg"
-      }, {
+        pic: "path/to/image259.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "260",
         name: "Мероприятие 260",
         idStaff: "8",
@@ -15479,8 +15479,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image260.jpg"
-      }, {
+        pic: "path/to/image260.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "261",
         name: "Мероприятие 261",
         idStaff: "1",
@@ -15500,8 +15500,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image261.jpg"
-      }, {
+        pic: "path/to/image261.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "262",
         name: "Мероприятие 262",
         idStaff: "4",
@@ -15535,8 +15535,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image262.jpg"
-      }, {
+        pic: "path/to/image262.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "263",
         name: "Мероприятие 263",
         idStaff: "4",
@@ -15574,8 +15574,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image263.jpg"
-      }, {
+        pic: "path/to/image263.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "264",
         name: "Мероприятие 264",
         idStaff: "4",
@@ -15595,8 +15595,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image264.jpg"
-      }, {
+        pic: "path/to/image264.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "265",
         name: "Мероприятие 265",
         idStaff: "1",
@@ -15624,8 +15624,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image265.jpg"
-      }, {
+        pic: "path/to/image265.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "266",
         name: "Мероприятие 266",
         idStaff: "7",
@@ -15654,8 +15654,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image266.jpg"
-      }, {
+        pic: "path/to/image266.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "267",
         name: "Мероприятие 267",
         idStaff: "4",
@@ -15684,8 +15684,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image267.jpg"
-      }, {
+        pic: "path/to/image267.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "268",
         name: "Мероприятие 268",
         idStaff: "5",
@@ -15713,8 +15713,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image268.jpg"
-      }, {
+        pic: "path/to/image268.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "269",
         name: "Мероприятие 269",
         idStaff: "2",
@@ -15746,8 +15746,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image269.jpg"
-      }, {
+        pic: "path/to/image269.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "270",
         name: "Мероприятие 270",
         idStaff: "7",
@@ -15779,8 +15779,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image270.jpg"
-      }, {
+        pic: "path/to/image270.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "271",
         name: "Мероприятие 271",
         idStaff: "7",
@@ -15801,8 +15801,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image271.jpg"
-      }, {
+        pic: "path/to/image271.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "272",
         name: "Мероприятие 272",
         idStaff: "5",
@@ -15830,8 +15830,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image272.jpg"
-      }, {
+        pic: "path/to/image272.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "273",
         name: "Мероприятие 273",
         idStaff: "7",
@@ -15858,8 +15858,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image273.jpg"
-      }, {
+        pic: "path/to/image273.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "274",
         name: "Мероприятие 274",
         idStaff: "7",
@@ -15891,8 +15891,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image274.jpg"
-      }, {
+        pic: "path/to/image274.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "275",
         name: "Мероприятие 275",
         idStaff: "7",
@@ -15929,8 +15929,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image275.jpg"
-      }, {
+        pic: "path/to/image275.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "276",
         name: "Мероприятие 276",
         idStaff: "7",
@@ -15954,8 +15954,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image276.jpg"
-      }, {
+        pic: "path/to/image276.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "277",
         name: "Мероприятие 277",
         idStaff: "1",
@@ -15985,8 +15985,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image277.jpg"
-      }, {
+        pic: "path/to/image277.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "278",
         name: "Мероприятие 278",
         idStaff: "3",
@@ -16008,8 +16008,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image278.jpg"
-      },
+        pic: "path/to/image278.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" },
       {
         id: "1",
         name: "Мероприятие 1",
@@ -16042,8 +16042,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image1.jpg"
-      }, {
+        pic: "path/to/image1.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "2",
         name: "Мероприятие 2",
         idStaff: "6",
@@ -16067,8 +16067,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image2.jpg"
-      }, {
+        pic: "path/to/image2.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "3",
         name: "Мероприятие 3",
         idStaff: "5",
@@ -16096,8 +16096,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image3.jpg"
-      }, {
+        pic: "path/to/image3.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "4",
         name: "Мероприятие 4",
         idStaff: "4",
@@ -16120,8 +16120,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image4.jpg"
-      }, {
+        pic: "path/to/image4.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "5",
         name: "Мероприятие 5",
         idStaff: "5",
@@ -16150,8 +16150,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image5.jpg"
-      }, {
+        pic: "path/to/image5.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "6",
         name: "Мероприятие 6",
         idStaff: "10",
@@ -16176,8 +16176,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image6.jpg"
-      }, {
+        pic: "path/to/image6.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "7",
         name: "Мероприятие 7",
         idStaff: "1",
@@ -16212,8 +16212,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image7.jpg"
-      }, {
+        pic: "path/to/image7.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "8",
         name: "Мероприятие 8",
         idStaff: "5",
@@ -16251,8 +16251,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image8.jpg"
-      }, {
+        pic: "path/to/image8.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "9",
         name: "Мероприятие 9",
         idStaff: "2",
@@ -16276,8 +16276,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image9.jpg"
-      }, {
+        pic: "path/to/image9.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "10",
         name: "Мероприятие 10",
         idStaff: "3",
@@ -16303,8 +16303,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image10.jpg"
-      }, {
+        pic: "path/to/image10.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "11",
         name: "Мероприятие 11",
         idStaff: "1",
@@ -16342,8 +16342,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image11.jpg"
-      }, {
+        pic: "path/to/image11.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "12",
         name: "Мероприятие 12",
         idStaff: "9",
@@ -16378,8 +16378,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image12.jpg"
-      }, {
+        pic: "path/to/image12.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "13",
         name: "Мероприятие 13",
         idStaff: "4",
@@ -16410,8 +16410,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image13.jpg"
-      }, {
+        pic: "path/to/image13.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "14",
         name: "Мероприятие 14",
         idStaff: "10",
@@ -16435,8 +16435,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image14.jpg"
-      }, {
+        pic: "path/to/image14.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "15",
         name: "Мероприятие 15",
         idStaff: "5",
@@ -16461,8 +16461,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image15.jpg"
-      }, {
+        pic: "path/to/image15.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "16",
         name: "Мероприятие 16",
         idStaff: "2",
@@ -16500,8 +16500,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image16.jpg"
-      }, {
+        pic: "path/to/image16.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "17",
         name: "Мероприятие 17",
         idStaff: "10",
@@ -16531,8 +16531,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image17.jpg"
-      }, {
+        pic: "path/to/image17.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "18",
         name: "Мероприятие 18",
         idStaff: "9",
@@ -16556,8 +16556,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image18.jpg"
-      }, {
+        pic: "path/to/image18.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "19",
         name: "Мероприятие 19",
         idStaff: "5",
@@ -16587,8 +16587,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image19.jpg"
-      }, {
+        pic: "path/to/image19.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "20",
         name: "Мероприятие 20",
         idStaff: "9",
@@ -16612,8 +16612,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image20.jpg"
-      }, {
+        pic: "path/to/image20.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "21",
         name: "Мероприятие 21",
         idStaff: "3",
@@ -16649,8 +16649,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image21.jpg"
-      }, {
+        pic: "path/to/image21.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "22",
         name: "Мероприятие 22",
         idStaff: "5",
@@ -16682,8 +16682,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image22.jpg"
-      }, {
+        pic: "path/to/image22.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "23",
         name: "Мероприятие 23",
         idStaff: "4",
@@ -16712,8 +16712,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image23.jpg"
-      }, {
+        pic: "path/to/image23.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "24",
         name: "Мероприятие 24",
         idStaff: "9",
@@ -16743,8 +16743,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image24.jpg"
-      }, {
+        pic: "path/to/image24.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "25",
         name: "Мероприятие 25",
         idStaff: "4",
@@ -16780,8 +16780,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image25.jpg"
-      }, {
+        pic: "path/to/image25.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "26",
         name: "Мероприятие 26",
         idStaff: "4",
@@ -16814,8 +16814,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image26.jpg"
-      }, {
+        pic: "path/to/image26.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "27",
         name: "Мероприятие 27",
         idStaff: "8",
@@ -16845,8 +16845,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image27.jpg"
-      }, {
+        pic: "path/to/image27.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "28",
         name: "Мероприятие 28",
         idStaff: "3",
@@ -16873,8 +16873,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image28.jpg"
-      }, {
+        pic: "path/to/image28.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "29",
         name: "Мероприятие 29",
         idStaff: "7",
@@ -16899,8 +16899,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image29.jpg"
-      }, {
+        pic: "path/to/image29.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "30",
         name: "Мероприятие 30",
         idStaff: "1",
@@ -16928,8 +16928,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image30.jpg"
-      }, {
+        pic: "path/to/image30.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "31",
         name: "Мероприятие 31",
         idStaff: "9",
@@ -16967,8 +16967,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image31.jpg"
-      }, {
+        pic: "path/to/image31.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "32",
         name: "Мероприятие 32",
         idStaff: "2",
@@ -17001,8 +17001,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image32.jpg"
-      }, {
+        pic: "path/to/image32.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "33",
         name: "Мероприятие 33",
         idStaff: "4",
@@ -17037,8 +17037,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image33.jpg"
-      }, {
+        pic: "path/to/image33.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "34",
         name: "Мероприятие 34",
         idStaff: "7",
@@ -17066,8 +17066,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image34.jpg"
-      }, {
+        pic: "path/to/image34.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "35",
         name: "Мероприятие 35",
         idStaff: "3",
@@ -17089,8 +17089,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image35.jpg"
-      }, {
+        pic: "path/to/image35.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "36",
         name: "Мероприятие 36",
         idStaff: "1",
@@ -17115,8 +17115,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image36.jpg"
-      }, {
+        pic: "path/to/image36.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "37",
         name: "Мероприятие 37",
         idStaff: "8",
@@ -17144,8 +17144,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image37.jpg"
-      }, {
+        pic: "path/to/image37.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "38",
         name: "Мероприятие 38",
         idStaff: "6",
@@ -17171,8 +17171,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image38.jpg"
-      }, {
+        pic: "path/to/image38.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "39",
         name: "Мероприятие 39",
         idStaff: "5",
@@ -17196,8 +17196,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image39.jpg"
-      }, {
+        pic: "path/to/image39.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "40",
         name: "Мероприятие 40",
         idStaff: "5",
@@ -17218,8 +17218,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image40.jpg"
-      }, {
+        pic: "path/to/image40.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "41",
         name: "Мероприятие 41",
         idStaff: "3",
@@ -17256,8 +17256,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image41.jpg"
-      }, {
+        pic: "path/to/image41.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "42",
         name: "Мероприятие 42",
         idStaff: "6",
@@ -17284,8 +17284,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image42.jpg"
-      }, {
+        pic: "path/to/image42.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "43",
         name: "Мероприятие 43",
         idStaff: "3",
@@ -17314,8 +17314,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image43.jpg"
-      }, {
+        pic: "path/to/image43.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "44",
         name: "Мероприятие 44",
         idStaff: "9",
@@ -17335,8 +17335,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image44.jpg"
-      }, {
+        pic: "path/to/image44.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "45",
         name: "Мероприятие 45",
         idStaff: "7",
@@ -17360,8 +17360,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image45.jpg"
-      }, {
+        pic: "path/to/image45.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "46",
         name: "Мероприятие 46",
         idStaff: "2",
@@ -17389,8 +17389,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image46.jpg"
-      }, {
+        pic: "path/to/image46.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "47",
         name: "Мероприятие 47",
         idStaff: "9",
@@ -17415,8 +17415,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image47.jpg"
-      }, {
+        pic: "path/to/image47.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "48",
         name: "Мероприятие 48",
         idStaff: "3",
@@ -17446,8 +17446,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image48.jpg"
-      }, {
+        pic: "path/to/image48.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "49",
         name: "Мероприятие 49",
         idStaff: "3",
@@ -17474,8 +17474,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image49.jpg"
-      }, {
+        pic: "path/to/image49.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "50",
         name: "Мероприятие 50",
         idStaff: "2",
@@ -17494,8 +17494,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image50.jpg"
-      }, {
+        pic: "path/to/image50.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "51",
         name: "Мероприятие 51",
         idStaff: "4",
@@ -17527,8 +17527,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image51.jpg"
-      }, {
+        pic: "path/to/image51.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "52",
         name: "Мероприятие 52",
         idStaff: "10",
@@ -17556,8 +17556,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image52.jpg"
-      }, {
+        pic: "path/to/image52.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "53",
         name: "Мероприятие 53",
         idStaff: "6",
@@ -17588,8 +17588,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image53.jpg"
-      }, {
+        pic: "path/to/image53.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "54",
         name: "Мероприятие 54",
         idStaff: "3",
@@ -17614,8 +17614,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image54.jpg"
-      }, {
+        pic: "path/to/image54.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "55",
         name: "Мероприятие 55",
         idStaff: "5",
@@ -17647,8 +17647,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image55.jpg"
-      }, {
+        pic: "path/to/image55.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "56",
         name: "Мероприятие 56",
         idStaff: "8",
@@ -17686,8 +17686,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image56.jpg"
-      }, {
+        pic: "path/to/image56.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "57",
         name: "Мероприятие 57",
         idStaff: "6",
@@ -17716,8 +17716,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image57.jpg"
-      }, {
+        pic: "path/to/image57.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "58",
         name: "Мероприятие 58",
         idStaff: "6",
@@ -17748,8 +17748,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image58.jpg"
-      }, {
+        pic: "path/to/image58.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "59",
         name: "Мероприятие 59",
         idStaff: "10",
@@ -17780,8 +17780,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image59.jpg"
-      }, {
+        pic: "path/to/image59.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "60",
         name: "Мероприятие 60",
         idStaff: "10",
@@ -17815,8 +17815,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image60.jpg"
-      }, {
+        pic: "path/to/image60.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "61",
         name: "Мероприятие 61",
         idStaff: "4",
@@ -17844,8 +17844,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image61.jpg"
-      }, {
+        pic: "path/to/image61.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "62",
         name: "Мероприятие 62",
         idStaff: "8",
@@ -17869,8 +17869,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image62.jpg"
-      }, {
+        pic: "path/to/image62.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "63",
         name: "Мероприятие 63",
         idStaff: "1",
@@ -17898,8 +17898,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image63.jpg"
-      }, {
+        pic: "path/to/image63.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "64",
         name: "Мероприятие 64",
         idStaff: "10",
@@ -17930,8 +17930,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image64.jpg"
-      }, {
+        pic: "path/to/image64.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "65",
         name: "Мероприятие 65",
         idStaff: "9",
@@ -17961,8 +17961,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image65.jpg"
-      }, {
+        pic: "path/to/image65.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "66",
         name: "Мероприятие 66",
         idStaff: "4",
@@ -17989,8 +17989,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image66.jpg"
-      }, {
+        pic: "path/to/image66.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "67",
         name: "Мероприятие 67",
         idStaff: "10",
@@ -18022,8 +18022,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image67.jpg"
-      }, {
+        pic: "path/to/image67.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "68",
         name: "Мероприятие 68",
         idStaff: "1",
@@ -18051,8 +18051,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image68.jpg"
-      }, {
+        pic: "path/to/image68.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "69",
         name: "Мероприятие 69",
         idStaff: "10",
@@ -18078,8 +18078,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image69.jpg"
-      }, {
+        pic: "path/to/image69.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "70",
         name: "Мероприятие 70",
         idStaff: "8",
@@ -18108,8 +18108,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image70.jpg"
-      }, {
+        pic: "path/to/image70.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "71",
         name: "Мероприятие 71",
         idStaff: "4",
@@ -18142,8 +18142,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image71.jpg"
-      }, {
+        pic: "path/to/image71.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "72",
         name: "Мероприятие 72",
         idStaff: "9",
@@ -18168,8 +18168,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image72.jpg"
-      }, {
+        pic: "path/to/image72.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "73",
         name: "Мероприятие 73",
         idStaff: "4",
@@ -18196,8 +18196,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image73.jpg"
-      }, {
+        pic: "path/to/image73.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "74",
         name: "Мероприятие 74",
         idStaff: "8",
@@ -18226,8 +18226,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image74.jpg"
-      }, {
+        pic: "path/to/image74.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "75",
         name: "Мероприятие 75",
         idStaff: "9",
@@ -18253,8 +18253,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image75.jpg"
-      }, {
+        pic: "path/to/image75.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "76",
         name: "Мероприятие 76",
         idStaff: "7",
@@ -18276,8 +18276,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image76.jpg"
-      }, {
+        pic: "path/to/image76.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "77",
         name: "Мероприятие 77",
         idStaff: "9",
@@ -18301,8 +18301,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image77.jpg"
-      }, {
+        pic: "path/to/image77.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "78",
         name: "Мероприятие 78",
         idStaff: "7",
@@ -18332,8 +18332,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image78.jpg"
-      }, {
+        pic: "path/to/image78.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "79",
         name: "Мероприятие 79",
         idStaff: "10",
@@ -18360,8 +18360,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image79.jpg"
-      }, {
+        pic: "path/to/image79.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "80",
         name: "Мероприятие 80",
         idStaff: "4",
@@ -18386,8 +18386,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image80.jpg"
-      }, {
+        pic: "path/to/image80.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "81",
         name: "Мероприятие 81",
         idStaff: "9",
@@ -18409,8 +18409,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image81.jpg"
-      }, {
+        pic: "path/to/image81.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "82",
         name: "Мероприятие 82",
         idStaff: "1",
@@ -18438,8 +18438,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image82.jpg"
-      }, {
+        pic: "path/to/image82.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "83",
         name: "Мероприятие 83",
         idStaff: "1",
@@ -18466,8 +18466,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image83.jpg"
-      }, {
+        pic: "path/to/image83.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "84",
         name: "Мероприятие 84",
         idStaff: "9",
@@ -18496,8 +18496,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image84.jpg"
-      }, {
+        pic: "path/to/image84.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "85",
         name: "Мероприятие 85",
         idStaff: "4",
@@ -18519,8 +18519,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image85.jpg"
-      }, {
+        pic: "path/to/image85.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "86",
         name: "Мероприятие 86",
         idStaff: "6",
@@ -18549,8 +18549,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image86.jpg"
-      }, {
+        pic: "path/to/image86.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "87",
         name: "Мероприятие 87",
         idStaff: "3",
@@ -18575,8 +18575,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image87.jpg"
-      }, {
+        pic: "path/to/image87.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "88",
         name: "Мероприятие 88",
         idStaff: "4",
@@ -18601,8 +18601,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image88.jpg"
-      }, {
+        pic: "path/to/image88.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "89",
         name: "Мероприятие 89",
         idStaff: "6",
@@ -18633,8 +18633,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image89.jpg"
-      }, {
+        pic: "path/to/image89.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "90",
         name: "Мероприятие 90",
         idStaff: "3",
@@ -18665,8 +18665,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image90.jpg"
-      }, {
+        pic: "path/to/image90.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "91",
         name: "Мероприятие 91",
         idStaff: "9",
@@ -18702,8 +18702,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image91.jpg"
-      }, {
+        pic: "path/to/image91.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "92",
         name: "Мероприятие 92",
         idStaff: "1",
@@ -18724,8 +18724,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image92.jpg"
-      }, {
+        pic: "path/to/image92.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "93",
         name: "Мероприятие 93",
         idStaff: "7",
@@ -18752,8 +18752,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image93.jpg"
-      }, {
+        pic: "path/to/image93.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "94",
         name: "Мероприятие 94",
         idStaff: "4",
@@ -18778,8 +18778,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image94.jpg"
-      }, {
+        pic: "path/to/image94.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "95",
         name: "Мероприятие 95",
         idStaff: "7",
@@ -18806,8 +18806,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image95.jpg"
-      }, {
+        pic: "path/to/image95.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "96",
         name: "Мероприятие 96",
         idStaff: "4",
@@ -18835,8 +18835,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image96.jpg"
-      }, {
+        pic: "path/to/image96.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "97",
         name: "Мероприятие 97",
         idStaff: "2",
@@ -18862,8 +18862,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image97.jpg"
-      }, {
+        pic: "path/to/image97.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "98",
         name: "Мероприятие 98",
         idStaff: "1",
@@ -18893,8 +18893,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image98.jpg"
-      }, {
+        pic: "path/to/image98.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "99",
         name: "Мероприятие 99",
         idStaff: "2",
@@ -18926,8 +18926,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image99.jpg"
-      }, {
+        pic: "path/to/image99.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "100",
         name: "Мероприятие 100",
         idStaff: "4",
@@ -18955,8 +18955,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image100.jpg"
-      }, {
+        pic: "path/to/image100.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "101",
         name: "Мероприятие 101",
         idStaff: "2",
@@ -18992,8 +18992,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image101.jpg"
-      }, {
+        pic: "path/to/image101.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "102",
         name: "Мероприятие 102",
         idStaff: "8",
@@ -19023,8 +19023,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image102.jpg"
-      }, {
+        pic: "path/to/image102.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "103",
         name: "Мероприятие 103",
         idStaff: "4",
@@ -19053,8 +19053,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image103.jpg"
-      }, {
+        pic: "path/to/image103.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "104",
         name: "Мероприятие 104",
         idStaff: "5",
@@ -19075,8 +19075,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image104.jpg"
-      }, {
+        pic: "path/to/image104.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "105",
         name: "Мероприятие 105",
         idStaff: "3",
@@ -19102,8 +19102,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image105.jpg"
-      }, {
+        pic: "path/to/image105.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "106",
         name: "Мероприятие 106",
         idStaff: "10",
@@ -19129,8 +19129,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image106.jpg"
-      }, {
+        pic: "path/to/image106.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "107",
         name: "Мероприятие 107",
         idStaff: "1",
@@ -19151,8 +19151,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image107.jpg"
-      }, {
+        pic: "path/to/image107.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "108",
         name: "Мероприятие 108",
         idStaff: "6",
@@ -19177,8 +19177,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image108.jpg"
-      }, {
+        pic: "path/to/image108.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "109",
         name: "Мероприятие 109",
         idStaff: "1",
@@ -19206,8 +19206,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image109.jpg"
-      }, {
+        pic: "path/to/image109.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "110",
         name: "Мероприятие 110",
         idStaff: "6",
@@ -19232,8 +19232,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image110.jpg"
-      }, {
+        pic: "path/to/image110.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "111",
         name: "Мероприятие 111",
         idStaff: "6",
@@ -19263,8 +19263,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image111.jpg"
-      }, {
+        pic: "path/to/image111.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "112",
         name: "Мероприятие 112",
         idStaff: "5",
@@ -19283,8 +19283,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image112.jpg"
-      }, {
+        pic: "path/to/image112.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "113",
         name: "Мероприятие 113",
         idStaff: "1",
@@ -19308,8 +19308,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image113.jpg"
-      }, {
+        pic: "path/to/image113.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "114",
         name: "Мероприятие 114",
         idStaff: "8",
@@ -19337,8 +19337,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image114.jpg"
-      }, {
+        pic: "path/to/image114.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "115",
         name: "Мероприятие 115",
         idStaff: "9",
@@ -19371,8 +19371,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image115.jpg"
-      }, {
+        pic: "path/to/image115.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "116",
         name: "Мероприятие 116",
         idStaff: "7",
@@ -19402,8 +19402,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image116.jpg"
-      }, {
+        pic: "path/to/image116.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "117",
         name: "Мероприятие 117",
         idStaff: "1",
@@ -19425,8 +19425,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image117.jpg"
-      }, {
+        pic: "path/to/image117.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "118",
         name: "Мероприятие 118",
         idStaff: "8",
@@ -19454,8 +19454,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image118.jpg"
-      }, {
+        pic: "path/to/image118.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "119",
         name: "Мероприятие 119",
         idStaff: "5",
@@ -19478,8 +19478,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image119.jpg"
-      }, {
+        pic: "path/to/image119.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "120",
         name: "Мероприятие 120",
         idStaff: "4",
@@ -19508,8 +19508,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image120.jpg"
-      }, {
+        pic: "path/to/image120.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "121",
         name: "Мероприятие 121",
         idStaff: "7",
@@ -19540,8 +19540,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image121.jpg"
-      }, {
+        pic: "path/to/image121.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "122",
         name: "Мероприятие 122",
         idStaff: "3",
@@ -19575,8 +19575,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image122.jpg"
-      }, {
+        pic: "path/to/image122.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "123",
         name: "Мероприятие 123",
         idStaff: "8",
@@ -19601,8 +19601,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image123.jpg"
-      }, {
+        pic: "path/to/image123.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "124",
         name: "Мероприятие 124",
         idStaff: "9",
@@ -19631,8 +19631,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image124.jpg"
-      }, {
+        pic: "path/to/image124.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "125",
         name: "Мероприятие 125",
         idStaff: "1",
@@ -19658,8 +19658,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image125.jpg"
-      }, {
+        pic: "path/to/image125.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "126",
         name: "Мероприятие 126",
         idStaff: "2",
@@ -19694,8 +19694,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image126.jpg"
-      }, {
+        pic: "path/to/image126.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "127",
         name: "Мероприятие 127",
         idStaff: "4",
@@ -19727,8 +19727,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image127.jpg"
-      }, {
+        pic: "path/to/image127.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "128",
         name: "Мероприятие 128",
         idStaff: "8",
@@ -19748,8 +19748,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image128.jpg"
-      }, {
+        pic: "path/to/image128.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "129",
         name: "Мероприятие 129",
         idStaff: "7",
@@ -19779,8 +19779,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image129.jpg"
-      }, {
+        pic: "path/to/image129.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "130",
         name: "Мероприятие 130",
         idStaff: "4",
@@ -19808,8 +19808,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image130.jpg"
-      }, {
+        pic: "path/to/image130.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "131",
         name: "Мероприятие 131",
         idStaff: "10",
@@ -19832,8 +19832,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image131.jpg"
-      }, {
+        pic: "path/to/image131.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "132",
         name: "Мероприятие 132",
         idStaff: "5",
@@ -19862,8 +19862,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image132.jpg"
-      }, {
+        pic: "path/to/image132.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "133",
         name: "Мероприятие 133",
         idStaff: "8",
@@ -19888,8 +19888,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image133.jpg"
-      }, {
+        pic: "path/to/image133.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "134",
         name: "Мероприятие 134",
         idStaff: "1",
@@ -19915,8 +19915,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image134.jpg"
-      }, {
+        pic: "path/to/image134.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "135",
         name: "Мероприятие 135",
         idStaff: "9",
@@ -19949,8 +19949,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image135.jpg"
-      }, {
+        pic: "path/to/image135.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "136",
         name: "Мероприятие 136",
         idStaff: "10",
@@ -19985,8 +19985,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image136.jpg"
-      }, {
+        pic: "path/to/image136.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "137",
         name: "Мероприятие 137",
         idStaff: "5",
@@ -20019,8 +20019,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image137.jpg"
-      }, {
+        pic: "path/to/image137.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "138",
         name: "Мероприятие 138",
         idStaff: "7",
@@ -20056,8 +20056,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image138.jpg"
-      }, {
+        pic: "path/to/image138.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "139",
         name: "Мероприятие 139",
         idStaff: "6",
@@ -20082,8 +20082,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image139.jpg"
-      }, {
+        pic: "path/to/image139.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "140",
         name: "Мероприятие 140",
         idStaff: "7",
@@ -20119,8 +20119,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image140.jpg"
-      }, {
+        pic: "path/to/image140.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "141",
         name: "Мероприятие 141",
         idStaff: "5",
@@ -20142,8 +20142,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image141.jpg"
-      }, {
+        pic: "path/to/image141.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "142",
         name: "Мероприятие 142",
         idStaff: "10",
@@ -20172,8 +20172,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image142.jpg"
-      }, {
+        pic: "path/to/image142.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "143",
         name: "Мероприятие 143",
         idStaff: "8",
@@ -20202,8 +20202,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image143.jpg"
-      }, {
+        pic: "path/to/image143.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "144",
         name: "Мероприятие 144",
         idStaff: "1",
@@ -20237,8 +20237,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image144.jpg"
-      }, {
+        pic: "path/to/image144.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "145",
         name: "Мероприятие 145",
         idStaff: "10",
@@ -20275,8 +20275,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image145.jpg"
-      }, {
+        pic: "path/to/image145.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "146",
         name: "Мероприятие 146",
         idStaff: "4",
@@ -20311,8 +20311,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image146.jpg"
-      }, {
+        pic: "path/to/image146.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "147",
         name: "Мероприятие 147",
         idStaff: "2",
@@ -20346,8 +20346,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image147.jpg"
-      }, {
+        pic: "path/to/image147.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "148",
         name: "Мероприятие 148",
         idStaff: "9",
@@ -20373,8 +20373,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image148.jpg"
-      }, {
+        pic: "path/to/image148.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "149",
         name: "Мероприятие 149",
         idStaff: "5",
@@ -20404,8 +20404,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image149.jpg"
-      }, {
+        pic: "path/to/image149.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "150",
         name: "Мероприятие 150",
         idStaff: "1",
@@ -20434,8 +20434,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image150.jpg"
-      }, {
+        pic: "path/to/image150.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "151",
         name: "Мероприятие 151",
         idStaff: "8",
@@ -20463,8 +20463,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image151.jpg"
-      }, {
+        pic: "path/to/image151.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "152",
         name: "Мероприятие 152",
         idStaff: "1",
@@ -20487,8 +20487,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image152.jpg"
-      }, {
+        pic: "path/to/image152.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "153",
         name: "Мероприятие 153",
         idStaff: "3",
@@ -20517,8 +20517,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image153.jpg"
-      }, {
+        pic: "path/to/image153.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "154",
         name: "Мероприятие 154",
         idStaff: "4",
@@ -20546,8 +20546,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image154.jpg"
-      }, {
+        pic: "path/to/image154.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "155",
         name: "Мероприятие 155",
         idStaff: "7",
@@ -20573,8 +20573,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image155.jpg"
-      }, {
+        pic: "path/to/image155.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "156",
         name: "Мероприятие 156",
         idStaff: "5",
@@ -20603,8 +20603,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image156.jpg"
-      }, {
+        pic: "path/to/image156.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "157",
         name: "Мероприятие 157",
         idStaff: "4",
@@ -20634,8 +20634,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image157.jpg"
-      }, {
+        pic: "path/to/image157.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "158",
         name: "Мероприятие 158",
         idStaff: "1",
@@ -20655,8 +20655,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image158.jpg"
-      }, {
+        pic: "path/to/image158.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "159",
         name: "Мероприятие 159",
         idStaff: "6",
@@ -20694,8 +20694,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image159.jpg"
-      }, {
+        pic: "path/to/image159.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "160",
         name: "Мероприятие 160",
         idStaff: "6",
@@ -20719,8 +20719,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image160.jpg"
-      }, {
+        pic: "path/to/image160.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "161",
         name: "Мероприятие 161",
         idStaff: "3",
@@ -20743,8 +20743,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image161.jpg"
-      }, {
+        pic: "path/to/image161.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "162",
         name: "Мероприятие 162",
         idStaff: "2",
@@ -20775,8 +20775,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image162.jpg"
-      }, {
+        pic: "path/to/image162.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "163",
         name: "Мероприятие 163",
         idStaff: "1",
@@ -20806,8 +20806,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image163.jpg"
-      }, {
+        pic: "path/to/image163.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "164",
         name: "Мероприятие 164",
         idStaff: "8",
@@ -20838,8 +20838,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image164.jpg"
-      }, {
+        pic: "path/to/image164.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "165",
         name: "Мероприятие 165",
         idStaff: "1",
@@ -20874,8 +20874,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image165.jpg"
-      }, {
+        pic: "path/to/image165.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "166",
         name: "Мероприятие 166",
         idStaff: "1",
@@ -20899,8 +20899,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image166.jpg"
-      }, {
+        pic: "path/to/image166.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "167",
         name: "Мероприятие 167",
         idStaff: "1",
@@ -20928,8 +20928,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image167.jpg"
-      }, {
+        pic: "path/to/image167.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "168",
         name: "Мероприятие 168",
         idStaff: "8",
@@ -20963,8 +20963,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image168.jpg"
-      }, {
+        pic: "path/to/image168.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "169",
         name: "Мероприятие 169",
         idStaff: "2",
@@ -20994,8 +20994,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image169.jpg"
-      }, {
+        pic: "path/to/image169.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "170",
         name: "Мероприятие 170",
         idStaff: "1",
@@ -21033,8 +21033,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image170.jpg"
-      }, {
+        pic: "path/to/image170.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "171",
         name: "Мероприятие 171",
         idStaff: "10",
@@ -21057,8 +21057,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image171.jpg"
-      }, {
+        pic: "path/to/image171.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "172",
         name: "Мероприятие 172",
         idStaff: "3",
@@ -21085,8 +21085,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image172.jpg"
-      }, {
+        pic: "path/to/image172.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "173",
         name: "Мероприятие 173",
         idStaff: "5",
@@ -21116,8 +21116,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image173.jpg"
-      }, {
+        pic: "path/to/image173.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "174",
         name: "Мероприятие 174",
         idStaff: "8",
@@ -21150,8 +21150,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image174.jpg"
-      }, {
+        pic: "path/to/image174.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "175",
         name: "Мероприятие 175",
         idStaff: "8",
@@ -21184,8 +21184,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image175.jpg"
-      }, {
+        pic: "path/to/image175.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "176",
         name: "Мероприятие 176",
         idStaff: "8",
@@ -21209,8 +21209,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image176.jpg"
-      }, {
+        pic: "path/to/image176.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "177",
         name: "Мероприятие 177",
         idStaff: "9",
@@ -21240,8 +21240,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image177.jpg"
-      }, {
+        pic: "path/to/image177.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "178",
         name: "Мероприятие 178",
         idStaff: "2",
@@ -21267,8 +21267,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image178.jpg"
-      }, {
+        pic: "path/to/image178.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "179",
         name: "Мероприятие 179",
         idStaff: "6",
@@ -21291,8 +21291,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image179.jpg"
-      }, {
+        pic: "path/to/image179.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "180",
         name: "Мероприятие 180",
         idStaff: "3",
@@ -21324,8 +21324,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image180.jpg"
-      }, {
+        pic: "path/to/image180.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "181",
         name: "Мероприятие 181",
         idStaff: "9",
@@ -21349,8 +21349,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image181.jpg"
-      }, {
+        pic: "path/to/image181.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "182",
         name: "Мероприятие 182",
         idStaff: "3",
@@ -21373,8 +21373,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image182.jpg"
-      }, {
+        pic: "path/to/image182.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "183",
         name: "Мероприятие 183",
         idStaff: "10",
@@ -21405,8 +21405,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image183.jpg"
-      }, {
+        pic: "path/to/image183.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "184",
         name: "Мероприятие 184",
         idStaff: "1",
@@ -21425,8 +21425,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image184.jpg"
-      }, {
+        pic: "path/to/image184.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "185",
         name: "Мероприятие 185",
         idStaff: "6",
@@ -21462,8 +21462,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image185.jpg"
-      }, {
+        pic: "path/to/image185.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "186",
         name: "Мероприятие 186",
         idStaff: "1",
@@ -21483,8 +21483,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image186.jpg"
-      }, {
+        pic: "path/to/image186.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "187",
         name: "Мероприятие 187",
         idStaff: "2",
@@ -21506,8 +21506,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image187.jpg"
-      }, {
+        pic: "path/to/image187.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "188",
         name: "Мероприятие 188",
         idStaff: "7",
@@ -21533,8 +21533,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image188.jpg"
-      }, {
+        pic: "path/to/image188.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "189",
         name: "Мероприятие 189",
         idStaff: "2",
@@ -21558,8 +21558,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image189.jpg"
-      }, {
+        pic: "path/to/image189.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "190",
         name: "Мероприятие 190",
         idStaff: "9",
@@ -21584,8 +21584,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image190.jpg"
-      }, {
+        pic: "path/to/image190.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "191",
         name: "Мероприятие 191",
         idStaff: "5",
@@ -21623,8 +21623,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image191.jpg"
-      }, {
+        pic: "path/to/image191.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "192",
         name: "Мероприятие 192",
         idStaff: "1",
@@ -21657,8 +21657,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image192.jpg"
-      }, {
+        pic: "path/to/image192.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "193",
         name: "Мероприятие 193",
         idStaff: "5",
@@ -21686,8 +21686,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image193.jpg"
-      }, {
+        pic: "path/to/image193.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "194",
         name: "Мероприятие 194",
         idStaff: "10",
@@ -21720,8 +21720,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image194.jpg"
-      }, {
+        pic: "path/to/image194.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "195",
         name: "Мероприятие 195",
         idStaff: "3",
@@ -21759,8 +21759,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image195.jpg"
-      }, {
+        pic: "path/to/image195.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "196",
         name: "Мероприятие 196",
         idStaff: "7",
@@ -21784,8 +21784,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image196.jpg"
-      }, {
+        pic: "path/to/image196.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "197",
         name: "Мероприятие 197",
         idStaff: "7",
@@ -21821,8 +21821,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image197.jpg"
-      }, {
+        pic: "path/to/image197.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "198",
         name: "Мероприятие 198",
         idStaff: "10",
@@ -21848,8 +21848,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image198.jpg"
-      }, {
+        pic: "path/to/image198.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "199",
         name: "Мероприятие 199",
         idStaff: "8",
@@ -21876,8 +21876,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image199.jpg"
-      }, {
+        pic: "path/to/image199.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "200",
         name: "Мероприятие 200",
         idStaff: "10",
@@ -21909,8 +21909,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image200.jpg"
-      }, {
+        pic: "path/to/image200.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "201",
         name: "Мероприятие 201",
         idStaff: "1",
@@ -21942,8 +21942,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image201.jpg"
-      }, {
+        pic: "path/to/image201.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "202",
         name: "Мероприятие 202",
         idStaff: "2",
@@ -21973,8 +21973,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image202.jpg"
-      }, {
+        pic: "path/to/image202.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "203",
         name: "Мероприятие 203",
         idStaff: "8",
@@ -22000,8 +22000,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image203.jpg"
-      }, {
+        pic: "path/to/image203.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "204",
         name: "Мероприятие 204",
         idStaff: "4",
@@ -22039,8 +22039,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image204.jpg"
-      }, {
+        pic: "path/to/image204.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "205",
         name: "Мероприятие 205",
         idStaff: "1",
@@ -22063,8 +22063,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image205.jpg"
-      }, {
+        pic: "path/to/image205.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "206",
         name: "Мероприятие 206",
         idStaff: "6",
@@ -22092,8 +22092,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image206.jpg"
-      }, {
+        pic: "path/to/image206.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "207",
         name: "Мероприятие 207",
         idStaff: "7",
@@ -22126,8 +22126,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image207.jpg"
-      }, {
+        pic: "path/to/image207.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "208",
         name: "Мероприятие 208",
         idStaff: "6",
@@ -22155,8 +22155,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image208.jpg"
-      }, {
+        pic: "path/to/image208.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "209",
         name: "Мероприятие 209",
         idStaff: "8",
@@ -22183,8 +22183,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image209.jpg"
-      }, {
+        pic: "path/to/image209.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "210",
         name: "Мероприятие 210",
         idStaff: "1",
@@ -22220,8 +22220,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image210.jpg"
-      }, {
+        pic: "path/to/image210.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "211",
         name: "Мероприятие 211",
         idStaff: "10",
@@ -22253,8 +22253,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image211.jpg"
-      }, {
+        pic: "path/to/image211.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "212",
         name: "Мероприятие 212",
         idStaff: "9",
@@ -22273,8 +22273,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image212.jpg"
-      }, {
+        pic: "path/to/image212.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "213",
         name: "Мероприятие 213",
         idStaff: "8",
@@ -22301,8 +22301,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image213.jpg"
-      }, {
+        pic: "path/to/image213.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "214",
         name: "Мероприятие 214",
         idStaff: "1",
@@ -22327,8 +22327,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image214.jpg"
-      }, {
+        pic: "path/to/image214.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "215",
         name: "Мероприятие 215",
         idStaff: "10",
@@ -22359,8 +22359,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image215.jpg"
-      }, {
+        pic: "path/to/image215.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "216",
         name: "Мероприятие 216",
         idStaff: "10",
@@ -22390,8 +22390,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image216.jpg"
-      }, {
+        pic: "path/to/image216.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "217",
         name: "Мероприятие 217",
         idStaff: "1",
@@ -22421,8 +22421,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image217.jpg"
-      }, {
+        pic: "path/to/image217.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "218",
         name: "Мероприятие 218",
         idStaff: "9",
@@ -22448,8 +22448,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image218.jpg"
-      }, {
+        pic: "path/to/image218.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "219",
         name: "Мероприятие 219",
         idStaff: "6",
@@ -22471,8 +22471,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image219.jpg"
-      }, {
+        pic: "path/to/image219.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "220",
         name: "Мероприятие 220",
         idStaff: "5",
@@ -22494,8 +22494,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image220.jpg"
-      }, {
+        pic: "path/to/image220.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "221",
         name: "Мероприятие 221",
         idStaff: "3",
@@ -22524,8 +22524,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image221.jpg"
-      }, {
+        pic: "path/to/image221.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "222",
         name: "Мероприятие 222",
         idStaff: "5",
@@ -22550,8 +22550,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image222.jpg"
-      }, {
+        pic: "path/to/image222.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "223",
         name: "Мероприятие 223",
         idStaff: "3",
@@ -22579,8 +22579,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image223.jpg"
-      }, {
+        pic: "path/to/image223.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "224",
         name: "Мероприятие 224",
         idStaff: "8",
@@ -22608,8 +22608,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image224.jpg"
-      }, {
+        pic: "path/to/image224.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "225",
         name: "Мероприятие 225",
         idStaff: "2",
@@ -22634,8 +22634,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image225.jpg"
-      }, {
+        pic: "path/to/image225.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "226",
         name: "Мероприятие 226",
         idStaff: "3",
@@ -22660,8 +22660,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image226.jpg"
-      }, {
+        pic: "path/to/image226.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "227",
         name: "Мероприятие 227",
         idStaff: "5",
@@ -22689,8 +22689,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image227.jpg"
-      }, {
+        pic: "path/to/image227.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "228",
         name: "Мероприятие 228",
         idStaff: "2",
@@ -22716,8 +22716,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image228.jpg"
-      }, {
+        pic: "path/to/image228.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "229",
         name: "Мероприятие 229",
         idStaff: "5",
@@ -22745,8 +22745,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image229.jpg"
-      }, {
+        pic: "path/to/image229.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "230",
         name: "Мероприятие 230",
         idStaff: "10",
@@ -22777,8 +22777,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image230.jpg"
-      }, {
+        pic: "path/to/image230.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "231",
         name: "Мероприятие 231",
         idStaff: "2",
@@ -22806,8 +22806,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image231.jpg"
-      }, {
+        pic: "path/to/image231.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "232",
         name: "Мероприятие 232",
         idStaff: "1",
@@ -22836,8 +22836,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image232.jpg"
-      }, {
+        pic: "path/to/image232.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "233",
         name: "Мероприятие 233",
         idStaff: "1",
@@ -22869,8 +22869,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image233.jpg"
-      }, {
+        pic: "path/to/image233.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "234",
         name: "Мероприятие 234",
         idStaff: "4",
@@ -22906,8 +22906,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image234.jpg"
-      }, {
+        pic: "path/to/image234.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "235",
         name: "Мероприятие 235",
         idStaff: "8",
@@ -22930,8 +22930,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image235.jpg"
-      }, {
+        pic: "path/to/image235.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "236",
         name: "Мероприятие 236",
         idStaff: "9",
@@ -22962,8 +22962,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image236.jpg"
-      }, {
+        pic: "path/to/image236.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "237",
         name: "Мероприятие 237",
         idStaff: "5",
@@ -22994,8 +22994,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image237.jpg"
-      }, {
+        pic: "path/to/image237.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "238",
         name: "Мероприятие 238",
         idStaff: "3",
@@ -23033,8 +23033,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image238.jpg"
-      }, {
+        pic: "path/to/image238.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "239",
         name: "Мероприятие 239",
         idStaff: "7",
@@ -23069,8 +23069,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image239.jpg"
-      }, {
+        pic: "path/to/image239.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "240",
         name: "Мероприятие 240",
         idStaff: "1",
@@ -23099,8 +23099,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image240.jpg"
-      }, {
+        pic: "path/to/image240.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "241",
         name: "Мероприятие 241",
         idStaff: "7",
@@ -23129,8 +23129,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image241.jpg"
-      }, {
+        pic: "path/to/image241.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "242",
         name: "Мероприятие 242",
         idStaff: "2",
@@ -23158,8 +23158,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image242.jpg"
-      }, {
+        pic: "path/to/image242.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "243",
         name: "Мероприятие 243",
         idStaff: "5",
@@ -23183,8 +23183,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image243.jpg"
-      }, {
+        pic: "path/to/image243.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "244",
         name: "Мероприятие 244",
         idStaff: "2",
@@ -23207,8 +23207,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image244.jpg"
-      }, {
+        pic: "path/to/image244.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "245",
         name: "Мероприятие 245",
         idStaff: "2",
@@ -23241,8 +23241,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image245.jpg"
-      }, {
+        pic: "path/to/image245.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "246",
         name: "Мероприятие 246",
         idStaff: "7",
@@ -23275,8 +23275,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image246.jpg"
-      }, {
+        pic: "path/to/image246.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "247",
         name: "Мероприятие 247",
         idStaff: "2",
@@ -23295,8 +23295,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image247.jpg"
-      }, {
+        pic: "path/to/image247.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "248",
         name: "Мероприятие 248",
         idStaff: "1",
@@ -23321,8 +23321,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image248.jpg"
-      }, {
+        pic: "path/to/image248.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "249",
         name: "Мероприятие 249",
         idStaff: "10",
@@ -23354,8 +23354,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image249.jpg"
-      }, {
+        pic: "path/to/image249.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "250",
         name: "Мероприятие 250",
         idStaff: "7",
@@ -23387,8 +23387,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image250.jpg"
-      }, {
+        pic: "path/to/image250.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "251",
         name: "Мероприятие 251",
         idStaff: "6",
@@ -23417,8 +23417,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image251.jpg"
-      }, {
+        pic: "path/to/image251.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "252",
         name: "Мероприятие 252",
         idStaff: "8",
@@ -23445,8 +23445,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image252.jpg"
-      }, {
+        pic: "path/to/image252.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "253",
         name: "Мероприятие 253",
         idStaff: "10",
@@ -23475,8 +23475,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image253.jpg"
-      }, {
+        pic: "path/to/image253.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "254",
         name: "Мероприятие 254",
         idStaff: "2",
@@ -23512,8 +23512,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image254.jpg"
-      }, {
+        pic: "path/to/image254.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "255",
         name: "Мероприятие 255",
         idStaff: "5",
@@ -23546,8 +23546,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image255.jpg"
-      }, {
+        pic: "path/to/image255.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "256",
         name: "Мероприятие 256",
         idStaff: "10",
@@ -23576,8 +23576,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image256.jpg"
-      }, {
+        pic: "path/to/image256.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "257",
         name: "Мероприятие 257",
         idStaff: "3",
@@ -23609,8 +23609,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image257.jpg"
-      }, {
+        pic: "path/to/image257.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "258",
         name: "Мероприятие 258",
         idStaff: "4",
@@ -23643,8 +23643,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image258.jpg"
-      }, {
+        pic: "path/to/image258.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "259",
         name: "Мероприятие 259",
         idStaff: "3",
@@ -23676,8 +23676,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image259.jpg"
-      }, {
+        pic: "path/to/image259.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "260",
         name: "Мероприятие 260",
         idStaff: "5",
@@ -23711,8 +23711,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image260.jpg"
-      }, {
+        pic: "path/to/image260.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "261",
         name: "Дополнительное мероприятие 261",
         idStaff: "9",
@@ -23745,8 +23745,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 4,
-        pic: "path/to/image261.jpg"
-      }, {
+        pic: "path/to/image261.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "262",
         name: "Дополнительное мероприятие 262",
         idStaff: "5",
@@ -23767,8 +23767,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image262.jpg"
-      }, {
+        pic: "path/to/image262.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "263",
         name: "Дополнительное мероприятие 263",
         idStaff: "7",
@@ -23799,8 +23799,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image263.jpg"
-      }, {
+        pic: "path/to/image263.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "264",
         name: "Дополнительное мероприятие 264",
         idStaff: "1",
@@ -23830,8 +23830,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image264.jpg"
-      }, {
+        pic: "path/to/image264.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "265",
         name: "Дополнительное мероприятие 265",
         idStaff: "8",
@@ -23862,8 +23862,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 2,
-        pic: "path/to/image265.jpg"
-      }, {
+        pic: "path/to/image265.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "266",
         name: "Дополнительное мероприятие 266",
         idStaff: "2",
@@ -23887,8 +23887,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 3,
-        pic: "path/to/image266.jpg"
-      }, {
+        pic: "path/to/image266.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "267",
         name: "Дополнительное мероприятие 267",
         idStaff: "1",
@@ -23914,8 +23914,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 4,
-        pic: "path/to/image267.jpg"
-      }, {
+        pic: "path/to/image267.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "268",
         name: "Дополнительное мероприятие 268",
         idStaff: "1",
@@ -23945,8 +23945,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 3,
-        pic: "path/to/image268.jpg"
-      }, {
+        pic: "path/to/image268.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "269",
         name: "Дополнительное мероприятие 269",
         idStaff: "8",
@@ -23974,8 +23974,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image269.jpg"
-      }, {
+        pic: "path/to/image269.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "270",
         name: "Дополнительное мероприятие 270",
         idStaff: "5",
@@ -24007,8 +24007,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 4,
-        pic: "path/to/image270.jpg"
-      }, {
+        pic: "path/to/image270.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "271",
         name: "Дополнительное мероприятие 271",
         idStaff: "10",
@@ -24038,8 +24038,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 9,
-        pic: "path/to/image271.jpg"
-      }, {
+        pic: "path/to/image271.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "272",
         name: "Дополнительное мероприятие 272",
         idStaff: "10",
@@ -24067,8 +24067,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image272.jpg"
-      }, {
+        pic: "path/to/image272.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "273",
         name: "Дополнительное мероприятие 273",
         idStaff: "7",
@@ -24097,8 +24097,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 2,
-        pic: "path/to/image273.jpg"
-      }, {
+        pic: "path/to/image273.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "274",
         name: "Дополнительное мероприятие 274",
         idStaff: "3",
@@ -24130,8 +24130,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image274.jpg"
-      }, {
+        pic: "path/to/image274.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "275",
         name: "Дополнительное мероприятие 275",
         idStaff: "7",
@@ -24150,8 +24150,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 1,
-        pic: "path/to/image275.jpg"
-      }, {
+        pic: "path/to/image275.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "276",
         name: "Дополнительное мероприятие 276",
         idStaff: "10",
@@ -24180,8 +24180,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image276.jpg"
-      },
+        pic: "path/to/image276.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" },
       {
         id: "1",
         name: "Мероприятие 1",
@@ -24218,8 +24218,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image1.jpg"
-      }, {
+        pic: "path/to/image1.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "2",
         name: "Мероприятие 2",
         idStaff: "10",
@@ -24255,8 +24255,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image2.jpg"
-      }, {
+        pic: "path/to/image2.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "3",
         name: "Мероприятие 3",
         idStaff: "5",
@@ -24293,8 +24293,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image3.jpg"
-      }, {
+        pic: "path/to/image3.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "4",
         name: "Мероприятие 4",
         idStaff: "9",
@@ -24318,8 +24318,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image4.jpg"
-      }, {
+        pic: "path/to/image4.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "5",
         name: "Мероприятие 5",
         idStaff: "4",
@@ -24342,8 +24342,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image5.jpg"
-      }, {
+        pic: "path/to/image5.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "6",
         name: "Мероприятие 6",
         idStaff: "8",
@@ -24377,8 +24377,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image6.jpg"
-      }, {
+        pic: "path/to/image6.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "7",
         name: "Мероприятие 7",
         idStaff: "5",
@@ -24410,8 +24410,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image7.jpg"
-      }, {
+        pic: "path/to/image7.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "8",
         name: "Мероприятие 8",
         idStaff: "1",
@@ -24440,8 +24440,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image8.jpg"
-      }, {
+        pic: "path/to/image8.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "9",
         name: "Мероприятие 9",
         idStaff: "3",
@@ -24470,8 +24470,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image9.jpg"
-      }, {
+        pic: "path/to/image9.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "10",
         name: "Мероприятие 10",
         idStaff: "3",
@@ -24501,8 +24501,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image10.jpg"
-      }, {
+        pic: "path/to/image10.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "11",
         name: "Мероприятие 11",
         idStaff: "10",
@@ -24523,8 +24523,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image11.jpg"
-      }, {
+        pic: "path/to/image11.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "12",
         name: "Мероприятие 12",
         idStaff: "7",
@@ -24554,8 +24554,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image12.jpg"
-      }, {
+        pic: "path/to/image12.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "13",
         name: "Мероприятие 13",
         idStaff: "7",
@@ -24589,8 +24589,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image13.jpg"
-      }, {
+        pic: "path/to/image13.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "14",
         name: "Мероприятие 14",
         idStaff: "7",
@@ -24621,8 +24621,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image14.jpg"
-      }, {
+        pic: "path/to/image14.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "15",
         name: "Мероприятие 15",
         idStaff: "8",
@@ -24647,8 +24647,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image15.jpg"
-      }, {
+        pic: "path/to/image15.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "16",
         name: "Мероприятие 16",
         idStaff: "2",
@@ -24677,8 +24677,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image16.jpg"
-      }, {
+        pic: "path/to/image16.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "17",
         name: "Мероприятие 17",
         idStaff: "2",
@@ -24708,8 +24708,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image17.jpg"
-      }, {
+        pic: "path/to/image17.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "18",
         name: "Мероприятие 18",
         idStaff: "7",
@@ -24732,8 +24732,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image18.jpg"
-      }, {
+        pic: "path/to/image18.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "19",
         name: "Мероприятие 19",
         idStaff: "2",
@@ -24765,8 +24765,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image19.jpg"
-      }, {
+        pic: "path/to/image19.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "20",
         name: "Мероприятие 20",
         idStaff: "2",
@@ -24789,8 +24789,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image20.jpg"
-      }, {
+        pic: "path/to/image20.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "21",
         name: "Мероприятие 21",
         idStaff: "1",
@@ -24816,8 +24816,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image21.jpg"
-      }, {
+        pic: "path/to/image21.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "22",
         name: "Мероприятие 22",
         idStaff: "10",
@@ -24844,8 +24844,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image22.jpg"
-      }, {
+        pic: "path/to/image22.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "23",
         name: "Мероприятие 23",
         idStaff: "5",
@@ -24873,8 +24873,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image23.jpg"
-      }, {
+        pic: "path/to/image23.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "24",
         name: "Мероприятие 24",
         idStaff: "4",
@@ -24903,8 +24903,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image24.jpg"
-      }, {
+        pic: "path/to/image24.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "25",
         name: "Мероприятие 25",
         idStaff: "3",
@@ -24930,8 +24930,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image25.jpg"
-      }, {
+        pic: "path/to/image25.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "26",
         name: "Мероприятие 26",
         idStaff: "5",
@@ -24952,8 +24952,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image26.jpg"
-      }, {
+        pic: "path/to/image26.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "27",
         name: "Мероприятие 27",
         idStaff: "6",
@@ -24980,8 +24980,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image27.jpg"
-      }, {
+        pic: "path/to/image27.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "28",
         name: "Мероприятие 28",
         idStaff: "9",
@@ -25004,8 +25004,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image28.jpg"
-      }, {
+        pic: "path/to/image28.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "29",
         name: "Мероприятие 29",
         idStaff: "4",
@@ -25042,8 +25042,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image29.jpg"
-      }, {
+        pic: "path/to/image29.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "30",
         name: "Мероприятие 30",
         idStaff: "5",
@@ -25073,8 +25073,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image30.jpg"
-      }, {
+        pic: "path/to/image30.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "31",
         name: "Мероприятие 31",
         idStaff: "9",
@@ -25108,8 +25108,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image31.jpg"
-      }, {
+        pic: "path/to/image31.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "32",
         name: "Мероприятие 32",
         idStaff: "6",
@@ -25134,8 +25134,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image32.jpg"
-      }, {
+        pic: "path/to/image32.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "33",
         name: "Мероприятие 33",
         idStaff: "8",
@@ -25156,8 +25156,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image33.jpg"
-      }, {
+        pic: "path/to/image33.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "34",
         name: "Мероприятие 34",
         idStaff: "7",
@@ -25188,8 +25188,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image34.jpg"
-      }, {
+        pic: "path/to/image34.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "35",
         name: "Мероприятие 35",
         idStaff: "10",
@@ -25218,8 +25218,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image35.jpg"
-      }, {
+        pic: "path/to/image35.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "36",
         name: "Мероприятие 36",
         idStaff: "10",
@@ -25243,8 +25243,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image36.jpg"
-      }, {
+        pic: "path/to/image36.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "37",
         name: "Мероприятие 37",
         idStaff: "8",
@@ -25276,8 +25276,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image37.jpg"
-      }, {
+        pic: "path/to/image37.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "38",
         name: "Мероприятие 38",
         idStaff: "3",
@@ -25299,8 +25299,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image38.jpg"
-      }, {
+        pic: "path/to/image38.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "39",
         name: "Мероприятие 39",
         idStaff: "8",
@@ -25329,8 +25329,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image39.jpg"
-      }, {
+        pic: "path/to/image39.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "40",
         name: "Мероприятие 40",
         idStaff: "10",
@@ -25367,8 +25367,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image40.jpg"
-      }, {
+        pic: "path/to/image40.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "41",
         name: "Мероприятие 41",
         idStaff: "4",
@@ -25399,8 +25399,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image41.jpg"
-      }, {
+        pic: "path/to/image41.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "42",
         name: "Мероприятие 42",
         idStaff: "2",
@@ -25434,8 +25434,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image42.jpg"
-      }, {
+        pic: "path/to/image42.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "43",
         name: "Мероприятие 43",
         idStaff: "10",
@@ -25464,8 +25464,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image43.jpg"
-      }, {
+        pic: "path/to/image43.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "44",
         name: "Мероприятие 44",
         idStaff: "8",
@@ -25493,8 +25493,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image44.jpg"
-      }, {
+        pic: "path/to/image44.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "45",
         name: "Мероприятие 45",
         idStaff: "10",
@@ -25531,8 +25531,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image45.jpg"
-      }, {
+        pic: "path/to/image45.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "46",
         name: "Мероприятие 46",
         idStaff: "9",
@@ -25565,8 +25565,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image46.jpg"
-      }, {
+        pic: "path/to/image46.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "47",
         name: "Мероприятие 47",
         idStaff: "2",
@@ -25593,8 +25593,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image47.jpg"
-      }, {
+        pic: "path/to/image47.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "48",
         name: "Мероприятие 48",
         idStaff: "4",
@@ -25615,8 +25615,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image48.jpg"
-      }, {
+        pic: "path/to/image48.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "49",
         name: "Мероприятие 49",
         idStaff: "7",
@@ -25655,8 +25655,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image49.jpg"
-      }, {
+        pic: "path/to/image49.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "50",
         name: "Мероприятие 50",
         idStaff: "8",
@@ -25675,8 +25675,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image50.jpg"
-      }, {
+        pic: "path/to/image50.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "51",
         name: "Мероприятие 51",
         idStaff: "8",
@@ -25699,8 +25699,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image51.jpg"
-      }, {
+        pic: "path/to/image51.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "52",
         name: "Мероприятие 52",
         idStaff: "6",
@@ -25728,8 +25728,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image52.jpg"
-      }, {
+        pic: "path/to/image52.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "53",
         name: "Мероприятие 53",
         idStaff: "4",
@@ -25762,8 +25762,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image53.jpg"
-      }, {
+        pic: "path/to/image53.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "54",
         name: "Мероприятие 54",
         idStaff: "2",
@@ -25796,8 +25796,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image54.jpg"
-      }, {
+        pic: "path/to/image54.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "55",
         name: "Мероприятие 55",
         idStaff: "2",
@@ -25822,8 +25822,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image55.jpg"
-      }, {
+        pic: "path/to/image55.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "56",
         name: "Мероприятие 56",
         idStaff: "5",
@@ -25845,8 +25845,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image56.jpg"
-      }, {
+        pic: "path/to/image56.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "57",
         name: "Мероприятие 57",
         idStaff: "1",
@@ -25872,8 +25872,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image57.jpg"
-      }, {
+        pic: "path/to/image57.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "58",
         name: "Мероприятие 58",
         idStaff: "8",
@@ -25898,8 +25898,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image58.jpg"
-      }, {
+        pic: "path/to/image58.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "59",
         name: "Мероприятие 59",
         idStaff: "5",
@@ -25927,8 +25927,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image59.jpg"
-      }, {
+        pic: "path/to/image59.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "60",
         name: "Мероприятие 60",
         idStaff: "7",
@@ -25965,8 +25965,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image60.jpg"
-      }, {
+        pic: "path/to/image60.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "61",
         name: "Мероприятие 61",
         idStaff: "5",
@@ -25993,8 +25993,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image61.jpg"
-      }, {
+        pic: "path/to/image61.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "62",
         name: "Мероприятие 62",
         idStaff: "8",
@@ -26022,8 +26022,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image62.jpg"
-      }, {
+        pic: "path/to/image62.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "63",
         name: "Мероприятие 63",
         idStaff: "9",
@@ -26055,8 +26055,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image63.jpg"
-      }, {
+        pic: "path/to/image63.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "64",
         name: "Мероприятие 64",
         idStaff: "2",
@@ -26078,8 +26078,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image64.jpg"
-      }, {
+        pic: "path/to/image64.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "65",
         name: "Мероприятие 65",
         idStaff: "1",
@@ -26105,8 +26105,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image65.jpg"
-      }, {
+        pic: "path/to/image65.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "66",
         name: "Мероприятие 66",
         idStaff: "10",
@@ -26135,8 +26135,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image66.jpg"
-      }, {
+        pic: "path/to/image66.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "67",
         name: "Мероприятие 67",
         idStaff: "6",
@@ -26159,8 +26159,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image67.jpg"
-      }, {
+        pic: "path/to/image67.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "68",
         name: "Мероприятие 68",
         idStaff: "9",
@@ -26182,8 +26182,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image68.jpg"
-      }, {
+        pic: "path/to/image68.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "69",
         name: "Мероприятие 69",
         idStaff: "3",
@@ -26206,8 +26206,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image69.jpg"
-      }, {
+        pic: "path/to/image69.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "70",
         name: "Мероприятие 70",
         idStaff: "3",
@@ -26240,8 +26240,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image70.jpg"
-      }, {
+        pic: "path/to/image70.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "71",
         name: "Мероприятие 71",
         idStaff: "5",
@@ -26267,8 +26267,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image71.jpg"
-      }, {
+        pic: "path/to/image71.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "72",
         name: "Мероприятие 72",
         idStaff: "4",
@@ -26289,8 +26289,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image72.jpg"
-      }, {
+        pic: "path/to/image72.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "73",
         name: "Мероприятие 73",
         idStaff: "10",
@@ -26315,8 +26315,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image73.jpg"
-      }, {
+        pic: "path/to/image73.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "74",
         name: "Мероприятие 74",
         idStaff: "8",
@@ -26350,8 +26350,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image74.jpg"
-      }, {
+        pic: "path/to/image74.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "75",
         name: "Мероприятие 75",
         idStaff: "10",
@@ -26378,8 +26378,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image75.jpg"
-      }, {
+        pic: "path/to/image75.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "76",
         name: "Мероприятие 76",
         idStaff: "9",
@@ -26410,8 +26410,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image76.jpg"
-      }, {
+        pic: "path/to/image76.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "77",
         name: "Мероприятие 77",
         idStaff: "10",
@@ -26439,8 +26439,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image77.jpg"
-      }, {
+        pic: "path/to/image77.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "78",
         name: "Мероприятие 78",
         idStaff: "7",
@@ -26464,8 +26464,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image78.jpg"
-      }, {
+        pic: "path/to/image78.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "79",
         name: "Мероприятие 79",
         idStaff: "10",
@@ -26502,8 +26502,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image79.jpg"
-      }, {
+        pic: "path/to/image79.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "80",
         name: "Мероприятие 80",
         idStaff: "9",
@@ -26523,8 +26523,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image80.jpg"
-      }, {
+        pic: "path/to/image80.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "81",
         name: "Мероприятие 81",
         idStaff: "1",
@@ -26550,8 +26550,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image81.jpg"
-      }, {
+        pic: "path/to/image81.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "82",
         name: "Мероприятие 82",
         idStaff: "4",
@@ -26583,8 +26583,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image82.jpg"
-      }, {
+        pic: "path/to/image82.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "83",
         name: "Мероприятие 83",
         idStaff: "3",
@@ -26605,8 +26605,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image83.jpg"
-      }, {
+        pic: "path/to/image83.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "84",
         name: "Мероприятие 84",
         idStaff: "1",
@@ -26635,8 +26635,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image84.jpg"
-      }, {
+        pic: "path/to/image84.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "85",
         name: "Мероприятие 85",
         idStaff: "1",
@@ -26663,8 +26663,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image85.jpg"
-      }, {
+        pic: "path/to/image85.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "86",
         name: "Мероприятие 86",
         idStaff: "2",
@@ -26698,8 +26698,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image86.jpg"
-      }, {
+        pic: "path/to/image86.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "87",
         name: "Мероприятие 87",
         idStaff: "10",
@@ -26726,8 +26726,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image87.jpg"
-      }, {
+        pic: "path/to/image87.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "88",
         name: "Мероприятие 88",
         idStaff: "10",
@@ -26752,8 +26752,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image88.jpg"
-      }, {
+        pic: "path/to/image88.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "89",
         name: "Мероприятие 89",
         idStaff: "7",
@@ -26777,8 +26777,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image89.jpg"
-      }, {
+        pic: "path/to/image89.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "90",
         name: "Мероприятие 90",
         idStaff: "3",
@@ -26808,8 +26808,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image90.jpg"
-      }, {
+        pic: "path/to/image90.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "91",
         name: "Мероприятие 91",
         idStaff: "4",
@@ -26837,8 +26837,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image91.jpg"
-      }, {
+        pic: "path/to/image91.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "92",
         name: "Мероприятие 92",
         idStaff: "3",
@@ -26867,8 +26867,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image92.jpg"
-      }, {
+        pic: "path/to/image92.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "93",
         name: "Мероприятие 93",
         idStaff: "1",
@@ -26897,8 +26897,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image93.jpg"
-      }, {
+        pic: "path/to/image93.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "94",
         name: "Мероприятие 94",
         idStaff: "6",
@@ -26926,8 +26926,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image94.jpg"
-      }, {
+        pic: "path/to/image94.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "95",
         name: "Мероприятие 95",
         idStaff: "5",
@@ -26949,8 +26949,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image95.jpg"
-      }, {
+        pic: "path/to/image95.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "96",
         name: "Мероприятие 96",
         idStaff: "8",
@@ -26986,8 +26986,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image96.jpg"
-      }, {
+        pic: "path/to/image96.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "97",
         name: "Мероприятие 97",
         idStaff: "6",
@@ -27017,8 +27017,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image97.jpg"
-      }, {
+        pic: "path/to/image97.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "98",
         name: "Мероприятие 98",
         idStaff: "7",
@@ -27045,8 +27045,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image98.jpg"
-      }, {
+        pic: "path/to/image98.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "99",
         name: "Мероприятие 99",
         idStaff: "4",
@@ -27072,8 +27072,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image99.jpg"
-      }, {
+        pic: "path/to/image99.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "100",
         name: "Мероприятие 100",
         idStaff: "5",
@@ -27101,8 +27101,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image100.jpg"
-      }, {
+        pic: "path/to/image100.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "101",
         name: "Мероприятие 101",
         idStaff: "9",
@@ -27123,8 +27123,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image101.jpg"
-      }, {
+        pic: "path/to/image101.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "102",
         name: "Мероприятие 102",
         idStaff: "7",
@@ -27159,8 +27159,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image102.jpg"
-      }, {
+        pic: "path/to/image102.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "103",
         name: "Мероприятие 103",
         idStaff: "1",
@@ -27190,8 +27190,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image103.jpg"
-      }, {
+        pic: "path/to/image103.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "104",
         name: "Мероприятие 104",
         idStaff: "7",
@@ -27219,8 +27219,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image104.jpg"
-      }, {
+        pic: "path/to/image104.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "105",
         name: "Мероприятие 105",
         idStaff: "1",
@@ -27251,8 +27251,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image105.jpg"
-      }, {
+        pic: "path/to/image105.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "106",
         name: "Мероприятие 106",
         idStaff: "3",
@@ -27288,8 +27288,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image106.jpg"
-      }, {
+        pic: "path/to/image106.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "107",
         name: "Мероприятие 107",
         idStaff: "1",
@@ -27316,8 +27316,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image107.jpg"
-      }, {
+        pic: "path/to/image107.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "108",
         name: "Мероприятие 108",
         idStaff: "10",
@@ -27344,8 +27344,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image108.jpg"
-      }, {
+        pic: "path/to/image108.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "109",
         name: "Мероприятие 109",
         idStaff: "3",
@@ -27376,8 +27376,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image109.jpg"
-      }, {
+        pic: "path/to/image109.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "110",
         name: "Мероприятие 110",
         idStaff: "9",
@@ -27404,8 +27404,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image110.jpg"
-      }, {
+        pic: "path/to/image110.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "111",
         name: "Мероприятие 111",
         idStaff: "10",
@@ -27442,8 +27442,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image111.jpg"
-      }, {
+        pic: "path/to/image111.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "112",
         name: "Мероприятие 112",
         idStaff: "10",
@@ -27470,8 +27470,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image112.jpg"
-      }, {
+        pic: "path/to/image112.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "113",
         name: "Мероприятие 113",
         idStaff: "8",
@@ -27501,8 +27501,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image113.jpg"
-      }, {
+        pic: "path/to/image113.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "114",
         name: "Мероприятие 114",
         idStaff: "10",
@@ -27532,8 +27532,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image114.jpg"
-      }, {
+        pic: "path/to/image114.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "115",
         name: "Мероприятие 115",
         idStaff: "5",
@@ -27561,8 +27561,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image115.jpg"
-      }, {
+        pic: "path/to/image115.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "116",
         name: "Мероприятие 116",
         idStaff: "8",
@@ -27585,8 +27585,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image116.jpg"
-      }, {
+        pic: "path/to/image116.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "117",
         name: "Мероприятие 117",
         idStaff: "3",
@@ -27611,8 +27611,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image117.jpg"
-      }, {
+        pic: "path/to/image117.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "118",
         name: "Мероприятие 118",
         idStaff: "4",
@@ -27643,8 +27643,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image118.jpg"
-      }, {
+        pic: "path/to/image118.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "119",
         name: "Мероприятие 119",
         idStaff: "2",
@@ -27671,8 +27671,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image119.jpg"
-      }, {
+        pic: "path/to/image119.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "120",
         name: "Мероприятие 120",
         idStaff: "2",
@@ -27704,8 +27704,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image120.jpg"
-      }, {
+        pic: "path/to/image120.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "121",
         name: "Мероприятие 121",
         idStaff: "1",
@@ -27732,8 +27732,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image121.jpg"
-      }, {
+        pic: "path/to/image121.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "122",
         name: "Мероприятие 122",
         idStaff: "6",
@@ -27760,8 +27760,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image122.jpg"
-      }, {
+        pic: "path/to/image122.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "123",
         name: "Мероприятие 123",
         idStaff: "7",
@@ -27798,8 +27798,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image123.jpg"
-      }, {
+        pic: "path/to/image123.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "124",
         name: "Мероприятие 124",
         idStaff: "9",
@@ -27832,8 +27832,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image124.jpg"
-      }, {
+        pic: "path/to/image124.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "125",
         name: "Мероприятие 125",
         idStaff: "10",
@@ -27852,8 +27852,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image125.jpg"
-      }, {
+        pic: "path/to/image125.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "126",
         name: "Мероприятие 126",
         idStaff: "4",
@@ -27872,8 +27872,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image126.jpg"
-      }, {
+        pic: "path/to/image126.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "127",
         name: "Мероприятие 127",
         idStaff: "3",
@@ -27908,8 +27908,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image127.jpg"
-      }, {
+        pic: "path/to/image127.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "128",
         name: "Мероприятие 128",
         idStaff: "3",
@@ -27938,8 +27938,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image128.jpg"
-      }, {
+        pic: "path/to/image128.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "129",
         name: "Мероприятие 129",
         idStaff: "9",
@@ -27975,8 +27975,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image129.jpg"
-      }, {
+        pic: "path/to/image129.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "130",
         name: "Мероприятие 130",
         idStaff: "8",
@@ -28003,8 +28003,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image130.jpg"
-      }, {
+        pic: "path/to/image130.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "131",
         name: "Мероприятие 131",
         idStaff: "4",
@@ -28032,8 +28032,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image131.jpg"
-      }, {
+        pic: "path/to/image131.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "132",
         name: "Мероприятие 132",
         idStaff: "6",
@@ -28067,8 +28067,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image132.jpg"
-      }, {
+        pic: "path/to/image132.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "133",
         name: "Мероприятие 133",
         idStaff: "8",
@@ -28095,8 +28095,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image133.jpg"
-      }, {
+        pic: "path/to/image133.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "134",
         name: "Мероприятие 134",
         idStaff: "4",
@@ -28126,8 +28126,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image134.jpg"
-      }, {
+        pic: "path/to/image134.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "135",
         name: "Мероприятие 135",
         idStaff: "10",
@@ -28151,8 +28151,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image135.jpg"
-      }, {
+        pic: "path/to/image135.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "136",
         name: "Мероприятие 136",
         idStaff: "2",
@@ -28170,8 +28170,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image136.jpg"
-      }, {
+        pic: "path/to/image136.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "137",
         name: "Мероприятие 137",
         idStaff: "2",
@@ -28208,8 +28208,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image137.jpg"
-      }, {
+        pic: "path/to/image137.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "138",
         name: "Мероприятие 138",
         idStaff: "8",
@@ -28232,8 +28232,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image138.jpg"
-      }, {
+        pic: "path/to/image138.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "139",
         name: "Мероприятие 139",
         idStaff: "2",
@@ -28257,8 +28257,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image139.jpg"
-      }, {
+        pic: "path/to/image139.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "140",
         name: "Мероприятие 140",
         idStaff: "7",
@@ -28295,8 +28295,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image140.jpg"
-      }, {
+        pic: "path/to/image140.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "141",
         name: "Мероприятие 141",
         idStaff: "2",
@@ -28335,8 +28335,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image141.jpg"
-      }, {
+        pic: "path/to/image141.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "142",
         name: "Мероприятие 142",
         idStaff: "4",
@@ -28366,8 +28366,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image142.jpg"
-      }, {
+        pic: "path/to/image142.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "143",
         name: "Мероприятие 143",
         idStaff: "4",
@@ -28389,8 +28389,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image143.jpg"
-      }, {
+        pic: "path/to/image143.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "144",
         name: "Мероприятие 144",
         idStaff: "9",
@@ -28428,8 +28428,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image144.jpg"
-      }, {
+        pic: "path/to/image144.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "145",
         name: "Мероприятие 145",
         idStaff: "8",
@@ -28458,8 +28458,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image145.jpg"
-      }, {
+        pic: "path/to/image145.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "146",
         name: "Мероприятие 146",
         idStaff: "5",
@@ -28485,8 +28485,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image146.jpg"
-      }, {
+        pic: "path/to/image146.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "147",
         name: "Мероприятие 147",
         idStaff: "8",
@@ -28507,8 +28507,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image147.jpg"
-      }, {
+        pic: "path/to/image147.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "148",
         name: "Мероприятие 148",
         idStaff: "2",
@@ -28529,8 +28529,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image148.jpg"
-      }, {
+        pic: "path/to/image148.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "149",
         name: "Мероприятие 149",
         idStaff: "2",
@@ -28561,8 +28561,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image149.jpg"
-      }, {
+        pic: "path/to/image149.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "150",
         name: "Мероприятие 150",
         idStaff: "3",
@@ -28589,8 +28589,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image150.jpg"
-      }, {
+        pic: "path/to/image150.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "151",
         name: "Мероприятие 151",
         idStaff: "6",
@@ -28620,8 +28620,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image151.jpg"
-      }, {
+        pic: "path/to/image151.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "152",
         name: "Мероприятие 152",
         idStaff: "10",
@@ -28658,8 +28658,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image152.jpg"
-      }, {
+        pic: "path/to/image152.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "153",
         name: "Мероприятие 153",
         idStaff: "3",
@@ -28688,8 +28688,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image153.jpg"
-      }, {
+        pic: "path/to/image153.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "154",
         name: "Мероприятие 154",
         idStaff: "6",
@@ -28714,8 +28714,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image154.jpg"
-      }, {
+        pic: "path/to/image154.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "155",
         name: "Мероприятие 155",
         idStaff: "6",
@@ -28745,8 +28745,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image155.jpg"
-      }, {
+        pic: "path/to/image155.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "156",
         name: "Мероприятие 156",
         idStaff: "5",
@@ -28772,8 +28772,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image156.jpg"
-      }, {
+        pic: "path/to/image156.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "157",
         name: "Мероприятие 157",
         idStaff: "5",
@@ -28801,8 +28801,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image157.jpg"
-      }, {
+        pic: "path/to/image157.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "158",
         name: "Мероприятие 158",
         idStaff: "8",
@@ -28830,8 +28830,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image158.jpg"
-      }, {
+        pic: "path/to/image158.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "159",
         name: "Мероприятие 159",
         idStaff: "4",
@@ -28854,8 +28854,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image159.jpg"
-      }, {
+        pic: "path/to/image159.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "160",
         name: "Мероприятие 160",
         idStaff: "7",
@@ -28881,8 +28881,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image160.jpg"
-      }, {
+        pic: "path/to/image160.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "161",
         name: "Мероприятие 161",
         idStaff: "6",
@@ -28913,8 +28913,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image161.jpg"
-      }, {
+        pic: "path/to/image161.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "162",
         name: "Мероприятие 162",
         idStaff: "2",
@@ -28943,8 +28943,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image162.jpg"
-      }, {
+        pic: "path/to/image162.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "163",
         name: "Мероприятие 163",
         idStaff: "6",
@@ -28964,8 +28964,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image163.jpg"
-      }, {
+        pic: "path/to/image163.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "164",
         name: "Мероприятие 164",
         idStaff: "10",
@@ -28992,8 +28992,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image164.jpg"
-      }, {
+        pic: "path/to/image164.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "165",
         name: "Мероприятие 165",
         idStaff: "3",
@@ -29022,8 +29022,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image165.jpg"
-      }, {
+        pic: "path/to/image165.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "166",
         name: "Мероприятие 166",
         idStaff: "3",
@@ -29049,8 +29049,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image166.jpg"
-      }, {
+        pic: "path/to/image166.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "167",
         name: "Мероприятие 167",
         idStaff: "10",
@@ -29080,8 +29080,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image167.jpg"
-      }, {
+        pic: "path/to/image167.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "168",
         name: "Мероприятие 168",
         idStaff: "9",
@@ -29120,8 +29120,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image168.jpg"
-      }, {
+        pic: "path/to/image168.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "169",
         name: "Мероприятие 169",
         idStaff: "1",
@@ -29144,8 +29144,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image169.jpg"
-      }, {
+        pic: "path/to/image169.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "170",
         name: "Мероприятие 170",
         idStaff: "4",
@@ -29169,8 +29169,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image170.jpg"
-      }, {
+        pic: "path/to/image170.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "171",
         name: "Мероприятие 171",
         idStaff: "4",
@@ -29199,8 +29199,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image171.jpg"
-      }, {
+        pic: "path/to/image171.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "172",
         name: "Мероприятие 172",
         idStaff: "4",
@@ -29226,8 +29226,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image172.jpg"
-      }, {
+        pic: "path/to/image172.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "173",
         name: "Мероприятие 173",
         idStaff: "8",
@@ -29258,8 +29258,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image173.jpg"
-      }, {
+        pic: "path/to/image173.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "174",
         name: "Мероприятие 174",
         idStaff: "3",
@@ -29279,8 +29279,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image174.jpg"
-      }, {
+        pic: "path/to/image174.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "175",
         name: "Мероприятие 175",
         idStaff: "2",
@@ -29303,8 +29303,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image175.jpg"
-      }, {
+        pic: "path/to/image175.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "176",
         name: "Мероприятие 176",
         idStaff: "9",
@@ -29337,8 +29337,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image176.jpg"
-      }, {
+        pic: "path/to/image176.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "177",
         name: "Мероприятие 177",
         idStaff: "2",
@@ -29367,8 +29367,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image177.jpg"
-      }, {
+        pic: "path/to/image177.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "178",
         name: "Мероприятие 178",
         idStaff: "3",
@@ -29398,8 +29398,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image178.jpg"
-      }, {
+        pic: "path/to/image178.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "179",
         name: "Мероприятие 179",
         idStaff: "5",
@@ -29431,8 +29431,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image179.jpg"
-      }, {
+        pic: "path/to/image179.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "180",
         name: "Мероприятие 180",
         idStaff: "2",
@@ -29458,8 +29458,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image180.jpg"
-      }, {
+        pic: "path/to/image180.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "181",
         name: "Мероприятие 181",
         idStaff: "2",
@@ -29482,8 +29482,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image181.jpg"
-      }, {
+        pic: "path/to/image181.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "182",
         name: "Мероприятие 182",
         idStaff: "6",
@@ -29509,8 +29509,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image182.jpg"
-      }, {
+        pic: "path/to/image182.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "183",
         name: "Мероприятие 183",
         idStaff: "2",
@@ -29534,8 +29534,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image183.jpg"
-      }, {
+        pic: "path/to/image183.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "184",
         name: "Мероприятие 184",
         idStaff: "5",
@@ -29570,8 +29570,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image184.jpg"
-      }, {
+        pic: "path/to/image184.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "185",
         name: "Мероприятие 185",
         idStaff: "5",
@@ -29602,8 +29602,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image185.jpg"
-      }, {
+        pic: "path/to/image185.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "186",
         name: "Мероприятие 186",
         idStaff: "10",
@@ -29634,8 +29634,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image186.jpg"
-      }, {
+        pic: "path/to/image186.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "187",
         name: "Мероприятие 187",
         idStaff: "6",
@@ -29659,8 +29659,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image187.jpg"
-      }, {
+        pic: "path/to/image187.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "188",
         name: "Мероприятие 188",
         idStaff: "7",
@@ -29690,8 +29690,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image188.jpg"
-      }, {
+        pic: "path/to/image188.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "189",
         name: "Мероприятие 189",
         idStaff: "7",
@@ -29721,8 +29721,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image189.jpg"
-      }, {
+        pic: "path/to/image189.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "190",
         name: "Мероприятие 190",
         idStaff: "6",
@@ -29754,8 +29754,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image190.jpg"
-      }, {
+        pic: "path/to/image190.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "191",
         name: "Мероприятие 191",
         idStaff: "1",
@@ -29779,8 +29779,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image191.jpg"
-      }, {
+        pic: "path/to/image191.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "192",
         name: "Мероприятие 192",
         idStaff: "3",
@@ -29804,8 +29804,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image192.jpg"
-      }, {
+        pic: "path/to/image192.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "193",
         name: "Мероприятие 193",
         idStaff: "2",
@@ -29830,8 +29830,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image193.jpg"
-      }, {
+        pic: "path/to/image193.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "194",
         name: "Мероприятие 194",
         idStaff: "7",
@@ -29857,8 +29857,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image194.jpg"
-      }, {
+        pic: "path/to/image194.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "195",
         name: "Мероприятие 195",
         idStaff: "7",
@@ -29889,8 +29889,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image195.jpg"
-      }, {
+        pic: "path/to/image195.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "196",
         name: "Мероприятие 196",
         idStaff: "10",
@@ -29926,8 +29926,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image196.jpg"
-      }, {
+        pic: "path/to/image196.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "197",
         name: "Мероприятие 197",
         idStaff: "4",
@@ -29950,8 +29950,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 6,
-        pic: "path/to/image197.jpg"
-      }, {
+        pic: "path/to/image197.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "198",
         name: "Мероприятие 198",
         idStaff: "6",
@@ -29975,8 +29975,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image198.jpg"
-      }, {
+        pic: "path/to/image198.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "199",
         name: "Мероприятие 199",
         idStaff: "1",
@@ -30002,8 +30002,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image199.jpg"
-      }, {
+        pic: "path/to/image199.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "200",
         name: "Мероприятие 200",
         idStaff: "3",
@@ -30026,8 +30026,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image200.jpg"
-      }, {
+        pic: "path/to/image200.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "201",
         name: "Мероприятие 201",
         idStaff: "6",
@@ -30052,8 +30052,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image201.jpg"
-      }, {
+        pic: "path/to/image201.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "202",
         name: "Мероприятие 202",
         idStaff: "1",
@@ -30071,8 +30071,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image202.jpg"
-      }, {
+        pic: "path/to/image202.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "203",
         name: "Мероприятие 203",
         idStaff: "6",
@@ -30095,8 +30095,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image203.jpg"
-      }, {
+        pic: "path/to/image203.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "204",
         name: "Мероприятие 204",
         idStaff: "1",
@@ -30123,8 +30123,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image204.jpg"
-      }, {
+        pic: "path/to/image204.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "205",
         name: "Мероприятие 205",
         idStaff: "10",
@@ -30149,8 +30149,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image205.jpg"
-      }, {
+        pic: "path/to/image205.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "206",
         name: "Мероприятие 206",
         idStaff: "2",
@@ -30184,8 +30184,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image206.jpg"
-      }, {
+        pic: "path/to/image206.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "207",
         name: "Мероприятие 207",
         idStaff: "1",
@@ -30217,8 +30217,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image207.jpg"
-      }, {
+        pic: "path/to/image207.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "208",
         name: "Мероприятие 208",
         idStaff: "7",
@@ -30245,8 +30245,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image208.jpg"
-      }, {
+        pic: "path/to/image208.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "209",
         name: "Мероприятие 209",
         idStaff: "7",
@@ -30280,8 +30280,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image209.jpg"
-      }, {
+        pic: "path/to/image209.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "210",
         name: "Мероприятие 210",
         idStaff: "8",
@@ -30317,8 +30317,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image210.jpg"
-      }, {
+        pic: "path/to/image210.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "211",
         name: "Мероприятие 211",
         idStaff: "6",
@@ -30350,8 +30350,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image211.jpg"
-      }, {
+        pic: "path/to/image211.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "212",
         name: "Мероприятие 212",
         idStaff: "7",
@@ -30381,8 +30381,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image212.jpg"
-      }, {
+        pic: "path/to/image212.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "213",
         name: "Мероприятие 213",
         idStaff: "7",
@@ -30412,8 +30412,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image213.jpg"
-      }, {
+        pic: "path/to/image213.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "214",
         name: "Мероприятие 214",
         idStaff: "5",
@@ -30441,8 +30441,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image214.jpg"
-      }, {
+        pic: "path/to/image214.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "215",
         name: "Мероприятие 215",
         idStaff: "5",
@@ -30465,8 +30465,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image215.jpg"
-      }, {
+        pic: "path/to/image215.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "216",
         name: "Мероприятие 216",
         idStaff: "2",
@@ -30490,8 +30490,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image216.jpg"
-      }, {
+        pic: "path/to/image216.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "217",
         name: "Мероприятие 217",
         idStaff: "4",
@@ -30510,8 +30510,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image217.jpg"
-      }, {
+        pic: "path/to/image217.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "218",
         name: "Мероприятие 218",
         idStaff: "7",
@@ -30544,8 +30544,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image218.jpg"
-      }, {
+        pic: "path/to/image218.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "219",
         name: "Мероприятие 219",
         idStaff: "3",
@@ -30578,8 +30578,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image219.jpg"
-      }, {
+        pic: "path/to/image219.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "220",
         name: "Мероприятие 220",
         idStaff: "6",
@@ -30609,8 +30609,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image220.jpg"
-      }, {
+        pic: "path/to/image220.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "221",
         name: "Мероприятие 221",
         idStaff: "7",
@@ -30635,8 +30635,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 2,
-        pic: "path/to/image221.jpg"
-      }, {
+        pic: "path/to/image221.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "222",
         name: "Мероприятие 222",
         idStaff: "1",
@@ -30659,8 +30659,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image222.jpg"
-      }, {
+        pic: "path/to/image222.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "223",
         name: "Мероприятие 223",
         idStaff: "3",
@@ -30696,8 +30696,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image223.jpg"
-      }, {
+        pic: "path/to/image223.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "224",
         name: "Мероприятие 224",
         idStaff: "6",
@@ -30724,8 +30724,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image224.jpg"
-      }, {
+        pic: "path/to/image224.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "225",
         name: "Мероприятие 225",
         idStaff: "8",
@@ -30756,8 +30756,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image225.jpg"
-      }, {
+        pic: "path/to/image225.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "226",
         name: "Мероприятие 226",
         idStaff: "6",
@@ -30789,8 +30789,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image226.jpg"
-      }, {
+        pic: "path/to/image226.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "227",
         name: "Мероприятие 227",
         idStaff: "10",
@@ -30825,8 +30825,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image227.jpg"
-      }, {
+        pic: "path/to/image227.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "228",
         name: "Мероприятие 228",
         idStaff: "9",
@@ -30857,8 +30857,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image228.jpg"
-      }, {
+        pic: "path/to/image228.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "229",
         name: "Мероприятие 229",
         idStaff: "1",
@@ -30890,8 +30890,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image229.jpg"
-      }, {
+        pic: "path/to/image229.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "230",
         name: "Мероприятие 230",
         idStaff: "5",
@@ -30929,8 +30929,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image230.jpg"
-      }, {
+        pic: "path/to/image230.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "231",
         name: "Мероприятие 231",
         idStaff: "6",
@@ -30968,8 +30968,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image231.jpg"
-      }, {
+        pic: "path/to/image231.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "232",
         name: "Мероприятие 232",
         idStaff: "7",
@@ -31001,8 +31001,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image232.jpg"
-      }, {
+        pic: "path/to/image232.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "233",
         name: "Мероприятие 233",
         idStaff: "6",
@@ -31024,8 +31024,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image233.jpg"
-      }, {
+        pic: "path/to/image233.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "234",
         name: "Мероприятие 234",
         idStaff: "2",
@@ -31058,8 +31058,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image234.jpg"
-      }, {
+        pic: "path/to/image234.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "235",
         name: "Мероприятие 235",
         idStaff: "5",
@@ -31080,8 +31080,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image235.jpg"
-      }, {
+        pic: "path/to/image235.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "236",
         name: "Мероприятие 236",
         idStaff: "9",
@@ -31108,8 +31108,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image236.jpg"
-      }, {
+        pic: "path/to/image236.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "237",
         name: "Мероприятие 237",
         idStaff: "8",
@@ -31134,8 +31134,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image237.jpg"
-      }, {
+        pic: "path/to/image237.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "238",
         name: "Мероприятие 238",
         idStaff: "8",
@@ -31164,8 +31164,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image238.jpg"
-      }, {
+        pic: "path/to/image238.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "239",
         name: "Мероприятие 239",
         idStaff: "5",
@@ -31192,8 +31192,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image239.jpg"
-      }, {
+        pic: "path/to/image239.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "240",
         name: "Мероприятие 240",
         idStaff: "1",
@@ -31226,8 +31226,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image240.jpg"
-      }, {
+        pic: "path/to/image240.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "241",
         name: "Мероприятие 241",
         idStaff: "10",
@@ -31254,8 +31254,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image241.jpg"
-      }, {
+        pic: "path/to/image241.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "242",
         name: "Мероприятие 242",
         idStaff: "5",
@@ -31284,8 +31284,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image242.jpg"
-      }, {
+        pic: "path/to/image242.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "243",
         name: "Мероприятие 243",
         idStaff: "6",
@@ -31307,8 +31307,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image243.jpg"
-      }, {
+        pic: "path/to/image243.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "244",
         name: "Мероприятие 244",
         idStaff: "2",
@@ -31337,8 +31337,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image244.jpg"
-      }, {
+        pic: "path/to/image244.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "245",
         name: "Мероприятие 245",
         idStaff: "8",
@@ -31363,8 +31363,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image245.jpg"
-      }, {
+        pic: "path/to/image245.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "246",
         name: "Мероприятие 246",
         idStaff: "8",
@@ -31390,8 +31390,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image246.jpg"
-      }, {
+        pic: "path/to/image246.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "247",
         name: "Мероприятие 247",
         idStaff: "6",
@@ -31427,8 +31427,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image247.jpg"
-      }, {
+        pic: "path/to/image247.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "248",
         name: "Мероприятие 248",
         idStaff: "8",
@@ -31465,8 +31465,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image248.jpg"
-      }, {
+        pic: "path/to/image248.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "249",
         name: "Мероприятие 249",
         idStaff: "2",
@@ -31495,8 +31495,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image249.jpg"
-      }, {
+        pic: "path/to/image249.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "250",
         name: "Мероприятие 250",
         idStaff: "9",
@@ -31524,8 +31524,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 6,
-        pic: "path/to/image250.jpg"
-      }, {
+        pic: "path/to/image250.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "251",
         name: "Мероприятие 251",
         idStaff: "10",
@@ -31562,8 +31562,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 8,
-        pic: "path/to/image251.jpg"
-      }, {
+        pic: "path/to/image251.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "252",
         name: "Мероприятие 252",
         idStaff: "2",
@@ -31589,8 +31589,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image252.jpg"
-      }, {
+        pic: "path/to/image252.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "253",
         name: "Мероприятие 253",
         idStaff: "5",
@@ -31619,8 +31619,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image253.jpg"
-      }, {
+        pic: "path/to/image253.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "254",
         name: "Мероприятие 254",
         idStaff: "10",
@@ -31656,8 +31656,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image254.jpg"
-      }, {
+        pic: "path/to/image254.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "255",
         name: "Мероприятие 255",
         idStaff: "5",
@@ -31692,8 +31692,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 10,
-        pic: "path/to/image255.jpg"
-      }, {
+        pic: "path/to/image255.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "256",
         name: "Мероприятие 256",
         idStaff: "7",
@@ -31727,8 +31727,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image256.jpg"
-      }, {
+        pic: "path/to/image256.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "257",
         name: "Мероприятие 257",
         idStaff: "7",
@@ -31751,8 +31751,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image257.jpg"
-      }, {
+        pic: "path/to/image257.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "258",
         name: "Мероприятие 258",
         idStaff: "1",
@@ -31775,8 +31775,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image258.jpg"
-      }, {
+        pic: "path/to/image258.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "259",
         name: "Мероприятие 259",
         idStaff: "3",
@@ -31809,8 +31809,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image259.jpg"
-      }, {
+        pic: "path/to/image259.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "260",
         name: "Мероприятие 260",
         idStaff: "6",
@@ -31834,8 +31834,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image260.jpg"
-      }, {
+        pic: "path/to/image260.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "261",
         name: "Мероприятие 261",
         idStaff: "7",
@@ -31856,8 +31856,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image261.jpg"
-      }, {
+        pic: "path/to/image261.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "262",
         name: "Мероприятие 262",
         idStaff: "3",
@@ -31883,8 +31883,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image262.jpg"
-      }, {
+        pic: "path/to/image262.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "263",
         name: "Мероприятие 263",
         idStaff: "10",
@@ -31911,8 +31911,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image263.jpg"
-      }, {
+        pic: "path/to/image263.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "264",
         name: "Мероприятие 264",
         idStaff: "10",
@@ -31940,8 +31940,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 7,
-        pic: "path/to/image264.jpg"
-      }, {
+        pic: "path/to/image264.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "265",
         name: "Мероприятие 265",
         idStaff: "4",
@@ -31971,8 +31971,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image265.jpg"
-      }, {
+        pic: "path/to/image265.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "266",
         name: "Мероприятие 266",
         idStaff: "9",
@@ -32000,8 +32000,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image266.jpg"
-      }, {
+        pic: "path/to/image266.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "267",
         name: "Мероприятие 267",
         idStaff: "6",
@@ -32030,8 +32030,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image267.jpg"
-      }, {
+        pic: "path/to/image267.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "268",
         name: "Мероприятие 268",
         idStaff: "1",
@@ -32060,8 +32060,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 4,
-        pic: "path/to/image268.jpg"
-      }, {
+        pic: "path/to/image268.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "269",
         name: "Мероприятие 269",
         idStaff: "6",
@@ -32084,8 +32084,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 10,
-        pic: "path/to/image269.jpg"
-      }, {
+        pic: "path/to/image269.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "270",
         name: "Мероприятие 270",
         idStaff: "3",
@@ -32109,8 +32109,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image270.jpg"
-      }, {
+        pic: "path/to/image270.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "271",
         name: "Мероприятие 271",
         idStaff: "10",
@@ -32138,8 +32138,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image271.jpg"
-      }, {
+        pic: "path/to/image271.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "272",
         name: "Мероприятие 272",
         idStaff: "5",
@@ -32169,8 +32169,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image272.jpg"
-      }, {
+        pic: "path/to/image272.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "273",
         name: "Мероприятие 273",
         idStaff: "10",
@@ -32203,8 +32203,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 5,
-        pic: "path/to/image273.jpg"
-      }, {
+        pic: "path/to/image273.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "274",
         name: "Мероприятие 274",
         idStaff: "6",
@@ -32227,8 +32227,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image274.jpg"
-      }, {
+        pic: "path/to/image274.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "275",
         name: "Мероприятие 275",
         idStaff: "2",
@@ -32263,8 +32263,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 1,
-        pic: "path/to/image275.jpg"
-      }, {
+        pic: "path/to/image275.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "276",
         name: "Мероприятие 276",
         idStaff: "7",
@@ -32293,8 +32293,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 3,
-        pic: "path/to/image276.jpg"
-      }, {
+        pic: "path/to/image276.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "277",
         name: "Мероприятие 277",
         idStaff: "9",
@@ -32330,8 +32330,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 4,
-        pic: "path/to/image277.jpg"
-      }, {
+        pic: "path/to/image277.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "278",
         name: "Мероприятие 278",
         idStaff: "6",
@@ -32365,8 +32365,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 3,
-        pic: "path/to/image278.jpg"
-      }, {
+        pic: "path/to/image278.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "279",
         name: "Мероприятие 279",
         idStaff: "3",
@@ -32393,8 +32393,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 5,
-        pic: "path/to/image279.jpg"
-      }, {
+        pic: "path/to/image279.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "280",
         name: "Мероприятие 280",
         idStaff: "3",
@@ -32421,8 +32421,8 @@ export const lose = [
         ],
         status: "провалено",
         needs: 9,
-        pic: "path/to/image280.jpg"
-      }, {
+        pic: "path/to/image280.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "281",
         name: "Мероприятие 281",
         idStaff: "2",
@@ -32452,8 +32452,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 9,
-        pic: "path/to/image281.jpg"
-      }, {
+        pic: "path/to/image281.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "282",
         name: "Мероприятие 282",
         idStaff: "4",
@@ -32479,8 +32479,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 7,
-        pic: "path/to/image282.jpg"
-      }, {
+        pic: "path/to/image282.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "283",
         name: "Мероприятие 283",
         idStaff: "8",
@@ -32510,8 +32510,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 2,
-        pic: "path/to/image283.jpg"
-      }, {
+        pic: "path/to/image283.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "284",
         name: "Мероприятие 284",
         idStaff: "2",
@@ -32535,8 +32535,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 8,
-        pic: "path/to/image284.jpg"
-      }, {
+        pic: "path/to/image284.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "285",
         name: "Мероприятие 285",
         idStaff: "1",
@@ -32566,8 +32566,8 @@ export const lose = [
         ],
         status: "успешно проведено",
         needs: 1,
-        pic: "path/to/image285.jpg"
-      }, {
+        pic: "path/to/image285.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "286",
         name: "Дополнительное мероприятие 286",
         idStaff: "7",
@@ -32593,8 +32593,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 1,
-        pic: "path/to/image286.jpg"
-      }, {
+        pic: "path/to/image286.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "287",
         name: "Дополнительное мероприятие 287",
         idStaff: "3",
@@ -32619,8 +32619,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image287.jpg"
-      }, {
+        pic: "path/to/image287.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "288",
         name: "Дополнительное мероприятие 288",
         idStaff: "4",
@@ -32649,8 +32649,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image288.jpg"
-      }, {
+        pic: "path/to/image288.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "289",
         name: "Дополнительное мероприятие 289",
         idStaff: "4",
@@ -32675,8 +32675,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image289.jpg"
-      }, {
+        pic: "path/to/image289.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "290",
         name: "Дополнительное мероприятие 290",
         idStaff: "3",
@@ -32702,8 +32702,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 9,
-        pic: "path/to/image290.jpg"
-      }, {
+        pic: "path/to/image290.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "291",
         name: "Дополнительное мероприятие 291",
         idStaff: "7",
@@ -32734,8 +32734,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 5,
-        pic: "path/to/image291.jpg"
-      }, {
+        pic: "path/to/image291.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "292",
         name: "Дополнительное мероприятие 292",
         idStaff: "3",
@@ -32764,8 +32764,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 1,
-        pic: "path/to/image292.jpg"
-      }, {
+        pic: "path/to/image292.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "293",
         name: "Дополнительное мероприятие 293",
         idStaff: "5",
@@ -32787,8 +32787,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image293.jpg"
-      }, {
+        pic: "path/to/image293.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "294",
         name: "Дополнительное мероприятие 294",
         idStaff: "2",
@@ -32819,8 +32819,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 1,
-        pic: "path/to/image294.jpg"
-      }, {
+        pic: "path/to/image294.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "295",
         name: "Дополнительное мероприятие 295",
         idStaff: "4",
@@ -32851,8 +32851,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 6,
-        pic: "path/to/image295.jpg"
-      }, {
+        pic: "path/to/image295.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "296",
         name: "Дополнительное мероприятие 296",
         idStaff: "7",
@@ -32875,14 +32875,14 @@ export const lose = [
         ],
         status: "активно",
         needs: 7,
-        pic: "path/to/image296.jpg"
-      }, {
+        pic: "path/to/image296.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "297",
         name: "Дополнительное мероприятие 297",
         idStaff: "10",
         startDate: "2025-06-03",
         endDate: "2025-06-08",
-        volunteerslist: "50, 70, 100, 17, 41, 4, 74, 93",
+        volunteerslist: "50, 70, 4, 74, 93",
         city: "Казань",
         description: "Дополнительное описание мероприятия 297",
         format: "онлайн",
@@ -32906,8 +32906,8 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image297.jpg"
-      }, {
+        pic: "path/to/image297.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "298",
         name: "Дополнительное мероприятие 298",
         idStaff: "8",
@@ -32942,14 +32942,14 @@ export const lose = [
         ],
         status: "активно",
         needs: 2,
-        pic: "path/to/image298.jpg"
-      }, {
+        pic: "path/to/image298.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "299",
         name: "Дополнительное мероприятие 299",
         idStaff: "3",
         startDate: "2025-07-06",
         endDate: "2025-07-11",
-        volunteerslist: "99, 100, 35, 20",
+        volunteerslist: "99, 20",
         city: "Челябинск",
         description: "Дополнительное описание мероприятия 299",
         format: "всё",
@@ -32981,14 +32981,14 @@ export const lose = [
         ],
         status: "активно",
         needs: 4,
-        pic: "path/to/image299.jpg"
-      }, {
+        pic: "path/to/image299.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "300",
         name: "Дополнительное мероприятие 300",
         idStaff: "10",
         startDate: "2025-07-10",
         endDate: "2025-07-14",
-        volunteerslist: "14, 24, 22, 48, 65, 37, 34, 67, 49",
+        volunteerslist: "14, 24, 22, 37, 34, 67, 49",
         city: "Санкт-Петербург",
         description: "Дополнительное описание мероприятия 300",
         format: "оффлайн",
@@ -33005,14 +33005,14 @@ export const lose = [
         ],
         status: "активно",
         needs: 9,
-        pic: "path/to/image300.jpg"
-      }, {
+        pic: "path/to/image300.jpg",
+        time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "301",
         name: "Дополнительное мероприятие 301",
         idStaff: "9",
         startDate: "2025-07-11",
         endDate: "2025-07-14",
-        volunteerslist: "88, 98, 77, 27, 76, 26, 82, 44",
+        volunteerslist: "88, 98, 77, 27, 76, 26",
         city: "Новосибирск",
         description: "Дополнительное описание мероприятия 301",
         format: "онлайн",
@@ -33034,6 +33034,6 @@ export const lose = [
         ],
         status: "активно",
         needs: 8,
-        pic: "path/to/image301.jpg"
-      }    
+        pic: "path/to/image301.jpg",
+      time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }    
 ]

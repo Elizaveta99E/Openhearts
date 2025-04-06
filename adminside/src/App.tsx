@@ -7,6 +7,8 @@ import { data } from './data'; // данные для графиков
 import { lose as chartData } from './lose'; // данные для графиков
 import React from 'react';
 import {events} from './pages/events/list';
+
+
 const Demo = () => {
   const filteredEvents = events.filter(event => {
       const volunteersCount = event.volunteerslist.split(', ').length;
@@ -39,7 +41,7 @@ const Demo = () => {
                         <Text size="sm" c="dimmed">
                             <strong>Место проведения:</strong> {event.city}, {event.place}
                         </Text>
-                        <Button color="blue" fullWidth mt="md" radius="md">
+                        <Button color="orange" fullWidth mt="md" radius="md">
                             Подробнее
                         </Button>
                     </Card>

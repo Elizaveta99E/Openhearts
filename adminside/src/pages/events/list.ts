@@ -33035,6 +33035,6 @@
         ],
         status: "активно",
         needs: 8,
-        pic: "./pictures/images274",
+        pic: "./pages/events/pictures/images301.jpg",
       time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }    
 ]

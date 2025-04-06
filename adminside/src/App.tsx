@@ -14,7 +14,7 @@ const Demo = () => {
   });
 
   return (
-      <div>
+      <Grid grow>
           {filteredEvents.length > 0 ? (
               filteredEvents.map(event => (
                   <Card key={event.id} shadow="sm" padding="lg" radius="md" withBorder>
@@ -49,7 +49,7 @@ const Demo = () => {
                     Нет мероприятий, соответствующих условиям.
                 </Text>
             )}
-        </div>
+        </Grid>
     );
 };
 
@@ -77,7 +77,7 @@ export default function App() {
                     <Grid.Col span={4}>
                         <BarChart
                             h={200}
-                            data={chartData} // Убедитесь, что графические данные корректны
+                            data={chartData} 
                             dataKey="month"
                             orientation="vertical"
                             yAxisProps={{ width: 80 }}
@@ -88,7 +88,7 @@ export default function App() {
                     <Grid.Col span={4}>
                         <BarChart
                             h={200}
-                            data={chartData} // Убедитесь, что графические данные корректны
+                            data={chartData} 
                             dataKey="month"
                             orientation="vertical"
                             yAxisProps={{ width: 80 }}

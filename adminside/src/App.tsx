@@ -1,7 +1,7 @@
 import "@mantine/core/styles.css";
 import '@mantine/charts/styles.css';
 import { BarChart } from '@mantine/charts';
-import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge } from "@mantine/core";
+import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper } from "@mantine/core";
 import { AreaChart } from '@mantine/charts';
 import { data } from './data'; // данные для графиков
 import { lose as chartData } from './lose'; // данные для графиков
@@ -16,10 +16,13 @@ const Demo = () => {
   });
 
   return (
-      <Grid grow>
+    <Paper shadow="md" radius="lg" withBorder p="xl">
+        <div style={{ resize: 'horizontal', overflow: 'hidden', maxWidth: '100%' }}>
+      <Grid type="container"
+        breakpoints={{ xs: '100px', sm: '200px', md: '300px', lg: '400px', xl: '500px' }}> 
           {filteredEvents.length > 0 ? (
               filteredEvents.map(event => (
-                  <Card key={event.id} shadow="sm" padding="lg" radius="md" withBorder>
+                <Grid.Col span="auto"><Card key={event.id} shadow="sm" padding="lg" radius="md" withBorder>
                       <Card.Section>
                           <Image
                               src={event.pic}
@@ -45,6 +48,7 @@ const Demo = () => {
                             Подробнее
                         </Button>
                     </Card>
+                    </Grid.Col>
                 ))
             ) : (
                 <Text size="sm" c="dimmed" style={{ textAlign: 'center' }}>
@@ -52,6 +56,8 @@ const Demo = () => {
                 </Text>
             )}
         </Grid>
+        </div>
+        </Paper>
     );
 };
 

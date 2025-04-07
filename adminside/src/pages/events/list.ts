@@ -7602,7 +7602,7 @@
         ],
         status: "активно",
         needs: 6,
-        pic: "path/to/image262.jpg",
+        pic: "https://resizer.mail.ru/p/50f749c9-cc27-51fc-8868-c07431313411/AQAOJohde1vF-Yj4QDDryluZR9jnIdQlEZw3PFNGQcpst18kMBpu4Vgxoxl0jlNWg5U7ovs1yk3_vs82woVrbw7tdoE.jpg",
       time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "263",
         name: "Мероприятие 263",
@@ -7724,7 +7724,7 @@
         ],
         status: "активно",
         needs: 10,
-        pic: "path/to/image266.jpg",
+        pic: "https://www.leading-medicine-guide.com/image/103404/kinderkardiologie.jpg",
       time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }, {
         id: "267",
         name: "Мероприятие 267",
@@ -33035,6 +33035,6 @@
         ],
         status: "активно",
         needs: 8,
-        pic: "./pages/events/pictures/images301.jpg",
+        pic: "https://resizer.mail.ru/p/50f749c9-cc27-51fc-8868-c07431313411/AQAOJohde1vF-Yj4QDDryluZR9jnIdQlEZw3PFNGQcpst18kMBpu4Vgxoxl0jlNWg5U7ovs1yk3_vs82woVrbw7tdoE.jpg",
       time: "10-00 – 18-00", place: "ул. Ленина, д. 15, оф 37" }    
 ]

@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@mantine/charts": "^7.17.3",
-    "@mantine/core": "7.17.2",
-    "@mantine/hooks": "7.17.2",
+    "@mantine/core": "^7.17.3",
+    "@mantine/hooks": "^7.17.3",
     "@tabler/icons-react": "~3.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

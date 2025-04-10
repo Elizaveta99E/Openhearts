@@ -12,7 +12,7 @@ img{
 }
 
 #image_1{
-    width: 728px;
+    width: 650px;
 }
 
 #image_2{
@@ -209,21 +209,29 @@ iframe{
 }
 
 .images-flex img{
-    max-width: 370px;
-    max-height: auto;
+    width: 370px;
+    height: auto;
 }
 
 .images-flex{
     display: flex;
     gap: 45px;
-}
-
-.images-flex .image7{
-    padding-bottom: 120px;
+    flex-wrap: nowrap; 
+    justify-content: center;
 }
 
 .images-flex .image8, .image9{
     padding-top: 120px;
+}
+
+@media (max-width: 700px){
+
+    .steps{
+        padding: 12px 28px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
 }
 
 @media (max-width: 1200px){
@@ -248,16 +256,65 @@ iframe{
 
 }
 
-@media (max-width: 800px){
+@media (max-width: 860px){
 
-    #our-values-images img{
+    img{
         display: none;
+    }
+
+    .images-flex{
+        display: none;
+    }
+
+    .connection{
+        padding-left: 20px;
     }
 
 }
 
-@media (max-width: 1560px){
-    #card-text-with-image_1-3 img{
+@media (max-width: 1660px){
+    
+    .images-flex img{
+        width: 270px;
+        height: auto;
+    }
+
+    .images-flex{
+        gap: 30px;
+    }
+    
+}
+
+@media (max-width: 1230px){
+    
+    .images-flex img{
+        width: 200px;
+        height: auto;
+    }
+
+    .images-flex{
+        gap: 15px;
+    }
+
+    
+}
+
+@media (max-width: 1500px){
+    #image_1{
         display: none;
     }
+
+    #images_2-3{
+        margin-left: 0;
+        margin-right: auto;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1070px){
+
+    #image_3{
+        display: none;
+    }
+
 }

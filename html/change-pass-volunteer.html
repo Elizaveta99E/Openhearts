@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Смена пароля</title>
-  <link rel="icon" href="/static/image/mini_logo.svg">
+  <link rel="icon" href="/static/image/logos/mini_logo.svg">
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="stylesheet" href="/static/css/for-change-pass-volunteer.css">
 </head>
@@ -16,21 +16,18 @@
     </header>
 
     <div class="container">
-      
       <div id="start-edit-volunteer-account">
         <p class="navigation">Личная страничка/</p>
         <h2>Сменить пароль</h2>
         <p id="comment">Для смены пароля воспользуйтесь формой ниже</p>
       </div>
 
-      <div class="password-input">
-        <input type="password" id="password" placeholder="Введите пароль">
-        <button type="button" id="show-password" class="password-toggle">
-            <img src="/static/image/icon/eye-open.svg" alt="Показать пароль">
-        </button>
-        <button type="button" id="hide-password" class="password-toggle" style="display: none;">
-            <img src="/static/image/icon/eye-closed.svg" alt="Скрыть пароль">
-        </button>
+      <div class="inputs">
+        <div class="password-input">
+          <input type="password" id="password" placeholder="Введите пароль" class="header-text">
+          <button type="button" id="show-password"></button>
+          <button type="button" id="hide-password"></button>
+        </div>
       </div>
       <script>
         document.getElementById('show-password').addEventListener('click', function() {
@@ -39,7 +36,7 @@
           document.getElementById('show-password').style.display = 'none'; // Скрываем кнопку "Показать"
           document.getElementById('hide-password').style.display = 'block'; // Показываем кнопку "Скрыть"
       });
-
+      
       document.getElementById('hide-password').addEventListener('click', function() {
           const passwordInput = document.getElementById('password');
           passwordInput.type = 'password'; // Скрываем пароль

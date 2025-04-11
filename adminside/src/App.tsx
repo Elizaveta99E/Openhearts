@@ -1,12 +1,13 @@
 import "@mantine/core/styles.css";
 import '@mantine/charts/styles.css';
 import { BarChart } from '@mantine/charts';
-import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper } from "@mantine/core";
+import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper, Title} from "@mantine/core";
 import { AreaChart } from '@mantine/charts';
 import { data } from './data';
 import { lose as chartData } from './lose';
-import React from 'react';
+import React, { useState } from 'react';
 import { events } from './pages/events/list';
+import { volunteers } from './pages/volunteers/list';
 import { TooltipProps } from 'recharts';
 // TooltipProps для подсказки в  первом чарте
 const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
@@ -40,6 +41,7 @@ interface Event {
   volunteerslist: string;
   needs: number;
   status: string;
+  course: string;
 }
 
 interface ChartDataItem {
@@ -73,22 +75,30 @@ const prepareVolunteersData = (events: Event[]): ChartDataItem[] => {
     Volunteers: monthlyData[index] || 0
   }));
 };
+interface DemoProps {
+  events: Event[];
+  selectedCourse: string | null;
+}
 
-const Demo = () => {
+const Demo = ({ events, selectedCourse }: DemoProps) => {
   const filteredEvents = events.filter(event => {
-    const volunteersCount = event.volunteerslist.split(', ').length;
-    return volunteersCount < event.needs && event.status === 'активно';
+    // Фильтрация по course (если не выбрано "Всё")
+    const courseMatch = !selectedCourse || selectedCourse === "Всё" || event.course === selectedCourse;
+    
+    const volunteersCount = event.volunteerslist.split(',').filter(v => v.trim() !== '').length;
+    return courseMatch && volunteersCount < event.needs && event.status === 'активно';
   });
 
   return (
     <Paper shadow="md" radius="lg" withBorder p="xl">
+      <Title order={1} mb="xl">Ближайшие мероприятия, нуждающиеся в волонтерах</Title>
       <div style={{ resize: 'horizontal', overflow: 'hidden', maxWidth: '100%' }}>
-        <Grid type="container"
+        <Grid type="container" 
           breakpoints={{ xs: '100px', sm: '200px', md: '300px', lg: '400px', xl: '500px' }}> 
           {filteredEvents.length > 0 ? (
             filteredEvents.map(event => (
-              <Grid.Col span="auto">
-                <Card key={event.id} shadow="sm" padding="lg" radius="md" withBorder>
+              <Grid.Col span="auto" key={event.id}>
+                <Card shadow="sm" padding="lg" radius="md" withBorder>
                   <Card.Section>
                     <Image
                       src={event.pic}
@@ -112,13 +122,12 @@ const Demo = () => {
                   <Button color="orange" fullWidth mt="md" radius="md">
                     Подробнее
                   </Button>
-                </Card>
+                  </Card>
               </Grid.Col>
             ))
           ) : (
-            <Text size="sm" c="dimmed" style={{ textAlign: 'center' }}>
-              Нет мероприятий, соответствующих условиям.
-            </Text>
+            <Grid.Col style={{ display: 'flex', justifyContent: 'center' }}><Text  >Нет мероприятий, соответствующих условиям.</Text></Grid.Col>
+            
           )}
         </Grid>
       </div>
@@ -142,51 +151,73 @@ const prepareFailedEventsByYear = (events: Event[]): { year: string; count: numb
     .sort((a, b) => parseInt(a.year) - parseInt(b.year));
 };
 export default function App() {
-  const volunteersData = prepareVolunteersData(events);
-  const failedEventsData = prepareFailedEventsByYear(events);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>("Всё");
+
+  // Функция для фильтрации мероприятий по направлению
+  const filterEventsByCourse = (events: Event[], course: string | null) => {
+    if (!course || course === "Всё") return events;
+    return events.filter(event => event.course === course);
+  };
+
+  // Фильтруем мероприятия по выбранному направлению
+  const filteredEvents = filterEventsByCourse(events, selectedCourse);
+  
+  // Готовим данные на основе отфильтрованных мероприятий
+  const volunteersData = prepareVolunteersData(filteredEvents);
+  const failedEventsData = prepareFailedEventsByYear(filteredEvents);
+  const volunteersByYearData = prepareVolunteersByRegistrationYear(volunteers);
   return (
     <>
       <Container size="xl">
         <Select
           label="Направление"
           placeholder="Выберите значение"
-          data={[ "Дети и молодежь",
-    "Образование",
-    "Поиск пропавших",
-    "СВО",
-    "Урбанистика",
-    "Срочная помощь (ЧС)",
-    "Экология",
-    "Животные",
-    "Ветераны и историческая память",
-    "Спорт и события",
-    "Здравоохранение",
-    "Права человека",
-    "Помощь лицам с ОВЗ",
-    "Старшее поколение",
-    "Культура и искусство",
-    "Интеллектуальная помощь",
-    "Наука",
-    "Наставничество",
-    "Другое"]}
+          data={[
+            "Всё",
+            "Дети и молодежь",
+            "Образование",
+            "Поиск пропавших",
+            "СВО",
+            "Урбанистика",
+            "Срочная помощь (ЧС)",
+            "Экология",
+            "Животные",
+            "Ветераны и историческая память",
+            "Спорт и события",
+            "Здравоохранение",
+            "Права человека",
+            "Помощь лицам с ОВЗ",
+            "Старшее поколение",
+            "Культура и искусство",
+            "Интеллектуальная помощь",
+            "Наука",
+            "Наставничество",
+            "Другое"
+          ]}
+          value={selectedCourse}
+          onChange={setSelectedCourse}
           w={400}
         />
 
-<AreaChart
-  h={300}
-  data={volunteersData}
-  dataKey="date"
-  series={[{ name: 'Volunteers', color: 'orange' }]}
-  curveType="linear"
-  connectNulls
-  tooltipProps={{
-    content: CustomTooltip, // Просто передайте компонент
-  }}
-/>
-
+        <Paper shadow="md" radius="lg" withBorder p="xl" mb="md" mt="md">
+          <Title order={1} mb="xl">Активность волонтеров</Title>  
+          <AreaChart
+            h={300}
+            data={volunteersData}
+            dataKey="date"
+            series={[{ name: 'Volunteers', color: 'orange' }]}
+            curveType="linear"
+            connectNulls
+            tooltipProps={{
+              content: CustomTooltip,
+            }}
+          />
+        </Paper>
         <Grid>
-          <Grid.Col span={4}>
-          <BarChart
+          <Grid.Col span={6}>
+          <Paper shadow="xl" radius="lg" withBorder p="xl" mb="md">
+          <Title order={2} mb="xl">Количество проваленных мероприятий</Title>
+            <BarChart
             h={200}
             data={failedEventsData} 
             dataKey="year"
@@ -197,30 +228,61 @@ export default function App() {
               formatter: (value) => [`${value} мероприятий`, null],
               labelFormatter: (label) => `Год: ${label}`
             }}
-            yAxisProps={{
-              width: 80,
-              label: { value: 'Год', angle: -90, position: 'insideLeft' }
-            }}
-            xAxisProps={{
-              label: { value: 'Количество', position: 'insideBottom', offset: -5 }
-            }}
-          />
+           
+          /> </Paper>
           </Grid.Col>
-          <Grid.Col span={4}>
+          <Grid.Col span={6}>
+          <Paper shadow="xl" radius="lg" withBorder p="xl" mb="md">
+          <Title order={2} mb="xl">Волонтеры новички</Title>
             <BarChart
               h={200}
-              data={chartData} 
-              dataKey="month"
+              data={volunteersByYearData}
+              dataKey="year"
               orientation="vertical"
-              yAxisProps={{ width: 80 }}
               barProps={{ radius: 10 }}
-              series={[{ name: 'Smartphones', color: 'blue.6' }]}
-            />
+              series={[{ name: 'count', color: 'green.6', label: 'Зарегистрированные волонтеры' }]}
+              tooltipProps={{
+                formatter: (value) => [`${value} волонтеров`, null],
+                labelFormatter: (label) => `Год регистрации: ${label}`
+              }}
+              
+            /></Paper>
           </Grid.Col>
         </Grid>
 
-        <Demo />
+        <Demo events={events} selectedCourse={selectedCourse} />
       </Container>
     </>
   );
+}
+
+// Функция для подготовки данных о волонтерах по годам регистрации
+const prepareVolunteersByRegistrationYear = (volunteers: Volunteer[]): { year: string; count: number }[] => {
+  const yearlyData: Record<string, number> = {};
+
+  volunteers.forEach(volunteer => {
+    if (volunteer.regdate) {
+      const year = new Date(volunteer.regdate).getFullYear().toString();
+      yearlyData[year] = (yearlyData[year] || 0) + 1;
+    }
+  });
+
+  // Сортируем годы по возрастанию
+  return Object.entries(yearlyData)
+    .map(([year, count]) => ({ year, count }))
+    .sort((a, b) => parseInt(a.year) - parseInt(b.year));
+};
+
+// Добавляем интерфейс для волонтера
+interface Volunteer {
+  id: string;
+  mail: string;
+  name: string;
+  phone: string;
+  regdate: string;
+  birtgday: string;
+  city: string;
+  comment: string;
+  status: string;
+  photo: string;
 }

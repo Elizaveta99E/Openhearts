@@ -6,15 +6,16 @@ import { StaffList } from "./pages/staff/list.tsx";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
 import { VolunteersList } from "./pages/volunteers/list.tsx";
-import {SignIn} from "./pages/signin/list.tsx";
-
+import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */}
+import {Layout} from "./components/layout.tsx"
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MantineProvider theme={theme} defaultColorScheme="light">
   <BrowserRouter>
   
-    <Routes>
+    <Routes >
+    <Route element={<Layout/>}>
       <Route path="/" element={<App />} />
       <Route path="staff">
         <Route index element={<StaffList />} />
@@ -29,7 +30,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Route path="signin">
           <Route index element={<SignIn/>}/>
           </Route>
+      </Route>
     </Routes>
+    
   </BrowserRouter>
   </MantineProvider>
 );

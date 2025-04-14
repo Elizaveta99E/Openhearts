@@ -8,7 +8,7 @@ import { theme } from "./theme";
 import { VolunteersList } from "./pages/volunteers/list.tsx";
 import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */}
 import {Layout} from "./components/layout.tsx"
-
+import {EventsList} from "./pages/events/list.tsx"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MantineProvider theme={theme} defaultColorScheme="light">
@@ -21,6 +21,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route index element={<StaffList />} />
         {/* <Route path=":staffid" element={<StaffID />} />
         <Route path="trending" element={<Trending />} /> */}
+      </Route>
+      <Route path="events">
+        <Route index element={<EventsList />} />  
       </Route>
       <Route path="volunteers">
         <Route index element={<VolunteersList />} />

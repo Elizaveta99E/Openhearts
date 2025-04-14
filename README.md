@@ -22,4 +22,7 @@ adminside
  ---------------------------------------
  Страницы админки:
  Дашборды - app
- Список волонтеров
+ Список волонтеров ./pages/volunteers/list.tsx
+ Список сотрудников./pages/staff/list.tsx
+ Список мероприятий ./pages/events/list.tsx
+ вход ./pages/signin/list.tsx

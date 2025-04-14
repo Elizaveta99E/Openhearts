@@ -1,29 +1,27 @@
 import { useState } from 'react';
-import { Input, CloseButton,Button } from '@mantine/core';
-import { IconAt } from '@tabler/icons-react';
+import cx from 'clsx';
+import { MantineProvider, Container, createTheme } from '@mantine/core';
+import classes from './Demo.module.css';
+
+const theme = createTheme({
+  components: {
+    Container: Container.extend({
+      classNames: (_, { size }) => ({
+        root: cx({ [classes.responsiveContainer]: size === 'responsive' }),
+      }),
+    }),
+  },
+});
 
 export function SignIn() {
   const [value, setValue] = useState('Clear me');
-  return (
-    <>
+  return ( <>
     
-      <Input placeholder="Your email" leftSection={<IconAt size={16}/>} />
-      <Input
-        placeholder="Clearable input"
-        value={value}
-        onChange={(event) => setValue(event.currentTarget.value)}
-        rightSectionPointerEvents="all"
-        mt="md"
-        w="xs"
-        rightSection={
-          <CloseButton
-            aria-label="Clear input"
-            onClick={() => setValue('')}
-            style={{ display: value ? undefined : 'none' }}
-          />
-        }
-      />
-      <Button variant="filled" color='blue'>Button</Button>
-    </>
-  );
+    <MantineProvider theme={theme}>
+      <Container size="responsive" bg="var(--mantine-color-blue-light)">
+        c
+      </Container>
+    </MantineProvider>
+
+    </>  );
 }

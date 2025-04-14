@@ -1,0 +1,11 @@
+<svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="4.27051" width="20.1445" height="19" rx="1" stroke="#878787" stroke-width="2"/>
+<path d="M0.527161 10.2705H21.6172" stroke="#878787" stroke-width="2"/>
+<path d="M5.27234 1.27051V5.77051" stroke="#878787" stroke-width="2" stroke-linecap="round"/>
+<path d="M16.8721 1.27051V5.77051" stroke="#878787" stroke-width="2" stroke-linecap="round"/>
+<rect x="10.3197" y="13.0455" width="2.559" height="2.45" rx="0.525" fill="#878787" stroke="#878787" stroke-width="0.45"/>
+<path d="M5.57234 13.0455C5.28239 13.0455 5.04734 13.2806 5.04734 13.5705V14.9705C5.04734 15.2605 5.28239 15.4955 5.57234 15.4955H7.08134C7.37129 15.4955 7.60634 15.2605 7.60634 14.9705V13.5705C7.60634 13.2806 7.37129 13.0455 7.08134 13.0455H5.57234Z" fill="#878787" stroke="#878787" stroke-width="0.45"/>
+<rect x="15.5927" y="13.0455" width="2.559" height="2.45" rx="0.525" fill="#878787" stroke="#878787" stroke-width="0.45"/>
+<rect x="10.3197" y="17.0455" width="2.559" height="2.45" rx="0.525" fill="#878787" stroke="#878787" stroke-width="0.45"/>
+<rect x="5.04734" y="17.0455" width="2.559" height="2.45" rx="0.525" fill="#878787" stroke="#878787" stroke-width="0.45"/>
+</svg>

@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проверка электронной почты</title>
-  <link rel="icon" href="/static/image/logos/mini_logo.svg">
-  <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Открытые сердца</title>
+    <link rel="icon" href="/static/image/logos/mini_logo.svg">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/for-checking-mail.css">
+   
+ 
 </head>
 <body>
 	<header>
-        <!-- Иконка -->
-        <img src="pictures/Logo.svg" alt="Логотип" class="logo">
-                
-        <!-- Центрированный блок для "Мероприятия" и поисковой строки -->
-        <div class="center-container">
-            <!-- Текст "Мероприятия" -->
-            <div class="events">Мероприятия</div>
-            
-            <!-- Поле ввода и кнопка поиска -->
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Найти">
-                <button class="search-button"></button>
+        <div class="container">
+            <div class="header-container">
+                <div class="container-for-logo">
+                    <a href="/html/main.html"><img src="/static/image/logos/logo.svg" alt="logo"></a>
+                </div>
+                <div class="header-text">
+                    <a href="/html/List of events.html">Мероприятия</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Найти" class="header-text">
+                    <button class="header-text"></button>
+                </div>
+                <div class="sign-in-container">
+                    <a href="/html/Log in.html" class="header-text"><img src="/static/image/icon/man.svg" alt="man"><div></div>Войти</a>
+                </div>
+                <div class="sign-up">
+                    <a href="/html/registration.html" class="header-text">Зарегистрироваться</a>
+                </div>
             </div>
         </div>
-        
-        <!-- Иконка и текст "Войти" -->
-        <div class="login-container">
-            <img src="pictures/iconin.png" alt="Войти" class="login-icon">
-            <span class="login-text">Войти</span>
-        </div>
-        
-        <!-- Кнопка "Зарегистрироваться" -->
-        <button class="register-button">Зарегистрироваться</button>
     </header>
 
-    <div class="container">
-        <img src="pictures/CheckingMail.svg" alt="Почта" class="mail-image">
+    <div class="containerchecking">
+        <img src="/static/image/CheckingMail.svg" alt="Почта" class="mail-image">
         <div class="content">
             <p class="main-text">Проверьте электронную почту!</p>
             <p class="secondary-text">Не пришло письмо-подтверждение? Проверьте спам или напишите на почту <a href="mailto:info@openhearts.ru">info@openhearts.ru</a>.</p>
+            <button class="button1">Отправить письмо-подтверждение</button>
         </div>
-    </div>
-    
+    </div>    
 </body>

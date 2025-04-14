@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@mantine/charts": "^7.17.3",
-    "@mantine/core": "7.17.2",
-    "@mantine/hooks": "7.17.2",
+    "@mantine/core": "^7.17.3",
+    "@mantine/dates": "^7.17.4",
+    "@mantine/hooks": "^7.17.3",
+    "@react-input/mask": "^2.0.4",
     "@tabler/icons-react": "~3.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -28,5 +30,9 @@
     "typescript": "^5.7.3",
     "vite": "^6.0.7"
   },
-  "packageManager": "yarn@4.7.0"
+  "packageManager": "yarn@4.7.0",
+  "description": "Get started with the template by clicking `Use this template` button on the top of the page.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

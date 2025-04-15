@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@mantine/core": "^7.17.4",
+    "@mantine/hooks": "^7.17.4",
+    "@tabler/icons-react": "^3.31.0",
+    "vite": "^6.2.6"
+  }
+nano package.json
+}

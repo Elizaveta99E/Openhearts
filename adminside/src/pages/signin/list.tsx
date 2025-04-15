@@ -61,7 +61,7 @@ export function SignIn() {
           component="a" 
           href="/some-page" 
           target="_blank"
-          mt={10} ml={60} leftSection={<Image src="./public/backArrow.svg" alt="Назад" w={24} h={24} />} variant="default" style={{ border: 'none'}}>
+          mt={10} ml={60} radius={10} leftSection={<Image src="./public/backArrow.svg" alt="Назад" w={24} h={24} />} variant="default" style={{ border: 'none'}}>
           <Text size='20px'>Назад</Text>
         </Button>
 
@@ -71,8 +71,10 @@ export function SignIn() {
           
           <Select
             w={400}
+            radius={10}
             data={['Администратор', 'Координатор', 'Менеджер']}
             placeholder="Роль"
+            rightSection={<Image src="./public/downArrow.svg"/>}
             required
             styles={{
               input:{
@@ -84,6 +86,7 @@ export function SignIn() {
 
           <TextInput
             w={400}
+            radius={10}
             placeholder="ФИО"
             required
             styles={{
@@ -96,6 +99,7 @@ export function SignIn() {
           
           <DateInput
             w={400}
+            radius={10}
             placeholder="Дата рождения"
             valueFormat="DD.MM.YYYY" // Формат отображения
             dateParser={(input) => {
@@ -118,6 +122,7 @@ export function SignIn() {
 
           <Input
             w={400}
+            radius={10}
             rightSection={<Image src="./public/email.svg" alt="Назад" w={20} h='auto' />}
             placeholder="Электронная почта"
             styles={{
@@ -130,6 +135,7 @@ export function SignIn() {
 
           <TextInput
             w={400}
+            radius={10}
             ref={inputRef}
             rightSection={<IconPhone width={20} />}
             placeholder="Телефон"
@@ -144,6 +150,7 @@ export function SignIn() {
 
           <PasswordInput
             w={400}
+            radius={10}
             placeholder="Пароль"
             required
             visibilityToggleIcon={({ reveal }) =>
@@ -157,10 +164,14 @@ export function SignIn() {
             }}
           />
 
-          <Paper radius={30} p={20} bg="#c6c6c6" w={400}>
-            <Text style={{color:'#ffffff'}} fw={"bold"}>
+          <Paper className='forPassword' radius={30} p={20} bg="#c6c6c6" w={400}>
+            <Text fw={"bold"} style={{color:'#ffffff'}}>
             Пароль должен содержать:
-              <List>
+              <List styles={{ 
+                item: { 
+                  color: '#ffffff'
+                } 
+              }}>
                 <List.Item>минимум 6 символов</List.Item>
                 <List.Item>заглавные буквы (A-Z)</List.Item>
                 <List.Item>cтрочные буквы (a-z)</List.Item>
@@ -172,6 +183,7 @@ export function SignIn() {
 
           <PasswordInput
             w={400}
+            radius={10}
             placeholder="Повторите пароль"
             required
             visibilityToggleIcon={({ reveal }) => (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />)}
@@ -226,6 +238,7 @@ export function SignIn() {
 
           <Button
             w={400}
+            radius={10}
             variant="filled"
             color="primary.0"
             fw="normal">

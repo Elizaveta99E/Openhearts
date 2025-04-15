@@ -164,7 +164,7 @@ export function SignIn() {
             }}
           />
 
-          <Paper className='forPassword' radius={30} p={20} bg="#c6c6c6" w={400}>
+          <Paper radius={30} p={20} bg="#c6c6c6" w={400}>
             <Text fw={"bold"} style={{color:'#ffffff'}}>
             Пароль должен содержать:
               <List styles={{ 

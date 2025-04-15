@@ -13,11 +13,13 @@ import { MantineProvider,
   Input,
   PasswordInput,
   Paper,
-  List
+  List,
+  Anchor,
+  Flex
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import { useMask } from '@react-input/mask';
-import { IconPhone } from '@tabler/icons-react';
+import { IconPhone, IconCheck } from '@tabler/icons-react';
 import classes from './Demo.module.css';
 
 const theme = createTheme({
@@ -38,6 +40,8 @@ export function SignIn() {
     replacement: { _: /\d/ } 
   });
 
+  const [checked, setChecked] = useState(false);
+
   return (
   <>
     
@@ -45,66 +49,69 @@ export function SignIn() {
       <Container size="responsive">
 
         <Image
-        h={42}
-        w={296}
-        fit="contain"
-        mt={50}
-        src="./public/logo.svg"
+          h={42}
+          w={296}
+          fit="contain"
+          mt={50}
+          src="./public/logo.svg"
         />
 
-        <Group justify="left" mt={10}>
-          <Button ml={60} leftSection={<Image src="./public/backArrow.svg" alt="Назад" w={24} h={24} />} variant="default" style={{ border: 'none'}}>
-            <Text size='20px'>Назад</Text>
-          </Button>
-        </Group>
+        <Button 
+          component="a" 
+          href="/some-page" 
+          target="_blank"
+          mt={10} ml={60} leftSection={<Image src="./public/backArrow.svg" alt="Назад" w={24} h={24} />} variant="default" style={{ border: 'none'}}>
+          <Text size='20px'>Назад</Text>
+        </Button>
 
         <Group justify='center' mt={40} style={{ flexDirection: 'column', gap:'20px' }}>
 
           <Title order={1} size={40} mb={25}>Регистрация сотрудника</Title>
           
           <Select
-          w={400}
-          data={['Администратор', 'Координатор', 'Менеджер']}
-          placeholder="Роль"
-          required
+            w={400}
+            data={['Администратор', 'Координатор', 'Менеджер']}
+            placeholder="Роль"
+            required
           />
 
           <TextInput
-          w={400}
-          placeholder="ФИО"
-          required
+            w={400}
+            placeholder="ФИО"
+            required
           />
           
           <DateInput
-          w={400}
-          placeholder="Дата рождения"
-          rightSection={<Image src="./public/calendar.svg" alt="Назад" w={20} h='auto' />}
+            w={400}
+            placeholder="Дата рождения"
+            rightSection={<Image src="./public/calendar.svg" alt="Назад" w={20} h='auto' />}
           />
 
           <Input
-          w={400}
-          rightSection={<Image src="./public/email.svg" alt="Назад" w={20} h='auto' />}
-          placeholder="Электронная почта"
+            w={400}
+            rightSection={<Image src="./public/email.svg" alt="Назад" w={20} h='auto' />}
+            placeholder="Электронная почта"
           />
 
           <TextInput
-          w={400}
-          ref={inputRef}
-          rightSection={<IconPhone width={20} />}
-          placeholder="Телефон"
-          styles={{
-          input: {
-          paddingLeft: '40px !important',
-          }
-          }}
+            w={400}
+            ref={inputRef}
+            rightSection={<IconPhone width={20} />}
+            placeholder="Телефон"
+            styles={{
+            input: {
+            paddingLeft: '40px !important',
+            }
+            }}
           />
 
           <PasswordInput
-          w={400}
-          placeholder="Пароль"
-          required
-          visibilityToggleIcon={({ reveal }) => (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />
-          )}
+            w={400}
+            placeholder="Пароль"
+            required
+            visibilityToggleIcon={({ reveal }) =>
+              (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />
+              )}
           />
 
           <Paper radius={30} p={20} bg="#c6c6c6" w={400}>
@@ -121,17 +128,55 @@ export function SignIn() {
           </Paper>
 
           <PasswordInput
-          w={400}
-          placeholder="Повторите пароль"
-          required
-          visibilityToggleIcon={({ reveal }) => (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />
-          )}
+            w={400}
+            placeholder="Повторите пароль"
+            required
+            visibilityToggleIcon={({ reveal }) => (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />)}
           />
 
-          <Button variant="default" radius="md">
-            <Image src></Image>
-          </Button>
+          <Flex w={400} h="auto" justify="center" align="center" direction="row" gap={20}>
+            <Button
+              miw={34}
+              mih={34}
+              p={0}
+              variant="outline"
+              onClick={() => setChecked(!checked)}
+              styles={{
+                root: {
+                  borderRadius: '10px',
+                  border: checked ? '1px solid #FF4A01' : '1px solid #878787',
+                  backgroundColor: checked ? '#FF4A01' : 'white',
+                  position: 'relative',
+                  overflow: 'hidden',
+                },
+              }}
+              >
+              <IconCheck
+                size={30}
+                style={{
+                  color: 'white',
+                  opacity: checked ? 1 : 0,
+                  transform: `scale(${checked ? 1 : 0.5})`,
+                }}
+              />
+            </Button>
+            <Text size='14px' style={{ wordBreak: "keep-all" }}>Соглашаюсь на{' '}
+              <Anchor href="./static/documents/agreement.docx" target="_blank" underline="never" c="#ff4a01">
+                обработку моих персональных данных
+              </Anchor>
+              , с{' '}
+              <Anchor href="./static/documents/agreement.docx" target="_blank" underline="never" c="#ff4a01">
+                правилами пользования сайтом{' '}
+              </Anchor>
+              и принимаю{' '}
+              <Anchor href="./static/documents/agreement.docx" target="_blank" underline="never" c="#ff4a01">
+                Пользовательское соглашение*
+              </Anchor>
+            </Text>
+          </Flex>
 
+          <Button w={400} variant="filled" color="primary.0" fw="normal">Зарегистрироваться</Button>
+        
         </Group>
 
       </Container>

@@ -4,7 +4,7 @@ export const theme = createTheme({
   
   colors:{
     primary: [
-      '#ffeee3',
+      '#FF4A01',
       '#ffdccd',
       '#ffb89b',
       '#ff9164',

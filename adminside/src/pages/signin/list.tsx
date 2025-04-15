@@ -46,7 +46,7 @@ export function SignIn() {
   <>
     
     <MantineProvider theme={theme}>
-  
+      
       <Container size="responsive">
 
         <Image
@@ -97,11 +97,21 @@ export function SignIn() {
           <DateInput
             w={400}
             placeholder="Дата рождения"
-            rightSection={<Image src="./public/calendar.svg" alt="Назад" w={20} h='auto' />}
+            valueFormat="DD.MM.YYYY" // Формат отображения
+            dateParser={(input) => {
+            // Парсинг введенной даты
+            const parts = input.split('.');
+            if (parts.length === 3) {
+              const [day, month, year] = parts;
+              return new Date(`${year}-${month}-${day}`);
+            }
+            return null;
+            }}
+            rightSection={<Image src="./public/calendar.svg" alt="Календарь" w={20} h="auto" />}
             styles={{
-              input:{
-                color:'black',
-                borderColor:'#878787',
+              input: {
+                color: 'black',
+                borderColor: '#878787',
               }
             }}
           />
@@ -227,6 +237,6 @@ export function SignIn() {
       </Container>
     </MantineProvider>
 
-    </> 
-    );
+  </> 
+  );
 }

@@ -46,6 +46,7 @@ export function SignIn() {
   <>
     
     <MantineProvider theme={theme}>
+  
       <Container size="responsive">
 
         <Image
@@ -73,24 +74,48 @@ export function SignIn() {
             data={['Администратор', 'Координатор', 'Менеджер']}
             placeholder="Роль"
             required
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
 
           <TextInput
             w={400}
             placeholder="ФИО"
             required
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
           
           <DateInput
             w={400}
             placeholder="Дата рождения"
             rightSection={<Image src="./public/calendar.svg" alt="Назад" w={20} h='auto' />}
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
 
           <Input
             w={400}
             rightSection={<Image src="./public/email.svg" alt="Назад" w={20} h='auto' />}
             placeholder="Электронная почта"
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
 
           <TextInput
@@ -99,9 +124,11 @@ export function SignIn() {
             rightSection={<IconPhone width={20} />}
             placeholder="Телефон"
             styles={{
-            input: {
-            paddingLeft: '40px !important',
-            }
+              input: {
+                color:'black',
+                borderColor:'#878787',
+                paddingLeft: '40px !important',
+              }
             }}
           />
 
@@ -111,7 +138,13 @@ export function SignIn() {
             required
             visibilityToggleIcon={({ reveal }) =>
               (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />
-              )}
+            )}
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
 
           <Paper radius={30} p={20} bg="#c6c6c6" w={400}>
@@ -132,6 +165,12 @@ export function SignIn() {
             placeholder="Повторите пароль"
             required
             visibilityToggleIcon={({ reveal }) => (reveal ? <img src="./public/openEye.svg" width={20} /> : <img src="./public/closedEye.svg" width={20} />)}
+            styles={{
+              input:{
+                color:'black',
+                borderColor:'#878787',
+              }
+            }}
           />
 
           <Flex w={400} h="auto" justify="center" align="center" direction="row" gap={20}>
@@ -175,7 +214,13 @@ export function SignIn() {
             </Text>
           </Flex>
 
-          <Button w={400} variant="filled" color="primary.0" fw="normal">Зарегистрироваться</Button>
+          <Button
+            w={400}
+            variant="filled"
+            color="primary.0"
+            fw="normal">
+              Зарегистрироваться
+          </Button>
         
         </Group>
 

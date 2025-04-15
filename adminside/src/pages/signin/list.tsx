@@ -74,7 +74,7 @@ export function SignIn() {
             radius={10}
             data={['Администратор', 'Координатор', 'Менеджер']}
             placeholder="Роль"
-            rightSection={<Image src="./public/downArrow.svg"/>}
+            rightSection={<Image src="./public/downArrow.svg" w={24}/>}
             required
             styles={{
               input:{

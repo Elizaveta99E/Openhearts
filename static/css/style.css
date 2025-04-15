@@ -303,17 +303,21 @@ a{
 
 /* Кнопки сохранить, зарегистрироваться, войти и др. (оранжевые с белым не жирным текстом) */
 .other-buttons{
+    display: inline-block;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 24px;
     background-color: #FF4A01;
     border: none;
     border-radius: 10px;
-    padding: 15px;
-    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     color: #ffffff;
     cursor: pointer;
+    text-decoration: none;
 }
+
 
 /* Инпуты */
 .container-input{
@@ -342,6 +346,52 @@ a{
 .inputs input[type="date"] {
     color: #878787;
 }
+
+@media (max-width: 700px){
+
+    *{
+        font-size: 24px;
+    }
+
+    h1{
+        font-size: 52px;
+    }
+    
+    h2{
+        font-size: 38px;
+    }
+    
+    h3{
+        font-size: 22px;
+    }
+
+    .volunteer-button{
+        font-size: 14px;
+    }
+
+    .other-buttons{
+        font-size: 14px;
+    }
+
+    .navigation{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1024px){
+
+    .navigation{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px){
+
+    .inputs{
+        width: 300px;
+    }
+
+} */
 
 .avatar {
     width: 200px;

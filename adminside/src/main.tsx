@@ -6,36 +6,45 @@ import { StaffList } from "./pages/staff/list.tsx";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
 import { VolunteersList } from "./pages/volunteers/list.tsx";
-import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */}
+import {SignIn} from "./pages/signin/list.tsx";{/*страница зарегистрироваться для сотрудника */}
+import { ProfilePage } from "./pages/profilepage/list.tsx";
 import {Layout} from "./components/layout.tsx"
 import {EventsList} from "./pages/events/list.tsx"
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './lib/queryClient';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <MantineProvider theme={theme} defaultColorScheme="light">
-  <BrowserRouter>
-  
-    <Routes >
-    <Route element={<Layout/>}>
-      <Route path="/" element={<App />} />
-      <Route path="staff">
-        <Route index element={<StaffList />} />
-        {/* <Route path=":staffid" element={<StaffID />} />
-        <Route path="trending" element={<Trending />} /> */}
-      </Route>
-      <Route path="events">
-        <Route index element={<EventsList />} />  
-      </Route>
-      <Route path="volunteers">
-        <Route index element={<VolunteersList />} />
-        {/* <Route path=":staffid" element={<StaffID />} />
-        <Route path="trending" element={<Trending />} /> */}
-      </Route>
-      <Route path="signin">
-          <Route index element={<SignIn/>}/>
-          </Route>
-      </Route>
-    </Routes>
+  <QueryClientProvider client={queryClient}>
+    <MantineProvider theme={theme} defaultColorScheme="light">
+    <BrowserRouter>
     
-  </BrowserRouter>
-  </MantineProvider>
+      <Routes >
+      <Route element={<Layout/>}>
+        <Route path="/" element={<App />} />
+        <Route path="staff">
+          <Route index element={<StaffList />} />
+          {/* <Route path=":staffid" element={<StaffID />} />
+          <Route path="trending" element={<Trending />} /> */}
+        </Route>
+        <Route path="events">
+          <Route index element={<EventsList />} />  
+        </Route>
+        <Route path="volunteers">
+          <Route index element={<VolunteersList />} />
+          {/* <Route path=":staffid" element={<StaffID />} />
+          <Route path="trending" element={<Trending />} /> */}
+        </Route>
+        <Route path="signin">
+          <Route index element={<SignIn/>}/>
+        </Route>
+        <Route path="profilepage">
+          <Route index element={<ProfilePage/>}/>
+          </Route>
+        </Route>
+
+      </Routes>
+      
+    </BrowserRouter>
+    </MantineProvider>
+  </QueryClientProvider>
 );

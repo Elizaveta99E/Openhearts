@@ -4,18 +4,18 @@ import { MantineProvider,
   Container,
   createTheme,
   Image,
-  Anchor,
-  Flex,
-  Button,
   Group,
-  Paper,
-  List,
+  Button,
+  Text,
+  Title,
   Select,
   TextInput,
   Input,
-  Title,
   PasswordInput,
-  Text
+  Paper,
+  List,
+  Anchor,
+  Flex
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';
 import { useMask } from '@react-input/mask';

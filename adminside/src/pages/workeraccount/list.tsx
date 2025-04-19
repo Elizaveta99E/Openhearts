@@ -33,13 +33,13 @@ export function WorkerAccount() {
 
       <MantineProvider theme={theme}>
 
-          <Container className={classes.responsiveContainer}>
+          <Container size="responsive" className={classes.responsiveContainer}>
 
             <Text className={classes.pagination}>Личная страничка сотрудника</Text>
 
-            <Flex direction={{base: 'column', md: 'row'}} className={classes.flexes} wrap="wrap">
+            <Flex className={classes.flexes} wrap="wrap">
 
-              <Stack align='center' >
+              <Stack align='center'>
 
                 <Paper className={classes.mainInfoPaper}>
                   <Avatar className={classes.avatar} src="avatar.png" alt="аватар" />
@@ -75,11 +75,12 @@ export function WorkerAccount() {
                 <Title className={classes.header4}>ФИО</Title>
                 <Title className={classes.header4}>ID сотрудника: </Title>
 
-                <Paper className={classes.mainInfoPaper}>
+                <Paper className={classes.InfoPaper}>
                   <Title className={classes.header4}>Ближайшие мероприятия</Title>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus molestias perspiciatis distinctio adipisci iste doloribus ea quos dolorem voluptate? Fuga quas modi veniam ex blanditiis soluta repudiandae illum natus quasi.
                 </Paper>
 
-                <Paper className={classes.mainInfoPaper}>
+                <Paper className={classes.InfoPaper}>
                   <Title className={classes.header4}>Список пройденных мероприятия</Title>
                 </Paper>
 

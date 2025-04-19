@@ -20,7 +20,7 @@ import { MantineProvider,
 import { DateInput } from '@mantine/dates';
 import { useMask } from '@react-input/mask';
 import { IconPhone, IconCheck } from '@tabler/icons-react';
-import classes from './Demo.module.css';
+import classes from '../Demo.module.css';
 
 const theme = createTheme({
   components: {

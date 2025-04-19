@@ -28,8 +28,6 @@ input:-webkit-autofill:focus {
 
 .flexes{
   gap: 45px;
-  padding: 20px;
-  justify-content: center;
 }
 
 .mainInfoPaper{
@@ -37,15 +35,6 @@ input:-webkit-autofill:focus {
   border: 1px solid #c6c6c6;
   padding: 25px;
   align-content: flex-start;
-  overflow-wrap: break-word;
-}
-
-.InfoPaper{
-  border-radius: 30px;
-  border: 1px solid #c6c6c6;
-  padding: 25px;
-  align-content: center;
-  overflow-wrap: break-word;
 }
 
 .header4{
@@ -56,11 +45,12 @@ input:-webkit-autofill:focus {
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 100px;
+  min-height: 100px;
   max-width: 339px;
   max-height: 339px;
   object-fit: cover;
+  
 }
 
 .mainInformation{

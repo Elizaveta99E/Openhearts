@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import './CreateEventForm.css';
+import './file.css';
 
 // Типы для формата мероприятия
 enum EventFormat {
@@ -128,128 +128,147 @@ const CreateEventForm = () => {
     
       return (
         <form onSubmit={handleSubmit} className="event-form">
-          <h2>Создание нового мероприятия</h2>
+        {/* Заголовок формы */}
+        <h2>Создание нового мероприятия</h2>
     
-          <div className="form-group">
-            <label>Название мероприятия:</label>
-            <input
-              type="text"
-              name="title"
-              value={formState.title}
-              onChange={handleInputChange}
-              required
-            />
+        {/* Основные поля ввода */}
+        <div className="form-group">
+          <label>Название мероприятия:</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Введите название"
+            value={formState.title}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        <div className="form-group">
+          <label>Место проведения:</label>
+          <input
+            type="text"
+            name="location"
+            placeholder="Укажите место"
+            value={formState.location}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        <div className="form-group">
+          <label>Сроки проведения:</label>
+          <input
+            type="text"
+            name="dates"
+            placeholder="Пример: 15-20 сентября 2023"
+            value={formState.dates}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        <div className="form-group">
+          <label>Ответственное лицо:</label>
+          <input
+            type="text"
+            name="responsiblePerson"
+            placeholder="ФИО ответственного"
+            value={formState.responsiblePerson}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        {/* Поле для количества волонтеров */}
+        <div className="form-group">
+          <label>Требуемое количество волонтеров:</label>
+          <input
+            type="number"
+            name="volunteersNeeded"
+            min="0"
+            placeholder="0"
+            value={formState.volunteersNeeded}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        {/* Текстовое поле для описания */}
+        <div className="form-group">
+          <label>Подробное описание:</label>
+          <textarea
+            name="description"
+            placeholder="Опишите цели, задачи и особенности мероприятия"
+            value={formState.description}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+    
+        {/* Секция выбора формата */}
+        <div className="form-section">
+          <h3>Формат проведения</h3>
+          <div className="format-options">
+            {Object.values(EventFormat).map((format) => (
+              <label key={format}>
+                <input
+                  type="radio"
+                  name="format"
+                  value={format}
+                  checked={formState.format === format}
+                  onChange={() => setFormState(prev => ({ ...prev, format }))}
+                />
+                {format}
+              </label>
+            ))}
           </div>
+        </div>
     
-          <div className="form-group">
-            <label>Место проведения:</label>
-            <input
-              type="text"
-              name="location"
-              value={formState.location}
-              onChange={handleInputChange}
-              required
-            />
+        {/* Секция условий */}
+        <div className="form-section">
+          <h3>Условия участия</h3>
+          <div className="conditions-grid">
+            {Object.entries(formState.conditions).map(([key, value]) => (
+              <label key={key}>
+                <input
+                  type="checkbox"
+                  checked={value}
+                  onChange={() => handleConditionChange(key as keyof EventConditions)}
+                />
+                {/* Преобразование camelCase в нормальный текст */}
+                {key
+                  .replace(/([A-Z])/g, ' $1')
+                  .replace(/^./, str => str.toUpperCase())}
+              </label>
+            ))}
           </div>
+        </div>
     
-          <div className="form-group">
-            <label>Сроки проведения:</label>
-            <input
-              type="text"
-              name="dates"
-              value={formState.dates}
-              onChange={handleInputChange}
-              required
-            />
+        {/* Секция особенностей */}
+        <div className="form-section">
+          <h3>Особые требования</h3>
+          <div className="features-grid">
+            {Object.entries(formState.features).map(([key, value]) => (
+              <label key={key}>
+                <input
+                  type="checkbox"
+                  checked={value}
+                  onChange={() => handleFeatureChange(key as keyof EventFeatures)}
+                />
+                {key
+                  .replace(/([A-Z])/g, ' $1')
+                  .replace(/^./, str => str.toUpperCase())}
+              </label>
+            ))}
           </div>
+        </div>
     
-          <div className="form-group">
-            <label>Ответственное лицо:</label>
-            <input
-              type="text"
-              name="responsiblePerson"
-              value={formState.responsiblePerson}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-    
-          <div className="form-group">
-            <label>Количество волонтеров:</label>
-            <input
-              type="number"
-              name="volunteersNeeded"
-              value={formState.volunteersNeeded}
-              onChange={handleInputChange}
-              min="0"
-              required
-            />
-          </div>
-    
-          <div className="form-group">
-            <label>Описание мероприятия:</label>
-            <textarea
-              name="description"
-              value={formState.description}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-    
-          <div className="form-section">
-            <h3>Формат проведения</h3>
-            <div className="format-options">
-              {Object.values(EventFormat).map(format => (
-                <label key={format}>
-                  <input
-                    type="radio"
-                    name="format"
-                    value={format}
-                    checked={formState.format === format}
-                    onChange={() => setFormState(prev => ({ ...prev, format }))}
-                  />
-                  {format}
-                </label>
-              ))}
-            </div>
-          </div>
-    
-          <div className="form-section">
-            <h3>Условия проведения</h3>
-            <div className="conditions-grid">
-              {Object.entries(formState.conditions).map(([key, value]) => (
-                <label key={key}>
-                  <input
-                    type="checkbox"
-                    checked={value}
-                    onChange={() => handleConditionChange(key as keyof EventConditions)}
-                  />
-                  {key.replace(/([A-Z])/g, ' $1').trim()}
-                </label>
-              ))}
-            </div>
-          </div>
-    
-          <div className="form-section">
-            <h3>Особенности мероприятия</h3>
-            <div className="features-grid">
-              {Object.entries(formState.features).map(([key, value]) => (
-                <label key={key}>
-                  <input
-                    type="checkbox"
-                    checked={value}
-                    onChange={() => handleFeatureChange(key as keyof EventFeatures)}
-                  />
-                  {key.replace(/([A-Z])/g, ' $1').trim()}
-                </label>
-              ))}
-            </div>
-          </div>
-    
-          <button type="submit" className="submit-button">
-            Создать мероприятие
-          </button>
-        </form>
+        {/* Кнопка отправки */}
+        <button type="submit" className="submit-button">
+          Опубликовать мероприятие
+        </button>
+      </form>
       );
     }
 

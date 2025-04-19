@@ -1,83 +1,164 @@
-import { Title, TextInput, Select,  Group, Stack, Button, Container  } from '@mantine/core';
-import { Table } from '@mantine/core';
-import { Pagination } from '@mantine/core';
+import { 
+  Title, 
+  TextInput, 
+  Select, 
+  Group, 
+  Stack, 
+  Button, 
+  Container,
+  Table,
+  Pagination,
+  Checkbox,
+  Divider,
+  Text,
+  Box
+} from '@mantine/core';
+import { IconSearch, IconPlus } from '@tabler/icons-react';
 import React from 'react';
 
-const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
-  ];
+const eventsData = [
+  { 
+    id: '01', 
+    name: 'Помощь животным', 
+    responsible: '00001', 
+    startDate: '01.02.2999', 
+    endDate: '02.02.2999', 
+    volunteers: '01, 02, 04' 
+  },
+  // Добавьте больше мероприятий по аналогии
+];
 
-import { IconAt } from '@tabler/icons-react';
-const icon = <IconAt size={16} />;
+const formatOptions = ['Все', 'Онлайн', 'Офлайн'];
+const conditionOptions = [
+  'Бесплатное питание',
+  'Билеты в театр',
+  'Благодарности',
+  'Верхнешированные часы',
+  'Оплата проживания',
+  'Персональное обучение',
+  'Проезд',
+  'Психологическая консультация',
+  'Сувенирная продукция',
+  'Экипировка',
+  'Средства индивидуальной защиты'
+];
+const featureOptions = [
+  'Только с периферированными часами',
+  'Младше 18 лет',
+  'Идет набор в резерв',
+  'Можно как посетитель',
+  'Организация работает по стандарту организатора волонтерской деятельности',
+  'Победители комиссии обучают президентских грантов',
+  'Организации из реестра СО НКО',
+  'Адресная помощь',
+  'Доступно для людей с инвалидностью',
+  'Доступно для серебрянных волонтеров',
+  'Можно приходить с детьми',
+  'Образовательное мероприятие'
+];
+
 export function EventsList() {
-    const icon = <IconAt size={16} />;
-    return <>
-        
-        <Container size="xl" >
-        <Stack
-        
-        >
-        <Title order={1}>Волонтеры</Title>
-        
-        <TextInput                                 //поиск
-            
-            leftSectionPointerEvents="none"
-            leftSection={icon}
-            w={400}                 
-            
-        />
-        
-        <Group gap="lg" grow>
-         <Select
-          label="Количество записей на странице"
-          placeholder="Pick value"
-          data={['1', '2', '5', '10']} 
-          />
-      
-       <Pagination total={10} /> {/*переключние страниц*/}
-       <Button variant="filled">Взрослые</Button>
-       <Button variant="filled">Дети</Button>
-       <Button variant="filled">Добавить</Button>
-       <Select
-          label="Сортировать"
-          placeholder="Pick value"
-          data={['От А-Я', 'От Я-А', 'Самые молодые', 'Взрослые']} 
-          />
-       </Group>
-        <Demo />  {/*Таблица*/}        
-        <Button variant="filled">Добавить</Button>
-        <Pagination total={10} /> {/*переключние страниц....*/}
-        </Stack>
-        </Container>
-    </>
-}
-
-
-function Demo() {
-  const rows = elements.map((element) => (
-    <Table.Tr key={element.name}>
-      <Table.Td>{element.position}</Table.Td>
-      <Table.Td>{element.name}</Table.Td>
-      <Table.Td>{element.symbol}</Table.Td>
-      <Table.Td>{element.mass}</Table.Td>
+  const rows = eventsData.map((event) => (
+    <Table.Tr key={event.id}>
+      <Table.Td>{event.id}</Table.Td>
+      <Table.Td>{event.name}</Table.Td>
+      <Table.Td>{event.responsible}</Table.Td>
+      <Table.Td>{event.startDate}</Table.Td>
+      <Table.Td>{event.endDate}</Table.Td>
+      <Table.Td>{event.volunteers}</Table.Td>
     </Table.Tr>
   ));
 
   return (
-    <Table>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>Element position</Table.Th>
-          <Table.Th>Element name</Table.Th>
-          <Table.Th>Symbol</Table.Th>
-          <Table.Th>Atomic mass</Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>{rows}</Table.Tbody>
-    </Table>
+    <Container size="xl">
+      <Stack gap="lg">
+        <Title order={1}>Мероприятия</Title>
+        
+        <Group gap="md" align="flex-end">
+          <TextInput
+            placeholder="Поиск..."
+            leftSection={<IconSearch size={16} />}
+            w={400}
+          />
+          <Button leftSection={<IconPlus size={16} />}>Создать</Button>
+        </Group>
+
+        <Group align="flex-start" gap="xl">
+          {/* Фильтры */}
+          <Box style={{ width: 300 }}>
+            <Stack gap="md">
+              <Divider label="Фильтр" />
+              
+              <Stack gap="xs">
+                <Text fw={500}>Направление</Text>
+                <Checkbox label="Все направления" />
+              </Stack>
+              
+              <Stack gap="xs">
+                <Text fw={500}>Дата</Text>
+                <Checkbox label="Любая дата" />
+              </Stack>
+              
+              <Divider label="Формат проведения" />
+              {formatOptions.map(option => (
+                <Checkbox key={option} label={option} />
+              ))}
+              
+              <Divider label="Условия проведения" />
+              {conditionOptions.map(option => (
+                <Checkbox key={option} label={option} />
+              ))}
+              
+              <Divider label="Особенности мероприятия" />
+              {featureOptions.map(option => (
+                <Checkbox key={option} label={option} />
+              ))}
+            </Stack>
+          </Box>
+
+          {/* Таблица и управление */}
+          <Box style={{ flex: 1 }}>
+            <Stack gap="md">
+              <Group justify="space-between">
+                <Select
+                  label="Количество записей на странице"
+                  placeholder="Выберите"
+                  data={['10', '25', '50', '100']}
+                  style={{ width: 250 }}
+                />
+                
+                <Pagination total={10} />
+                
+                <Select
+                  label="Сортировать"
+                  placeholder="Выберите"
+                  data={['От А-Я', 'От Я-А', 'Старые', 'Новые']}
+                  style={{ width: 250 }}
+                />
+              </Group>
+
+              <Table striped highlightOnHover>
+                <Table.Thead>
+                  <Table.Tr>
+                    <Table.Th>ID</Table.Th>
+                    <Table.Th>Наименование мероприятия</Table.Th>
+                    <Table.Th>Ответственное лицо</Table.Th>
+                    <Table.Th>Дата начала</Table.Th>
+                    <Table.Th>Дата окончания</Table.Th>
+                    <Table.Th>Список волонтеров (id)</Table.Th>
+                  </Table.Tr>
+                </Table.Thead>
+                <Table.Tbody>{rows}</Table.Tbody>
+              </Table>
+
+              <Group justify="space-between">
+                <Button leftSection={<IconPlus size={16} />}>Создать</Button>
+                <Pagination total={10} />
+              </Group>
+            </Stack>
+          </Box>
+        </Group>
+      </Stack>
+    </Container>
   );
 }

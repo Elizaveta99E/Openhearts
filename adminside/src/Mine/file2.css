@@ -1,0 +1,68 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  /* Заголовки */
+  h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+  }
+  
+  h2 {
+    color: #34495e;
+    margin: 24px 0 12px;
+  }
+  
+  /* Секции информации */
+  section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Кнопки и ссылки */
+  button, .button-link {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover, .button-link:hover {
+    background: #2980b9;
+  }
+  
+  /* Уведомления */
+  .notification-badge {
+    background: #e74c3c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+  }
+  
+  /* Карточка волонтера */
+  .volunteer-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+  }
+  
+  /* Разделители */
+  hr {
+    border: 1px solid #ecf0f1;
+    margin: 24px 0;
+  }

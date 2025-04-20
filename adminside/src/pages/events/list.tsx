@@ -63,7 +63,9 @@ export function EventsList() {
 
   return (
     <Container size="xl">
+      <Text size="xs">Таблицы/Мероприятия</Text>
       <Stack gap="lg">
+        
         <Group justify="space-between">
           <Title order={1}>Мероприятия</Title>
           <TextInput

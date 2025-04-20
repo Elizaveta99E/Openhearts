@@ -28,6 +28,8 @@ input:-webkit-autofill:focus {
 
 .flexes{
   gap: 45px;
+  padding: 20px;
+  justify-content: center;
 }
 
 .mainInfoPaper{

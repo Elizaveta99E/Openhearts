@@ -1,20 +1,12 @@
 import { 
-  Title, 
-  TextInput, 
-  Select, 
-  Group, 
-  Stack, 
-  Button, 
-  Container,
-  Table,
-  Pagination,
-  Checkbox,
-  Divider,
-  Text,
-  Box
-} from '@mantine/core';
+  Title, TextInput, Select, 
+  Group, Stack, Button, Container,
+  Table, Pagination, Checkbox, Divider,
+  Text,  Box, NativeSelect} from '@mantine/core';
 import { IconSearch, IconPlus } from '@tabler/icons-react';
-import React from 'react';
+import { useState } from 'react';
+import { DatePickerInput } from '@mantine/dates';
+import 'dayjs/locale/ru';
 
 const eventsData = [
   { 
@@ -28,12 +20,12 @@ const eventsData = [
   // Добавьте больше мероприятий по аналогии
 ];
 
-const formatOptions = ['Все', 'Онлайн', 'Офлайн'];
+const formatOptions = ['Онлайн', 'Офлайн'];
 const conditionOptions = [
   'Бесплатное питание',
   'Билеты в театр',
   'Благодарности',
-  'Верхнешированные часы',
+  'Верифицированные часы',
   'Оплата проживания',
   'Персональное обучение',
   'Проезд',
@@ -72,31 +64,54 @@ export function EventsList() {
   return (
     <Container size="xl">
       <Stack gap="lg">
-        <Title order={1}>Мероприятия</Title>
-        
-        <Group gap="md" align="flex-end">
+        <Group justify="space-between">
+          <Title order={1}>Мероприятия</Title>
           <TextInput
             placeholder="Поиск..."
             leftSection={<IconSearch size={16} />}
-            w={400}
+            w={250}
           />
-          <Button leftSection={<IconPlus size={16} />}>Создать</Button>
+            <Button leftSection={<IconPlus size={16} />}>Создать</Button>
         </Group>
 
         <Group align="flex-start" gap="xl">
           {/* Фильтры */}
-          <Box style={{ width: 300 }}>
+          <Box style={{ width: 200 }}>
             <Stack gap="md">
               <Divider label="Фильтр" />
               
               <Stack gap="xs">
                 <Text fw={500}>Направление</Text>
-                <Checkbox label="Все направления" />
+                <NativeSelect
+                  mt="md"
+                  data={["Всё",
+                          "Дети и молодежь",
+                          "Образование",
+                          "Поиск пропавших",
+                          "СВО",
+                          "Урбанистика",
+                          "Срочная помощь (ЧС)",
+                          "Экология",
+                          "Животные",
+                          "Ветераны и историческая память",
+                          "Спорт и события",
+                          "Здравоохранение",
+                          "Права человека",
+                          "Помощь лицам с ОВЗ",
+                          "Старшее поколение",
+                          "Культура и искусство",
+                          "Интеллектуальная помощь",
+                          "Наука",
+                          "Наставничество",
+                          "Другое"
+                        ]}
+                />
+
               </Stack>
               
               <Stack gap="xs">
                 <Text fw={500}>Дата</Text>
-                <Checkbox label="Любая дата" />
+                <Date />
               </Stack>
               
               <Divider label="Формат проведения" />
@@ -151,14 +166,45 @@ export function EventsList() {
                 <Table.Tbody>{rows}</Table.Tbody>
               </Table>
 
-              <Group justify="space-between">
-                <Button leftSection={<IconPlus size={16} />}>Создать</Button>
+              <Stack
+                  
+                  bg="var(--mantine-color-body)"
+                  align="center"
+                  justify="center"
+                  gap="md">
+                <Button leftSection={<IconPlus size={16} />} w = '150px' justify="center">Создать</Button>
                 <Pagination total={10} />
-              </Group>
+                </Stack>
             </Stack>
           </Box>
         </Group>
       </Stack>
     </Container>
+  );
+}
+
+
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+
+function Date() {
+  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
+
+  return (
+    <DatePickerInput
+      type="range"
+      locale="ru"
+      size="xs"
+      placeholder="Дата"
+      value={value}
+      onChange={setValue}
+      styles={{
+        calendarHeaderControl: {
+          width: 24, 
+          height: 24,
+        },
+      }}
+      nextIcon={<IconChevronRight size={16} />} 
+      previousIcon={<IconChevronLeft size={16} />}
+    />
   );
 }

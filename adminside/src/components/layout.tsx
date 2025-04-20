@@ -1,9 +1,11 @@
-import '@mantine/core/styles.css';
+import { AppShell, Burger, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Burger, Box, NavLink, rem } from '@mantine/core';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import '@mantine/core/styles.css';
+import { NavLink, rem } from '@mantine/core';
+import { Link, useLocation } from 'react-router-dom';
 import { IconChartBar, IconTable} from '@tabler/icons-react';
-
+import { Drawer, Button } from '@mantine/core';
 function NavigationMenu() {
   const [opened, { toggle }] = useDisclosure();
   const location = useLocation();
@@ -16,27 +18,6 @@ function NavigationMenu() {
 
   return (
     <>
-      <Burger 
-        opened={opened} 
-        onClick={toggle} 
-        aria-label="Toggle navigation"
-        style={{ position: 'fixed', top: 20, left: 20, zIndex: 1001 }}
-      />
-      
-      {opened && (
-        <Box
-          style={{
-            position: 'fixed',
-            top: 60,
-            left: 20,
-            width: 250,
-            backgroundColor: '#FF4A01',
-            padding: '15px',
-            borderRadius: '8px',
-            zIndex: 1000,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-          }}
-        >
           <NavLink
             label="Аналитика"  
             component={Link}
@@ -60,6 +41,7 @@ function NavigationMenu() {
               color: isStaffActive() || isEventsActive() || isVolunteersActive() ? 'black' : 'white',
               backgroundColor: isActive('/') ? '#FF4A01' : 'transparent' // Задаем фоновый цвет активному элементу
             }}
+            
             childrenOffset={28}
           >
             <NavLink 
@@ -86,29 +68,123 @@ function NavigationMenu() {
               onClick={toggle}
             />
           </NavLink>
-          
-          {/* <NavLink
-            label="Войти"
-            component={Link}
-            to="/signin"
-            leftSection={<IconLogin style={{ width: rem(20), height: rem(20) }} />}
-            style={{ 
-              borderRadius: 4,
-              color: isActive('/signin') ? 'black' : 'white',
-            }}
-            onClick={toggle}
-          /> */}
-        </Box>
-      )}
+       
+      
+    </>
+  );
+}
+
+function Demo() {
+  const [opened, { open, close }] = useDisclosure(false);
+
+  return (
+    <>
+      <Drawer 
+  offset={8}
+  opened={opened}
+  onClose={close}
+  size="md" // Увеличиваем базовую ширину (можно использовать 'xl', 'sm' или число в px)
+  styles={{
+    content: {
+      backgroundColor: '#FF4A01',
+      height: '300px', // Уменьшаем высоту Drawer (было 300px)
+      top: 60,
+      position: 'fixed',
+      width: '250px' // Увеличиваем ширину (было 250)
+    },
+    header: {
+      backgroundColor: '#FF4A01',
+      color: 'white',
+      height: '40px', // Уменьшаем высоту header (было 50px)
+      minHeight: '30px', // Добавляем минимальную высоту
+      padding: '8px 16px' // Уменьшаем отступы внутри header
+    },
+    body: {
+      paddingTop: 0
+    }
+  }}
+>
+  <NavigationMenu />
+</Drawer>
+
+      <Button
+        variant="filled"
+        styles={{
+          root: {
+            backgroundColor: '#FF4A01',
+            '&:hover': {
+              backgroundColor: '#E54300',
+            },
+          }
+        }}
+        h={40}
+        w={40}
+        onClick={open}
+        p={0}
+      >
+        <Image
+          h={31}
+          w={31}
+          fit="contain"
+          src="./public/menubutton.svg"
+        />
+      </Button>
     </>
   );
 }
 
 export function Layout() {
+  const [opened, { toggle }] = useDisclosure();
+
   return (
-    <>
-      <NavigationMenu />
-      <Outlet />
-    </>
+    <AppShell
+      header={{ height: 60}}
+      navbar={{
+        width: 250,
+        breakpoint: 'sm',
+        collapsed: { mobile: !opened },
+      }}
+      padding="md"
+      styles={{
+        root: {
+          position: 'relative', // Добавляем относительное позиционирование
+        },
+        header: {
+          border: 'none', // Убираем границу у header
+        },
+        navbar: {
+          border: 'none', // Убираем границу у navbar
+          borderRight: 'none', // Убираем правую границу (если нужно)
+          
+        },
+       
+      }}
+    >
+      <AppShell.Header style={{ position: 'fixed', width: '100%', zIndex: 200 }}>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          hiddenFrom="sm"
+          size="sm"
+        />
+        <div>
+          <Image
+            h={42}
+            w={296}
+            fit="contain"
+            mt={8}
+            src="./public/logo.svg"
+          />
+        </div>
+      </AppShell.Header>
+
+      <AppShell.Navbar>
+        <Demo />
+      </AppShell.Navbar>
+
+      <AppShell.Main style={{ paddingTop: 60 }}>
+        <Outlet />
+      </AppShell.Main>
+    </AppShell>
   );
 }

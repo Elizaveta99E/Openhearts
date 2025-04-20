@@ -12,7 +12,7 @@ const elements = [
   ];
 
 import { IconAt } from '@tabler/icons-react';
-const icon = <IconAt size={16} />;
+
 export function StaffList() {
     const icon = <IconAt size={16} />;
     return <>

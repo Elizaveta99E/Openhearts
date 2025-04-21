@@ -10,6 +10,7 @@ import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */
 import {Layout} from "./components/layout.tsx"
 import {EventsList} from "./pages/events/list.tsx"
 import { WorkerAccount } from "./pages/workeraccount/list.tsx";
+import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MantineProvider theme={theme} defaultColorScheme="light">
@@ -37,6 +38,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       </Route>
       <Route path="workeraccount">
         <Route index element={<WorkerAccount/>}/>
+      </Route>
+      <Route path="workereditprofile">
+        <Route index element={<WorkerEditProfile/>}/>
       </Route>
 
     </Route>

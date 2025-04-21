@@ -50,16 +50,17 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       </Route>
       
       <Route path="events">
+        <Route index element={<EventsList />} />
+        <Route path="change" element={<EventEdit />} />
+      </Route>
+      
       <Route index element={<EventsList />} />
       <Route path="create" element={<CreateEventForm/>} />
     </Route>
       
 </Route>
 
-<Route path="events">
-  <Route index element={<EventsList />} />
-  <Route path="change" element={<EventEdit />} />
-</Route>
+
 
     </Routes>
     

@@ -1,6 +1,7 @@
-import { Title, TextInput, Select,  Group, Stack, Button, Container  } from '@mantine/core';
+import { Title, TextInput, Select,  Group, Stack, Button, Text  } from '@mantine/core';
 import { Table } from '@mantine/core';
 import { Pagination } from '@mantine/core';
+import { IconSearch, IconPlus } from '@tabler/icons-react';
 
 
 const elements = [
@@ -17,42 +18,43 @@ export function VolunteersList() {
     const icon = <IconAt size={16} />;
     return <>
         
-        <Container size="xl" >
-        <Stack
+        <Text size="xs">Таблицы/Волонтеры</Text>
+      <Stack gap="lg">
         
-        >
-        <Title order={1}>Волонтеры</Title>
-        
-        <TextInput                                 //поиск
-            
-            leftSectionPointerEvents="none"
-            leftSection={icon}
-            w={400}                 
-            
-        />
-        
-        <Group gap="lg" grow>
+        <Group justify="space-between">
+          <Title order={1}>Волонтеры</Title>
+          <TextInput
+            placeholder="Поиск..."
+            leftSection={<IconSearch size={16} />}
+            w={250}
+          />
+            <Button leftSection={<IconPlus size={16} />}>Добавить</Button>
+        </Group>
+      </Stack>
+        <Group justify="space-between">
          <Select
           label="Количество записей на странице"
-          placeholder="Pick value"
           data={['1', '2', '5', '10']} 
           />
       
        <Pagination total={10} /> {/*переключние страниц*/}
        <Button variant="filled">Взрослые</Button>
        <Button variant="filled">Дети</Button>
-       <Button variant="filled">Добавить</Button>
        <Select
-          label="Сортировать"
-          placeholder="Pick value"
+          label="Сортировать"          
           data={['От А-Я', 'От Я-А', 'Самые молодые', 'Взрослые']} 
           />
        </Group>
         <Demo />  {/*Таблица*/}        
-        <Button variant="filled">Добавить</Button>
-        <Pagination total={10} /> {/*переключние страниц....*/}
+        <Stack
+                  
+          bg="var(--mantine-color-body)"
+          align="center"
+          justify="center"
+          gap="md">
+          <Button leftSection={<IconPlus size={16} />} w = '150px' justify="center">Добавить</Button>
+          <Pagination total={10} />
         </Stack>
-        </Container>
     </>
 }
 
@@ -68,7 +70,7 @@ function Demo() {
   ));
 
   return (
-    <Table>
+    <Table striped highlightOnHover>
       <Table.Thead>
         <Table.Tr>
           <Table.Th>Element position</Table.Th>

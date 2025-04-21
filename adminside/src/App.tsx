@@ -1,14 +1,14 @@
+
 import "@mantine/core/styles.css";
 import '@mantine/charts/styles.css';
 import { BarChart } from '@mantine/charts';
 import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper, Title} from "@mantine/core";
 import { AreaChart } from '@mantine/charts';
-import { data } from './data';
-import { lose as chartData } from './lose';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { events } from './pages/events/list';
 import { volunteers } from './pages/volunteers/list';
 import { TooltipProps } from 'recharts';
+import { SimpleGrid } from '@mantine/core';
 // TooltipProps для подсказки в  первом чарте
 const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
   if (!active || !payload || !payload.length) return null;
@@ -153,19 +153,53 @@ const prepareFailedEventsByYear = (events: Event[]): { year: string; count: numb
 export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<string | null>("Всё");
 
-  // Функция для фильтрации мероприятий по направлению
-  const filterEventsByCourse = (events: Event[], course: string | null) => {
-    if (!course || course === "Всё") return events;
-    return events.filter(event => event.course === course);
+  // Функция для фильтрации мероприятий и волонтеров по направлению
+  const filterByCourse = (data: Event[] | Volunteer[], course: string | null) => {
+    if (!course || course === "Всё") return data;
+    
+    // Для волонтеров пока оставляем без фильтрации (или можно добавить поле course в Volunteer)
+    if ('regdate' in data[0]) {
+      return data as Volunteer[];
+    }
+    
+    return (data as Event[]).filter(event => event.course === course);
   };
-
-  // Фильтруем мероприятия по выбранному направлению
-  const filteredEvents = filterEventsByCourse(events, selectedCourse);
-  
-  // Готовим данные на основе отфильтрованных мероприятий
-  const volunteersData = prepareVolunteersData(filteredEvents);
-  const failedEventsData = prepareFailedEventsByYear(filteredEvents);
-  const volunteersByYearData = prepareVolunteersByRegistrationYear(volunteers);
+   // Фильтруем данные по выбранному направлению
+   const filteredEvents = filterByCourse(events, selectedCourse) as Event[];
+   const filteredVolunteers = filterByCourse(volunteers, selectedCourse) as Volunteer[];
+// Готовим данные на основе отфильтрованных данных
+const volunteersData = prepareVolunteersData(filteredEvents);
+const failedEventsData = prepareFailedEventsByYear(filteredEvents);
+const volunteersByYearData = prepareVolunteersByRegistrationYear(filteredVolunteers);
+  // Функция для расчета статистики с учетом фильтрации
+  const calculateStats = () => {
+    // 1. Количество активных мероприятий
+    const activeEvents = filteredEvents.filter(event => event.status === 'активно').length;
+    
+    // 2. Количество проведенных мероприятий за год (2025)
+    const currentYear = new Date().getFullYear().toString();
+    const completedEvents = filteredEvents.filter(event => 
+      event.status === 'успешно проведено' && 
+      event.endDate && 
+      new Date(event.endDate).getFullYear().toString() === currentYear
+    ).length;
+    
+    // 3. Количество мероприятий без волонтеров
+    const eventsWithoutVolunteers = filteredEvents.filter(event => {
+      if (event.status !== 'активно') return false;
+      const volunteersCount = event.volunteerslist.split(',').filter(v => v.trim() !== '').length;
+      return volunteersCount < event.needs;
+    }).length;
+    
+    // 4. Количество привлеченных волонтеров (зарегистрировавшихся в текущем году)
+    const newVolunteers = filteredVolunteers.filter(volunteer => 
+      volunteer.regdate && 
+      new Date(volunteer.regdate).getFullYear().toString() === currentYear
+    ).length;
+    
+    return { activeEvents, completedEvents, eventsWithoutVolunteers, newVolunteers };
+  };
+  const stats = calculateStats();
   return (
     <>
       <Container size="xl">
@@ -197,8 +231,47 @@ export default function App() {
           value={selectedCourse}
           onChange={setSelectedCourse}
           w={400}
+          mb="md"
         />
+        
 
+        <SimpleGrid cols={4} spacing="md" mb="md">
+          <Paper withBorder p="md" radius="md">
+            <Text size="xs" c="dimmed" fw={700}>
+              Количество активных мероприятий
+            </Text>
+            <Text fw={700} size="xl">
+              {stats.activeEvents}
+            </Text>
+          </Paper>
+  
+          <Paper withBorder p="md" radius="md">
+            <Text size="xs" c="dimmed" fw={700}>
+              Количество проведенных мероприятий за год
+            </Text>
+            <Text fw={700} size="xl">
+              {stats.completedEvents}
+            </Text>
+          </Paper>
+  
+          <Paper withBorder p="md" radius="md">
+            <Text size="xs" c="dimmed" fw={700}>
+              Количество мероприятий без волонтеров
+            </Text>
+            <Text fw={700} size="xl">
+              {stats.eventsWithoutVolunteers}
+            </Text>
+          </Paper>
+  
+          <Paper withBorder p="md" radius="md">
+            <Text size="xs" c="dimmed" fw={700}>
+              Количество привлеченных волонтеров
+            </Text>
+            <Text fw={700} size="xl">
+              {stats.newVolunteers}
+            </Text>
+          </Paper>
+        </SimpleGrid>
         <Paper shadow="md" radius="lg" withBorder p="xl" mb="md" mt="md">
           <Title order={1} mb="xl">Активность волонтеров</Title>  
           <AreaChart

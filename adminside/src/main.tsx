@@ -34,23 +34,18 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         {/* <Route path=":staffid" element={<StaffID />} />
         <Route path="trending" element={<Trending />} /> */}
       </Route>
-      <Route path="signin">
-        <Route index element={<SignIn/>}/>
-      </Route>
+      <Route path="signin" element={<SignIn/>}/>
       <Route path="workeraccount">
         <Route index element={<WorkerAccount/>}/>
       </Route>
       <Route path="workereditprofile">
         <Route index element={<WorkerEditProfile/>}/>
       </Route>
-
-    </Route>
-          <Route index element={<SignIn/>}/>
-          </Route>
-      </Route>
       <Route path="events">
-  <Route index element={<EventsList />} />
-  <Route path="create" element={<CreateEventForm/>} />
+      <Route index element={<EventsList />} />
+      <Route path="create" element={<CreateEventForm/>} />
+    </Route>
+      
 </Route>
     </Routes>
     

@@ -37,7 +37,7 @@ export function WorkerAccount() {
 
             <Text className={classes.pagination}>Личная страничка сотрудника</Text>
 
-            <Flex direction={{base: 'column', md: 'row'}} className={classes.flexes} wrap="wrap">
+            <Flex direction={{base: 'column', md: 'row'}}  className={classes.flexes} wrap="wrap">
 
               <Stack align='center' >
 
@@ -70,7 +70,7 @@ export function WorkerAccount() {
 
               </Stack>
 
-              <Stack>
+              <Stack w="auto">
 
                 <Title className={classes.header4}>ФИО</Title>
                 <Title className={classes.header4}>ID сотрудника: </Title>

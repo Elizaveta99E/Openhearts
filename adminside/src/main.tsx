@@ -9,6 +9,8 @@ import { VolunteersList } from "./pages/volunteers/list.tsx";
 import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */}
 import {Layout} from "./components/layout.tsx"
 import {EventsList} from "./pages/events/list.tsx"
+import { WorkerAccount } from "./pages/workeraccount/list.tsx";
+import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
 import CreateEventForm from "./Mine/CreateEvent.tsx"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -17,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   
     <Routes >
     <Route element={<Layout/>}>
+
       <Route path="/" element={<App />} />
       <Route path="staff">
         <Route index element={<StaffList />} />
@@ -32,6 +35,16 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="trending" element={<Trending />} /> */}
       </Route>
       <Route path="signin">
+        <Route index element={<SignIn/>}/>
+      </Route>
+      <Route path="workeraccount">
+        <Route index element={<WorkerAccount/>}/>
+      </Route>
+      <Route path="workereditprofile">
+        <Route index element={<WorkerEditProfile/>}/>
+      </Route>
+
+    </Route>
           <Route index element={<SignIn/>}/>
           </Route>
       </Route>

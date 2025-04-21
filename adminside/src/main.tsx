@@ -30,11 +30,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         {/* <Route path=":staffid" element={<StaffID />} />
         <Route path="trending" element={<Trending />} /> */}
       </Route>
-      
-      <Route path="events">
-        <Route index element={<EventsList />} />  
-      </Route>
-      
+            
       <Route path="volunteers">
         <Route index element={<VolunteersList />} />
         {/* <Route path=":staffid" element={<StaffID />} />
@@ -51,9 +47,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       
       <Route path="events">
         <Route index element={<EventsList />} />
-        <Route path="change" element={<EventEdit />} />
       </Route>
-      
+
       <Route index element={<EventsList />} />
       <Route path="create" element={<CreateEventForm/>} />
     </Route>

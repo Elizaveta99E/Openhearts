@@ -1,4 +1,4 @@
-import React from "react";
+
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -9,6 +9,7 @@ import { VolunteersList } from "./pages/volunteers/list.tsx";
 import {SignIn} from "./pages/signin/list.tsx";{/*страница войти */}
 import {Layout} from "./components/layout.tsx"
 import {EventsList} from "./pages/events/list.tsx"
+import CreateEventForm from "./Mine/CreateEvent.tsx"
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MantineProvider theme={theme} defaultColorScheme="light">
@@ -34,6 +35,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route index element={<SignIn/>}/>
           </Route>
       </Route>
+      <Route path="events">
+  <Route index element={<EventsList />} />
+  <Route path="create" element={<CreateEventForm/>} />
+</Route>
     </Routes>
     
   </BrowserRouter>

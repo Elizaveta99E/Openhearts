@@ -45,12 +45,13 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <Route index element={<WorkerEditProfile />} />
           </Route>
 
-          <Route path="events">
-            <Route index element={<EventsList />} />
+          <Route path="create">
+            <Route index element={<CreateEventForm />} />
           </Route>
 
+          
+          <Route path="chsnge" element={<CreateEventForm />} />
           <Route index element={<EventsList />} />
-          <Route path="create" element={<CreateEventForm />} />
         </Route>
       </Routes>
 

@@ -161,12 +161,7 @@ export function Layout() {
       }}
     >
       <AppShell.Header style={{ position: 'fixed', width: '100%', zIndex: 200 }}>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          hiddenFrom="sm"
-          size="sm"
-        />
+        
         <div>
           <Image
             h={42}
@@ -176,10 +171,16 @@ export function Layout() {
             src="./public/logo.svg"
           />
         </div>
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          hiddenFrom="sm"
+          size="sm"
+        />
       </AppShell.Header>
 
-      <AppShell.Navbar>
-        <Demo />
+      <AppShell.Navbar style={{background:'#FF4A01'}}>
+        <NavigationMenu />
       </AppShell.Navbar>
 
       <AppShell.Main style={{ paddingTop: 60 }}>

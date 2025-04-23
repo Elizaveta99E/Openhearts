@@ -12,7 +12,6 @@ import { EventsList } from "./pages/events/list.tsx"
 import { WorkerAccount } from "./pages/workeraccount/list.tsx";
 import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
 import CreateEventForm from "./Mine/CreateEvent.tsx"
-import EventEdit from "./Mine/ChangeEvent.tsx"
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -49,9 +48,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <Route index element={<CreateEventForm />} />
           </Route>
 
-          
-          <Route path="chsnge" element={<CreateEventForm />} />
-          <Route index element={<EventsList />} />
         </Route>
       </Routes>
 

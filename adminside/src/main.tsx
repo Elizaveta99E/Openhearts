@@ -11,7 +11,9 @@ import { Layout } from "./components/layout.tsx"
 import { EventsList } from "./pages/events/list.tsx"
 import { WorkerAccount } from "./pages/workeraccount/list.tsx";
 import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
-import CreateEventForm from "./Mine/CreateEvent.tsx"
+import CreateEventForm from "./pages/actions_on_events/CreateEvent.tsx"
+import DeleteEvent from "./pages/actions_on_events/DeleteEvent.tsx"
+import EventPage from "./pages/actions_on_events/EventPage.tsx"
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -46,6 +48,14 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 
           <Route path="create">
             <Route index element={<CreateEventForm />} />
+          </Route>
+
+          <Route path="delete">
+            <Route index element={<DeleteEvent />} />
+          </Route>
+
+          <Route path="page">
+            <Route index element={<EventPage />} />
           </Route>
 
         </Route>

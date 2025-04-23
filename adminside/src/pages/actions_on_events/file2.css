@@ -1,7 +1,7 @@
 /* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: 2D0F12;
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
@@ -9,13 +9,13 @@ body {
   
   /* Заголовки */
   h1 {
-    color: #2c3e50;
+    color: 2D0F12;
     border-bottom: 2px solid #3498db;
     padding-bottom: 8px;
   }
   
   h2 {
-    color: #34495e;
+    color: 2D0F12;
     margin: 24px 0 12px;
   }
   
@@ -30,7 +30,7 @@ body {
   
   /* Кнопки и ссылки */
   button, .button-link {
-    background: #3498db;
+    background: #FF4A01;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -40,12 +40,12 @@ body {
   }
   
   button:hover, .button-link:hover {
-    background: #2980b9;
+    background: #FF4A01;
   }
   
   /* Уведомления */
   .notification-badge {
-    background: #e74c3c;
+    background: #FF4A01;
     color: white;
     padding: 2px 8px;
     border-radius: 10px;
@@ -66,3 +66,5 @@ body {
     border: 1px solid #ecf0f1;
     margin: 24px 0;
   }
+
+  

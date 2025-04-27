@@ -14,6 +14,7 @@ import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
 import CreateEventForm from "./pages/actions_on_events/CreateEvent.tsx"
 import DeleteEvent from "./pages/actions_on_events/DeleteEvent.tsx"
 import EventPage from "./pages/actions_on_events/EventPage.tsx"
+import EditEventPage from "./pages/actions_on_events/ChangeEvent.tsx"
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -56,6 +57,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 
           <Route path="page">
             <Route index element={<EventPage />} />
+          </Route>
+
+          <Route path="change">
+            <Route index element={<EditEventPage />} />
           </Route>
 
         </Route>

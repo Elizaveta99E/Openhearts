@@ -74,65 +74,6 @@ function NavigationMenu() {
   );
 }
 
-function Demo() {
-  const [opened, { open, close }] = useDisclosure(false);
-
-  return (
-    <>
-      <Drawer 
-  offset={8}
-  opened={opened}
-  onClose={close}
-  size="md" // Увеличиваем базовую ширину (можно использовать 'xl', 'sm' или число в px)
-  styles={{
-    content: {
-      backgroundColor: '#FF4A01',
-      height: '300px', // Уменьшаем высоту Drawer (было 300px)
-      top: 60,
-      position: 'fixed',
-      width: '250px' // Увеличиваем ширину (было 250)
-    },
-    header: {
-      backgroundColor: '#FF4A01',
-      color: 'white',
-      height: '40px', // Уменьшаем высоту header (было 50px)
-      minHeight: '30px', // Добавляем минимальную высоту
-      padding: '8px 16px' // Уменьшаем отступы внутри header
-    },
-    body: {
-      paddingTop: 0
-    }
-  }}
->
-  <NavigationMenu />
-</Drawer>
-
-      <Button
-        variant="filled"
-        styles={{
-          root: {
-            backgroundColor: '#FF4A01',
-            '&:hover': {
-              backgroundColor: '#E54300',
-            },
-          }
-        }}
-        h={40}
-        w={40}
-        onClick={open}
-        p={0}
-      >
-        <Image
-          h={31}
-          w={31}
-          fit="contain"
-          src="./public/menubutton.svg"
-        />
-      </Button>
-    </>
-  );
-}
-
 export function Layout() {
   const [opened, { toggle }] = useDisclosure();
 

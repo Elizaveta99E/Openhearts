@@ -4,8 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Шапка</title>
-  <link rel="icon" href="/static/image/mini_logo.svg">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="../../static/image/logos/mini_logo.svg">
+  <link rel="stylesheet" href="../../static/css/style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownButton = document.querySelector('.dropdown-button');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+  
+      dropdownButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Предотвращаем всплытие события
+        dropdownMenu.classList.toggle('open');
+      });
+  
+      // Закрываем меню при клике вне его области
+      document.addEventListener('click', function() {
+        dropdownMenu.classList.remove('open');
+      });
+  
+      // Предотвращаем закрытие меню при клике внутри него
+      dropdownMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -14,10 +35,10 @@
             <div class="header-container">
                 <div class="panel-1">
                     <div class="container-for-logo">
-                        <a href=""><img src="/static/image/logo.svg" alt=""></a>
+                        <a href=""><img src="../../static/image/logos/logo.svg" alt="logo"></a>
                     </div>
                     <div class="header-text">
-                        <a href="../List of events.html">Мероприятия</a>
+                        <a href="../html/List of events.html">Мероприятия</a>
                     </div>
                     <div class="search-container">
                         <input type="text" placeholder="Поиск по сайту" class="header-text">
@@ -27,21 +48,21 @@
                 <div class="authorized-panel-1">
                     <div class="notification-icon">
                         <a href="#">
-                            <img src="/static/image/icon/notification.svg" alt="notification">
+                            <img src="../../static/image/icon/notification.svg" alt="notification">
                             <span class="notification-count">0</span>
                         </a>
                     </div>
                     <div class="avatar-menu">
-                        <a href="#">
+                        <a href="../volunteer-account.html">
                             <img src="#" alt="avatar" class="avatar">
                         </a>
                         <div class="dropdown">
                             <button class="dropdown-button">
-                                <img src="/static/image/icon/orange_arrow.svg" alt="">
+                                <img src="../../static/image/icon/orange_arrow.svg" alt="orange_arrow">
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#">
-                                    <div href="#" class="avatar-name-dropdown">
+                                <a href="../volunteer-account.html">
+                                    <div href="../volunteer-account.html" class="avatar-name-dropdown">
                                     <div>
                                         <img src="#" alt="avatar" class="avatar">
                                     </div>
@@ -50,10 +71,9 @@
                                     </div>
                                 </div>
                                 </a>
-                                <a href="../edit-volunteer-account.html">Редактировать профиль</a>
+                                <a href="../html/edit-volunteer-account.html">Редактировать профиль</a>
                                 <a href="#">Выйти</a>
-                            </div>
-                            <script src="/dropdown-menu.js"></script>
+                            </div>                            
                         </div>
                     </div>
                 </div>

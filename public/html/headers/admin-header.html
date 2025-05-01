@@ -4,15 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Шапка</title>
-  <link rel="icon" href="/static/image/mini_logo.svg">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="../../static/image/logos/mini_logo.svg">
+  <link rel="stylesheet" href="../../static/css/style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownButton = document.querySelector('.dropdown-button');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+  
+      dropdownButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Предотвращаем всплытие события
+        dropdownMenu.classList.toggle('open');
+      });
+  
+      // Закрываем меню при клике вне его области
+      document.addEventListener('click', function() {
+        dropdownMenu.classList.remove('open');
+      });
+  
+      // Предотвращаем закрытие меню при клике внутри него
+      dropdownMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="container-for-logo">
-                <a href=""><img src="/static/image/logo.svg" alt=""></a>
+                <a href=""><img src="../../static/image/logos/logo.svg" alt=""></a>
             </div>
             
             <div class="table-search">
@@ -25,7 +46,7 @@
             <div class="authorized-panel-2">
                 <div class="notification-icon">
                     <a href="#">
-                        <img src="/static/image/icon/notification.svg" alt="notification">
+                        <img src="../../static/image/icon/notification.svg" alt="notification">
                         <span class="notification-count">0</span>
                     </a>
                 </div>
@@ -39,13 +60,22 @@
                     </div>
                     <div class="dropdown">
                         <button class="dropdown-button">
-                            <img src="/static/image/icon/orange_arrow.svg" alt="orange_arrow">
+                            <img src="../../static/image/icon/orange_arrow.svg" alt="">
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#">Профиль</a>
-                            <a href="#">Редактировать профиль</a>
+                            <a href="#">
+                                <div href="#" class="avatar-name-dropdown">
+                                <div>
+                                    <img src="#" alt="avatar" class="avatar">
+                                </div>
+                                <div>
+                                    <p id="full-name">Фамилия Имя Отчество</p>
+                                </div>
+                            </div>
+                            </a>
+                            <a href="../../html/edit-volunteer-account.html">Редактировать профиль</a>
                             <a href="#">Выйти</a>
-                        </div>
+                        </div>                            
                     </div>
                 </div>
             </div>         

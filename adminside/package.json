@@ -39,7 +39,7 @@
     "postcss-preset-mantine": "1.17.0",
     "postcss-simple-vars": "^7.0.1",
     "typescript": "^5.8.3",
-    "vite": "^6.0.7"
+    "vite": "^6.3.3"
   },
   "packageManager": "yarn@4.7.0",
   "description": "Get started with the template by clicking `Use this template` button on the top of the page.",

@@ -68,40 +68,42 @@ interface EventFormState {
     format: EventFormat;
     conditions: EventConditions;
     features: EventFeatures;
+    photo: File | null;
 }
 
 // Компонент формы
 const CreateEventForm = () => {
-    const [formState, setFormState] = useState<EventFormState>({
-        title: "",
-        location: "",
-        dates: "",
-        responsiblePerson: "",
-        volunteersNeeded: 0,
-        description: "",
-        format: EventFormat.All,
-        conditions: {
-            freeMeals: false,
-            theaterTickets: false,
-            acknowledgments: false,
-            accommodationPayment: false,
-            personalTraining: false,
-            travel: false,
-            psychologicalConsultation: false,
-            souvenirs: false,
-            equipment: false,
-            protectiveEquipment: false,
-        },
-        features: {
-            under18: false,
-            reserveRecruitment: false,
-            attendAsVisitor: false,
-            targetedHelp: false,
-            accessibleForDisabled: false,
-            withChildren: false,
-            educationalEvent: false,
-        },
-    });
+  const [formState, setFormState] = useState<EventFormState>({
+      title: "",
+      location: "",
+      dates: "",
+      responsiblePerson: "",
+      volunteersNeeded: 0,
+      description: "",
+      format: EventFormat.All,
+      conditions: {
+          freeMeals: false,
+          theaterTickets: false,
+          acknowledgments: false,
+          accommodationPayment: false,
+          personalTraining: false,
+          travel: false,
+          psychologicalConsultation: false,
+          souvenirs: false,
+          equipment: false,
+          protectiveEquipment: false,
+      },
+      features: {
+          under18: false,
+          reserveRecruitment: false,
+          attendAsVisitor: false,
+          targetedHelp: false,
+          accessibleForDisabled: false,
+          withChildren: false,
+          educationalEvent: false,
+      },
+      photo: null,
+  });
 
     const handleInputChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -111,6 +113,15 @@ const CreateEventForm = () => {
             ...prev,
             [name]: name === "volunteersNeeded" ? Number(value) : value
         }));
+    };
+
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setFormState(prev => ({
+                ...prev,
+                photo: e.target.files![0]
+            }));
+        }
     };
 
     const handleConditionChange = (condition: keyof EventConditions) => {
@@ -141,7 +152,7 @@ const CreateEventForm = () => {
       return (
         <form onSubmit={handleSubmit} className="event-form">
         {/* Заголовок формы */}
-        <h2>Создание нового мероприятия</h2>
+        <h2>Создать мероприятие</h2>
     
         {/* Основные поля ввода */}
         <div className="form-group">

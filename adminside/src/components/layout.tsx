@@ -166,12 +166,16 @@ export function Layout() {
           
           <Menu.Item 
             leftSection={<IconPencil size={14} />}
+            style={{
+              backgroundColor: 'white'
+          }}
           >
             Редактировать
           </Menu.Item>
           <Menu.Item 
             leftSection={<IconLogout size={14} />}
             color="red"
+            style={{ backgroundColor: 'white'}}
           >
             Выйти
           </Menu.Item>

@@ -1,70 +1,83 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    color: 2D0F12;
-    /* max-width: 800px; */
-    margin: 20px auto;
-    padding: 0 20px;
-  }
-  
-  /* Заголовки */
-  h1 {
-    color: 2D0F12;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 8px;
-  }
-  
-  h2 {
-    color: 2D0F12;
-    margin: 24px 0 12px;
-  }
-  
-  /* Секции информации */
-  section {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  /* Кнопки и ссылки */
-  button, .button-link {
-    background: #FF4A01;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover, .button-link:hover {
-    background: #FF4A01;
-  }
-  
-  /* Уведомления */
-  .notification-badge {
-    background: #FF4A01;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 10px;
-    margin-left: 8px;
-  }
-  
-  /* Карточка волонтера */
-  .volunteer-card {
-    background: white;
-    border: 1px solid #eee;
-    padding: 12px;
-    margin: 12px 0;
-    border-radius: 6px;
-  }
-  
-  /* Разделители */
-  hr {
-    border: 1px solid #ecf0f1;
-    margin: 24px 0;
-  }
+/* Стили для уведомлений */
+.notifications-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+.notification-button {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notifications-panel {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.notifications-list {
+  padding: 15px;
+}
+
+.notification-item {
+  padding: 10px;
+  margin: 5px 0;
+  background: #f8f8f8;
+  border-radius: 3px;
+}
+
+/* Стили для ссылки на волонтеров */
+.volunteers-link {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.volunteers-button {
+  padding: 12px 25px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .event-header {
+    flex-direction: column;
+  }
   
+  .event-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .notifications-panel {
+    width: 100%;
+    right: -20px;
+  }
+}

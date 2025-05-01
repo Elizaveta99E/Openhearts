@@ -116,13 +116,13 @@ const CreateEventForm = () => {
     };
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files && e.target.files[0]) {
-            setFormState(prev => ({
-                ...prev,
-                photo: e.target.files![0]
-            }));
-        }
-    };
+      if (e.target.files && e.target.files[0]) {
+          setFormState(prev => ({
+              ...prev,
+              photo: e.target.files![0]
+          }));
+      }
+  };
 
     const handleConditionChange = (condition: keyof EventConditions) => {
         setFormState(prev => ({
@@ -154,6 +154,15 @@ const CreateEventForm = () => {
         {/* Заголовок формы */}
         <h2>Создать мероприятие</h2>
     
+         {/* Поле для загрузки фото */}
+         <div className="form-group">
+                <label>Фото мероприятия:</label>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}/>
+            </div>
+        
         {/* Основные поля ввода */}
         <div className="form-group">
           <label>Название мероприятия:</label>
@@ -231,63 +240,64 @@ const CreateEventForm = () => {
     
         {/* Секция выбора формата */}
         <div className="form-section">
-          <h3>Формат проведения</h3>
-          <div className="format-options">
-            {Object.values(EventFormat).map((format) => (
-              <label key={format}>
-                <input
-                  type="radio"
-                  name="format"
-                  value={format}
-                  checked={formState.format === format}
-                  onChange={() => setFormState(prev => ({ ...prev, format }))}
-                />
-                {format}
-              </label>
-            ))}
-          </div>
-        </div>
-    
-        {/* Секция условий */}
-        <div className="conditions-section">
-                <h3>Условия проведения</h3>
-                <div className="checkbox-grid">
-                    {Object.entries(formState.conditions).map(([key, value]) => (
-                        <label key={key}>
+                <h3>Формат проведения</h3>
+                <div className="format-options">
+                    {Object.values(EventFormat).map((format) => (
+                        <label key={format}>
                             <input
-                                type="checkbox"
-                                checked={value}
-                                onChange={() => handleConditionChange(key as keyof EventConditions)}
+                                type="radio"
+                                name="format"
+                                value={format}
+                                checked={formState.format === format}
+                                onChange={() => setFormState(prev => ({ ...prev, format }))}
                             />
-                            {CONDITION_LABELS[key as keyof EventConditions]}
+                            {format}
                         </label>
                     ))}
                 </div>
             </div>
 
-            <div className="features-section">
-                <h3>Особенности мероприятия</h3>
-                <div className="checkbox-grid">
-                    {Object.entries(formState.features).map(([key, value]) => (
-                        <label key={key}>
-                            <input
-                                type="checkbox"
-                                checked={value}
-                                onChange={() => handleFeatureChange(key as keyof EventFeatures)}
-                            />
-                            {FEATURE_LABELS[key as keyof EventFeatures]}
-                        </label>
-                    ))}
+            {/* Секции условий и особенностей в двух колонках */}
+            <div className="columns-container">
+                <div className="conditions-section">
+                    <h3>Условия проведения</h3>
+                    <div className="checkbox-grid">
+                        {Object.entries(formState.conditions).map(([key, value]) => (
+                            <label key={key}>
+                                <input
+                                    type="checkbox"
+                                    checked={value}
+                                    onChange={() => handleConditionChange(key as keyof EventConditions)}
+                                />
+                                {CONDITION_LABELS[key as keyof EventConditions]}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="features-section">
+                    <h3>Особенности мероприятия</h3>
+                    <div className="checkbox-grid">
+                        {Object.entries(formState.features).map(([key, value]) => (
+                            <label key={key}>
+                                <input
+                                    type="checkbox"
+                                    checked={value}
+                                    onChange={() => handleFeatureChange(key as keyof EventFeatures)}
+                                />
+                                {FEATURE_LABELS[key as keyof EventFeatures]}
+                            </label>
+                        ))}
+                    </div>
                 </div>
             </div>
-    
-        {/* Кнопка отправки */}
-        <button type="submit" className="submit-button">
-          Опубликовать мероприятие
-        </button>
-      </form>
-      );
-    }
+
+            <button type="submit" className="submit-button">
+                Создать
+            </button>
+        </form>
+    );
+}
 
 
 export default CreateEventForm;

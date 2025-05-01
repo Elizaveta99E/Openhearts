@@ -1,107 +1,118 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-import './file2.css';
-import 'dayjs/locale/ru';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './file2.css'; // Импорт стилей
 
+const EventInfoPage = () => {
+  const [showNotifications, setShowNotifications] = useState(false);
 
-interface EventData {
-  title: string;
-  city: string;
-  dates: string;
-  responsible: string;
-  format: string;
-  description: string;
-  conditions: string;
-  volunteers: Volunteer[];
-  notifications: number;
-}
-
-interface Volunteer {
-  id: number;
-  fullName: string;
-  district: string;
-  contact: string;
-  participationCount: number;
-}
-
-const EventPage: React.FC = () => {
-  const [eventData, setEventData] = useState<EventData>({
+  // Моковые данные для примера
+  const eventData = {
     title: "Помощь животным",
-    city: "Иркутск",
-    dates: "01.09.2023 - 30.09.2023",
-    responsible: "Иванова Мария Петровна",
+    city: "Москва",
+    dates: "15 — 20 сентября 2023",
+    responsible: "Иванов И.И.",
     format: "Офлайн",
-    description: "Особенности мероприятия...",
-    conditions: "Условия участия...",
-    volunteers: [
-      {
-        id: 1,
-        fullName: "Петрова Анна Сергеевна",
-        district: "© Свердловский район",
-        contact: "+7 999 123-45-67",
-        participationCount: 5
-      }
+    direction: "Экология",
+    description: [
+      "Текст Текст Текст",
+      "Текст Текст Текст",
+      "Текст Текст Текст"
     ],
-    notifications: 1
-  });
+    conditions: "Текст условий проведения мероприятия",
+    features: "Текст особенностей мероприятия"
+  };
 
-  const handleEdit = () => {
-    // Логика редактирования
-    console.log("Редактирование мероприятия");
+  const handleParticipate = () => {
+    // Логика для участия в мероприятии
+    console.log("Участие в мероприятии");
   };
 
   return (
-    <div className="event-container">
-      <h1>Информация о мероприятии</h1>
-      
-      <section className="event-section">
-        <h2>{eventData.title}</h2>
-        <div className="event-info">
-          <p>{eventData.city}</p>
-          <p>Сроки: {eventData.dates}</p>
-          <p>Ответственное лицо: {eventData.responsible}</p>
-        </div>
-        <button onClick={handleEdit} className="edit-button">Редактировать</button>
-      </section>
+    <div className="event-page-container">
+      {/* Навигационная цепочка */}
+      <nav className="breadcrumbs" aria-label="Хлебные крошки">
+        <ul>
+          <li><Link to="/main">Главная</Link></li>
+          <li><Link to="/events">Мероприятия</Link></li>
+          <li>Информация о мероприятии</li>
+        </ul>
+      </nav>
 
-      <hr className="section-divider" />
+      {/* Заголовок и уведомления */}
+      <div className="header-section">
+        <h2>Информация о мероприятии</h2>
+        
+      </div>
 
-      <section className="event-section">
-        <h3>Формат проведения: {eventData.format}</h3>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section className="event-section">
-        <h3>Описание</h3>
-        <p>{eventData.description}</p>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section className="event-section">
-        <h3>Условия</h3>
-        <p>{eventData.conditions}</p>
-      </section>
-
-      <div className="volunteers-section">
-        <button className="volunteers-button">
-          Перейти к волонтерам
-          {eventData.notifications > 0 && 
-            <span className="notification-badge">{eventData.notifications}</span>}
-        </button>
-
-        {eventData.volunteers.map(volunteer => (
-          <div key={volunteer.id} className="volunteer-card">
-            <h4>{volunteer.fullName}</h4>
-            <p>{volunteer.district}</p>
-            <p>{volunteer.contact}</p>
-            <p>Участвовала: {volunteer.participationCount} раз</p>
-            <button className="profile-button">Перейти в профиль</button>
+      {/* Основная информация о мероприятии */}
+      <div className="event-card-head">
+        <div className="event-header">
+          <img 
+            src="/path/to/event-image.jpg" 
+            alt="Изображение мероприятия" 
+            className="event-image"
+          />
+          
+          <div className="event-info">
+            <div className="name">{eventData.title}</div>
+            <div className="city">{eventData.city}</div>
+            <div className="dates">{eventData.dates}</div>
+            <div className="responsible">
+              Ответственное лицо: {eventData.responsible}
+            </div>
           </div>
-        ))}
+        </div>
+
+        <div className="event-details">
+          <div className="event-format">
+            Формат проведения: {eventData.format}
+          </div>
+          <button 
+            className="other-buttons"
+            onClick={handleParticipate}
+          >
+            Принять участие
+          </button>
+        </div>
+
+        <div className="event-details">
+          <div className="event-format hybrid">
+            Направление: {eventData.direction}
+          </div>
+        </div>
+      </div>
+
+      {/* Описание мероприятия */}
+      <div className="event-card">
+        <div className="event-description">
+          <h3>Описание</h3>
+          <div className="description-content">
+            {eventData.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+            
+            <div className="conditions">
+              <h4>Условия проведения:</h4>
+              <p>{eventData.conditions}</p>
+            </div>
+            
+            <div className="features">
+              <h4>Особенности:</h4>
+              <p>{eventData.features}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Ссылка на таблицу волонтеров */}
+      <div className="volunteers-link">
+        <Link to="/volunteers-table" className="volunteers-button">
+          Посмотреть таблицу волонтеров
+        </Link>
       </div>
     </div>
+    
   );
 };
 
-export default EventPage;
+export default EventInfoPage;

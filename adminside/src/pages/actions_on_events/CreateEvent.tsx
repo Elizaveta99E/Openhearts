@@ -13,7 +13,6 @@ interface EventConditions {
     freeMeals: boolean;
     theaterTickets: boolean;
     acknowledgments: boolean;
-    verifiedHours: boolean;
     accommodationPayment: boolean;
     personalTraining: boolean;
     travel: boolean;
@@ -25,19 +24,38 @@ interface EventConditions {
 
 // Интерфейс для особенностей мероприятия
 interface EventFeatures {
-    verifiedHoursOnly: boolean;
     under18: boolean;
     reserveRecruitment: boolean;
     attendAsVisitor: boolean;
-    organizationStandard: boolean;
-    fundWinners: boolean;
-    nkoRegistry: boolean;
     targetedHelp: boolean;
     accessibleForDisabled: boolean;
-    silverVolunteers: boolean;
     withChildren: boolean;
     educationalEvent: boolean;
 }
+
+const CONDITION_LABELS: Record<keyof EventConditions, string> = {
+  freeMeals: "Бесплатное питание",
+  theaterTickets: "Билеты в театр",
+  acknowledgments: "Благодарности",
+  accommodationPayment: "Оплата проживания",
+  personalTraining: "Персональное обучение",
+  travel: "Проезд",
+  psychologicalConsultation: "Психологическая консультация",
+  souvenirs: "Сувенирная продукция",
+  equipment: "Экипировка",
+  protectiveEquipment: "Средства индивидуальной защиты"
+};
+
+// Русские названия для особенностей
+const FEATURE_LABELS: Record<keyof EventFeatures, string> = {
+  under18: "Младше 18 лет",
+  reserveRecruitment: "Идет набор в резерв",
+  attendAsVisitor: "Можно как посетитель",
+  targetedHelp: "Адресная помощь",
+  accessibleForDisabled: "Доступно для людей с инвалидностью",
+  withChildren: "Можно приходить с детьми",
+  educationalEvent: "Образовательное мероприятие"
+};
 
 // Основной интерфейс формы
 interface EventFormState {
@@ -66,7 +84,6 @@ const CreateEventForm = () => {
             freeMeals: false,
             theaterTickets: false,
             acknowledgments: false,
-            verifiedHours: false,
             accommodationPayment: false,
             personalTraining: false,
             travel: false,
@@ -76,16 +93,11 @@ const CreateEventForm = () => {
             protectiveEquipment: false,
         },
         features: {
-            verifiedHoursOnly: false,
             under18: false,
             reserveRecruitment: false,
             attendAsVisitor: false,
-            organizationStandard: false,
-            fundWinners: false,
-            nkoRegistry: false,
             targetedHelp: false,
             accessibleForDisabled: false,
-            silverVolunteers: false,
             withChildren: false,
             educationalEvent: false,
         },
@@ -226,43 +238,37 @@ const CreateEventForm = () => {
         </div>
     
         {/* Секция условий */}
-        <div className="form-section">
-          <h3>Условия участия</h3>
-          <div className="conditions-grid">
-            {Object.entries(formState.conditions).map(([key, value]) => (
-              <label key={key}>
-                <input
-                  type="checkbox"
-                  checked={value}
-                  onChange={() => handleConditionChange(key as keyof EventConditions)}
-                />
-                {/* Преобразование camelCase в нормальный текст */}
-                {key
-                  .replace(/([A-Z])/g, ' $1')
-                  .replace(/^./, str => str.toUpperCase())}
-              </label>
-            ))}
-          </div>
-        </div>
-    
-        {/* Секция особенностей */}
-        <div className="form-section">
-          <h3>Особые требования</h3>
-          <div className="features-grid">
-            {Object.entries(formState.features).map(([key, value]) => (
-              <label key={key}>
-                <input
-                  type="checkbox"
-                  checked={value}
-                  onChange={() => handleFeatureChange(key as keyof EventFeatures)}
-                />
-                {key
-                  .replace(/([A-Z])/g, ' $1')
-                  .replace(/^./, str => str.toUpperCase())}
-              </label>
-            ))}
-          </div>
-        </div>
+        <div className="conditions-section">
+                <h3>Условия проведения</h3>
+                <div className="checkbox-grid">
+                    {Object.entries(formState.conditions).map(([key, value]) => (
+                        <label key={key}>
+                            <input
+                                type="checkbox"
+                                checked={value}
+                                onChange={() => handleConditionChange(key as keyof EventConditions)}
+                            />
+                            {CONDITION_LABELS[key as keyof EventConditions]}
+                        </label>
+                    ))}
+                </div>
+            </div>
+
+            <div className="features-section">
+                <h3>Особенности мероприятия</h3>
+                <div className="checkbox-grid">
+                    {Object.entries(formState.features).map(([key, value]) => (
+                        <label key={key}>
+                            <input
+                                type="checkbox"
+                                checked={value}
+                                onChange={() => handleFeatureChange(key as keyof EventFeatures)}
+                            />
+                            {FEATURE_LABELS[key as keyof EventFeatures]}
+                        </label>
+                    ))}
+                </div>
+            </div>
     
         {/* Кнопка отправки */}
         <button type="submit" className="submit-button">

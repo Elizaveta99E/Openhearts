@@ -1,12 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import './file2.css';
-import { 
-  Title, TextInput, Select, 
-  Group, Stack, Button, Container,
-  Table, Pagination, Checkbox, Divider,
-  Text,  Box, NativeSelect} from '@mantine/core';
-import { IconSearch, IconPlus } from '@tabler/icons-react';
-import { DatePickerInput } from '@mantine/dates';
 import 'dayjs/locale/ru';
 
 

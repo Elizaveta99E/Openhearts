@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../static/css/style.css">
   <link rel="stylesheet" href="../static/css/for-change-pass-volunteer.css">
   
+  
   <script>
     function togglePassword(inputId, icon) {
         const input = document.getElementById(inputId);
@@ -57,6 +58,18 @@ alert('Форма успешно отправлена!'); // Замените э
         <p id="comment">Для смены пароля воспользуйтесь формой ниже</p>
       </div>
       <div class="inputs">
-      <div class="password-input">
+        <div class="form-field">
+            <input type="password" id="confirm-password" placeholder="Старый пароль (обязательное поле)" required>
+            <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('old-password', this)">
+        </div>
+      <div class="form-field">
+        <input type="password" id="password" placeholder="Новый пароль*" required>
+        <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('password', this)">
+        </div>
+      <div class="inputs">
+        <div class="form-field">
+            <input type="password" id="confirm-password" placeholder="Повторите пароль (обязательное поле)" required>
+            <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
+        </div>
     </div>
 </body>

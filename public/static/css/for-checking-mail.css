@@ -22,7 +22,11 @@
     font-family: 'Instrument Sans', sans-serif; /* Шрифт */
     color: #2D0F12; /* Цвет текста */
 }
-
+.contentforerror {
+    font-family: 'Instrument Sans', sans-serif; /* Шрифт */
+    color: #2D0F12; /* Цвет текста */
+    margin-top: 50px;
+}
 .main-text {
     font-size: 48px; /* Размер основного текста */
     font-weight: bold; /* Жирный текст */

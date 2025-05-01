@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="/static/css/for-registration.css">
-    <link rel="icon" href="/static/image/logos/mini_logo.svg">
+    <link rel="stylesheet" href="../static/css/for-registration.css">
+    <link rel="icon" href="../static/image/logos/mini_logo.svg">
     <script>
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
                 input.type = "text"; // Показываем пароль
-                icon.src = "/static/image/icon/eye-open.svg"; // Меняем иконку на открытую
+                icon.src = "../static/image/icon/eye-open.svg"; // Меняем иконку на открытую
             } else {
                 input.type = "password"; // Скрываем пароль
-                icon.src = "/static/image/icon/eye-closed.svg"; // Меняем иконку на закрытую
+                icon.src = "../static/image/icon/eye-closed.svg"; // Меняем иконку на закрытую
             }
         }
         function validateForm() {
@@ -46,7 +46,7 @@
 </head>
 <body>
     <div class="body">
-        <img src="/static/image/logos/logo.svg" alt="Логотип" class="logo">
+        <img src="../static/image/logos/logo.svg" alt="Логотип" class="logo">
         <div class="back-link-container">
             <a href="#" class="back-link">&lt; Назад</a>
         </div>
@@ -75,7 +75,7 @@
     </div>
     <div class="form-field">
         <input type="password" id="password" placeholder="Пароль*" required>
-        <img src="/static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('password', this)">
+        <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('password', this)">
     </div>
     <div class="password-hint">
         Пароль должен содержать:
@@ -89,7 +89,7 @@
     </div>
     <div class="form-field">
         <input type="password" id="confirm-password" placeholder="Повторите пароль (обязательное поле)" required>
-        <img src="/static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
+        <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
     </div>
     <div id="error-message" class="error-message"></div>
     <div class="agreement">

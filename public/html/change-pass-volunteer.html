@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Смена пароля</title>
-  <link rel="icon" href="/static/image/logos/mini_logo.svg">
-  <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="stylesheet" href="/static/css/for-change-pass-volunteer.css">
+  <link rel="icon" href="../static/image/logos/mini_logo.svg">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/for-change-pass-volunteer.css">
   
   <script>
     function togglePassword(inputId, icon) {
         const input = document.getElementById(inputId);
         if (input.type === "password") {
             input.type = "text"; // Показываем пароль
-            icon.src = "/static/image/icon/eye-open.svg"; // Меняем иконку на открытую
+            icon.src = "../static/image/icon/eye-open.svg"; // Меняем иконку на открытую
         } else {
             input.type = "password"; // Скрываем пароль
-            icon.src = "/static/image/icon/eye-closed.svg"; // Меняем иконку на закрытую
+            icon.src = "../static/image/icon/eye-closed.svg"; // Меняем иконку на закрытую
         }
     }
     function validateForm() {

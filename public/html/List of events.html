@@ -5,23 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1">
   <title>Open heaarts</title>
-  <link rel = 'icon' href = "\static\images\mini_logo.svg">
-  <link href="\static\css\style.css" rel="stylesheet">
-  <link href="\static\css\style 2.0.css" rel="stylesheet">
-  <link href="\static\css\wow.css" rel="stylesheet">
+  <link rel = 'icon' href = "..\static\images\mini_logo.svg">
+  <link href="..\static\css\style.css" rel="stylesheet">
+  <link href="..\static\css\style 2.0.css" rel="stylesheet">
+  <link href="..\static\css\wow.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
     <header>
         <!-- Иконка -->
-        <img src="\static\image\logo.svg" alt="Логотип">
+        <img src="..\static\image\logos\logo.svg" alt="Логотип">
                 
         <!-- Центрированный блок для "Мероприятия" и поисковой строки -->
         <div class="center-container">
             <!-- Текст "Мероприятия" -->
             <div class="events">
-              <a href="\html\List of events.html">Мероприятия</a>
+              <a href="..\html\List of events.html">Мероприятия</a>
             </div>
             
             <!-- Поле ввода и кнопка поиска -->
@@ -33,9 +33,9 @@
         
         <!-- Иконка и текст "Войти" -->
         <div class="login-container">
-            <img src="\static\images\man.svg" alt="Войти" class="login-icon">
+            <img src="..\static\image\icon\man.svg" alt="Войти" class="login-icon">
             <span class="login-text">
-              <a href="\html\Log in.html">Войти</a>
+              <a href="..\html\Log in.html">Войти</a>
             </span>
         </div>
         
@@ -45,7 +45,7 @@
   
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <ul>
-        <li><a href="\html\main.html">Главная</a></li>
+        <li><a href="..\html\main.html">Главная</a></li>
         <li><a>Мероприятия</a></li>
       </ul>
     </nav>
@@ -87,7 +87,7 @@
     
     <div class="container_form">
       <div>
-        <a><img src="\static\images\Vector.svg"></a>
+        <a><img src="..\static\image\icon\Vector.svg"></a>
         <a class="event-directions"  style="cursor: pointer; color: #2D0F12;">Направления</a>
       </div>
       <div class="directions-modal" id="directionsModal">
@@ -164,7 +164,7 @@ document.querySelectorAll('.direction-item').forEach(item => {
 
     <div class="container_form">
       <div>
-        <a><img src="\static\images\Vector.svg"></a>
+        <a><img src="..\static\image\icon\Vector.svg"></a>
         <a style="color: #2D0F12;">Дата</a>
         <input type="text" id="dateRangePicker" placeholder="Дата" class="flatpickr-input">
       </div>

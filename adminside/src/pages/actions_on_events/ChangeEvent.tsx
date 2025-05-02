@@ -1,5 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import './file.css';
+
 
 // Типы для формата мероприятия
 enum EventFormat {
@@ -57,6 +60,7 @@ const CONDITION_LABELS: Record<keyof EventConditions, string> = {
   equipment: "Экипировка",
   protectiveEquipment: "Средства индивидуальной защиты"
 };
+
 
 const FEATURE_LABELS: Record<keyof EventFeatures, string> = {
   under18: "Младше 18 лет",

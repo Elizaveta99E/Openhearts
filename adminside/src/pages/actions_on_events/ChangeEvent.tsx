@@ -1,7 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import React from 'react';
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './file.css';
-
 
 // Типы для формата мероприятия
 enum EventFormat {
@@ -37,7 +38,8 @@ interface EventFeatures {
 interface EventFormState {
     title: string;
     location: string;
-    dates: string;
+    startDate: Date | null; // Заменяем dates на startDate
+    endDate: Date | null;   // Добавляем endDate
     responsiblePerson: string;
     volunteersNeeded: number;
     description: string;
@@ -76,7 +78,8 @@ const EditEventPage = () => {
     const [formState, setFormState] = useState<EventFormState>({
         title: "Помощь животным",
         location: "Иркутск",
-        dates: "15-20 сентября 2023",
+        startDate: new Date('2023-09-15'), // Пример инициализации даты
+        endDate: new Date('2023-09-20'), 
         responsiblePerson: "Иванова Мария Петровна",
         volunteersNeeded: 15,
         description: "Описание мероприятия",
@@ -105,6 +108,15 @@ const EditEventPage = () => {
         },
         photo: null,
     });
+
+    const handleDateChange = (dates: [Date | null, Date | null]) => {
+        const [start, end] = dates;
+        setFormState(prev => ({
+            ...prev,
+            startDate: start,
+            endDate: end,
+        }));
+    };
 
     const handleInputChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -157,96 +169,112 @@ const EditEventPage = () => {
     return (
         <div className="edit-event-container">
             <form onSubmit={handleSubmit} className="edit-event-form">
-                <h2>Pедактировать мероприятие</h2>
-                <div className="photo-upload">
-                    <label>Фото мероприятия:</label>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                    />
-                </div>
-
-                <div className="main-fields-grid">
+                <h2>Редактировать мероприятие</h2>
+                
+                <div className="form-fields-column">
                     <div className="form-group">
-                        <label>Название:</label>
+                        <label>Фото мероприятия:</label>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFileChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Название мероприятия:</label>
                         <input
                             type="text"
                             name="title"
                             value={formState.title}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Локация:</label>
+                        <label>Место проведения:</label>
                         <input
                             type="text"
                             name="location"
                             value={formState.location}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Сроки:</label>
-                        <input
-                            type="text"
-                            name="dates"
-                            value={formState.dates}
-                            onChange={handleInputChange}
+                        <label>Даты проведения:</label>
+                        <DatePicker
+                            selectsRange
+                            startDate={formState.startDate}
+                            endDate={formState.endDate}
+                            onChange={handleDateChange}
+                            dateFormat="dd.MM.yyyy"
+                            placeholderText="Выберите даты"
+                            isClearable
+                            className="date-picker-input"
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Ответственный:</label>
+                        <label>Ответственное лицо:</label>
                         <input
                             type="text"
                             name="responsiblePerson"
                             value={formState.responsiblePerson}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>Волонтеров:</label>
+                        <label>Требуемое количество волонтеров:</label>
                         <input
                             type="number"
                             name="volunteersNeeded"
                             value={formState.volunteersNeeded}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
 
-                <div className="description-section framed-section">
-                    <h3>Описание</h3>
+                {/* Описание мероприятия */}
+                <div className="form-group">
+                    <label>Подробное описание:</label>
                     <textarea
                         name="description"
+                        placeholder="Опишите цели, задачи и особенности мероприятия"
                         value={formState.description}
                         onChange={handleInputChange}
+                        required
                     />
                 </div>
 
-                <div className="format-section framed-section">
+                {/* Секция формата проведения */}
+                <div className="form-section">
                     <h3>Формат проведения</h3>
-                    <div className="radio-group">
-                        {Object.values(EventFormat).map(format => (
-                            <label key={format}>
+                    <div className="format-options">
+                        {Object.values(EventFormat).map((format) => (
+                            <React.Fragment key={format}>
                                 <input
                                     type="radio"
+                                    name="format"
                                     value={format}
+                                    id={format}
                                     checked={formState.format === format}
-                                    onChange={() => setFormState(prev => ({...prev, format}))}
+                                    onChange={() => setFormState(prev => ({ ...prev, format }))}
                                 />
-                                {format}
-                            </label>
+                                <label htmlFor={format}>{format}</label>
+                            </React.Fragment>
                         ))}
                     </div>
                 </div>
 
+                {/* Условия и особенности */}
                 <div className="conditions-features-grid">
-                    <div className="conditions-section framed-section">
+                    <div className="framed-section">
                         <h3>Условия проведения</h3>
                         <div className="checkbox-grid">
                             {Object.entries(formState.conditions).map(([key, value]) => (
@@ -262,8 +290,8 @@ const EditEventPage = () => {
                         </div>
                     </div>
 
-                    <div className="features-section framed-section">
-                        <h3>Особенности</h3>
+                    <div className="framed-section">
+                        <h3>Особенности мероприятия</h3>
                         <div className="checkbox-grid">
                             {Object.entries(formState.features).map(([key, value]) => (
                                 <label key={key}>
@@ -279,12 +307,20 @@ const EditEventPage = () => {
                     </div>
                 </div>
 
-                <div className="form-actions">
-                    <button type="button" className="delete-button" onClick={handleDelete}>
+                {/* Кнопки действий */}
+                <div className="form-action-buttons">
+                    <button 
+                        type="button" 
+                        className="delete-button-outline"
+                        onClick={handleDelete}
+                    >
                         Удалить
                     </button>
-                    <button type="submit" className="save-button">
-                        Сохранить
+                    <button 
+                        type="submit" 
+                        className="save-button"
+                    >
+                        Сохранить изменения
                     </button>
                 </div>
             </form>

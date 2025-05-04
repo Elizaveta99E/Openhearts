@@ -28,7 +28,6 @@ interface EventFeatures {
     under18: boolean;
     reserveRecruitment: boolean;
     attendAsVisitor: boolean;
-    fundWinners: boolean;
     targetedHelp: boolean;
     accessibleForDisabled: boolean;
     withChildren: boolean;
@@ -67,12 +66,48 @@ const FEATURE_LABELS: Record<keyof EventFeatures, string> = {
   under18: "Младше 18 лет",
   reserveRecruitment: "Идет набор в резерв",
   attendAsVisitor: "Можно как посетитель",
-  fundWinners: "Победители конкурса Фонда президентских грантов",
   targetedHelp: "Адресная помощь",
   accessibleForDisabled: "Доступно для людей с инвалидностью",
   withChildren: "Можно приходить с детьми",
   educationalEvent: "Образовательное мероприятие"
 };
+
+const DIRECTIONS = [
+    "Дети и молодежь",
+    "Образование",
+    "Поиск пропавших",
+    "СВО",
+    "Урбанистика",
+    "Срочная помощь (ЧС)",
+    "Экология",
+    "Животные",
+    "Ветераны и историческая память",
+    "Спорт и события",
+    "Здравоохранение",
+    "Права человека",
+    "Помощь лицам с ОВЗ",
+    "Старшее поколение",
+    "Культура и искусство",
+    "Интеллектуальная помощь",
+    "Наука",
+    "Наставничество",
+    "Другое"
+  ];
+
+  interface EventFormState {
+    title: string;
+    location: string;
+    startDate: Date | null;
+    endDate: Date | null;
+    responsiblePerson: string;
+    volunteersNeeded: number;
+    description: string;
+    format: EventFormat;
+    conditions: EventConditions;
+    features: EventFeatures;
+    photo: File | null;
+    selectedDirections: string[];
+}
 
 const EditEventPage = () => {
     const [formState, setFormState] = useState<EventFormState>({
@@ -100,15 +135,17 @@ const EditEventPage = () => {
             under18: true,
             reserveRecruitment: true,
             attendAsVisitor: false,
-            fundWinners: false,
             targetedHelp: false,
             accessibleForDisabled: true,
             withChildren: false,
             educationalEvent: true,
         },
+        selectedDirections: [],
         photo: null,
     });
 
+    const [showDirections, setShowDirections] = useState(false);
+    
     const handleDateChange = (dates: [Date | null, Date | null]) => {
         const [start, end] = dates;
         setFormState(prev => ({
@@ -127,6 +164,15 @@ const EditEventPage = () => {
             [name]: name === "volunteersNeeded" ? Number(value) : value
         }));
     };
+
+    const toggleDirection = (direction: string) => {
+        setFormState(prev => ({
+          ...prev,
+          selectedDirections: prev.selectedDirections.includes(direction)
+            ? prev.selectedDirections.filter(d => d !== direction)
+            : [...prev.selectedDirections, direction]
+        }));
+      };
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
@@ -167,8 +213,8 @@ const EditEventPage = () => {
     };
 
     return (
-        <div className="edit-event-container">
-            <form onSubmit={handleSubmit} className="edit-event-form">
+        <div className="event-form">
+            <form onSubmit={handleSubmit} className="event-form">
                 <h2>Редактировать мероприятие</h2>
                 
                 <div className="form-fields-column">
@@ -240,6 +286,44 @@ const EditEventPage = () => {
                     </div>
                 </div>
 
+                {/* Секция выбора направлений */}
+            
+            <div className="directions-section">
+            <button 
+              type="button" 
+              className="add-direction-btn"
+              onClick={() => setShowDirections(true)}
+            >
+              <span>+</span>
+            </button>
+            
+            <div className="selected-directions">
+              {formState.selectedDirections.map(direction => (
+                <div key={direction} className="selected-tag">
+                  {direction}
+                </div>
+              ))}
+            </div>
+
+            {showDirections && (
+              <div className="directions-modal" onClick={() => setShowDirections(false)}>
+                <div className="directions-grid" onClick={e => e.stopPropagation()}>
+                  {DIRECTIONS.map(direction => (
+                    <div
+                      key={direction}
+                      className={`direction-item ${
+                        formState.selectedDirections.includes(direction) ? 'selected' : ''
+                      }`}
+                      onClick={() => toggleDirection(direction)}
+                    >
+                      {direction}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+                
                 {/* Описание мероприятия */}
                 <div className="form-group">
                     <label>Подробное описание:</label>
@@ -273,8 +357,8 @@ const EditEventPage = () => {
                 </div>
 
                 {/* Условия и особенности */}
-                <div className="conditions-features-grid">
-                    <div className="framed-section">
+                <div className="columns-container">
+                    <div className="conditions-section">
                         <h3>Условия проведения</h3>
                         <div className="checkbox-grid">
                             {Object.entries(formState.conditions).map(([key, value]) => (
@@ -290,7 +374,7 @@ const EditEventPage = () => {
                         </div>
                     </div>
 
-                    <div className="framed-section">
+                    <div className="features-section">
                         <h3>Особенности мероприятия</h3>
                         <div className="checkbox-grid">
                             {Object.entries(formState.features).map(([key, value]) => (

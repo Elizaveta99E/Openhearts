@@ -383,12 +383,14 @@ const CreateEventForm = () => {
                   </div>
               </div>
           </div>
-
           <button type="submit" className="submit-button">
-              Создать
+            Создать
           </button>
       </form>
+      
   );
+  
+
 }
 
 export default CreateEventForm;

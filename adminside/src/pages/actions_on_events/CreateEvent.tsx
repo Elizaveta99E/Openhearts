@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './file.css';
@@ -330,23 +331,23 @@ const CreateEventForm = () => {
   
       {/* Секция выбора формата */}
       <div className="form-section">
-              <h3>Формат проведения</h3>
-              <div className="format-options">
-                  {Object.values(EventFormat).map((format) => (
-                      <label key={format}>
-                          <input
-                              type="radio"
-                              name="format"
-                              value={format}
-                              checked={formState.format === format}
-                              onChange={() => setFormState(prev => ({ ...prev, format }))}
-                          />
-                          {format}
-                      </label>
-                  ))}
-              </div>
-          </div>
-
+    <h3>Формат проведения</h3>
+      <div className="format-options">
+          {Object.values(EventFormat).map((format) => (
+              <React.Fragment key={format}>
+                  <input
+                      type="radio"
+                      name="format"
+                      value={format}
+                      id={format}
+                      checked={formState.format === format}
+                      onChange={() => setFormState(prev => ({ ...prev, format }))}
+                  />
+                  <label htmlFor={format}>{format}</label>
+              </React.Fragment>
+          ))}
+      </div>
+  </div>
 
           {/* Секции условий и особенностей в двух колонках */}
           <div className="columns-container">
@@ -382,12 +383,14 @@ const CreateEventForm = () => {
                   </div>
               </div>
           </div>
-
           <button type="submit" className="submit-button">
-              Создать
+            Создать
           </button>
       </form>
+      
   );
+  
+
 }
 
 export default CreateEventForm;

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './file2.css'; // Импорт стилей
+import './file2.css';
 
 const EventInfoPage = () => {
-  const [showNotifications, setShowNotifications] = useState(false);
+  const [isAdmin] = useState(true); // Моковая проверка прав админа
 
-  // Моковые данные для примера
   const eventData = {
     title: "Помощь животным",
     city: "Москва",
@@ -14,34 +13,18 @@ const EventInfoPage = () => {
     format: "Офлайн",
     direction: "Экология",
     description: [
-      "Текст Текст Текст",
-      "Текст Текст Текст",
-      "Текст Текст Текст"
+      "Комплексная помощь бездомным животным городского приюта",
+      "Ежедневный уход, кормление и медицинские процедуры",
+      "Организация адаптации и поиска новых хозяев"
     ],
-    conditions: "Текст условий проведения мероприятия",
-    features: "Текст особенностей мероприятия"
-  };
-
-  const handleParticipate = () => {
-    // Логика для участия в мероприятии
-    console.log("Участие в мероприятии");
+    conditions: "Обязательная регистрация за 3 дня до мероприятия. Требуется медицинская книжка.",
+    features: "Возможность участия несовершеннолетних с сопровождением взрослых"
   };
 
   return (
     <div className="event-page-container">
-      {/* Навигационная цепочка */}
-      <nav className="breadcrumbs" aria-label="Хлебные крошки">
-        <ul>
-          <li><Link to="/main">Главная</Link></li>
-          <li><Link to="/events">Мероприятия</Link></li>
-          <li>Информация о мероприятии</li>
-        </ul>
-      </nav>
-
-      {/* Заголовок и уведомления */}
       <div className="header-section">
         <h2>Информация о мероприятии</h2>
-        
       </div>
 
       {/* Основная информация о мероприятии */}
@@ -54,64 +37,75 @@ const EventInfoPage = () => {
           />
           
           <div className="event-info">
-            <div className="name">{eventData.title}</div>
-            <div className="city">{eventData.city}</div>
-            <div className="dates">{eventData.dates}</div>
-            <div className="responsible">
-              Ответственное лицо: {eventData.responsible}
+            <span className="event-title">{eventData.title}</span>
+            <div className="event-meta">
+              <span className="city">{eventData.city}</span>
+              <span className="dates">{eventData.dates}</span>
+              <span className="responsible">Ответственное лицо: {eventData.responsible}</span>
             </div>
           </div>
         </div>
 
-        <div className="event-details">
-          <div className="event-format">
-            Формат проведения: {eventData.format}
-          </div>
-          <button 
-            className="other-buttons"
-            onClick={handleParticipate}
-          >
-            Принять участие
-          </button>
+        <div className="event-format-section">
+          <div className="format-label">Формат проведения:</div>
+          <div className="format-value">{eventData.format}</div>
         </div>
 
-        <div className="event-details">
-          <div className="event-format hybrid">
-            Направление: {eventData.direction}
-          </div>
+        <div className="direction-badge">
+          {eventData.direction}
         </div>
       </div>
 
-      {/* Описание мероприятия */}
-      <div className="event-card">
-        <div className="event-description">
-          <h3>Описание</h3>
-          <div className="description-content">
-            {eventData.description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-            
-            <div className="conditions">
-              <h4>Условия проведения:</h4>
-              <p>{eventData.conditions}</p>
-            </div>
-            
-            <div className="features">
-              <h4>Особенности:</h4>
-              <p>{eventData.features}</p>
-            </div>
-          </div>
+      {/* Блок описания с рамкой */}
+      <div className="description-section">
+        <h3 className="section-title">Описание</h3>
+    
+        <div className="description-content">
+          {eventData.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+
+        <div className="features-block">
+          <h4>Особенности</h4>
+          <p>{eventData.features}</p>
+        </div>
+
+        <div className="conditions-block">
+          <h4>Условия участия</h4>
+          <p>{eventData.conditions}</p>
         </div>
       </div>
 
-      {/* Ссылка на таблицу волонтеров */}
-      <div className="volunteers-link">
-        <Link to="/volunteers-table" className="volunteers-button">
-          Посмотреть таблицу волонтеров
+      {/* Ссылка на волонтеров */}
+      <div className="volunteers-link-wrapper">
+        <Link to="/volunteers-table" className="simple-link">
+          Посмотреть список волонтеров
         </Link>
       </div>
+
+      <h3 className="notification-title">Уведомления</h3>
+      {/* Админские уведомления */}
+      {isAdmin && (
+        <div className="admin-notifications"> 
+          <div className="notification-example">
+            <div className="notification-header">
+              <span className="notification-type new">Новая заявка: </span>
+              <span className="notification-time">2 часа назад</span>
+            </div>
+            <div className="notification-body">
+              <p>Петрова А.С. хочет присоединиться к мероприятию</p>
+              <div className="user-details">
+              </div>
+            </div>
+            <div className="notification-actions">
+              <button className="accept-btn">Принять</button>
+              <button className="reject-btn">Отклонить</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-    
   );
 };
 

@@ -1,107 +1,112 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './file2.css';
-import 'dayjs/locale/ru';
 
+const EventInfoPage = () => {
+  const [isAdmin] = useState(true); // Моковая проверка прав админа
 
-interface EventData {
-  title: string;
-  city: string;
-  dates: string;
-  responsible: string;
-  format: string;
-  description: string;
-  conditions: string;
-  volunteers: Volunteer[];
-  notifications: number;
-}
-
-interface Volunteer {
-  id: number;
-  fullName: string;
-  district: string;
-  contact: string;
-  participationCount: number;
-}
-
-const EventPage: React.FC = () => {
-  const [eventData, setEventData] = useState<EventData>({
+  const eventData = {
     title: "Помощь животным",
-    city: "Иркутск",
-    dates: "01.09.2023 - 30.09.2023",
-    responsible: "Иванова Мария Петровна",
+    city: "Москва",
+    dates: "15 — 20 сентября 2023",
+    responsible: "Иванов И.И.",
     format: "Офлайн",
-    description: "Особенности мероприятия...",
-    conditions: "Условия участия...",
-    volunteers: [
-      {
-        id: 1,
-        fullName: "Петрова Анна Сергеевна",
-        district: "© Свердловский район",
-        contact: "+7 999 123-45-67",
-        participationCount: 5
-      }
+    direction: "Экология",
+    description: [
+      "Комплексная помощь бездомным животным городского приюта",
+      "Ежедневный уход, кормление и медицинские процедуры",
+      "Организация адаптации и поиска новых хозяев"
     ],
-    notifications: 1
-  });
-
-  const handleEdit = () => {
-    // Логика редактирования
-    console.log("Редактирование мероприятия");
+    conditions: "Обязательная регистрация за 3 дня до мероприятия. Требуется медицинская книжка.",
+    features: "Возможность участия несовершеннолетних с сопровождением взрослых"
   };
 
   return (
-    <div className="event-container">
-      <h1>Информация о мероприятии</h1>
-      
-      <section className="event-section">
-        <h2>{eventData.title}</h2>
-        <div className="event-info">
-          <p>{eventData.city}</p>
-          <p>Сроки: {eventData.dates}</p>
-          <p>Ответственное лицо: {eventData.responsible}</p>
-        </div>
-        <button onClick={handleEdit} className="edit-button">Редактировать</button>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section className="event-section">
-        <h3>Формат проведения: {eventData.format}</h3>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section className="event-section">
-        <h3>Описание</h3>
-        <p>{eventData.description}</p>
-      </section>
-
-      <hr className="section-divider" />
-
-      <section className="event-section">
-        <h3>Условия</h3>
-        <p>{eventData.conditions}</p>
-      </section>
-
-      <div className="volunteers-section">
-        <button className="volunteers-button">
-          Перейти к волонтерам
-          {eventData.notifications > 0 && 
-            <span className="notification-badge">{eventData.notifications}</span>}
-        </button>
-
-        {eventData.volunteers.map(volunteer => (
-          <div key={volunteer.id} className="volunteer-card">
-            <h4>{volunteer.fullName}</h4>
-            <p>{volunteer.district}</p>
-            <p>{volunteer.contact}</p>
-            <p>Участвовала: {volunteer.participationCount} раз</p>
-            <button className="profile-button">Перейти в профиль</button>
-          </div>
-        ))}
+    <div className="event-page-container">
+      <div className="header-section">
+        <h2>Информация о мероприятии</h2>
       </div>
+
+      {/* Основная информация о мероприятии */}
+      <div className="event-card-head">
+        <div className="event-header">
+          <img 
+            src="/path/to/event-image.jpg" 
+            alt="Изображение мероприятия" 
+            className="event-image"
+          />
+          
+          <div className="event-info">
+            <span className="event-title">{eventData.title}</span>
+            <div className="event-meta">
+              <span className="city">{eventData.city}</span>
+              <span className="dates">{eventData.dates}</span>
+              <span className="responsible">Ответственное лицо: {eventData.responsible}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="event-format-section">
+          <div className="format-label">Формат проведения:</div>
+          <div className="format-value">{eventData.format}</div>
+        </div>
+
+        <div className="direction-badge">
+          {eventData.direction}
+        </div>
+      </div>
+
+      {/* Блок описания с рамкой */}
+      <div className="description-section">
+        <h3 className="section-title">Описание</h3>
+    
+        <div className="description-content">
+          {eventData.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+
+        <div className="features-block">
+          <h4>Особенности</h4>
+          <p>{eventData.features}</p>
+        </div>
+
+        <div className="conditions-block">
+          <h4>Условия участия</h4>
+          <p>{eventData.conditions}</p>
+        </div>
+      </div>
+
+      {/* Ссылка на волонтеров */}
+      <div className="volunteers-link-wrapper">
+        <Link to="/volunteers-table" className="simple-link">
+          Посмотреть список волонтеров
+        </Link>
+      </div>
+
+      <h3 className="notification-title">Уведомления</h3>
+      {/* Админские уведомления */}
+      {isAdmin && (
+        <div className="admin-notifications"> 
+          <div className="notification-example">
+            <div className="notification-header">
+              <span className="notification-type new">Новая заявка: </span>
+              <span className="notification-time">2 часа назад</span>
+            </div>
+            <div className="notification-body">
+              <p>Петрова А.С. хочет присоединиться к мероприятию</p>
+              <div className="user-details">
+              </div>
+            </div>
+            <div className="notification-actions">
+              <button className="accept-btn">Принять</button>
+              <button className="reject-btn">Отклонить</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default EventPage;
+export default EventInfoPage;

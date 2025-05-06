@@ -13,7 +13,7 @@ import { WorkerAccount } from "./pages/workeraccount/list.tsx";
 import { WorkerEditProfile } from "./pages/workereditprofile/list.tsx";
 import CreateEventForm from "./pages/actions_on_events/CreateEvent.tsx"
 import DeleteEvent from "./pages/actions_on_events/DeleteEvent.tsx"
-import EventPage from "./pages/actions_on_events/EventPage.tsx"
+import EventInfoPage from "./pages/actions_on_events/EventPage.tsx"
 import EditEventPage from "./pages/actions_on_events/ChangeEvent.tsx"
 import {VolunteerAccount} from "./pages/volunteers/page.tsx"
 
@@ -58,7 +58,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           </Route>
 
           <Route path="page">
-            <Route index element={<EventPage />} />
+            <Route index element={<EventInfoPage />} />
           </Route>
           <Route path='volunteer' element={<VolunteerAccount/>}/>
           <Route path="change">

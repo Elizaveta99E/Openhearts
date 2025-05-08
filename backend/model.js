@@ -1,4 +1,4 @@
-const pg = require('pg')
+
 const sequelize = require('../backend/db');
 const {DataTypes} = require('sequelize');
 
@@ -55,7 +55,7 @@ const Staff = sequelize.define('Staff', {
     Photo: {type: DataTypes.TEXT}
 });
 
-Staff.belongsTo(StaffRoles, { foreignKey: 'StaffRole' });
+Staff.belongsTo(Staff, { foreignKey: 'Staffes' });
 
 const Volunteers = sequelize.define('Volunteers', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -68,7 +68,7 @@ const Volunteers = sequelize.define('Volunteers', {
     Photo: {type: DataTypes.TEXT}
 },);
 
-Volunteers.belongsTo(Cities, { foreignKey: 'City' });
+Volunteers.belongsTo(Cities, { foreignKey: 'Cities' });
 Volunteers.belongsTo(VolunteersStatus, { foreignKey: 'Status' });
 
 const Events = sequelize.define('Events', {
@@ -86,66 +86,19 @@ const Events = sequelize.define('Events', {
 });
 
 Events.belongsTo(Staff, { foreignKey: 'IdStaff' });
-Events.belongsTo(Cities, { foreignKey: 'City' });
-Events.belongsTo(Format, { foreignKey: 'Format' });
+Events.belongsTo(Format, { foreignKey: 'Formats' });
 Events.belongsTo(EventsStatus, { foreignKey: 'Status' });
-Events.belongsTo(Course, { foreignKey: 'Course' });
+Events.belongsTo(Course, { foreignKey: 'Courses' });
 
 const Activity = sequelize.define('Activity', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     Datetime: {type: DataTypes.DATEONLY}
 }, { timestamps: false });
 
-Activity.belongsTo(Events, { foreignKey: 'Event' });
-Activity.belongsTo(Volunteers, { foreignKey: 'Volunteer' });
+Activity.belongsTo(Events, { foreignKey: 'Events' });
+Activity.belongsTo(Volunteers, { foreignKey: 'Volunteeres' });
 
 // Синхронизация с БД
 sequelize.sync({ alter: true })
-    .then(() => console.log('Все таблицы созданы'))
-    .catch(error => console.error('Ошибка синхронизации:', error));
-
-
-// Для модели Staff
-Staff.belongsTo(StaffRoles, {
-    foreignKey: 'StaffRole', // Поле в таблице Staff
-    as: 'Role' // Уникальное имя для ассоциации
-});
-
-// Для модели Volunteers
-Volunteers.belongsTo(Cities, {
-    foreignKey: 'City',
-    as: 'VolunteerCity' // Уникальное имя
-});
-
-Volunteers.belongsTo(VolunteersStatus, {
-    foreignKey: 'Status',
-    as: 'VolunteerStatus'
-});
-
-// Для модели Events
-Events.belongsTo(Staff, {
-    foreignKey: 'IdStaff',
-    as: 'ResponsibleStaff'
-});
-
-Events.belongsTo(Cities, {
-    foreignKey: 'City',
-    as: 'EventCity'
-});
-
-Events.belongsTo(Format, {
-    foreignKey: 'Format',
-    as: 'EventFormat'
-});
-
-Events.belongsTo(EventsStatus, {
-    foreignKey: 'Status',
-    as: 'EventStatus'
-});
-
-Events.belongsTo(Course, {
-    foreignKey: 'Course',
-    as: 'EventCourse'
-});
-
-
+    .then(() => console.log("It's work!"))
+    .catch(error => console.error('Error:', error));

@@ -1,6 +1,7 @@
 const express = require ('express')
+const pg = require('pg')
 const staffRouter = require('./routes/staff.routes')
-const sequelize = require('./db');
+const sequelize = require('../backend/model')
 const PORT = process.env.PORT || 8080
 const app = express()
 
@@ -10,13 +11,14 @@ const start = async () => {
   try {
     await sequelize.authenticate()
     await sequelize.sync()
-    app.listen(PORT,  () => console.log(`server started on post ${PORT}`))
+
   }
   catch {
     console.log("Don't work")
   }
 }
 
+app.listen(PORT,  () => console.log(`server started on post ${PORT}`))
 app.use('/static', express.static('static'))
 
 app.get('/', (req, res) => {

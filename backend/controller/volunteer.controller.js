@@ -1,11 +1,12 @@
-
 const db = require('../db.js')
-class StaffController{
+class VolunteerController{
     async create(req,res){
     }
 
     async get(req,res){
     }
+
+
 
     async update(req,res){
     }
@@ -14,17 +15,18 @@ class StaffController{
     }
 
     async registration(req,res){
+        const {email, password} = req.body
+        if(!email || !password) {
+            return 0
+        }
     }
 
     async login(req,res){
+
     }
 
-  async check(req,res, next){
-      const {id} = req.query
-      if (!id) {
-        next(ApiError)
-      }
-      res.json(id)
-  }
+    async check(req,res){
+        res.json('Hello!')
+    }
 }
-module.exports = new StaffController()
+module.exports = new VolunteerController()

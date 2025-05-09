@@ -5,8 +5,4 @@ const StaffController = require('../controller/staff.controller');
 
 const router = new Router();
 
-router.post('/registration', StaffController.registration)
-router.post('/login', StaffController.login)
-router.get('/check', StaffController.check)
-
 module.exports = router

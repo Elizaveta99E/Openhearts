@@ -2,7 +2,9 @@ const express = require('express');
 const sequelize =  require('./db');
 const VolunteerRouter = require('./routes/volunteer_routes');
 const StaffRouter = require('./routes/staff_router');
+const EventController = require('./routes/event_router');
 const cors = require('cors');
+
 
 const PORT = process.env.PORT || 8080;
 
@@ -14,7 +16,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/staff', StaffRouter)
 app.use('/volunteer', VolunteerRouter)
-
+app.use('/event', EventController)
 app.use('/static', express.static('static'))
 
 app.get('/', (req, res) => {
@@ -31,4 +33,5 @@ const start = async () => {
   }
 }
 
+app.use(Error)
 app.listen(PORT,  () => console.log(`server started on post ${PORT}`))

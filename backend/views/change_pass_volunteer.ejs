@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Смена пароля</title>
+    <link rel="icon" href="../static/image/logos/mini_logo.svg">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/for-change-pass-volunteer.css">
+
+
+    <script>
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text"; // Показываем пароль
+                icon.src = "../static/image/icon/eye-open.svg"; // Меняем иконку на открытую
+            } else {
+                input.type = "password"; // Скрываем пароль
+                icon.src = "../static/image/icon/eye-closed.svg"; // Меняем иконку на закрытую
+            }
+        }
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.style.display = 'none'; // Скрываем сообщение об ошибках
+
+// Проверка условий для пароля
+            const passwordConditions = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+            if (!passwordConditions.test(password)) {
+                errorMessage.textContent = 'Пароль должен содержать минимум 6 символов, включая заглавные и строчные буквы, цифры и специальные символы.';
+                errorMessage.style.display = 'block'; // Показываем сообщение об ошибках
+                return;
+            }
+
+// Проверка на совпадение паролей
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Пароли не совпадают.';
+                errorMessage.style.display = 'block'; // Показываем сообщение об ошибках
+                return;
+            }
+
+// Если все проверки пройдены, можно отправить форму или выполнить другие действия
+            alert('Форма успешно отправлена!'); // Замените это на вашу логику отправки формы
+        }
+    </script>
+
+</head>
+<body>
+<header>
+</header>
+<div class="container">
+    <div id="start-edit-volunteer-account">
+        <p class="navigation">Личная страничка/</p>
+        <h2>Сменить пароль</h2>
+        <p id="comment">Для смены пароля воспользуйтесь формой ниже</p>
+    </div>
+    <div class="inputs">
+        <div class="form-field">
+            <input type="password" id="confirm-password" placeholder="Старый пароль (обязательное поле)" required>
+            <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('old-password', this)">
+        </div>
+        <div class="form-field">
+            <input type="password" id="password" placeholder="Новый пароль*" required>
+            <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('password', this)">
+        </div>
+        <div class="inputs">
+            <div class="form-field">
+                <input type="password" id="confirm-password" placeholder="Повторите пароль (обязательное поле)" required>
+                <img src="../static/image/icon/eye-closed.svg" alt="Скрыть" class="toggle-password" onclick="togglePassword('confirm-password', this)">
+            </div>
+        </div>
+</body>

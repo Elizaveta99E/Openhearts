@@ -1,5 +1,6 @@
 const pg = require('pg');
 const {Sequelize} = require('sequelize');
+
 module.exports = new Sequelize({
     database: 'Openhearts',
     username: 'postgres',

@@ -46,12 +46,12 @@ const Cities = sequelize.define('City', {
 const Staff = sequelize.define('Staff', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32)},
-    Mail: {type: DataTypes.STRING(32), unique: true},
-    Phone:{type: DataTypes.STRING(32)},
+    Mail: {type: DataTypes.STRING(64), unique: true},
+    Phone:{type: DataTypes.STRING(16)},
     RegDate: {type: DataTypes.DATEONLY, unique: true},
     Birthday: {type: DataTypes.DATEONLY, unique: true},
     Photo: {type: DataTypes.STRING(32), unique: true},
-    Password: {type: DataTypes.STRING(32)}
+    Password: {type: DataTypes.STRING(128)}
 });
 
 Staff.belongsTo(StaffRoles, {foreignKey: 'Role',});
@@ -59,11 +59,11 @@ Staff.belongsTo(StaffRoles, {foreignKey: 'Role',});
 const Volunteers = sequelize.define('Volunteer', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32)},
-    Mail: {type: DataTypes.STRING(32), unique: true},
-    Phone:{type: DataTypes.STRING(32)},
+    Mail: {type: DataTypes.STRING(64), unique: true},
+    Phone:{type: DataTypes.STRING(16)},
     RegDate: {type: DataTypes.DATEONLY, unique: true},
     Birthday: {type: DataTypes.DATEONLY, unique: true},
-    Password: {type: DataTypes.STRING(32)},
+    Password: {type: DataTypes.STRING(128)},
     Comment: {type: DataTypes.TEXT},
     Photo: {type: DataTypes.STRING(32)},
 

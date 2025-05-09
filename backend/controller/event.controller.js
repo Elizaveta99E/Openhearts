@@ -6,6 +6,7 @@ class EventController {
     async create(req, res, next) {
         try {
             const {
+                id,
                 Name,
                 StartDate,
                 EndDate,
@@ -24,6 +25,7 @@ class EventController {
             } = req.body;
 
             const event = await Events.create({
+                id,
                 Name,
                 StartDate,
                 EndDate,
@@ -66,14 +68,22 @@ class EventController {
 
     async find(req, res, next) {
         try {
-            const {id} = req.params;
+            const {id} = req.query;
             if (!id) return next(ApiError.badRequest('Не указан ID'));
 
-            const event = await Events.findOne({
-                where: {id},
+            const event = await Events.findByPk(id, {
                 include: [
-                    {model: Events}
-                ]});
+                    {model: Cities},
+                    {model: Format},
+                    {model: EventsStatus},
+                    {model: Course},
+                    {model: Staff}
+                ]
+            });
+
+            if (!event) {
+                return next(ApiError.badRequest('Мероприятие не найдено'));
+            }
 
             return res.json(event);
         } catch (e) {

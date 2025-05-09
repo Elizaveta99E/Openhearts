@@ -1,5 +1,6 @@
-
 const db = require('../db.js')
+const ApiError = require('../error/api_error')
+
 class StaffController{
     async create(req,res){
     }
@@ -19,10 +20,10 @@ class StaffController{
     async login(req,res){
     }
 
-  async check(req,res, next){
+  async check(req, res, next){
       const {id} = req.query
       if (!id) {
-        next(ApiError)
+        return next(ApiError.badRequest('Stupid people'))
       }
       res.json(id)
   }

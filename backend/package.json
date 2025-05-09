@@ -16,8 +16,10 @@
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "path-to-regexp": "^8.2.0",
     "pg": "^8.15.6",
     "require": "^2.4.20",
+    "router": "^2.2.0",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {

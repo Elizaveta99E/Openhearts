@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize =  require('./db');
-const router = require('./routes/index_router');
+const VolunteerRouter = require('./routes/volunteer_routes');
+const StaffRouter = require('./routes/staff_router');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
@@ -11,7 +12,8 @@ app.set('view engine', 'ejs')
 
 app.use(cors())
 app.use(express.json())
-app.use('/api', router)
+app.use('/staff', StaffRouter)
+app.use('/volunteer', VolunteerRouter)
 
 app.use('/static', express.static('static'))
 

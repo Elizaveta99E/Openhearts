@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('../db.js')
 class StaffController{
     async createStaff(req,res){
         const {Mail, Name, Phone, Regdate, Birthday, StaffRole, Photo}=req.body

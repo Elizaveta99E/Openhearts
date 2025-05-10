@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import cx from 'clsx';
 import { MantineProvider,
   Container,
@@ -18,6 +18,7 @@ import { useMask } from '@react-input/mask';
 import { IconChevronRight, IconChevronLeft, IconPhone } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import classes from '../Demo.module.css';
+import {useFetch} from "@mantine/hooks";
 
 const theme = createTheme({
     components: {
@@ -30,7 +31,6 @@ const theme = createTheme({
   });
 
 export function WorkerEditProfile() {
-    const [value, setValue] = useState('Clear me');
 
     const inputRef = useMask({ 
         mask: '+7 (___) ___-__-__', 

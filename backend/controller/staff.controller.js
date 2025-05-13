@@ -6,6 +6,44 @@ const jwt = require('jsonwebtoken');
 
 class StaffController{
 
+    async create(req, res, next) {
+        try {
+            const {Name, Mail, Password, Phone, Birthday, Role} = req.body;
+
+            // Проверка существования email
+            const candidate = await Staff.findOne({ where: { Mail } });
+            if(candidate) {
+                return next(ApiError.badRequest('Сотрудник с таким email уже существует'));
+            }
+
+            // Хеширование пароля
+            const hashPassword = await bcrypt.hash(Password, 10);
+
+            // Создание сотрудника
+            const staff = await Staff.create({
+                Name,
+                Mail,
+                Password: hashPassword, // Используем хешированный пароль
+                Phone,
+                Birthday,
+                Role,
+                RegDate: new Date()
+            });
+
+            // Генерация JWT (опционально, если требуется сразу выдать токен)
+            const token = jwt.sign(
+                {id: staff.id, email: Mail, role: 'staff'},
+                process.env.SECRET_KEY,
+                {expiresIn: '24h'}
+            );
+
+            return res.json({...staff.toJSON(), token}); // Возвращаем токен в ответе
+
+        } catch (e) {
+            next(ApiError.internal(e.message));
+        }
+    }
+
     async get(req, res, next) {
         try {
             const staffs = await Staff.findAll({
@@ -61,66 +99,5 @@ class StaffController{
         }
     }
 
-    async registration(req, res, next) {
-        try {
-            const { Name, Mail, Password, RoleId } = req.body;
-
-            // Проверка существования роли
-            const role = await StaffRoles.findByPk(RoleId);
-            if (!role) {
-                return next(ApiError.badRequest("Роль не найдена"));
-            }
-
-            // Проверка уникальности почты
-            const candidate = await Staff.findOne({ where: { Mail } });
-            if (candidate) {
-                return next(ApiError.badRequest("Пользователь уже существует"));
-            }
-
-            // Хеширование пароля
-            const hashPassword = await bcrypt.hash(Password, 5);
-
-            // Создание сотрудника
-            const staff = await Staff.create({
-                Name,
-                Mail,
-                Password: hashPassword,
-                Role: RoleId, // Убедитесь, что поле называется именно так
-                RegDate: new Date().toISOString().split("T")[0]
-            });
-
-            // Генерация токена
-            const token = generateJwt(staff.id, RoleId);
-            return res.json({ token });
-
-        } catch (e) {
-            next(ApiError.internal(e.message));
-        }
-    }
-
-    async login(req, res, next) {
-        try {
-            const {Mail, Password} = req.body;
-            const staff = await Staff.findOne({where: {Mail}});
-            if (!staff) {
-                return next(ApiError.internal('Пользователь не найден'));
-            }
-
-            let comparePassword = bcrypt.compareSync(Password, staff.Password);
-            if (!comparePassword) {
-                return next(ApiError.internal('Указан неверный пароль'));
-            }
-
-            const token = generateJwt(staff.id, staff.Role);
-            return res.json({token});
-        } catch (e) {
-            next(ApiError.internal(e.message));
-        }
-    }
-
-    async check(req, res) {
-        const token = generateJwt(req.user.id, req.user.role);
-        return res.json({token});
-    }
 }
 module.exports = new StaffController()

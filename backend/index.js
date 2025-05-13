@@ -1,8 +1,6 @@
 const express = require('express');
 const sequelize =  require('./db');
-const VolunteerRouter = require('./routes/volunteer_routes');
-const StaffRouter = require('./routes/staff_router');
-const EventRouter = require('./routes/event_router');
+const Router = require('./routes/index_router');
 const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
@@ -16,9 +14,7 @@ app.set('view engine', 'ejs')
 
 app.use(cors())
 app.use(express.json())
-app.use('/staff', StaffRouter)
-app.use('/volunteer', VolunteerRouter)
-app.use('/event', EventRouter)
+app.use('/app', Router)
 app.use('/static', express.static('static'))
 
 app.get('/', (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize =  require('./db');
-const Router = require('./routes/index_router');
+const router = require('./routes/index_router');
 const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
@@ -14,7 +14,7 @@ app.set('view engine', 'ejs')
 
 app.use(cors())
 app.use(express.json())
-app.use('/app', Router)
+app.use('/api', router)
 app.use('/static', express.static('static'))
 
 app.get('/', (req, res) => {

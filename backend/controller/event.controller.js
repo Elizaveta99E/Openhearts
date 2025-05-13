@@ -1,47 +1,19 @@
-const db = require('../db.js')
 const ApiError = require('../error/api_error')
-const {Staff, Events, Cities, Format, EventsStatus, Course} = require('../models')
+const {Event, Staff, City, Course, Format, EventStatus, Condition, Peculiarity} = require('../models');
 
 class EventController {
     async create(req, res, next) {
         try {
-            const {
-                id,
-                Name,
-                StartDate,
-                EndDate,
-                Description,
-                Conditions,
-                Peculiarities,
-                Needs,
-                Pic,
-                Time,
-                Place,
-                CityId,
-                FormatId,
-                StatusId,
-                CourseId,
-                StaffId
-            } = req.body;
+            const eventData = req.body;
+            const event = await Event.create(eventData);
 
-            const event = await Events.create({
-                id,
-                Name,
-                StartDate,
-                EndDate,
-                Description,
-                Conditions,
-                Peculiarities,
-                Needs,
-                Pic,
-                Time,
-                Place,
-                Cities: CityId,
-                Formates: FormatId,
-                Status: StatusId,
-                Courses: CourseId,
-                IdStaff: StaffId
-            });
+            // Добавление связей многие-ко-многим
+            if (eventData.conditions) {
+                await event.addConditions(eventData.conditions);
+            }
+            if (eventData.peculiarities) {
+                await event.addPeculiarities(eventData.peculiarities);
+            }
 
             return res.json(event);
         } catch (e) {
@@ -51,13 +23,15 @@ class EventController {
 
     async getAll(req, res, next) {
         try {
-            const events = await Events.findAll({
+            const events = await Event.findAll({
                 include: [
-                    {model: Cities},
-                    {model: Format},
-                    {model: EventsStatus},
+                    {model: Staff},
+                    {model: City},
                     {model: Course},
-                    {model: Staff}
+                    {model: Format},
+                    {model: EventStatus},
+                    {model: Condition},
+                    {model: Peculiarity}
                 ]
             });
             return res.json(events);
@@ -68,23 +42,24 @@ class EventController {
 
     async find(req, res, next) {
         try {
-            const {id} = req.query;
-            if (!id) return next(ApiError.badRequest('Не указан ID'));
+            const {id} = req.params;
 
-            const event = await Events.findByPk(id, {
+            const event = await Event.findOne({
+                where: {id},// Исправлено: Events → Event
                 include: [
-                    {model: Cities},
-                    {model: Format},
-                    {model: EventsStatus},
+                    {model: Staff},
+                    {model: City},
                     {model: Course},
-                    {model: Staff}
+                    {model: Format},
+                    {model: EventStatus},
+                    {model: Condition},
+                    {model: Peculiarity}
                 ]
             });
 
             if (!event) {
-                return next(ApiError.badRequest('Мероприятие не найдено'));
+                return next(ApiError.badRequest('Event not found'));
             }
-
             return res.json(event);
         } catch (e) {
             next(ApiError.internal(e.message));
@@ -93,15 +68,23 @@ class EventController {
 
     async update(req, res, next) {
         try {
-            const {id, ...data} = req.body;
-            if (!id) return next(ApiError.badRequest('Не указан ID'));
+            const {id} = req.params;
+            const event = await Event.findByPk(id);
+            if (!event) {
+                return next(ApiError.badRequest('Event not found'));
+            }
 
-            const updatedEvent = await Events.update(data, {
-                where: {id},
-                returning: true
-            });
+            await event.update(req.body);
 
-            return res.json(updatedEvent[1][0]);
+            // Обновление связей
+            if (req.body.conditions) {
+                await event.setConditions(req.body.conditions);
+            }
+            if (req.body.peculiarities) {
+                await event.setPeculiarities(req.body.peculiarities);
+            }
+
+            return res.json(event);
         } catch (e) {
             next(ApiError.internal(e.message));
         }
@@ -109,19 +92,22 @@ class EventController {
 
     async delete(req, res, next) {
         try {
-            const {id} = req.query;
-            if (!id) return next(ApiError.badRequest('Не указан ID'));
-
-            await Events.destroy({where: {id}});
-            return res.json({message: 'Мероприятие удалено'});
+            const {id} = req.params;
+            const event = await Event.findByPk(id);
+            if (!event) {
+                return next(ApiError.badRequest('Event not found'));
+            }
+            await event.destroy();
+            return res.json({message: 'Event deleted'});
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
     async check(req, res) {
-        res.json('Event controller works!');
+        res.json("It's events!")
     }
+
 }
 
 module.exports = new EventController()

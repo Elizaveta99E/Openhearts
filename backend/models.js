@@ -43,7 +43,6 @@ const Staff = sequelize.define('Staff', {
     name: { type: DataTypes.STRING(100) },
     mail: { type: DataTypes.STRING(100), unique: true },
     phone: { type: DataTypes.STRING(100) },
-    regDate: { type: DataTypes.DATEONLY },
     birthday: { type: DataTypes.DATEONLY },
     photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
@@ -55,7 +54,6 @@ const Volunteer = sequelize.define('Volunteer', {
     name: { type: DataTypes.STRING(100) },
     mail: { type: DataTypes.STRING(100), unique: true },
     phone: { type: DataTypes.STRING(100) },
-    regDate: { type: DataTypes.DATEONLY },
     birthday: { type: DataTypes.DATEONLY },
     comment: { type: DataTypes.TEXT },
     photo: { type: DataTypes.TEXT }
@@ -104,8 +102,15 @@ const User = sequelize.define('User', {
     regDate: { type: DataTypes.DATEONLY }
 }, { timestamps: false });
 
-User.belongsTo(Staff, { foreignKey: 'staffId' });
-User.belongsTo(Volunteer, { foreignKey: 'volunteerId' });
+User.belongsTo(Staff, {
+    foreignKey: 'staffId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
+
+User.belongsTo(Volunteer, {
+    foreignKey: 'volunteerId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
 
 module.exports = {
     StaffRole,

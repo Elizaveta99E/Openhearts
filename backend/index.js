@@ -4,6 +4,8 @@ const router = require('./routes/index_router');
 const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
+const cookieParser = require('cookie-parser');
+
 
 
 const PORT = process.env.PORT || 8080;
@@ -12,7 +14,11 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
-app.use(cors())
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+app.use(cookieParser());
 app.use(express.json())
 app.use('/api', router)
 app.use('/static', express.static('static'))

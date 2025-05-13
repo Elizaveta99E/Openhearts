@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const {Staff, StaffRole} = require('../models');
+const {Staff, StaffRole, User} = require('../models');
 const ApiError = require('../error/api_error');
 
 
@@ -7,17 +7,30 @@ class StaffController {
     async create(req, res, next) {
         try {
             const {name, mail, phone, regDate, birthday, photo, staffRoleId, password} = req.body;
-            const hashPassword = await bcrypt.hash(password, 5);
 
+            if (!name || !mail || !password) {
+                return next(ApiError.badRequest('Имя, почта и пароль обязательны'));
+            }
+
+            const hashPassword = await bcrypt.hash(password, 5);
+            const currentDate = new Date().toISOString().split('T')[0];
+
+            // Создаем сотрудника
             const staff = await Staff.create({
                 name,
                 mail,
                 phone,
-                regDate,
+                regDate: regDate || currentDate,
                 birthday,
                 photo,
-                staffRoleId,
-                password: hashPassword
+                staffRoleId
+            });
+
+            // Создаем пользователя
+            const user = await User.create({
+                hash: hashPassword,
+                regDate: currentDate,
+                staffId: staff.id
             });
 
             return res.json(staff);
@@ -74,6 +87,13 @@ class StaffController {
             if (!staff) {
                 return next(ApiError.badRequest('Staff not found'));
             }
+
+            // Находим и удаляем связанного пользователя
+            const user = await User.findOne({ where: { staffId: id } });
+            if (user) {
+                await user.destroy();
+            }
+
             await staff.destroy();
             return res.json({message: 'Staff deleted'});
         } catch (e) {

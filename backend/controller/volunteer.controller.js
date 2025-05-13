@@ -1,14 +1,37 @@
 const db = require('../db.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-const {Volunteer, City} = require('../models');
+const {Volunteer, City, User} = require('../models');
 const ApiError = require('../error/api_error');
 
 class VolunteerController {
     async create(req, res, next) {
         try {
             const volunteerData = req.body;
-            const volunteer = await Volunteer.create(volunteerData);
+
+            if (!volunteerData.name || !volunteerData.mail || !volunteerData.password) {
+                return next(ApiError.badRequest('Имя, почта и пароль обязательны'));
+            }
+
+            const hashPassword = await bcrypt.hash(volunteerData.password, 5);
+            const currentDate = new Date().toISOString().split('T')[0];
+
+            // Удаляем пароль из данных волонтера
+            delete volunteerData.password;
+
+            // Создаем волонтера
+            const volunteer = await Volunteer.create({
+                ...volunteerData,
+                regDate: volunteerData.regDate || currentDate
+            });
+
+            // Создаем пользователя
+            const user = await User.create({
+                hash: hashPassword,
+                regDate: currentDate,
+                volunteerId: volunteer.id
+            });
+
             return res.json(volunteer);
         } catch (e) {
             next(ApiError.badRequest(e.message));
@@ -63,6 +86,13 @@ class VolunteerController {
             if (!volunteer) {
                 return next(ApiError.badRequest('Volunteer not found'));
             }
+
+            // Находим и удаляем связанного пользователя
+            const user = await User.findOne({ where: { volunteerId: id } });
+            if (user) {
+                await user.destroy();
+            }
+
             await volunteer.destroy();
             return res.json({message: 'Volunteer deleted'});
         } catch (e) {

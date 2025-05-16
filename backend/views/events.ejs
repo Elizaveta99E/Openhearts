@@ -1,76 +1,81 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-    <title>Open heaarts</title>
-    <link rel = 'icon' href = "..\static\images\mini_logo.svg">
-    <link href="..\static\css\style.css" rel="stylesheet">
-    <link href="..\static\css\style 2.0.css" rel="stylesheet">
-    <link href="..\static\css\wow.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Hearts - Мероприятия</title>
+  <link rel="icon" href="/static/images/mini_logo.svg">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link href="/static/css/style-2.0.css" rel="stylesheet">
+  <link href="/static/css/wow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
-<header>
+  <header>
     <%- include ('Header/header-not-authorized'); -%>
-</header>
+  </header>
 
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
     <ul>
-        <li><a href="..\html\main.html">Главная</a></li>
-        <li><a>Мероприятия</a></li>
+      <li><a href="/">Главная</a></li>
+      <li><a>Мероприятия</a></li>
     </ul>
-</nav>
+  </nav>
 
-<div id="start_log_in">
-    <h2>Мероприятия</h2>
-</div>
-<div class="pagination">
-    <span class="page-item active">1</span>
-</div>
+  <main class="container">
+    <div id="start_log_in">
+      <h1>Мероприятия</h1>
+    </div>
 
-<div class="view-controls">
-    <div class="select-group">
-        <select id="sort">
-            <option> Не сортировать</option>
+    <div class="pagination">
+      <span class="page-item active">1</span>
+      <span class="page-item">2</span>
+      <span class="page-item">3</span>
+      <span class="page-item">10</span>
+    </div>
+
+    <div class="search-and-filters">
+      <div class="view-controls">
+        <div class="select-group">
+          <select id="sort">
+            <option>Не сортировать</option>
             <option>По дате</option>
             <option>По городу</option>
             <option>По названию</option>
-        </select>
+          </select>
 
-        <select id="per-page">
+          <select id="per-page">
             <option>Показывать все</option>
             <option>10 на странице</option>
             <option>25 на странице</option>
             <option>50 на странице</option>
-        </select>
-    </div>
-</div>
-</div>
+          </select>
+        </div>
+      </div>
 
-<div class="for">
-    <div class="container_for">
-        <input type="text" class="for-input" placeholder="Найти">
-        <button class="for-button"></button>
-    </div>
-</div>
+      <div class="for">
+        <div class="container_for">
+          <input type="text" class="for-input" placeholder="Найти">
+          <button class="for-button"></button>
+        </div>
+      </div>
 
-<h4>Фильтры</h4>
+      <h4>Фильтры</h4>
 
-<div class="container_form">
-    <div>
-        <a><img src="..\static\image\icon\Vector.svg"></a>
-        <a class="event-directions"  style="cursor: pointer; color: #2D0F12;">Направления</a>
-    </div>
-    <div class="directions-modal" id="directionsModal">
-        <div class="modal-content">
-            <div class="modal-header">
+      <div class="filter-section">
+        <div class="container_form">
+          <div>
+            <a><img src="/static/image/icon/Vector.svg"></a>
+            <a class="event-directions" style="cursor: pointer; color: #2D0F12;">Направления</a>
+          </div>
+          <div class="directions-modal" id="directionsModal">
+            <div class="modal-content">
+              <div class="modal-header">
                 <h4>Выберите направления</h4>
                 <span class="close-modal">&times;</span>
-            </div>
-            <div class="directions-list">
+              </div>
+              <div class="directions-list">
                 <div class="direction-item">Дети и молодежь</div>
                 <div class="direction-item">Образование</div>
                 <div class="direction-item">Поиск пропавших</div>
@@ -90,220 +95,295 @@
                 <div class="direction-item">Наука</div>
                 <div class="direction-item">Наставничество</div>
                 <div class="direction-item">Другое</div>
+              </div>
             </div>
         </div>
+        </div>
+
+        <div class="container_form">
+          <div>
+            <a><img src="/static/image/icon/Vector.svg"></a>
+            <a style="color: #2D0F12;">Дата</a>
+            <input type="text" id="dateRangePicker" placeholder="Дата" class="flatpickr-input">
+          </div>
+        </div>
+      </div>
+
+      <h4>Формат проведения</h4>
+      <div class="container_form">
+        <p>
+          <input type="checkbox" class="form_buttons" id="a">
+          <label for='a'>Все</label>
+
+          <input type="checkbox" class="form_buttons" id='b'>
+          <label for='b'>Онлайн</label>
+
+          <input type="checkbox" class="form_buttons" id="c">
+          <label for='c'>Офлайн</label>
+        </p>
+      </div>
+
+      <h4>Условия проведения</h4>
+      <div class="filter-group">
+        <label class="filter-item" id="1">
+          <input type="checkbox" for="1">
+          <span class="custom-checkbox"></span>
+          Бесплатное питание
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Билеты в театр
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Благодарности
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Оплата проживания
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Персональное обучение
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Оплачиваемый проезд
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Психологическая консультация
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Сувенирная продукция
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Средства индивидуальной защиты
+        </label>
+      </div>
+
+      <h4>Особенности проведения</h4>
+      <div class="filter-group">
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Младше 18 лет
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Можно как посетитель
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Адресная помощь
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Доступно для людей с инвалидностью
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Можно приходить с детьми
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Образовательное мероприятие
+        </label>
+
+        <label class="filter-item">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          Идет набор в резерв
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <div>
+          <button class="other-buttons">Найти</button>
+        </div>
+      </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const directionsTrigger = document.querySelector('.event-directions');
-        const modal = document.getElementById('directionsModal');
-        const closeModal = document.querySelector('.close-modal');
-
-        // Обработчик открытия модального окна
-        directionsTrigger?.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-
-        // Обработчик закрытия
-        closeModal?.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Закрытие при клике вне модального окна
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Обработчик выбора направления
-        document.querySelectorAll('.direction-item').forEach(item => {
-            item.addEventListener('click', function() {
-                // Логика обработки выбора направления
-                this.classList.toggle('selected');
-            });
-        });
-        // После создания элементов направлений
-        document.querySelectorAll('.direction-item').forEach(item => {
-            // Автоматический перенос текста при необходимости
-            if (item.scrollWidth > item.offsetWidth) {
-                item.style.whiteSpace = 'normal';
-                item.style.textAlign = 'left';
-                item.style.justifyContent = 'flex-start';
-            }});
-    });
-</script>
-
-<div class="container_form">
-    <div>
-        <a><img src="..\static\image\icon\Vector.svg"></a>
-        <a style="color: #2D0F12;">Дата</a>
-        <input type="text" id="dateRangePicker" placeholder="Дата" class="flatpickr-input">
+    <div class="events-list">
+      <% events.forEach(event => { %>
+        <div class="event-card">
+          <a href="/events/<%= event.id %>" class="event-card-link">
+            <div class="event-card-image">
+              <img src="<%= event.imageUrl || '/static/images/event-default.jpg' %>" alt="<%= event.name %>">
+            </div>
+            <div class="event-card-content">
+              <h3><%= event.name %></h3>
+              <div class="event-meta">
+                <span class="event-date"><%= event.dates %></span>
+                <span class="event-location"><%= event.city %></span>
+              </div>
+              <div class="event-directions">
+                <% event.directions.forEach(direction => { %>
+                  <span class="direction-tag"><%= direction %></span>
+                <% }); %>
+              </div>
+              <div class="event-format <%= event.format.toLowerCase() %>">
+                <%= event.format %>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }); %>
     </div>
-</div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
-<script>
+    <div class="pagination">
+      <span class="page-item active">1</span>
+      <span class="page-item">2</span>
+      <span class="page-item">3</span>
+      <span class="page-item">10</span>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+  <script>
+    // Инициализация Flatpickr для выбора даты
     flatpickr("#dateRangePicker", {
-        mode: "range",
-        locale: "ru",
-        dateFormat: "d.m.Y",
-        altInput: true,
-        altFormat: "j F Y",
-        static: true,
-        monthSelectorType: "static",
-        minDate: "today",
-        showMonths: 1
+      mode: "range",
+      locale: "ru",
+      dateFormat: "d.m.Y",
+      altInput: true,
+      altFormat: "j F Y",
+      static: true,
+      monthSelectorType: "static",
+      minDate: "today",
+      showMonths: 1
     });
-</script>
 
-<div class="container_form">
-</div>
+    // Обработчики для модального окна направлений
+    document.addEventListener('DOMContentLoaded', () => {
+      const directionsTrigger = document.querySelector('.event-directions');
+      const modal = document.getElementById('directionsModal');
+      const closeModal = document.querySelector('.close-modal');
 
-<h4>Формат проведения</h4>
-<div class="container_form">
-    <p>
-        <input type="checkbox" class="form_buttons" id="a">
-        <label for ='a'>Все</label>
+      // Открытие модального окна
+      directionsTrigger?.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
 
-        <input type="checkbox" class="form_buttons" id = 'b'>
-        <label for ='b'>Онлайн</label>
+      // Закрытие модального окна
+      closeModal?.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
 
-        <input type="checkbox"class="form_buttons" id="c">
-        <label for ='c'>Офлайн</label>
-    </p>
-</div>
+      // Закрытие при клике вне модального окна
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
 
-<h4>Условия проведения</h4>
-<div class="filter-group">
+      // Обработчик выбора направления
+      document.querySelectorAll('.direction-item').forEach(item => {
+        item.addEventListener('click', function() {
+          this.classList.toggle('selected');
+        });
+      });
 
-    <label class="filter-item" id = "1">
-        <input type="checkbox" for = "1">
-        <span class="custom-checkbox"></span>
-        Бесплатное питание
-    </label>
+      // Автоматический перенос текста в направлениях
+      document.querySelectorAll('.direction-item').forEach(item => {
+        if (item.scrollWidth > item.offsetWidth) {
+          item.style.whiteSpace = 'normal';
+          item.style.textAlign = 'left';
+          item.style.justifyContent = 'flex-start';
+        }
+      });
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Билеты в театр
-    </label>
+      // Обработчики для чекбоксов "Все/Онлайн/Офлайн"
+      const allCheckbox = document.getElementById('a');
+      const onlineCheckbox = document.getElementById('b');
+      const offlineCheckbox = document.getElementById('c');
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Благодарности
-    </label>
+      allCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          onlineCheckbox.checked = false;
+          offlineCheckbox.checked = false;
+        }
+      });
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Оплата проживания
-    </label>
+      onlineCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          allCheckbox.checked = false;
+        }
+      });
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Персональное обучение
-    </label>
+      offlineCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          allCheckbox.checked = false;
+        }
+      });
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Оплачиваемый проезд
-    </label>
+      // Обработчик кнопки "Найти"
+      document.querySelector('.other-buttons').addEventListener('click', function() {
+        // Здесь будет логика применения фильтров
+        console.log('Фильтры применены');
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Психологическая консультация
-    </label>
+        // Собираем выбранные направления
+        const selectedDirections = Array.from(document.querySelectorAll('.direction-item.selected'))
+          .map(el => el.textContent.trim());
+        console.log('Выбранные направления:', selectedDirections);
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Сувенирная продукция
-    </label>
+        // Собираем другие фильтры
+        // ...
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Средства индивидуальной защиты
-    </label>
-</div>
+        // Можно отправить AJAX запрос или перезагрузить страницу с параметрами
+      });
 
-<!-- Список мероприятий -->
-<div class="events-list">
-    <!-- Здесь повторяются карточки мероприятий -->
-    <div class="event-card">
-        <!-- Вставить карточку мероприятия из предыдущего примера -->
-    </div>
-    <div class="event-card">
-        <!-- Еще одна карточка -->
-    </div>
-</div>
-</main>
-</div>
+      // Обработчик сортировки
+      document.getElementById('sort').addEventListener('change', function() {
+        const sortBy = this.value;
+        console.log('Сортировка по:', sortBy);
+        // Логика сортировки...
+      });
 
+      // Обработчик пагинации
+      document.querySelectorAll('.page-item').forEach(item => {
+        item.addEventListener('click', function() {
+          if (this.classList.contains('active')) return;
 
-<h4>Особенности проведения</h4>
-<div class="filter-group">
+          document.querySelector('.page-item.active').classList.remove('active');
+          this.classList.add('active');
 
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Младше 18 лет
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Можно как посетитель
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Адресная помощь
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Доступно для людей с инвалидностью
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Можно приходить с детьми
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Образовательное мероприятие
-    </label>
-
-    <label class="filter-item">
-        <input type="checkbox">
-        <span class="custom-checkbox"></span>
-        Идет набор в резерв
-    </label>
-</div>
-
-<div class="filter-group">
-    <buttion class="other-buttons">Найти</buttion>
-</div>
-
-<!-- Пагинация -->
-<div class="pagination">
-    <span class="page-item active">1</span>
-</div>
-<%- include ('Header/foot'); -%>
+          const page = this.textContent;
+          console.log('Переход на страницу:', page);
+          // Логика загрузки страницы...
+        });
+      });
+    });
+  </script>
 </body>
+<%- include ('Header/foot'); -%>
 </html>

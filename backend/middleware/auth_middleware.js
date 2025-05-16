@@ -44,3 +44,27 @@ module.exports = function (role) {
         }
     }
 }
+
+module.exports = function (req, res, next) {
+    try {
+        const token = req.cookies.token;
+        if (!token) {
+            return next(ApiError.unauthorized('Требуется авторизация'));
+        }
+
+        const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
+        req.user = decoded;
+        next();
+    } catch (e) {
+        return next(ApiError.unauthorized('Ошибка авторизации'));
+    }
+};
+
+module.exports = function(role) {
+    return function(req, res, next) {
+        if (req.user.role !== role) {
+            return next(ApiError.forbidden('Доступ запрещён'));
+        }
+        next();
+    }
+}

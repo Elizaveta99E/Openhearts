@@ -10,4 +10,3 @@ module.exports = new Sequelize({
     dialect: 'postgres',
     dialectModule: pg, 
 })
-

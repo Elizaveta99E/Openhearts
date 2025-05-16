@@ -93,8 +93,36 @@ class VolunteerController {
                 await user.destroy();
             }
 
-            await volunteer.destroy();
             return res.json({message: 'Volunteer deleted'});
+        } catch (e) {
+            next(ApiError.internal(e.message));
+        }
+    }
+
+    async changePassword(req, res, next) {
+        try {
+            const { oldPassword, newPassword } = req.body;
+            // Ищем пользователя по ID из токена
+            const user = await User.findByPk(req.volunteerId, {
+                include: [Volunteer] // Включаем связь с волонтёром
+            });
+
+            // Проверяем существование пользователя и привязку к волонтёру
+            if (!user || !user.Volunteer) {
+                return next(ApiError.badRequest('Волонтёр не найден'));
+            }
+
+            // Проверка старого пароля
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
+            }
+
+            // Обновление пароля
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль волонтёра изменён' });
         } catch (e) {
             next(ApiError.internal(e.message));
         }

@@ -94,8 +94,62 @@ class StaffController {
                 await user.destroy();
             }
 
-            await staff.destroy();
             return res.json({message: 'Staff deleted'});
+        } catch (e) {
+            next(ApiError.internal(e.message));
+        }
+    }
+
+    async changePassword(req, res, next) {
+        try {
+            const { oldPassword, newPassword } = req.body;
+            const user = await User.findOne({
+                where: { staffId: req.user.id },
+                include: [Staff]
+            });
+
+            if (!user || !user.Staff) {
+                return next(ApiError.badRequest('Сотрудник не найден'));
+            }
+
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
+            }
+
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль сотрудника изменён' });
+        } catch (e) {
+            next(ApiError.internal(e.message));
+        }
+    }
+
+    async changePassword(req, res, next) {
+        try {
+            const { oldPassword, newPassword } = req.body;
+            // Ищем пользователя по ID из токена
+            const user = await User.findByPk(req.staffId, {
+                include: [Staff] // Включаем связь с сотрудником
+            });
+
+            // Проверяем существование пользователя и привязку к сотруднику
+            if (!user || !user.Staff) {
+                return next(ApiError.badRequest('Сотрудник не найден'));
+            }
+
+            // Проверка старого пароля
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
+            }
+
+            // Обновление пароля
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль сотрудника изменён' });
         } catch (e) {
             next(ApiError.internal(e.message));
         }

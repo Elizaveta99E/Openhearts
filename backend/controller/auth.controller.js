@@ -149,6 +149,7 @@ class AuthController {
             return res.json({auth: false});
         }
     }
+
 }
 
 module.exports = new AuthController();

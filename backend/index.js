@@ -7,7 +7,9 @@ const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
 const PeculiaritiesRouter = require('./routes/peculiarities_routes')
-
+const ConditionsRouter = require('./routes/Condition_router')
+const StaffRolesRouter = require('./routes/StaffRoles_router')
+const CourseRouter = require('./routes/course_router')
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,6 +24,9 @@ app.use('/volunteer', VolunteerRouter)
 app.use('/event', EventRouter)
 app.use('/static', express.static('static'))
 app.use('/peculiarities', PeculiaritiesRouter)
+app.use('/conditions', ConditionsRouter)
+app.use('/StaffRoles', StaffRolesRouter)
+app.use('/course', CourseRouter)
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})

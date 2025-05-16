@@ -4,7 +4,7 @@ const {DataTypes, INTEGER} = require('sequelize')
 // Вспомогательные модели
 const StaffRoles = sequelize.define('StaffRole', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
+    Name: {type: DataTypes.TEXT, unique: true}
 });
 
 const Course = sequelize.define('Course', {
@@ -19,7 +19,7 @@ const Format = sequelize.define('Format', {
 
 const Conditions = sequelize.define('Condition', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
+    Name: {type: DataTypes.TEXT}
 });
 
 const Peculiarities = sequelize.define('Peculiarity', {

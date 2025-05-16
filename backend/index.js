@@ -24,7 +24,9 @@ app.use('/static', express.static('static'))
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})
 })
-
+app.get('/registration', (req, res) => {
+  res.render('registration.ejs', {foo: 'FOO'})
+})
 const start = async () => {
   try {
     await sequelize.authenticate();

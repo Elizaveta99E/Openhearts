@@ -24,7 +24,7 @@ const Conditions = sequelize.define('Condition', {
 
 const Peculiarities = sequelize.define('Peculiarity', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
+    Name: {type: DataTypes.TEXT}
 });
 
 const EventsStatus = sequelize.define('EventsStatus', {

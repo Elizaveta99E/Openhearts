@@ -41,29 +41,25 @@ class EventController {
     }
 
     async find(req, res, next) {
-        try {
-            const {id} = req.params;
+        exports.find = async (req, res) => {
+            try {
+                const event = await Event.findByPk(req.params.id, {
+                    include: [
+                        { model: City },
+                        { model: Staff },
+                        { model: Format },
+                        { model: Condition }
+                    ]
+                });
 
-            const event = await Event.findOne({
-                where: {id},// Исправлено: Events → Event
-                include: [
-                    {model: Staff},
-                    {model: City},
-                    {model: Course},
-                    {model: Format},
-                    {model: EventStatus},
-                    {model: Condition},
-                    {model: Peculiarity}
-                ]
-            });
-
-            if (!event) {
-                return next(ApiError.badRequest('Event not found'));
+                res.render('event', {
+                    event: event.toJSON(),
+                    user: req.user // Передаем данные пользователя из сессии
+                });
+            } catch (e) {
+                res.status(500).json({ message: 'Ошибка получения данных' });
             }
-            return res.json(event);
-        } catch (e) {
-            next(ApiError.internal(e.message));
-        }
+        };
     }
 
     async update(req, res, next) {

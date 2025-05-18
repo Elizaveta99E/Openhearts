@@ -13,6 +13,18 @@ router.get('/get', VolunteerController.get)
 router.get('/find/:id', VolunteerController.find)
 router.get('/check', VolunteerController.check)
 router.post('/changePassword/:volunteerId', VolunteerController.changePassword)
+router.post('/participate', authMiddleware, async (req, res) => {
+    try {
+        await VolunteerEvent.create({
+            VolunteerId: req.user.id,
+            EventId: req.body.eventId,
+            date: new Date()
+        });
+        res.json({ message: 'Успешная запись на мероприятие' });
+    } catch (e) {
+        res.status(500).json({ message: 'Ошибка записи' });
+    }
+});
 
 
 

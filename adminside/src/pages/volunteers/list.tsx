@@ -1,6 +1,6 @@
 import { Title, TextInput, Select,  Group, Stack, Button, Text  } from '@mantine/core';
 import { Table } from '@mantine/core';
-import { Pagination } from '@mantine/core';
+import { Pagination, Center } from '@mantine/core';
 import { IconSearch, IconPlus } from '@tabler/icons-react';
 
 
@@ -36,15 +36,17 @@ export function VolunteersList() {
           label="Количество записей на странице"
           data={['1', '2', '5', '10']} 
           />
-      
-       <Pagination total={10} /> {/*переключние страниц*/}
-       <Button variant="filled">Взрослые</Button>
-       <Button variant="filled">Дети</Button>
-       <Select
+          <Select
           label="Сортировать"          
           data={['От А-Я', 'От Я-А', 'Самые молодые', 'Взрослые']} 
           />
+          <Group><Button variant="filled">Взрослые</Button>
+          <Button variant="filled">Дети</Button>  </Group>
+      
+       
+       
        </Group>
+       <Center mt="md"><Pagination  total={10} styles={{control: {width: 30},}}/> {/*переключние страниц*/}</Center>
         <Demo />  {/*Таблица*/}        
         <Stack
                   
@@ -53,7 +55,7 @@ export function VolunteersList() {
           justify="center"
           gap="md">
           <Button leftSection={<IconPlus size={16} />} w = '150px' justify="center">Добавить</Button>
-          <Pagination total={10} />
+          <Pagination total={10} styles={{control: {width: 30},}}       />
         </Stack>
     </>
 }

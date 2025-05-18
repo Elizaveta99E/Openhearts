@@ -144,7 +144,7 @@ export function EventsList() {
                   style={{ width: 250 }}
                 />
                 
-                <Pagination total={10} />
+                <Pagination total={10} styles={{control: {width: 30},}}/>
                 
                 <Select
                   label="Сортировать"
@@ -175,7 +175,7 @@ export function EventsList() {
                   justify="center"
                   gap="md">
                 <Button leftSection={<IconPlus size={16} />} w = '150px' justify="center">Создать</Button>
-                <Pagination total={10} />
+                <Pagination total={10} styles={{control: {width: 30},}}/>
                 </Stack>
             </Stack>
           </Box>

@@ -4,6 +4,10 @@ const router = require('./routes/index_router');
 const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
+const PeculiaritiesRouter = require('./routes/peculiarities_routes')
+const ConditionsRouter = require('./routes/Condition_router')
+const StaffRolesRouter = require('./routes/StaffRoles_router')
+const CourseRouter = require('./routes/course_router')
 const cookieParser = require('cookie-parser');
 
 
@@ -22,35 +26,17 @@ app.use(cookieParser());
 app.use(express.json())
 app.use('/api', router)
 app.use('/static', express.static('static'))
-
+app.use('/peculiarities', PeculiaritiesRouter)
+app.use('/conditions', ConditionsRouter)
+app.use('/StaffRoles', StaffRolesRouter)
+app.use('/course', CourseRouter)
 
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})
 })
-
 app.get('/registration', (req, res) => {
   res.render('registration.ejs', {foo: 'FOO'})
-})
-
-app.get('/login', (req, res) => {
-  res.render('Log_in.ejs', {foo: 'FOO'})
-})
-
-app.get('/events', (req, res) => {
-  res.render('events.ejs', {foo: 'FOO'})
-})
-
-app.get('/edit_volunteer_account', (req, res) => {
-  res.render('edit_volunteer_account.ejs', {foo: 'FOO'})
-})
-
-app.get('/volunteer_account', (req, res) => {
-  res.render('volunteer_account.ejs', {foo: 'FOO'})
-})
-
-app.get('/forget_password', (req, res) => {
-  res.render('forget_password.ejs', {foo: 'FOO'})
 })
 
 const start = async () => {

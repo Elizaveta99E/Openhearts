@@ -37,7 +37,7 @@ export function StaffList() {
           data={['1', '2', '5', '10']} 
           />
       
-       <Pagination total={10} /> {/*переключние страниц*/}
+      <Pagination total={10} styles={{control: {width: 30},}}       /> {/*переключние страниц*/}
        <Select
           label="Сортировать"          
           data={['От А-Я', 'От Я-А', 'Самые молодые', 'Взрослые']} 
@@ -51,7 +51,7 @@ export function StaffList() {
           justify="center"
           gap="md">
           <Button leftSection={<IconPlus size={16} />} w = '150px' justify="center">Добавить</Button>
-          <Pagination total={10} />
+          <Pagination total={10} styles={{control: {width: 30},}}/>
         </Stack>
     </>
 }

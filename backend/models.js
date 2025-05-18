@@ -5,42 +5,59 @@ const {DataTypes, INTEGER} = require('sequelize')
 const StaffRoles = sequelize.define('StaffRole', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT, unique: true}
-});
+}, { timestamps: false });
+const StaffRole = sequelize.define('StaffRole', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT, unique: true }
+}, { timestamps: false });
+
+const City = sequelize.define('City', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 const Course = sequelize.define('Course', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-});
+}, { timestamps: false }));
 
 const Format = sequelize.define('Format', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-});
+}, { timestamps: false }));
 
 const Conditions = sequelize.define('Condition', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
-});
+}, { timestamps: false }));
+const Condition = sequelize.define('Condition', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 const Peculiarities = sequelize.define('Peculiarity', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
-});
+}, { timestamps: false }));
+const Peculiarity = sequelize.define('Peculiarity', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 const EventsStatus = sequelize.define('EventsStatus', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-});
+}, { timestamps: false });
 
 const VolunteersStatus = sequelize.define('VolunteersStatus', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-});
+}, { timestamps: false });
 
 const Cities = sequelize.define('City', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32)}
-});
+}, { timestamps: false });
 
 // Основные модели
 const Staff = sequelize.define('Staff', {
@@ -52,7 +69,7 @@ const Staff = sequelize.define('Staff', {
     Birthday: {type: DataTypes.DATEONLY, unique: true},
     Photo: {type: DataTypes.STRING(32), unique: true},
     Password: {type: DataTypes.STRING(128)}
-});
+}, { timestamps: false });
 
 Staff.belongsTo(StaffRoles, {foreignKey: 'Role',});
 
@@ -67,7 +84,7 @@ const Volunteers = sequelize.define('Volunteer', {
     Comment: {type: DataTypes.TEXT},
     Photo: {type: DataTypes.STRING(32)},
 
-});
+}, { timestamps: false });
 
 Volunteers.belongsTo(Cities, { foreignKey: 'Cities'});
 Volunteers.belongsTo(VolunteersStatus, { foreignKey: 'Status'});
@@ -84,7 +101,7 @@ const Events = sequelize.define('Event', {
     Pic: {type: DataTypes.TEXT},
     Time: {type: DataTypes.TIME},
     Place: {type: DataTypes.TEXT}
-});
+},{ timestamps: false });
 
 Events.belongsTo(Staff, { foreignKey: 'IdStaff' });
 Events.belongsTo(Cities, { foreignKey: 'Cities' });

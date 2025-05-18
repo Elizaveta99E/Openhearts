@@ -26,10 +26,6 @@ const Format = sequelize.define('Format', {
     Name: {type: DataTypes.STRING(32), unique: true}
 }, { timestamps: false }));
 
-const Conditions = sequelize.define('Condition', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.TEXT}
-}, { timestamps: false }));
 const Condition = sequelize.define('Condition', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }

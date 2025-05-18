@@ -1,120 +1,131 @@
-const sequelize = require('./db')
-const {DataTypes, INTEGER} = require('sequelize')
+const sequelize = require('./db');
+const { DataTypes } = require('sequelize');
 
 // Вспомогательные модели
-const StaffRoles = sequelize.define('StaffRole', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
+const StaffRole = sequelize.define('StaffRole', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT, unique: true }
+}, { timestamps: false });
+
+const City = sequelize.define('City', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 const Course = sequelize.define('Course', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 const Format = sequelize.define('Format', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
-const Conditions = sequelize.define('Condition', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
+const Condition = sequelize.define('Condition', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
-const Peculiarities = sequelize.define('Peculiarity', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
+const Peculiarity = sequelize.define('Peculiarity', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
-const EventsStatus = sequelize.define('EventsStatus', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
-
-const VolunteersStatus = sequelize.define('VolunteersStatus', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
-
-const Cities = sequelize.define('City', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32)}
-});
+const EventStatus = sequelize.define('EventStatus', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.TEXT }
+}, { timestamps: false });
 
 // Основные модели
 const Staff = sequelize.define('Staff', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32)},
-    Mail: {type: DataTypes.STRING(64), unique: true},
-    Phone:{type: DataTypes.STRING(16)},
-    RegDate: {type: DataTypes.DATEONLY, unique: true},
-    Birthday: {type: DataTypes.DATEONLY, unique: true},
-    Photo: {type: DataTypes.STRING(32), unique: true},
-    Password: {type: DataTypes.STRING(128)}
-});
-
-Staff.belongsTo(StaffRoles, {foreignKey: 'Role',});
-
-const Volunteers = sequelize.define('Volunteer', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32)},
-    Mail: {type: DataTypes.STRING(64), unique: true},
-    Phone:{type: DataTypes.STRING(16)},
-    RegDate: {type: DataTypes.DATEONLY, unique: true},
-    Birthday: {type: DataTypes.DATEONLY, unique: true},
-    Password: {type: DataTypes.STRING(128)},
-    Comment: {type: DataTypes.TEXT},
-    Photo: {type: DataTypes.STRING(32)},
-
-});
-
-Volunteers.belongsTo(Cities, { foreignKey: 'Cities'});
-Volunteers.belongsTo(VolunteersStatus, { foreignKey: 'Status'});
-
-const Events = sequelize.define('Event', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32)},
-    StartDate: {type: DataTypes.DATEONLY},
-    EndDate: {type: DataTypes.DATEONLY},
-    Description:  {type: DataTypes.TEXT},
-    Conditions: {type: DataTypes.ARRAY(DataTypes.STRING(500))},
-    Peculiarities: {type: DataTypes.ARRAY(DataTypes.STRING(500))},
-    Needs: {type: DataTypes.INTEGER},
-    Pic: {type: DataTypes.TEXT},
-    Time: {type: DataTypes.TIME},
-    Place: {type: DataTypes.TEXT}
-});
-
-Events.belongsTo(Staff, { foreignKey: 'IdStaff' });
-Events.belongsTo(Cities, { foreignKey: 'Cities' });
-Events.belongsTo(Format, { foreignKey: 'Formates' });
-Events.belongsTo(EventsStatus, { foreignKey: 'Status'});
-Events.belongsTo(Course, { foreignKey: 'Courses'});
-
-const Activity = sequelize.define('Activity', {
-    Datetime: {
-        type: DataTypes.DATE,
-        primaryKey: true
-    }
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING(100) },
+    mail: { type: DataTypes.STRING(100), unique: true },
+    phone: { type: DataTypes.STRING(100) },
+    birthday: { type: DataTypes.DATEONLY },
+    photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
-Activity.belongsTo(Events, { foreignKey: 'Events' });
-Activity.belongsTo(Volunteers, { foreignKey: 'Volunteers' });
+Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId' });
 
-// Экспорт моделей
+const Volunteer = sequelize.define('Volunteer', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING(100) },
+    mail: { type: DataTypes.STRING(100), unique: true },
+    phone: { type: DataTypes.STRING(100) },
+    birthday: { type: DataTypes.DATEONLY },
+    comment: { type: DataTypes.TEXT },
+    photo: { type: DataTypes.TEXT }
+}, { timestamps: false });
+
+Volunteer.belongsTo(City, { foreignKey: 'cityId' });
+
+const Event = sequelize.define('Event', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING(100) },
+    startDate: { type: DataTypes.DATEONLY },
+    endDate: { type: DataTypes.DATEONLY },
+    needs: { type: DataTypes.INTEGER },
+    pic: { type: DataTypes.TEXT },
+    description: { type: DataTypes.TEXT },
+    time: { type: DataTypes.TIME },
+    place: { type: DataTypes.TEXT }
+}, { timestamps: false });
+
+// Связи для Event
+Event.belongsTo(Staff, { foreignKey: 'staffId' });
+Event.belongsTo(Course, { foreignKey: 'courseId' });
+Event.belongsTo(City, { foreignKey: 'cityId' });
+Event.belongsTo(Format, { foreignKey: 'formatId' });
+Event.belongsTo(EventStatus, { foreignKey: 'statusId' });
+
+// Многие-ко-многим связи
+const ConditionEvent = sequelize.define('ConditionEvent', {}, { timestamps: false });
+Event.belongsToMany(Condition, { through: ConditionEvent });
+Condition.belongsToMany(Event, { through: ConditionEvent });
+
+const PeculiarityEvent = sequelize.define('PeculiarityEvent', {}, { timestamps: false });
+Event.belongsToMany(Peculiarity, { through: PeculiarityEvent });
+Peculiarity.belongsToMany(Event, { through: PeculiarityEvent });
+
+const VolunteerEvent = sequelize.define('VolunteerEvent', {
+    date: { type: DataTypes.DATE }
+}, { timestamps: false });
+Event.belongsToMany(Volunteer, { through: VolunteerEvent });
+Volunteer.belongsToMany(Event, { through: VolunteerEvent });
+
+// Пользователи
+const User = sequelize.define('User', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    hash: { type: DataTypes.TEXT },
+    regDate: { type: DataTypes.DATEONLY }
+}, { timestamps: false });
+
+User.belongsTo(Staff, {
+    foreignKey: 'staffId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
+
+User.belongsTo(Volunteer, {
+    foreignKey: 'volunteerId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
+
 module.exports = {
-    StaffRoles,
+    StaffRole,
+    City,
     Course,
     Format,
-    Conditions,
-    Peculiarities,
-    EventsStatus,
-    VolunteersStatus,
-    Cities,
+    Condition,
+    Peculiarity,
+    EventStatus,
     Staff,
-    Volunteers,
-    Events,
-    Activity,
+    Volunteer,
+    Event,
+    User,
+    ConditionEvent,
+    PeculiarityEvent,
+    VolunteerEvent,
     sequelize
 };

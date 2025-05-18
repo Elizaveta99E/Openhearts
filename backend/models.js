@@ -6,35 +6,26 @@ const StaffRoles = sequelize.define('StaffRole', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT, unique: true}
 }, { timestamps: false });
-const StaffRole = sequelize.define('StaffRole', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT, unique: true }
-}, { timestamps: false });
-
-const City = sequelize.define('City', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
-}, { timestamps: false });
 
 const Course = sequelize.define('Course', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-}, { timestamps: false }));
+}, { timestamps: false });
 
 const Format = sequelize.define('Format', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32), unique: true}
-}, { timestamps: false }));
+}, { timestamps: false });
 
-const Condition = sequelize.define('Condition', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
+const Conditions = sequelize.define('Condition', {
+    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
+    Name: {type: DataTypes.TEXT}
 }, { timestamps: false });
 
 const Peculiarities = sequelize.define('Peculiarity', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
-}, { timestamps: false }));
+}, { timestamps: false });
 const Peculiarity = sequelize.define('Peculiarity', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }

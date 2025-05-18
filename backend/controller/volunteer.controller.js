@@ -1,18 +1,47 @@
 const db = require('../db.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-const {Volunteers, Cities, VolunteersStatus} = require('../models');
+const {Volunteer, City, User} = require('../models');
 const ApiError = require('../error/api_error');
 
-class VolunteerController{
-
-    async get(req,res, next){
+class VolunteerController {
+    async create(req, res, next) {
         try {
-            const volunteers = await Volunteers.findAll({
-                include: [
-                    {model: Cities},
-                    {model: VolunteersStatus}
-                ]
+            const volunteerData = req.body;
+
+            if (!volunteerData.name || !volunteerData.mail || !volunteerData.password) {
+                return next(ApiError.badRequest('Имя, почта и пароль обязательны'));
+            }
+
+            const hashPassword = await bcrypt.hash(volunteerData.password, 5);
+            const currentDate = new Date().toISOString().split('T')[0];
+
+            // Удаляем пароль из данных волонтера
+            delete volunteerData.password;
+
+            // Создаем волонтера
+            const volunteer = await Volunteer.create({
+                ...volunteerData,
+                regDate: volunteerData.regDate || currentDate
+            });
+
+            // Создаем пользователя
+            const user = await User.create({
+                hash: hashPassword,
+                regDate: currentDate,
+                volunteerId: volunteer.id
+            });
+
+            return res.json(volunteer);
+        } catch (e) {
+            next(ApiError.badRequest(e.message));
+        }
+    }
+
+    async get(req, res, next) {
+        try {
+            const volunteers = await Volunteer.findAll({
+                include: [{model: City}]
             });
             return res.json(volunteers);
         } catch (e) {
@@ -22,15 +51,13 @@ class VolunteerController{
 
     async find(req, res, next) {
         try {
-            const {id} = req.query;
-            const volunteer = await Volunteers.findByPk(id, {
-                include: [
-                    {model: Cities},
-                    {model: VolunteersStatus}
-                ]
+            const {id} = req.params;
+            const volunteer = await Volunteer.findOne({
+                where: {id},
+                include: [{model: City}]
             });
             if (!volunteer) {
-                return next(ApiError.badRequest('Волонтер не найден'));
+                return next(ApiError.badRequest('Volunteer not found'));
             }
             return res.json(volunteer);
         } catch (e) {
@@ -40,18 +67,13 @@ class VolunteerController{
 
     async update(req, res, next) {
         try {
-            const {id, ...data} = req.body;
-            if (!id) return next(ApiError.badRequest('Не указан ID'));
-
-            if (data.Password) {
-                data.Password = await bcrypt.hash(data.Password, 5);
+            const {id} = req.params;
+            const volunteer = await Volunteer.findByPk(id);
+            if (!volunteer) {
+                return next(ApiError.badRequest('Volunteer not found'));
             }
-
-            const updated = await Volunteers.update(data, {
-                where: {id},
-                returning: true
-            });
-            return res.json(updated[1][0]);
+            await volunteer.update(req.body);
+            return res.json(volunteer);
         } catch (e) {
             next(ApiError.internal(e.message));
         }
@@ -59,83 +81,56 @@ class VolunteerController{
 
     async delete(req, res, next) {
         try {
-            const {id} = req.query;
-            await Volunteers.destroy({where: {id}});
-            return res.json({message: 'Волонтер удален'});
+            const {id} = req.params;
+            const volunteer = await Volunteer.findByPk(id);
+            if (!volunteer) {
+                return next(ApiError.badRequest('Volunteer not found'));
+            }
+
+            // Находим и удаляем связанного пользователя
+            const user = await User.findOne({ where: { volunteerId: id } });
+            if (user) {
+                await user.destroy();
+            }
+
+            return res.json({message: 'Volunteer deleted'});
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
-    async registration(req, res, next) {
+    async changePassword(req, res, next) {
         try {
-            const { Name, Mail, Password, CityId } = req.body;
-
-            // Проверка существования города
-            const city = await Cities.findByPk(CityId);
-            if (!city) {
-                return next(ApiError.badRequest("Город не найден"));
-            }
-
-            // Проверка существования статуса (если передается)
-            if (StatusId) {
-                const status = await VolunteersStatus.findByPk(StatusId);
-                if (!status) {
-                    return next(ApiError.badRequest("Статус не найден"));
-                }
-            }
-
-            // Проверка уникальности почты
-            const candidate = await Volunteers.findOne({ where: { Mail } });
-            if (candidate) {
-                return next(ApiError.badRequest("Пользователь уже существует"));
-            }
-
-            // Хеширование пароля
-            const hashPassword = await bcrypt.hash(Password, 5);
-
-            // Создание волонтера
-            const volunteer = await Volunteers.create({
-                Name,
-                Mail,
-                Password: hashPassword,
-                Cities: CityId, // Название поля должно совпадать с моделью
-                Status: 1,      // Статус "Активен" по умолчанию
-                RegDate: new Date().toISOString().split("T")[0]
+            const { oldPassword, newPassword } = req.body;
+            // Ищем пользователя по ID из токена
+            const user = await User.findByPk(req.volunteerId, {
+                include: [Volunteer] // Включаем связь с волонтёром
             });
 
-            // Генерация токена
-            const token = generateJwt(volunteer.id);
-            return res.json({ token });
-
-        } catch (e) {
-            next(ApiError.internal(e.message));
-        }
-    }
-
-    async login(req, res, next) {
-        try {
-            const {Mail, Password} = req.body;
-            const volunteer = await Volunteers.findOne({where: {Mail}});
-            if (!volunteer) {
-                return next(ApiError.internal('Пользователь не найден'));
+            // Проверяем существование пользователя и привязку к волонтёру
+            if (!user || !user.Volunteer) {
+                return next(ApiError.badRequest('Волонтёр не найден'));
             }
 
-            let comparePassword = bcrypt.compareSync(Password, volunteer.Password);
-            if (!comparePassword) {
-                return next(ApiError.internal('Указан неверный пароль'));
+            // Проверка старого пароля
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
             }
 
-            const token = generateJwt(volunteer.id);
-            return res.json({token});
+            // Обновление пароля
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль волонтёра изменён' });
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
     async check(req, res) {
-        const token = generateJwt(req.user.id);
-        return res.json({token});
+        res.json("It's volunteer!")
     }
 }
+
 module.exports = new VolunteerController()

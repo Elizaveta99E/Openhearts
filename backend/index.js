@@ -24,9 +24,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.json())
-app.use('/staff', StaffRouter)
-app.use('/volunteer', VolunteerRouter)
-app.use('/event', EventRouter)
+app.use('/api', router)
 app.use('/static', express.static('static'))
 app.use('/peculiarities', PeculiaritiesRouter)
 app.use('/conditions', ConditionsRouter)
@@ -34,36 +32,11 @@ app.use('/StaffRoles', StaffRolesRouter)
 app.use('/course', CourseRouter)
 
 
-
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})
 })
 app.get('/registration', (req, res) => {
   res.render('registration.ejs', {foo: 'FOO'})
-})
-
-app.get('/registration', (req, res) => {
-  res.render('registration.ejs', {foo: 'FOO'})
-})
-
-app.get('/login', (req, res) => {
-  res.render('Log_in.ejs', {foo: 'FOO'})
-})
-
-app.get('/events', (req, res) => {
-  res.render('events.ejs', {foo: 'FOO'})
-})
-
-app.get('/edit_volunteer_account', (req, res) => {
-  res.render('edit_volunteer_account.ejs', {foo: 'FOO'})
-})
-
-app.get('/volunteer_account', (req, res) => {
-  res.render('volunteer_account.ejs', {foo: 'FOO'})
-})
-
-app.get('/forget_password', (req, res) => {
-  res.render('forget_password.ejs', {foo: 'FOO'})
 })
 
 const start = async () => {

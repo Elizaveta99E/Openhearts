@@ -1,7 +1,8 @@
-const sequelize = require('./db')
-const {DataTypes, INTEGER} = require('sequelize')
+const sequelize = require('./db');
+const { DataTypes } = require('sequelize');
 
 // Вспомогательные модели
+
 const StaffRoles = sequelize.define('StaffRole', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT, unique: true}
@@ -26,10 +27,6 @@ const Peculiarities = sequelize.define('Peculiarity', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
 }, { timestamps: false });
-const Peculiarity = sequelize.define('Peculiarity', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
-}, { timestamps: false });
 
 const EventsStatus = sequelize.define('EventsStatus', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
@@ -44,7 +41,6 @@ const VolunteersStatus = sequelize.define('VolunteersStatus', {
 const Cities = sequelize.define('City', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.STRING(32)}
-}, { timestamps: false });
 
 // Основные модели
 const Staff = sequelize.define('Staff', {
@@ -56,21 +52,24 @@ const Staff = sequelize.define('Staff', {
     Birthday: {type: DataTypes.DATEONLY, unique: true},
     Photo: {type: DataTypes.STRING(32), unique: true},
     Password: {type: DataTypes.STRING(128)}
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING(100) },
+    mail: { type: DataTypes.STRING(100), unique: true },
+    phone: { type: DataTypes.STRING(100) },
+    birthday: { type: DataTypes.DATEONLY },
+    photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
-Staff.belongsTo(StaffRoles, {foreignKey: 'Role',});
+Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId' });
 
-const Volunteers = sequelize.define('Volunteer', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32)},
-    Mail: {type: DataTypes.STRING(64), unique: true},
-    Phone:{type: DataTypes.STRING(16)},
-    RegDate: {type: DataTypes.DATEONLY, unique: true},
-    Birthday: {type: DataTypes.DATEONLY, unique: true},
-    Password: {type: DataTypes.STRING(128)},
-    Comment: {type: DataTypes.TEXT},
-    Photo: {type: DataTypes.STRING(32)},
-
+const Volunteer = sequelize.define('Volunteer', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING(100) },
+    mail: { type: DataTypes.STRING(100), unique: true },
+    phone: { type: DataTypes.STRING(100) },
+    birthday: { type: DataTypes.DATEONLY },
+    comment: { type: DataTypes.TEXT },
+    photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
 Volunteers.belongsTo(Cities, { foreignKey: 'Cities'});
@@ -90,35 +89,62 @@ const Events = sequelize.define('Event', {
     Place: {type: DataTypes.TEXT}
 },{ timestamps: false });
 
-Events.belongsTo(Staff, { foreignKey: 'IdStaff' });
-Events.belongsTo(Cities, { foreignKey: 'Cities' });
-Events.belongsTo(Format, { foreignKey: 'Formates' });
-Events.belongsTo(EventsStatus, { foreignKey: 'Status'});
-Events.belongsTo(Course, { foreignKey: 'Courses'});
+Volunteer.belongsTo(City, { foreignKey: 'cityId' });
 
-const Activity = sequelize.define('Activity', {
-    Datetime: {
-        type: DataTypes.DATE,
-        primaryKey: true
-    }
+// Связи для Event
+Event.belongsTo(Staff, { foreignKey: 'staffId' });
+Event.belongsTo(Course, { foreignKey: 'courseId' });
+Event.belongsTo(City, { foreignKey: 'cityId' });
+Event.belongsTo(Format, { foreignKey: 'formatId' });
+Event.belongsTo(EventStatus, { foreignKey: 'statusId' });
+
+// Многие-ко-многим связи
+const ConditionEvent = sequelize.define('ConditionEvent', {}, { timestamps: false });
+Event.belongsToMany(Condition, { through: ConditionEvent });
+Condition.belongsToMany(Event, { through: ConditionEvent });
+
+
+const PeculiarityEvent = sequelize.define('PeculiarityEvent', {}, { timestamps: false });
+Event.belongsToMany(Peculiarity, { through: PeculiarityEvent });
+Peculiarity.belongsToMany(Event, { through: PeculiarityEvent });
+
+const VolunteerEvent = sequelize.define('VolunteerEvent', {
+    date: { type: DataTypes.DATE }
+}, { timestamps: false });
+Event.belongsToMany(Volunteer, { through: VolunteerEvent });
+Volunteer.belongsToMany(Event, { through: VolunteerEvent });
+
+// Пользователи
+const User = sequelize.define('User', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    hash: { type: DataTypes.TEXT },
+    regDate: { type: DataTypes.DATEONLY }
 }, { timestamps: false });
 
-Activity.belongsTo(Events, { foreignKey: 'Events' });
-Activity.belongsTo(Volunteers, { foreignKey: 'Volunteers' });
+User.belongsTo(Staff, {
+    foreignKey: 'staffId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
 
-// Экспорт моделей
+User.belongsTo(Volunteer, {
+    foreignKey: 'volunteerId',
+    onDelete: 'CASCADE' // Добавляем каскадное удаление
+});
+
 module.exports = {
-    StaffRoles,
+    StaffRole,
+    City,
     Course,
     Format,
-    Conditions,
-    Peculiarities,
-    EventsStatus,
-    VolunteersStatus,
-    Cities,
+    Condition,
+    Peculiarity,
+    EventStatus,
     Staff,
-    Volunteers,
-    Events,
-    Activity,
+    Volunteer,
+    Event,
+    User,
+    ConditionEvent,
+    PeculiarityEvent,
+    VolunteerEvent,
     sequelize
 };

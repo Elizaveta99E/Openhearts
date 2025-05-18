@@ -5,9 +5,8 @@ module.exports = new Sequelize({
     database: 'Openhearts',
     username: 'postgres',
     password: '7281',
-    host: 'localhost', // Если БД локальная
-    port: 5432, // Стандартный порт PostgreSQL
+    host: 'localhost',
+    port: 5432,
     dialect: 'postgres',
-    dialectModule: pg, // Используем драйвер pg
+    dialectModule: pg, 
 })
-

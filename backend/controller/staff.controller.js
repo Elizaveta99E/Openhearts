@@ -1,15 +1,48 @@
-const db = require('../db.js')
 const bcrypt = require('bcryptjs')
-const {Staff, StaffRoles} = require('../models');
+const {Staff, StaffRole, User} = require('../models');
 const ApiError = require('../error/api_error');
-const jwt = require('jsonwebtoken');
 
-class StaffController{
+
+class StaffController {
+    async create(req, res, next) {
+        try {
+            const {name, mail, phone, regDate, birthday, photo, staffRoleId, password} = req.body;
+
+            if (!name || !mail || !password) {
+                return next(ApiError.badRequest('Имя, почта и пароль обязательны'));
+            }
+
+            const hashPassword = await bcrypt.hash(password, 5);
+            const currentDate = new Date().toISOString().split('T')[0];
+
+            // Создаем сотрудника
+            const staff = await Staff.create({
+                name,
+                mail,
+                phone,
+                regDate: regDate || currentDate,
+                birthday,
+                photo,
+                staffRoleId
+            });
+
+            // Создаем пользователя
+            const user = await User.create({
+                hash: hashPassword,
+                regDate: currentDate,
+                staffId: staff.id
+            });
+
+            return res.json(staff);
+        } catch (e) {
+            next(ApiError.badRequest(e.message));
+        }
+    }
 
     async get(req, res, next) {
         try {
             const staffs = await Staff.findAll({
-                include: [{model: StaffRoles}]
+                include: [{model: StaffRole}]
             });
             return res.json(staffs);
         } catch (e) {
@@ -19,12 +52,13 @@ class StaffController{
 
     async find(req, res, next) {
         try {
-            const {id} = req.query;
-            const staff = await Staff.findByPk(id, {
-                include: [{model: StaffRoles}]
+            const {id} = req.params;
+            const staff = await Staff.findOne({
+                where: {id},
+                include: [{model: StaffRole}]
             });
             if (!staff) {
-                return next(ApiError.badRequest('Сотрудник не найден'));
+                return next(ApiError.badRequest('Staff not found'));
             }
             return res.json(staff);
         } catch (e) {
@@ -34,18 +68,13 @@ class StaffController{
 
     async update(req, res, next) {
         try {
-            const {id, ...data} = req.body;
-            if (!id) return next(ApiError.badRequest('Не указан ID'));
-
-            if (data.Password) {
-                data.Password = await bcrypt.hash(data.Password, 5);
+            const {id} = req.params;
+            const staff = await Staff.findByPk(id);
+            if (!staff) {
+                return next(ApiError.badRequest('Staff not found'));
             }
-
-            const updated = await Staff.update(data, {
-                where: {id},
-                returning: true
-            });
-            return res.json(updated[1][0]);
+            await staff.update(req.body);
+            return res.json(staff);
         } catch (e) {
             next(ApiError.internal(e.message));
         }
@@ -53,74 +82,81 @@ class StaffController{
 
     async delete(req, res, next) {
         try {
-            const {id} = req.query;
-            await Staff.destroy({where: {id}});
-            return res.json({message: 'Сотрудник удален'});
+            const {id} = req.params;
+            const staff = await Staff.findByPk(id);
+            if (!staff) {
+                return next(ApiError.badRequest('Staff not found'));
+            }
+
+            // Находим и удаляем связанного пользователя
+            const user = await User.findOne({ where: { staffId: id } });
+            if (user) {
+                await user.destroy();
+            }
+
+            return res.json({message: 'Staff deleted'});
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
-    async registration(req, res, next) {
+    async changePassword(req, res, next) {
         try {
-            const { Name, Mail, Password, RoleId } = req.body;
-
-            // Проверка существования роли
-            const role = await StaffRoles.findByPk(RoleId);
-            if (!role) {
-                return next(ApiError.badRequest("Роль не найдена"));
-            }
-
-            // Проверка уникальности почты
-            const candidate = await Staff.findOne({ where: { Mail } });
-            if (candidate) {
-                return next(ApiError.badRequest("Пользователь уже существует"));
-            }
-
-            // Хеширование пароля
-            const hashPassword = await bcrypt.hash(Password, 5);
-
-            // Создание сотрудника
-            const staff = await Staff.create({
-                Name,
-                Mail,
-                Password: hashPassword,
-                Role: RoleId, // Убедитесь, что поле называется именно так
-                RegDate: new Date().toISOString().split("T")[0]
+            const { oldPassword, newPassword } = req.body;
+            const user = await User.findOne({
+                where: { staffId: req.user.id },
+                include: [Staff]
             });
 
-            // Генерация токена
-            const token = generateJwt(staff.id, RoleId);
-            return res.json({ token });
+            if (!user || !user.Staff) {
+                return next(ApiError.badRequest('Сотрудник не найден'));
+            }
 
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
+            }
+
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль сотрудника изменён' });
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
-    async login(req, res, next) {
+    async changePassword(req, res, next) {
         try {
-            const {Mail, Password} = req.body;
-            const staff = await Staff.findOne({where: {Mail}});
-            if (!staff) {
-                return next(ApiError.internal('Пользователь не найден'));
+            const { oldPassword, newPassword } = req.body;
+            // Ищем пользователя по ID из токена
+            const user = await User.findByPk(req.staffId, {
+                include: [Staff] // Включаем связь с сотрудником
+            });
+
+            // Проверяем существование пользователя и привязку к сотруднику
+            if (!user || !user.Staff) {
+                return next(ApiError.badRequest('Сотрудник не найден'));
             }
 
-            let comparePassword = bcrypt.compareSync(Password, staff.Password);
-            if (!comparePassword) {
-                return next(ApiError.internal('Указан неверный пароль'));
+            // Проверка старого пароля
+            const isValid = bcrypt.compareSync(oldPassword, user.hash);
+            if (!isValid) {
+                return next(ApiError.badRequest('Неверный текущий пароль'));
             }
 
-            const token = generateJwt(staff.id, staff.Role);
-            return res.json({token});
+            // Обновление пароля
+            const hashPassword = await bcrypt.hash(newPassword, 5);
+            await user.update({ hash: hashPassword });
+
+            return res.json({ message: 'Пароль сотрудника изменён' });
         } catch (e) {
             next(ApiError.internal(e.message));
         }
     }
 
     async check(req, res) {
-        const token = generateJwt(req.user.id, req.user.role);
-        return res.json({token});
+        res.json("It's staff!")
     }
 }
 module.exports = new StaffController()

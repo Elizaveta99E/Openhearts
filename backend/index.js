@@ -1,8 +1,6 @@
 const express = require('express');
 const sequelize =  require('./db');
-const VolunteerRouter = require('./routes/volunteer_routes');
-const StaffRouter = require('./routes/staff_router');
-const EventRouter = require('./routes/event_router');
+const router = require('./routes/index_router');
 const cors = require('cors');
 const Error = require('./middleware/error_middleware');
 const models = require('./models');
@@ -10,6 +8,9 @@ const PeculiaritiesRouter = require('./routes/peculiarities_routes')
 const ConditionsRouter = require('./routes/Condition_router')
 const StaffRolesRouter = require('./routes/StaffRoles_router')
 const CourseRouter = require('./routes/course_router')
+const cookieParser = require('cookie-parser');
+
+
 
 const PORT = process.env.PORT || 8080;
 
@@ -17,16 +18,19 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
-app.use(cors())
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+app.use(cookieParser());
 app.use(express.json())
-app.use('/staff', StaffRouter)
-app.use('/volunteer', VolunteerRouter)
-app.use('/event', EventRouter)
+app.use('/api', router)
 app.use('/static', express.static('static'))
 app.use('/peculiarities', PeculiaritiesRouter)
 app.use('/conditions', ConditionsRouter)
 app.use('/StaffRoles', StaffRolesRouter)
 app.use('/course', CourseRouter)
+
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})
@@ -34,6 +38,7 @@ app.get('/', (req, res) => {
 app.get('/registration', (req, res) => {
   res.render('registration.ejs', {foo: 'FOO'})
 })
+
 const start = async () => {
   try {
     await sequelize.authenticate();

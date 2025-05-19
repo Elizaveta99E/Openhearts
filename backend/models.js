@@ -1,11 +1,12 @@
-const sequelize = require('./db')
-const {DataTypes, INTEGER} = require('sequelize')
+const sequelize = require('./db');
+const { DataTypes } = require('sequelize');
 
 // Вспомогательные модели
+
 const StaffRoles = sequelize.define('StaffRole', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT, unique: true}
-});
+}, { timestamps: false });
 
 const Course = sequelize.define('Course', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
@@ -20,22 +21,18 @@ const Format = sequelize.define('Format', {
 const Conditions = sequelize.define('Condition', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
-});
+}, { timestamps: false });
 
 const Peculiarities = sequelize.define('Peculiarity', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT}
-});
+}, { timestamps: false });
 
 const EventsStatus = sequelize.define('EventsStatus', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
     Name: {type: DataTypes.TEXT, unique: true}
 });
 
-const VolunteersStatus = sequelize.define('VolunteersStatus', {
-    id: {type: INTEGER, primaryKey: true, autoIncrement: true},
-    Name: {type: DataTypes.STRING(32), unique: true}
-});
 
 const Cities = sequelize.define('City', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
@@ -64,7 +61,7 @@ const Volunteers = sequelize.define('Volunteer', {
 });
 
 Volunteers.belongsTo(Cities, { foreignKey: 'City'});
-Volunteers.belongsTo(VolunteersStatus, { foreignKey: 'Status'});
+
 
 const Events = sequelize.define('Event', {
     id: {type: INTEGER, primaryKey: true, autoIncrement: true},
@@ -76,7 +73,7 @@ const Events = sequelize.define('Event', {
     Pic: {type: DataTypes.TEXT},
     Time: {type: DataTypes.TIME},
     Place: {type: DataTypes.TEXT}
-});
+},{ timestamps: false });
 
 Events.belongsTo(Staff, { foreignKey: 'IdStaff' });
 Events.belongsTo(Cities, { foreignKey: 'City' });
@@ -84,22 +81,7 @@ Events.belongsTo(Format, { foreignKey: 'Format' });
 Events.belongsTo(EventsStatus, { foreignKey: 'Status'});
 Events.belongsTo(Course, { foreignKey: 'Course'});
 
-const Activity = sequelize.define('Activity', {
-    Datetime: {
-        type: DataTypes.DATE,
-        primaryKey: true
-    }
-}, { timestamps: false });
-
-Activity.belongsTo(Events, { foreignKey: 'Events' });
-Activity.belongsTo(Volunteers, { foreignKey: 'Volunteers' });
-
-const PeculiaritiesOfEvents = sequelize.define('PeculiaritiesOfEvents', {
-    Datetime: {
-        type: DataTypes.DATE,
-        primaryKey: true
-    }
-}, { timestamps: false });
+const PeculiaritiesOfEvents = sequelize.define('PeculiaritiesOfEvents');
 
 PeculiaritiesOfEvents.belongsTo(Events, { foreignKey: 'IdEvent' });
 PeculiaritiesOfEvents.belongsTo(Peculiarities, { foreignKey: 'IdPeculiarities' });
@@ -112,16 +94,30 @@ const Users = sequelize.define('Users', {
 });
 Users.belongsTo(Volunteers, { foreignKey: 'IdVolunteer' });
 Users.belongsTo(Staff, { foreignKey: 'IdStaff' });
+
+const Activity = sequelize.define('Activity', {
+    Datetime: {
+        type: DataTypes.DATE,
+        primaryKey: true
+    }
+}, { timestamps: false });
+
+Activity.belongsTo(Events, { foreignKey: 'Event' });
+Activity.belongsTo(Volunteers, { foreignKey: 'Volunteer' });
+
+const ConditionsOfEvents = sequelize.define('ConditionsOfEvents');
+ConditionsOfEvents.belongsTo(Events, { foreignKey: 'IdEvent' });
+ConditionsOfEvents.belongsTo(Conditions, { foreignKey: 'IdConditions' });
 // Экспорт моделей
 module.exports = {
     StaffRoles,
+    Cities,
     Course,
     Format,
     Conditions,
+    ConditionsOfEvents,
     Peculiarities,
     EventsStatus,
-    VolunteersStatus,
-    Cities,
     Staff,
     Volunteers,
     Events,

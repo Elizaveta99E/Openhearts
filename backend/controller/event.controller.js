@@ -1,5 +1,5 @@
 const ApiError = require('../error/api_error')
-const {Event, Staff, City, Course, Format, EventStatus, Condition, Peculiarity} = require('../models');
+const {Events, Staff, Cities, Course, Format, EventsStatus, Conditions, Peculiarities} = require('../models');
 
 class EventController {
     async create(req, res, next) {
@@ -26,12 +26,12 @@ class EventController {
             const events = await Event.findAll({
                 include: [
                     {model: Staff},
-                    {model: City},
+                    {model: Cities},
                     {model: Course},
                     {model: Format},
-                    {model: EventStatus},
-                    {model: Condition},
-                    {model: Peculiarity}
+                    {model: EventsStatus},
+                    {model: Conditions},
+                    {model: Peculiarities}
                 ]
             });
             return res.json(events);
@@ -101,7 +101,12 @@ class EventController {
     }
 
     async check(req, res) {
-        res.json("It's events!")
+        try {
+            const course = await Events.findAll();
+            res.json(course);
+          } catch (error) {
+            res.status(500).json({ error: error.message });
+          }
     }
 
 }

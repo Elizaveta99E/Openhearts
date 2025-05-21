@@ -3,6 +3,7 @@ const EventController = require('../controller/event.controller');
 const VolunteerController = require("../controller/volunteer.controller");
 const express = require('express');
 const { Events, EventsStatus } = require('../models');
+const eventController = require('../controller/event.controller');
 const router = express.Router();
 
 
@@ -24,10 +25,11 @@ router.get('/get', EventController.getAll)
 router.put('/update/:id', EventController.update)
 router.get('/find/:id', EventController.find)
 router.delete('/delete/:id', EventController.delete)
+router.get('/',eventController.check)
 
 router.get('/active-count', async (req, res) => {
     try {
-      const activeStatus = await EventsStatus.findOne({ where: { Name: 'Активно' } });
+      const activeStatus = await EventsStatus.findOne({ where: { Name: "Активно" } });
       const count = await Events.count({ where: { Status: activeStatus.id } });
       res.json({ count });
     } catch (error) {

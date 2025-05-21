@@ -42,8 +42,8 @@ const Staff = sequelize.define('Staff', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     Name: { type: DataTypes.STRING(100) },    
     Phone: { type: DataTypes.STRING(100) },
-    Birthday: { type: DataTypes.DATEONLY, unique: true },
-    Photo: { type: DataTypes.TEXT, unique: true }
+    Birthday: { type: DataTypes.DATEONLY},
+    Photo: { type: DataTypes.TEXT }
 });
 
 Staff.belongsTo(StaffRoles, { foreignKey: 'IdStaffRole' });

@@ -9,6 +9,13 @@ import { events } from './pages/events/list';
 import { volunteers } from './pages/volunteers/list';
 import { TooltipProps } from 'recharts';
 import { SimpleGrid } from '@mantine/core';
+import { useEffect } from 'react';
+import { getActiveEventsCount } from './api';
+
+
+
+
+
 // TooltipProps для подсказки в  первом чарте
 const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
   if (!active || !payload || !payload.length) return null;
@@ -43,7 +50,7 @@ interface Event {
   status: string;
   course: string;
 }
-
+//активность волонтеров
 interface ChartDataItem {
   date: string;
   Volunteers: number;
@@ -152,6 +159,22 @@ const prepareFailedEventsByYear = (events: Event[]): { year: string; count: numb
 };
 export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<string | null>("Всё");
+  const [activeEventsCount, setActiveEventsCount] = useState<number | null>(null);
+
+  // Загрузка данных с бэкенда
+  useEffect(() => {
+    const fetchActiveEvents = async () => {
+      try {
+        const count = await getActiveEventsCount();
+        setActiveEventsCount(count);
+      } catch (error) {
+        console.error('Ошибка при загрузке активных мероприятий:', error);
+        setActiveEventsCount(0);
+      }
+    };
+
+    fetchActiveEvents();
+  }, []);
 
   // Функция для фильтрации мероприятий и волонтеров по направлению
   const filterByCourse = (data: Event[] | Volunteer[], course: string | null) => {
@@ -174,7 +197,7 @@ const volunteersByYearData = prepareVolunteersByRegistrationYear(filteredVolunte
   // Функция для расчета статистики с учетом фильтрации
   const calculateStats = () => {
     // 1. Количество активных мероприятий
-    const activeEvents = filteredEvents.filter(event => event.status === 'активно').length;
+    
     
     // 2. Количество проведенных мероприятий за год (2025)
     const currentYear = new Date().getFullYear().toString();
@@ -197,7 +220,7 @@ const volunteersByYearData = prepareVolunteersByRegistrationYear(filteredVolunte
       new Date(volunteer.regdate).getFullYear().toString() === currentYear
     ).length;
     
-    return { activeEvents, completedEvents, eventsWithoutVolunteers, newVolunteers };
+    return { completedEvents, eventsWithoutVolunteers, newVolunteers };
   };
   const stats = calculateStats();
   return (
@@ -241,7 +264,7 @@ const volunteersByYearData = prepareVolunteersByRegistrationYear(filteredVolunte
               Количество активных мероприятий
             </Text>
             <Text fw={700} size="xl">
-              {stats.activeEvents}
+              {activeEventsCount ?? 'Загрузка...'}
             </Text>
           </Paper>
   

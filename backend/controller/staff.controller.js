@@ -41,12 +41,16 @@ class StaffController {
 
     async get(req, res, next) {
         try {
-            const staffs = await Staff.findAll({
-                include: [{model: StaffRole}]
-            });
-            return res.json(staffs);
-        } catch (e) {
-            next(ApiError.internal(e.message));
+            const staff = await Staff.findAll();
+            
+            if (!staff || staff.length === 0) {
+                return res.status(404).json({ error: 'Сотрудники не найдены' });
+            }
+    
+            res.json(staff);
+        } catch (error) {
+            console.error('Ошибка при получении списка сотрудников:', error);
+            res.status(500).json({ error: 'Ошибка сервера' });
         }
     }
 

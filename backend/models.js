@@ -61,7 +61,7 @@ Volunteer.belongsTo(City, { foreignKey: 'cityId' });
 
 const Event = sequelize.define('Event', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.STRING(100) },
+    name: { type: DataTypes.STRING(500) },
     startDate: { type: DataTypes.DATEONLY },
     endDate: { type: DataTypes.DATEONLY },
     description: { type: DataTypes.TEXT },

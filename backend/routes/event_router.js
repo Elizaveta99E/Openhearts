@@ -2,7 +2,7 @@ const Router = require('express');
 const EventController = require('../controller/event.controller');
 const VolunteerController = require("../controller/volunteer.controller");
 const express = require('express');
-const { Event, EventStatus } = require('../models');
+const { Event, EventStatus, sequelize } = require('../models');
 const eventController = require('../controller/event.controller');
 const router = express.Router();
 
@@ -30,7 +30,7 @@ router.get('/',eventController.check)
 router.get('/active-count', async (req, res) => {
     try {
       const activeStatus = await EventStatus.findOne({ where: { Name: "Активно" } });
-      const count = await Events.count({ where: { Status: activeStatus.id } });
+      const count = await Event.count({ where: { Status: activeStatus.id } });
       res.json({ count });
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -38,6 +38,7 @@ router.get('/active-count', async (req, res) => {
   });
   
   router.post('/bulk', async (req, res) => {
+    
     try {
       const conditionsList = req.body;
       if (!Array.isArray(conditionsList)) {
@@ -50,7 +51,7 @@ router.get('/active-count', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
-module.exports = router
+
 // Обновление события по ID (PUT /events/:id)
 router.put('/:id', async (req, res) => {
   try {
@@ -73,3 +74,5 @@ router.put('/:id', async (req, res) => {
       res.status(500).json({ error: 'Ошибка сервера' });
   }
 });
+
+module.exports = router

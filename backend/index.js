@@ -19,6 +19,8 @@ const Volunteersrouter = require('./routes/volunteer_routes')
 const PeculiaritiesOfEventsRouter = require ('./routes/PeculiaritiesOfEvents_router')
 const UsersRouter = require ('./routes/users_router')
 const PORT = process.env.PORT || 8080;
+const updateEvent =require ('./routes/updatelistevents')
+const ConditionsOfEventsRout = require('./routes/conditionsofevents')
 
 const app = express();
 
@@ -46,6 +48,8 @@ app.use('/staff', staffrouter);
 app.use('/volunteers', Volunteersrouter)
 app.use('/PeculiaritiesOfEvents', PeculiaritiesOfEventsRouter)
 app.use('/users', UsersRouter)
+app.use('/update',updateEvent) //потом убрать
+app.use('/ConditionsOfEvents', ConditionsOfEventsRout)
 
 
 app.get('/', (req, res) => {

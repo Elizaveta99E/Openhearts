@@ -2,7 +2,7 @@ const Router = require('express');
 const EventController = require('../controller/event.controller');
 const VolunteerController = require("../controller/volunteer.controller");
 const express = require('express');
-const { Events, EventsStatus } = require('../models');
+const { Event, EventStatus } = require('../models');
 const eventController = require('../controller/event.controller');
 const router = express.Router();
 
@@ -12,7 +12,7 @@ const router = express.Router();
 // Получить все мероприятия
 router.get('/check', async (req, res) => {
     try {
-      const role = await Events.findAll();
+      const role = await Event.findAll();
       res.json(role);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -29,7 +29,7 @@ router.get('/',eventController.check)
 
 router.get('/active-count', async (req, res) => {
     try {
-      const activeStatus = await EventsStatus.findOne({ where: { Name: "Активно" } });
+      const activeStatus = await EventStatus.findOne({ where: { Name: "Активно" } });
       const count = await Events.count({ where: { Status: activeStatus.id } });
       res.json({ count });
     } catch (error) {
@@ -44,7 +44,7 @@ router.get('/active-count', async (req, res) => {
         return res.status(400).json({ error: 'Ожидается массив условий' });
       }
       
-      const createdConditions = await Events.bulkCreate(conditionsList);
+      const createdConditions = await Event.bulkCreate(conditionsList);
       res.status(201).json(createdConditions);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
       const eventData = req.body;
 
       // Проверяем, существует ли событие
-      const event = await Events.findByPk(id);
+      const event = await Event.findByPk(id);
       if (!event) {
           return res.status(404).json({ error: 'Событие не найдено' });
       }

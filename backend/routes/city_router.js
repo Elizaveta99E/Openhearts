@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Cities } = require('../models');
+const { City } = require('../models');
 
 
 router.post('/bulk', async (req, res) => {
@@ -10,7 +10,7 @@ router.post('/bulk', async (req, res) => {
         return res.status(400).json({ error: 'Ожидается массив условий' });
       }
       
-      const createdConditions = await Cities.bulkCreate(conditionsList);
+      const createdConditions = await City.bulkCreate(conditionsList);
       res.status(201).json(createdConditions);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -18,7 +18,7 @@ router.post('/bulk', async (req, res) => {
   });
   router.get('/', async (req, res) => {
     try {
-      const conditions = await Cities.findAll();
+      const conditions = await City.findAll();
       res.json(conditions);
     } catch (error) {
       res.status(500).json({ error: error.message });

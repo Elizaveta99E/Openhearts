@@ -2,7 +2,7 @@ const Router = require('express');
 const VolunteerController = require("../controller/volunteer.controller");
 const authMiddleware = require('../middleware/auth_middleware');
 const roleMiddleware = require('../middleware/auth_middleware');
-const {Volunteers} = require('../models');
+const {Volunteer} = require('../models');
 const router = new Router();
 
 
@@ -33,7 +33,7 @@ router.post('/bulk', async (req, res) => {
         return res.status(400).json({ error: 'Ожидается массив условий' });
       }
       
-      const createdConditions = await Volunteers.bulkCreate(conditionsList);
+      const createdConditions = await Volunteer.bulkCreate(conditionsList);
       res.status(201).json(createdConditions);
     } catch (error) {
       res.status(500).json({ error: error.message });

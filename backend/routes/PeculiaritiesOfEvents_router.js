@@ -16,5 +16,19 @@ router.post('/bulk', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
+  router.get('/', async (req, res, next) => {
+    try {
+        const staff = await PeculiaritiesOfEvents.findAll();
+        
+        if (!staff || staff.length === 0) {
+            return res.status(404).json({ error: 'Сотрудники не найдены' });
+        }
+
+        res.json(staff);
+    } catch (error) {
+        console.error('Ошибка при получении списка сотрудников:', error);
+        res.status(500).json({ error: 'Ошибка сервера' });
+    }
+});
 
   module.exports = router;

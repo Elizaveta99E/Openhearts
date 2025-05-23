@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 8080;
 const updateEvent =require ('./routes/updatelistevents')
 const ConditionsOfEventsRout = require('./routes/conditionsofevents')
 const analiticRouter = require('./routes/analitic') //Для страницы по аналитике
+const Stafftsble = require('./routes/stafftable') //Для страницы по список сотрудников
 
 const app = express();
 
@@ -52,6 +53,7 @@ app.use('/users', UsersRouter)
 app.use('/update',updateEvent) //потом убрать
 app.use('/ConditionsOfEvents', ConditionsOfEventsRout)
 app.use('/analitic', analiticRouter) //Для страницы по аналитике
+app.use('/stafftable', Stafftsble) //Для страницы по список сотрудников
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})

@@ -7,6 +7,8 @@ const StaffRole = sequelize.define('StaffRole', {
     name: { type: DataTypes.TEXT, unique: true }
 }, { timestamps: false });
 
+
+
 const Course = sequelize.define('Course', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT, unique: true }
@@ -46,7 +48,7 @@ const Staff = sequelize.define('Staff',{
     photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
-Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId' });
+Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId', as: 'StaffRole' }); 
 
 const Volunteer = sequelize.define('Volunteer', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -111,10 +113,8 @@ const Activity = sequelize.define('Activity', {
 
 Activity.belongsTo(Event, { foreignKey: 'IdEvent' });
 Activity.belongsTo(Volunteer, { foreignKey: 'IdVolunteer' });
-
-// Добавьте обратные ассоциации в модели Event и Volunteer
-Event.hasMany(Activity, { foreignKey: 'eventId' });
-Volunteer.hasMany(Activity, { foreignKey: 'volunteerId' });
+Staff.hasMany(User, { foreignKey: 'staffId', as: 'users' });
+User.belongsTo(Staff, { foreignKey: 'staffId', as: 'staff' });
 
 const ConditionsOfEvents = sequelize.define('ConditionsOfEvents', {
     // Если нужны дополнительные поля, укажите их здесь

@@ -101,7 +101,12 @@ class EventController {
     }
 
     async check(req, res) {
-        res.json("It's events!")
+        try {
+            const course = await Event.findAll();
+            res.json(course);
+          } catch (error) {
+            res.status(500).json({ error: error.message });
+          }
     }
 
 }

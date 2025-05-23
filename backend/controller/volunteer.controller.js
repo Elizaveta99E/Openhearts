@@ -1,7 +1,7 @@
 const db = require('../db.js')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-const {Volunteer, City, User} = require('../models');
+const {Volunteer, City, User, sequelize} = require('../models');
 const ApiError = require('../error/api_error');
 
 class VolunteerController {

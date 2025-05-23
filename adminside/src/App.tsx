@@ -1,22 +1,53 @@
-
 import "@mantine/core/styles.css";
 import '@mantine/charts/styles.css';
 import { BarChart } from '@mantine/charts';
-import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper, Title} from "@mantine/core";
+import { Select, Grid, Container, Card, Image, Text, Group, Button, Badge, Paper, Title, SimpleGrid, Alert, LoadingOverlay } from "@mantine/core";
 import { AreaChart } from '@mantine/charts';
-import  { useState } from 'react';
-import { events } from './pages/events/list';
-import { volunteers } from './pages/volunteers/list';
+import { useState, useEffect } from 'react';
 import { TooltipProps } from 'recharts';
-import { SimpleGrid } from '@mantine/core';
-import { useEffect } from 'react';
-import { getActiveEventsCount } from './api';
+import { IconAlertCircle } from '@tabler/icons-react';
 
+interface Course {
+  id: number;
+  name: string;
+}
 
+interface Event {
+  id: number;
+  name: string;
+  pic: string | null;
+  startDate: string;
+  endDate: string;
+  time: string;
+  place: string;
+  needs: number;
+  Activities?: { id: number }[];
+  city?: string;
+  description?: string;
+}
 
+interface VolunteerActivity {
+  month: string;
+  count: string;
+}
 
+interface YearlyStat {
+  year: string;
+  count: string;
+}
 
-// TooltipProps для подсказки в  первом чарте
+interface DashboardData {
+  courses: Course[];
+  activeEvents: number;
+  completedEvents: number;
+  newVolunteers: number;
+  volunteerActivity: VolunteerActivity[];
+  failedEvents: YearlyStat[];
+  newVolunteersByYear: YearlyStat[];
+  eventsNeedVolunteers: Event[];
+  eventsWithoutVolunteers: number;
+}
+
 const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
   if (!active || !payload || !payload.length) return null;
 
@@ -35,350 +66,337 @@ const CustomTooltip = ({ active, payload }: TooltipProps<any, any>) => {
   );
 };
 
-
-interface Event {
-  id: string;
-  name: string;
-  pic: string;
-  startDate: string;
-  endDate: string;
-  time: string;
-  city: string;
-  place: string;
-  volunteerslist: string;
-  needs: number;
-  status: string;
-  course: string;
-}
-//активность волонтеров
-interface ChartDataItem {
-  date: string;
-  Volunteers: number;
-}
-
-const prepareVolunteersData = (events: Event[]): ChartDataItem[] => {
-  const monthlyData: Record<number, number> = {};
-  
-  events.forEach(event => {
-    if (event.endDate && event.volunteerslist) {
-      const date = new Date(event.endDate);
-      const month = date.getMonth();
-      
-      const volunteersCount = event.volunteerslist
-        .split(',')
-        .filter(v => v.trim() !== '').length;
-      
-      monthlyData[month] = (monthlyData[month] || 0) + volunteersCount;
-    }
-  });
-  
-  const monthNames = [
-    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", 
-    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-  ];
-  
-  return monthNames.map((name, index) => ({
-    date: name,
-    Volunteers: monthlyData[index] || 0
-  }));
-};
-interface DemoProps {
-  events: Event[];
-  selectedCourse: string | null;
-}
-
-const Demo = ({ events, selectedCourse }: DemoProps) => {
-  const filteredEvents = events.filter(event => {
-    // Фильтрация по course (если не выбрано "Всё")
-    const courseMatch = !selectedCourse || selectedCourse === "Всё" || event.course === selectedCourse;
-    
-    const volunteersCount = event.volunteerslist.split(',').filter(v => v.trim() !== '').length;
-    return courseMatch && volunteersCount < event.needs && event.status === 'активно';
-  });
+const Demo = ({ events }: { events: Event[] }) => {
+  const formatDate = (dateString: string) => {
+    const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+    return new Date(dateString).toLocaleDateString('ru-RU', options);
+  };
 
   return (
     <Paper shadow="md" radius="lg" withBorder p="xl">
       <Title order={1} mb="xl">Ближайшие мероприятия, нуждающиеся в волонтерах</Title>
       <div style={{ resize: 'horizontal', overflow: 'hidden', maxWidth: '100%' }}>
-        <Grid type="container" 
-          breakpoints={{ xs: '100px', sm: '200px', md: '300px', lg: '400px', xl: '500px' }}> 
-          {filteredEvents.length > 0 ? (
-            filteredEvents.map(event => (
-              <Grid.Col span="auto" key={event.id}>
+        <Grid>
+          {events.length > 0 ? (
+            events.map(event => (
+              <Grid.Col span={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={event.id}>
                 <Card shadow="sm" padding="lg" radius="md" withBorder>
                   <Card.Section>
                     <Image
-                      src={event.pic}
+                      src={event.pic || 'https://placehold.co/600x400?text=Нет+изображения'}
                       height={160}
                       alt={event.name}
                     />
                   </Card.Section>
                   <Group justify="space-between" mt="md" mb="xs">
-                    <Text fw={500}>{event.name}</Text>
-                    <Badge color="pink">Важно</Badge>
+                    <Text fw={500} lineClamp={1}>{event.name}</Text>
+                    <Badge color="pink">Нужны волонтеры: {event.needs}</Badge>
                   </Group>
                   <Text size="sm" c="dimmed">
-                    <strong>Даты проведения:</strong> {event.startDate} – {event.endDate}
+                    <strong>Даты:</strong> {formatDate(event.startDate)} – {formatDate(event.endDate)}
                   </Text>
                   <Text size="sm" c="dimmed">
-                    <strong>Время проведения:</strong> {event.time}
+                    <strong>Время:</strong> {event.time.slice(0, 5)}
                   </Text>
-                  <Text size="sm" c="dimmed">
-                    <strong>Место проведения:</strong> {event.city}, {event.place}
+                  <Text size="sm" c="dimmed" lineClamp={1}>
+                    <strong>Место:</strong> {event.city ? `${event.city}, ${event.place}` : event.place}
                   </Text>
-                  <Button color="orange" fullWidth mt="md" radius="md">
+                  {event.description && (
+                    <Text size="sm" mt="xs" lineClamp={2}>
+                      {event.description}
+                    </Text>
+                  )}
+                  <Button 
+                    component="a" 
+                    href={`/events/${event.id}`} 
+                    color="orange" 
+                    fullWidth 
+                    mt="md" 
+                    radius="md"
+                  >
                     Подробнее
                   </Button>
-                  </Card>
+                </Card>
               </Grid.Col>
             ))
           ) : (
-            <Grid.Col style={{ display: 'flex', justifyContent: 'center' }}><Text  >Нет мероприятий, соответствующих условиям.</Text></Grid.Col>
-            
+            <Grid.Col span={12} style={{ display: 'flex', justifyContent: 'center' }}>
+              <Alert color="blue" title="Нет мероприятий">
+                В настоящее время нет мероприятий, нуждающихся в волонтерах.
+              </Alert>
+            </Grid.Col>
           )}
         </Grid>
       </div>
     </Paper>
   );
 };
-// Функция для подготовки данных о проваленных мероприятиях по годам
-const prepareFailedEventsByYear = (events: Event[]): { year: string; count: number }[] => {
-  const yearlyData: Record<string, number> = {};
 
-  events.forEach(event => {
-    if (event.status === 'провалено' && event.endDate) {
-      const year = new Date(event.endDate).getFullYear().toString();
-      yearlyData[year] = (yearlyData[year] || 0) + 1;
-    }
-  });
-
-  // Сортируем годы по возрастанию
-  return Object.entries(yearlyData)
-    .map(([year, count]) => ({ year, count }))
-    .sort((a, b) => parseInt(a.year) - parseInt(b.year));
-};
 export default function App() {
-  const [selectedCourse, setSelectedCourse] = useState<string | null>("Всё");
-  const [activeEventsCount, setActiveEventsCount] = useState<number | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [stats, setStats] = useState({
+    activeEvents: 0,
+    completedEvents: 0,
+    eventsWithoutVolunteers: 0,
+    newVolunteers: 0
+  });
+  const [chartData, setChartData] = useState({
+    volunteerActivity: [] as { date: string; Volunteers: number }[],
+    failedEvents: [] as { year: string; count: number }[],
+    newVolunteersByYear: [] as { year: string; count: number }[]
+  });
+  const [eventsNeedVolunteers, setEventsNeedVolunteers] = useState<Event[]>([]);
 
-  // Загрузка данных с бэкенда
+  const fetchWithErrorHandling = async <T,>(url: string): Promise<T | null> => {
+    try {
+      const res = await fetch(url);
+      
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(
+          errorData.message || `HTTP error! status: ${res.status}`
+        );
+      }
+      
+      return await res.json();
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setError(`Ошибка загрузки: ${err instanceof Error ? err.message : String(err)}`);
+      return null;
+    }
+  };
+
+  const formatActivityData = (data: VolunteerActivity[]): { date: string; Volunteers: number }[] => {
+    const monthMap: Record<string, string> = {
+      "January": "Январь",
+      "February": "Февраль",
+      "March": "Март",
+      "April": "Апрель",
+      "May": "Май",
+      "June": "Июнь",
+      "July": "Июль",
+      "August": "Август",
+      "September": "Сентябрь",
+      "October": "Октябрь",
+      "November": "Ноябрь",
+      "December": "Декабрь"
+    };
+
+    const monthOrder = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    return data
+      .map(item => ({
+        month: item.month.trim(),
+        count: item.count
+      }))
+      .sort((a, b) => monthOrder.indexOf(a.month) - monthOrder.indexOf(b.month))
+      .map(item => ({
+        date: monthMap[item.month] || item.month,
+        Volunteers: Number(item.count) || 0
+      }));
+  };
+
   useEffect(() => {
-    const fetchActiveEvents = async () => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const loadData = async () => {
       try {
-        const count = await getActiveEventsCount();
-        setActiveEventsCount(count);
-      } catch (error) {
-        console.error('Ошибка при загрузке активных мероприятий:', error);
-        setActiveEventsCount(0);
+        setLoading(true);
+        setError(null);
+        const courseParam = selectedCourse ? `?courseId=${selectedCourse}` : '';
+        
+        const data = await fetchWithErrorHandling<DashboardData>(
+          `http://localhost:8080/analitic/dashboard-data${courseParam}`
+        );
+
+        if (!isMounted || !data) return;
+        
+        setCourses(data.courses);
+        setStats({
+          activeEvents: data.activeEvents,
+          completedEvents: data.completedEvents,
+          eventsWithoutVolunteers: data.eventsWithoutVolunteers,
+          newVolunteers: data.newVolunteers
+        });
+        
+        setChartData({
+          volunteerActivity: formatActivityData(data.volunteerActivity),
+          failedEvents: data.failedEvents.map(item => ({ 
+            year: item.year, 
+            count: Number(item.count) 
+          })),
+          newVolunteersByYear: data.newVolunteersByYear.map(item => ({
+            year: item.year,
+            count: Number(item.count)
+          }))
+        });
+        
+        setEventsNeedVolunteers(data.eventsNeedVolunteers);
+      } catch (err) {
+        if (isMounted) {
+          console.error('Ошибка загрузки данных:', err);
+          setError(`Ошибка: ${err instanceof Error ? err.message : String(err)}`);
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
-    fetchActiveEvents();
-  }, []);
+    loadData();
 
-  // Функция для фильтрации мероприятий и волонтеров по направлению
-  const filterByCourse = (data: Event[] | Volunteer[], course: string | null) => {
-    if (!course || course === "Всё") return data;
-    
-    // Для волонтеров пока оставляем без фильтрации (или можно добавить поле course в Volunteer)
-    if ('regdate' in data[0]) {
-      return data as Volunteer[];
-    }
-    
-    return (data as Event[]).filter(event => event.course === course);
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, [selectedCourse]);
+
+  const courseOptions = [
+    { value: "", label: "Все направления" },
+    ...courses.map(c => ({ value: c.id.toString(), label: c.name }))
+  ];
+
+  const handleCourseChange = (value: string | null) => {
+    setSelectedCourse(value);
   };
-   // Фильтруем данные по выбранному направлению
-   const filteredEvents = filterByCourse(events, selectedCourse) as Event[];
-   const filteredVolunteers = filterByCourse(volunteers, selectedCourse) as Volunteer[];
-// Готовим данные на основе отфильтрованных данных
-const volunteersData = prepareVolunteersData(filteredEvents);
-const failedEventsData = prepareFailedEventsByYear(filteredEvents);
-const volunteersByYearData = prepareVolunteersByRegistrationYear(filteredVolunteers);
-  // Функция для расчета статистики с учетом фильтрации
-  const calculateStats = () => {
-    // 1. Количество активных мероприятий
-    
-    
-    // 2. Количество проведенных мероприятий за год (2025)
-    const currentYear = new Date().getFullYear().toString();
-    const completedEvents = filteredEvents.filter(event => 
-      event.status === 'успешно проведено' && 
-      event.endDate && 
-      new Date(event.endDate).getFullYear().toString() === currentYear
-    ).length;
-    
-    // 3. Количество мероприятий без волонтеров
-    const eventsWithoutVolunteers = filteredEvents.filter(event => {
-      if (event.status !== 'активно') return false;
-      const volunteersCount = event.volunteerslist.split(',').filter(v => v.trim() !== '').length;
-      return volunteersCount < event.needs;
-    }).length;
-    
-    // 4. Количество привлеченных волонтеров (зарегистрировавшихся в текущем году)
-    const newVolunteers = filteredVolunteers.filter(volunteer => 
-      volunteer.regdate && 
-      new Date(volunteer.regdate).getFullYear().toString() === currentYear
-    ).length;
-    
-    return { completedEvents, eventsWithoutVolunteers, newVolunteers };
-  };
-  const stats = calculateStats();
-  return (
-    <>
-      <Container size="xl">
-        <Select
-          label="Направление"
-          placeholder="Выберите значение"
-          data={[
-            "Всё",
-            "Дети и молодежь",
-            "Образование",
-            "Поиск пропавших",
-            "СВО",
-            "Урбанистика",
-            "Срочная помощь (ЧС)",
-            "Экология",
-            "Животные",
-            "Ветераны и историческая память",
-            "Спорт и события",
-            "Здравоохранение",
-            "Права человека",
-            "Помощь лицам с ОВЗ",
-            "Старшее поколение",
-            "Культура и искусство",
-            "Интеллектуальная помощь",
-            "Наука",
-            "Наставничество",
-            "Другое"
-          ]}
-          value={selectedCourse}
-          onChange={setSelectedCourse}
-          w={400}
-          mb="md"
-        />
-        
 
-        <SimpleGrid cols={4} spacing="md" mb="md">
-          <Paper withBorder p="md" radius="md">
-            <Text size="xs" c="dimmed" fw={700}>
-              Количество активных мероприятий
-            </Text>
-            <Text fw={700} size="xl">
-              {activeEventsCount ?? 'Загрузка...'}
-            </Text>
-          </Paper>
-  
-          <Paper withBorder p="md" radius="md">
-            <Text size="xs" c="dimmed" fw={700}>
-              Количество проведенных мероприятий за год
-            </Text>
-            <Text fw={700} size="xl">
-              {stats.completedEvents}
-            </Text>
-          </Paper>
-  
-          <Paper withBorder p="md" radius="md">
-            <Text size="xs" c="dimmed" fw={700}>
-              Количество мероприятий без волонтеров
-            </Text>
-            <Text fw={700} size="xl">
-              {stats.eventsWithoutVolunteers}
-            </Text>
-          </Paper>
-  
-          <Paper withBorder p="md" radius="md">
-            <Text size="xs" c="dimmed" fw={700}>
-              Количество привлеченных волонтеров
-            </Text>
-            <Text fw={700} size="xl">
-              {stats.newVolunteers}
-            </Text>
-          </Paper>
-        </SimpleGrid>
-        <Paper shadow="md" radius="lg" withBorder p="xl" mb="md" mt="md">
-          <Title order={1} mb="xl">Активность волонтеров</Title>  
-          <AreaChart
-            h={300}
-            data={volunteersData}
-            dataKey="date"
-            series={[{ name: 'Volunteers', color: 'orange' }]}
-            curveType="linear"
-            connectNulls
-            tooltipProps={{
-              content: CustomTooltip,
-            }}
-          />
-        </Paper>
-        <Grid>
-          <Grid.Col span={6}>
-          <Paper shadow="xl" radius="lg" withBorder p="xl" mb="md">
-          <Title order={2} mb="xl">Количество проваленных мероприятий</Title>
-            <BarChart
-            h={200}
-            data={failedEventsData} 
-            dataKey="year"
-            orientation="vertical"
-            barProps={{ radius: 10 }}
-            series={[{ name: 'count', color: 'red.6', label: 'Проваленные мероприятия' }]}
-            tooltipProps={{
-              formatter: (value) => [`${value} мероприятий`, null],
-              labelFormatter: (label) => `Год: ${label}`
-            }}
-           
-          /> </Paper>
-          </Grid.Col>
-          <Grid.Col span={6}>
-          <Paper shadow="xl" radius="lg" withBorder p="xl" mb="md">
-          <Title order={2} mb="xl">Волонтеры новички</Title>
-            <BarChart
-              h={200}
-              data={volunteersByYearData}
-              dataKey="year"
-              orientation="vertical"
-              barProps={{ radius: 10 }}
-              series={[{ name: 'count', color: 'green.6', label: 'Зарегистрированные волонтеры' }]}
-              tooltipProps={{
-                formatter: (value) => [`${value} волонтеров`, null],
-                labelFormatter: (label) => `Год регистрации: ${label}`
-              }}
-              
-            /></Paper>
-          </Grid.Col>
-        </Grid>
-
-        <Demo events={events} selectedCourse={selectedCourse} />
+  if (error) {
+    return (
+      <Container size="xl" py="xl">
+        <Alert 
+          icon={<IconAlertCircle size="1rem" />} 
+          title="Ошибка!" 
+          color="red"
+          variant="filled"
+        >
+          {error}
+          <Text mt="md">Проверьте:
+            <ul>
+              <li>Запущен ли сервер</li>
+              <li>Правильность URL адресов API</li>
+              <li>Наличие CORS заголовков на сервере</li>
+            </ul>
+          </Text>
+        </Alert>
       </Container>
-    </>
+    );
+  }
+
+  return (
+    <Container size="xl" py="xl" pos="relative">
+      <LoadingOverlay visible={loading} overlayProps={{ blur: 2 }} />
+
+      <Select
+        label="Направление"
+        placeholder="Выберите направление"
+        data={courseOptions}
+        value={selectedCourse}
+        onChange={handleCourseChange}
+        w={400}
+        mb="md"
+        clearable
+      />
+
+      <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="md" mb="md">
+        <Paper withBorder p="md" radius="md">
+          <Text size="xs" c="dimmed" fw={700}>Активные мероприятия</Text>
+          <Text fw={700} size="xl">{stats.activeEvents}</Text>
+        </Paper>
+        
+        <Paper withBorder p="md" radius="md">
+          <Text size="xs" c="dimmed" fw={700}>Проведено в этом году</Text>
+          <Text fw={700} size="xl">{stats.completedEvents}</Text>
+        </Paper>
+        
+        <Paper withBorder p="md" radius="md">
+          <Text size="xs" c="dimmed" fw={700}>Требуются волонтеры</Text>
+          <Text fw={700} size="xl">{stats.eventsWithoutVolunteers}</Text>
+        </Paper>
+        
+        <Paper withBorder p="md" radius="md">
+          <Text size="xs" c="dimmed" fw={700}>Новых волонтеров</Text>
+          <Text fw={700} size="xl">{stats.newVolunteers}</Text>
+        </Paper>
+      </SimpleGrid>
+
+      <Paper shadow="md" radius="lg" withBorder p="xl" mb="md">
+        <Title order={1} mb="xl">Активность волонтеров</Title>  
+        <AreaChart
+          h={300}
+          data={chartData.volunteerActivity}
+          dataKey="date"
+          series={[{ name: 'Volunteers', color: 'orange' }]}
+          curveType="linear"
+          connectNulls
+          tooltipProps={{
+            content: CustomTooltip,
+          }}
+        />
+      </Paper>
+
+      <Grid gutter="md" mb="md">
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Paper shadow="xl" radius="lg" withBorder p="xl">
+            <Title order={2} mb="xl">Проваленные мероприятия по годам</Title>
+            {chartData.failedEvents.length > 0 ? (
+              <BarChart
+                h={300}
+                data={chartData.failedEvents} 
+                dataKey="year"
+                orientation="vertical"
+                barProps={{ radius: 10 }}
+                series={[{ 
+                  name: 'count', 
+                  color: 'red.6', 
+                  label: 'Количество'
+                }]}
+                tooltipProps={{
+                  formatter: (value) => [`${value} мероприятий`, null],
+                  labelFormatter: (label) => `Год: ${label}`
+                }}
+              />
+            ) : (
+              <Text>Нет данных для отображения</Text>
+            )}
+          </Paper>
+        </Grid.Col>
+        
+        <Grid.Col span={{ base: 12, md: 6 }}>
+          <Paper shadow="xl" radius="lg" withBorder p="xl">
+            <Title order={2} mb="xl">Новые волонтеры по годам</Title>
+            {chartData.newVolunteersByYear.length > 0 ? (
+              <BarChart
+                h={300}
+                data={chartData.newVolunteersByYear}
+                dataKey="year"
+                orientation="vertical"
+                barProps={{ radius: 10 }}
+                series={[{ 
+                  name: 'count', 
+                  color: 'green.6', 
+                  label: 'Количество'
+                }]}
+                tooltipProps={{
+                  formatter: (value) => [`${value} волонтеров`, null],
+                  labelFormatter: (label) => `Год: ${label}`
+                }}
+              />
+            ) : (
+              <Text>Нет данных для отображения</Text>
+            )}
+          </Paper>
+        </Grid.Col>
+      </Grid>
+
+      <Demo events={eventsNeedVolunteers} />
+    </Container>
   );
-}
-
-// Функция для подготовки данных о волонтерах по годам регистрации
-const prepareVolunteersByRegistrationYear = (volunteers: Volunteer[]): { year: string; count: number }[] => {
-  const yearlyData: Record<string, number> = {};
-
-  volunteers.forEach(volunteer => {
-    if (volunteer.regdate) {
-      const year = new Date(volunteer.regdate).getFullYear().toString();
-      yearlyData[year] = (yearlyData[year] || 0) + 1;
-    }
-  });
-
-  // Сортируем годы по возрастанию
-  return Object.entries(yearlyData)
-    .map(([year, count]) => ({ year, count }))
-    .sort((a, b) => parseInt(a.year) - parseInt(b.year));
-};
-
-// Добавляем интерфейс для волонтера
-interface Volunteer {
-  id: string;
-  mail: string;
-  name: string;
-  phone: string;
-  regdate: string;
-  birtgday: string;
-  city: string;
-  comment: string;
-  status: string;
-  photo: string;
 }

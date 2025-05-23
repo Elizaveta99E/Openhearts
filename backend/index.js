@@ -21,6 +21,7 @@ const UsersRouter = require ('./routes/users_router')
 const PORT = process.env.PORT || 8080;
 const updateEvent =require ('./routes/updatelistevents')
 const ConditionsOfEventsRout = require('./routes/conditionsofevents')
+const analiticRouter = require('./routes/analitic') //Для страницы по аналитике
 
 const app = express();
 
@@ -50,7 +51,7 @@ app.use('/PeculiaritiesOfEvents', PeculiaritiesOfEventsRouter)
 app.use('/users', UsersRouter)
 app.use('/update',updateEvent) //потом убрать
 app.use('/ConditionsOfEvents', ConditionsOfEventsRout)
-
+app.use('/analitic', analiticRouter) //Для страницы по аналитике
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {foo: 'FOO'})

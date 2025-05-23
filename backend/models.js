@@ -112,6 +112,10 @@ const Activity = sequelize.define('Activity', {
 Activity.belongsTo(Event, { foreignKey: 'IdEvent' });
 Activity.belongsTo(Volunteer, { foreignKey: 'IdVolunteer' });
 
+// Добавьте обратные ассоциации в модели Event и Volunteer
+Event.hasMany(Activity, { foreignKey: 'eventId' });
+Volunteer.hasMany(Activity, { foreignKey: 'volunteerId' });
+
 const ConditionsOfEvents = sequelize.define('ConditionsOfEvents', {
     // Если нужны дополнительные поля, укажите их здесь
 }, { timestamps: false });

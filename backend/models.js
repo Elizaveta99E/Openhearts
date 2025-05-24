@@ -19,17 +19,13 @@ const Format = sequelize.define('Format', {
     name: { type: DataTypes.TEXT, unique: true }
 }, { timestamps: false });
 
-const Condition = sequelize.define('Condition', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
+
 const Condition = sequelize.define('Condition', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
-const Peculiarity = sequelize.define('Peculiarity', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
+
 const Peculiarity = sequelize.define('Peculiarity', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }

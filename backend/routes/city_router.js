@@ -3,7 +3,7 @@ const router = express.Router();
 const { City, sequelize } = require('../models');
 
 
-router.post('/bulk', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
       const conditionsList = req.body;
       if (!Array.isArray(conditionsList)) {

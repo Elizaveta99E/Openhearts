@@ -22,17 +22,13 @@ const Format = sequelize.define('Format', {
 const Condition = sequelize.define('Condition', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }
-const Condition = sequelize.define('Condition', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
+
 }, { timestamps: false });
 
 const Peculiarity = sequelize.define('Peculiarity', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }
-const Peculiarity = sequelize.define('Peculiarity', {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.TEXT }
+
 }, { timestamps: false });
 
 const EventStatus = sequelize.define('EventStatus', {
@@ -121,6 +117,7 @@ Activity.belongsTo(Event, { foreignKey: 'IdEvent' });
 Activity.belongsTo(Volunteer, { foreignKey: 'IdVolunteer' });
 Staff.hasMany(User, { foreignKey: 'staffId', as: 'users' });
 User.belongsTo(Staff, { foreignKey: 'staffId', as: 'staff' });
+Event.hasMany(Activity, { foreignKey: 'IdEvent' });
 
 const ConditionsOfEvents = sequelize.define('ConditionsOfEvents', {
     // Если нужны дополнительные поля, укажите их здесь

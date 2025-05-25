@@ -23,9 +23,9 @@ router.get('/check', async (req, res) => {
 router.post('/', EventController.create)
 router.get('/', EventController.getAll)
 router.put('/:id', EventController.update)
-router.get('/:id', EventController.find)
+router.get('/:id', EventController.getOne)
 router.delete('/:id', EventController.delete)
-router.get('/',eventController.check)
+router.patch('/:id/status', EventController.updateStatus);
 
 router.get('/active-count', async (req, res) => {
     try {
@@ -36,15 +36,15 @@ router.get('/active-count', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
-  
+
   router.post('/bulk', async (req, res) => {
-    
+
     try {
       const conditionsList = req.body;
       if (!Array.isArray(conditionsList)) {
         return res.status(400).json({ error: 'Ожидается массив условий' });
       }
-      
+
       const createdConditions = await Event.bulkCreate(conditionsList);
       res.status(201).json(createdConditions);
     } catch (error) {

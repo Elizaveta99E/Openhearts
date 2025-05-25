@@ -16,12 +16,20 @@ router.post('/bulk', async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   });
-  router.get('/', async (req, res) => {
+  router.get('/', async (req, res) =>  {
     try {
-      const conditions = await City.findAll();
-      res.json(conditions);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+      console.log('Запрос списка городов...'); // Логирование
+      const cities = await City.findAll({
+        attributes: ['id', 'name'], // Явно указываем нужные поля
+        order: [['name', 'ASC']]   // Сортировка по имени
+      });
+
+      console.log('Найдены города:', cities.map(c => c.name)); // Логирование
+
+      res.json(cities);
+    } catch (e) {
+      console.error('Ошибка при получении городов:', e);
+      res.status(500).json({ error: e.message });
     }
   });
 

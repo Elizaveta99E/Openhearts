@@ -1,7 +1,7 @@
 const Router = require('express');
 const VolunteerController = require("../controller/volunteer.controller");
-const authMiddleware = require('../middleware/auth_middleware');
-const roleMiddleware = require('../middleware/auth_middleware');
+const {authMiddleware} = require('../middleware/auth_middleware');
+const {roleMiddleware} = require('../middleware/auth_middleware');
 const {Volunteer, sequelize} = require('../models');
 const router = new Router();
 

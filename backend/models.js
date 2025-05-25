@@ -149,6 +149,8 @@ Event.belongsToMany(Peculiarity, {
     otherKey: 'IdPeculiarities'
 });
 
+Event.hasOne(Activity, { foreignKey: 'eventId' });
+
 Peculiarity.belongsToMany(Event, {
     through: PeculiaritiesOfEvents,
     foreignKey: 'IdPeculiarities',

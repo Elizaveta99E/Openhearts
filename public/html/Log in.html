@@ -1,53 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="/static/css/for-registration.css">
+  <link rel="icon" href="/static/image/logos/mini_logo.svg">
+</head>
+<body>
+<img src="/static/image/logos/logo.svg" alt="Логотип" class="logo">
+<div class="back-link-container">
+  <a href="/" class="back-link">&lt; Назад</a>
+</div>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-    <title>Open heaarts</title>
-    <link rel = 'icon' href = "../static/image/logos/mini_logo.svg">
-    <link href="..\static\css\style.css" rel="stylesheet">
-    <link href="..\static\css\style 2.0.css" rel="stylesheet">
-  </head>
+<h1>Регистрация</h1>
+<p class="subtext">Уже есть аккаунт? <a href="/login" class="login-link">Войти</a></p>
 
-  <body>
-    <div class="logo">
-      <img src="..\static\image\logos\logo.svg" alt="logo">
-    </div>
-    
-      <nav class="breadcrumbs" aria-label="Хлебные крошки">
-        <ul>
-          <li><a href="..\html\main.html">Главная</a></li>
-          <li>Вход</li>
-        </ul>
-      </nav>
-
-    <div id="start_log_in">
-      <h2 class="container-input">Вход</h2>
-    </div>
-
-      <div id = "comment">
-          Нет аккаунта?
-        <a href ="!!!">Зарегистрироваться</a>
-      </div>
-
-      <div id = "log" class="container-input">        
-        <div class="inputs">
-          <input id = "Email" name = "email" placeholder = "Электронная почта" required>
-        </div>
-
-        <div class="inputs">
-          <input id = "pass" type = "password" name = "pass" placeholder = "Пароль" required>
-        </div>
-      </div>
-
-      <div>
-      <a href ="..\html\Password.html">Забыли пароль?</a>
-    </div>
-  
-    <div id = 'buttion'>
-      <a class="other-buttons">Войти</a>
-    </div>
-  </body>
- 
+<form action="/register" method="POST">
+  <div class="form-field">
+    <input type="text" name="name" placeholder="ФИО*" required>
+  </div>
+  <div class="form-field">
+    <input type="text" name="cityId" placeholder="Город">
+  </div>
+  <div class="form-field">
+    <input type="date" name="birthday" placeholder="Дата рождения*" required>
+  </div>
+  <div class="form-field">
+    <input type="email" name="mail" placeholder="Электронная почта*" required>
+  </div>
+  <div class="form-field">
+    <input type="tel" name="phone" placeholder="Телефон">
+  </div>
+  <div class="form-field">
+    <input type="password" name="password" placeholder="Пароль*" required>
+  </div>
+  <div class="form-field">
+    <input type="password" name="confirm" placeholder="Повторите пароль*" required>
+  </div>
+  <div class="agreement">
+    <input type="checkbox" required> Я согласен с условиями
+  </div>
+  <button type="submit" class="register-button">Зарегистрироваться</button>
+</form>
+</body>
 </html>

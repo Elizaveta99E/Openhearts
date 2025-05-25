@@ -1,4 +1,4 @@
-const {Staff, Volunteer, User} = require('../models');
+const { Staff, Volunteer, User, sequelize } = require('../models');
 const { Op } = require('sequelize');
 const ApiError = require('../error/api_error');
 const bcrypt = require('bcryptjs');
@@ -6,31 +6,33 @@ const jwt = require('jsonwebtoken');
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
-        {id, email, role},
+        { id, email, role },
         process.env.SECRET_KEY || 'test_secret_key',
-        {expiresIn: '24h'}
+        { expiresIn: '24h' }
     );
-}
+};
+
+const setTokenCookie = (res, token) => {
+    res.cookie('token', token, {
+        maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+    });
+};
 
 class AuthController {
-
     async registration(req, res, next) {
+        const t = await sequelize.transaction();
         try {
-            const {name, mail, phone, birthday, cityId, comment, password, photo} = req.body;
+            const { name, mail, phone, birthday, cityId, password } = req.body;
 
             if (!mail || !password || !name) {
-                return next(ApiError.badRequest('Некорректные email, имя или пароль'));
+                return next(ApiError.badRequest('Неверные email, имя или пароль'));
             }
 
-            const candidate = await User.findOne({
-                include: [
-                    {model: Volunteer, where: {mail}},
-                    {model: Staff, where: {mail}}
-                ],
-                where: {}
-            });
-
-            if (candidate) {
+            const existingUser = await User.findOne({ where: { mail } });
+            if (existingUser) {
                 return next(ApiError.badRequest('Пользователь с таким email уже существует'));
             }
 
@@ -39,106 +41,84 @@ class AuthController {
 
             const volunteer = await Volunteer.create({
                 name,
-                mail,
                 phone,
                 regDate,
                 birthday,
-                cityId,
-                comment,
-                photo
-            });
+                cityId
+            }, { transaction: t });
 
             const user = await User.create({
+                mail,
                 hash: hashPassword,
                 regDate,
                 volunteerId: volunteer.id
-            });
+            }, { transaction: t });
+
+            await t.commit();
 
             const token = generateJwt(user.id, mail, 'volunteer');
+            setTokenCookie(res, token);
 
-            // Устанавливаем cookie
-            res.cookie('token', token, {
-                maxAge: 24 * 60 * 60 * 1000, // 24 часа
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'production', // В production используем secure
-                sameSite: 'strict'
-            });
-
-            return res.json({message: 'Регистрация успешна'});
-
+            return res.json({ message: 'Регистрация успешна' });
         } catch (e) {
-            next(ApiError.badRequest(e.message));
+            await t.rollback();
+            return next(ApiError.badRequest(e.message || 'Ошибка регистрации'));
         }
     }
 
     async login(req, res, next) {
         try {
-            const {mail, password} = req.body;
+            const { mail, password } = req.body;
+
             if (!mail || !password) {
-                return next(ApiError.badRequest('Некорректный email или пароль'));
+                return next(ApiError.badRequest('Неверный email или пароль'));
             }
 
             const user = await User.findOne({
                 include: [
-                    {
-                        model: Volunteer,
-                        where: { mail },
-                        required: false
-                    },
-                    {
-                        model: Staff,
-                        where: { mail },
-                        required: false
-                    }
+                    { model: Volunteer, required: false },
+                    { model: Staff, required: false }
                 ],
-                where: {
-                    [Op.or]: [
-                        { '$Volunteer.mail$': mail },
-                        { '$Staff.mail$': mail }
-                    ]
-                }
+                where: { mail }
             });
 
             if (!user) {
-                return next(ApiError.badRequest('Пользователь не найден'));
+                return next(ApiError.badRequest('Неверный email или пароль'));
             }
 
-            let comparePassword = bcrypt.compareSync(password, user.hash);
-            if (!comparePassword) {
-                return next(ApiError.badRequest('Указан неверный пароль'));
+            const isPasswordValid = await bcrypt.compare(password, user.hash);
+            if (!isPasswordValid) {
+                return next(ApiError.badRequest('Неверный email или пароль'));
             }
 
             const role = user.staffId ? 'staff' : 'volunteer';
-            const token = generateJwt(user.id, mail, role);
+            const token = generateJwt(user.id, user.mail, role);
+            setTokenCookie(res, token);
 
-            // Устанавливаем cookie
-            res.cookie('token', token, {
-                maxAge: 24 * 60 * 60 * 1000, // 24 часа
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'production', // В production используем secure
-                sameSite: 'strict'
-            });
-
-            return res.json({message: 'Вход выполнен успешно', role});
-
+            return res.json({ message: 'Вход выполнен успешно', role });
         } catch (e) {
-            next(ApiError.badRequest(e.message));
+            return next(ApiError.internal(e.message || 'Ошибка входа'));
         }
     }
 
     async logout(req, res) {
         res.clearCookie('token');
-        return res.json({message: 'Выход выполнен успешно'});
+        return res.json({ message: 'Выход выполнен успешно' });
     }
 
     async check(req, res) {
         const token = req.cookies.token;
         if (!token) {
-            return res.json({auth: false});
+            return res.json({ auth: false });
         }
 
         try {
             const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
+
+            // Можно обновить токен тут (по желанию)
+            const newToken = generateJwt(decoded.id, decoded.email, decoded.role);
+            setTokenCookie(res, newToken);
+
             return res.json({
                 auth: true,
                 id: decoded.id,
@@ -146,10 +126,10 @@ class AuthController {
                 role: decoded.role
             });
         } catch (e) {
-            return res.json({auth: false});
+            res.clearCookie('token');
+            return res.json({ auth: false });
         }
     }
-
 }
 
 module.exports = new AuthController();

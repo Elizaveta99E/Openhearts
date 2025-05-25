@@ -22,13 +22,11 @@ const Format = sequelize.define('Format', {
 const Condition = sequelize.define('Condition', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }
-
 }, { timestamps: false });
 
 const Peculiarity = sequelize.define('Peculiarity', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.TEXT }
-
 }, { timestamps: false });
 
 const EventStatus = sequelize.define('EventStatus', {
@@ -50,7 +48,7 @@ const Staff = sequelize.define('Staff',{
     photo: { type: DataTypes.TEXT }
 }, { timestamps: false });
 
-Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId', as: 'StaffRole' }); 
+Staff.belongsTo(StaffRole, { foreignKey: 'staffRoleId' });
 
 const Volunteer = sequelize.define('Volunteer', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -81,6 +79,8 @@ Event.belongsTo(Course, { foreignKey: 'courseId' });
 Event.belongsTo(City, { foreignKey: 'cityId' });
 Event.belongsTo(Format, { foreignKey: 'formatId' });
 Event.belongsTo(EventStatus, { foreignKey: 'statusId' });
+
+
 
 const PeculiaritiesOfEvents = sequelize.define('PeculiaritiesOfEvents', {
     // Если нужны дополнительные поля, укажите их здесь
@@ -125,6 +125,36 @@ const ConditionsOfEvents = sequelize.define('ConditionsOfEvents', {
 
 ConditionsOfEvents.belongsTo(Event, { foreignKey: 'IdEvent' });
 ConditionsOfEvents.belongsTo(Condition, { foreignKey: 'IdConditions' });
+
+// Ассоциации для Event
+Event.belongsToMany(Condition, {
+    through: ConditionsOfEvents,
+    foreignKey: 'IdEvent',
+    otherKey: 'IdConditions',
+    onDelete: 'CASCADE'
+});
+
+Condition.belongsToMany(Event, {
+    through: ConditionsOfEvents,
+    foreignKey: 'IdConditions',
+    otherKey: 'IdEvent',
+    onDelete: 'CASCADE'
+});
+
+// Аналогично для Peculiarity
+Event.belongsToMany(Peculiarity, {
+    through: PeculiaritiesOfEvents,
+    foreignKey: 'IdEvent',
+    otherKey: 'IdPeculiarities'
+});
+
+Event.hasOne(Activity, { foreignKey: 'eventId' });
+
+Peculiarity.belongsToMany(Event, {
+    through: PeculiaritiesOfEvents,
+    foreignKey: 'IdPeculiarities',
+    otherKey: 'IdEvent'
+});
 
 // Экспорт моделей
 module.exports = {

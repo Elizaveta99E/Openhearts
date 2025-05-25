@@ -1,51 +1,9 @@
 const jwt = require('jsonwebtoken');
 const ApiError = require('../error/api_error');
-const {User, Staff, Volunteer} = require('../models');
+const { User, Staff, Volunteer } = require('../models');
 
-module.exports = function (role) {
-    return async function (req, res, next) {
-        if (req.method === 'OPTIONS') {
-            return next();
-        }
-        try {
-            const token = req.cookies.token;
-            if (!token) {
-                return next(ApiError.unauthorized('Не авторизован'));
-            }
-
-            const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
-
-            const user = await User.findByPk(decoded.id, {
-                include: [
-                    {model: Staff, required: false},
-                    {model: Volunteer, required: false}
-                ]
-            });
-
-            if (!user) {
-                return next(ApiError.unauthorized('Пользователь не найден'));
-            }
-
-            if (role && role !== (user.staffId ? 'staff' : 'volunteer')) {
-                return next(ApiError.forbidden('Нет доступа'));
-            }
-
-            req.user = {
-                id: user.id,
-                email: decoded.email,
-                role: user.staffId ? 'staff' : 'volunteer',
-                staffId: user.staffId,
-                volunteerId: user.volunteerId
-            };
-
-            next();
-        } catch (e) {
-            return next(ApiError.unauthorized('Не авторизован'));
-        }
-    }
-}
-
-module.exports = function (req, res, next) {
+// Основная middleware для проверки аутентификации
+const authMiddleware = async (req, res, next) => {
     try {
         const token = req.cookies.token;
         if (!token) {
@@ -53,25 +11,45 @@ module.exports = function (req, res, next) {
         }
 
         const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
-        req.user = decoded;
+
+        // Получаем актуальные данные пользователя
+        const user = await User.findByPk(decoded.id, {
+            include: [
+                { model: Staff, required: false },
+                { model: Volunteer, required: false }
+            ]
+        });
+
+        if (!user) {
+            return next(ApiError.unauthorized('Пользователь не найден'));
+        }
+
+        req.user = {
+            id: user.id,
+            email: decoded.email,
+            role: user.staffId ? 'staff' : 'volunteer',
+            staffId: user.staffId,
+            volunteerId: user.volunteerId,
+            name: user.staffId ? user.Staff.name : user.Volunteer.name
+        };
+
         next();
     } catch (e) {
         return next(ApiError.unauthorized('Ошибка авторизации'));
     }
 };
 
-module.exports = function(role) {
-    return function(req, res, next) {
-        if (req.user.role !== role) {
-            return next(ApiError.forbidden('Доступ запрещён'));
+// Middleware для проверки ролей
+const roleMiddleware = (requiredRoles) => {
+    return (req, res, next) => {
+        if (!requiredRoles.includes(req.user.role)) {
+            return next(ApiError.forbidden('Доступ запрещен'));
         }
         next();
-    }
-}
+    };
+};
 
-module.exports = function(req, res, next) {
-    if (req.session.user) {
-        req.user = req.session.user;
-    }
-    next();
+module.exports = {
+    authMiddleware,
+    roleMiddleware
 };

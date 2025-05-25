@@ -213,7 +213,7 @@ export default function App() {
         const courseParam = selectedCourse ? `?courseId=${selectedCourse}` : '';
         
         const data = await fetchWithErrorHandling<DashboardData>(
-          `http://localhost:8080/analitic/dashboard-data${courseParam}`
+          `http://localhost:8080/api/analitic/dashboard-data${courseParam}`
         );
 
         if (!isMounted || !data) return;

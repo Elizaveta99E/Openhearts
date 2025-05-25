@@ -20,11 +20,11 @@ router.get('/check', async (req, res) => {
   });
 
 
-router.post('/create', EventController.create)
-router.get('/get', EventController.getAll)
-router.put('/update/:id', EventController.update)
-router.get('/find/:id', EventController.find)
-router.delete('/delete/:id', EventController.delete)
+router.post('/', EventController.create)
+router.get('/', EventController.getAll)
+router.put('/:id', EventController.update)
+router.get('/:id', EventController.find)
+router.delete('/:id', EventController.delete)
 router.get('/',eventController.check)
 
 router.get('/active-count', async (req, res) => {

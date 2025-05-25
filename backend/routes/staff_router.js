@@ -8,11 +8,11 @@ const {Staff, sequelize, StaffRole, User} = require('../models');
 
 const router = new Router();
 
-router.post('/create', StaffController.create)
-router.put('/update/:id', StaffController.update)
-router.delete('/delete/:id', StaffController.delete)
-router.get('/get', StaffController.get)
-router.get('/find/:id', StaffController.find)
+router.post('/', StaffController.create)
+router.put('/:id', StaffController.update)
+router.delete('/:id', StaffController.delete)
+router.get('/', StaffController.get)
+router.get('/:id', StaffController.find)
 router.get('/check', StaffController.check)
 router.post('/changePassword/:staffId', StaffController.changePassword)
 

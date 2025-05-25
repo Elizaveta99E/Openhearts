@@ -32,7 +32,7 @@ export function StaffList() {
     try {
       setLoading(true);
       const response = await fetch(
-        `/api/stafftable?page=${currentPage}&limit=${itemsPerPage}&search=${searchTerm}&searchField=name&sort=${sortBy}`
+        `/api/api/stafftable?page=${currentPage}&limit=${itemsPerPage}&search=${searchTerm}&searchField=name&sort=${sortBy}`
       );
       
       if (!response.ok) {

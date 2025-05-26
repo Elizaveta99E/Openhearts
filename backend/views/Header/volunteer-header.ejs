@@ -1,75 +1,113 @@
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdownButton = document.querySelector('.dropdown-button');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-
-        dropdownButton.addEventListener('click', function(e) {
-            e.stopPropagation(); // Предотвращаем всплытие события
-            dropdownMenu.classList.toggle('open');
-        });
-
-        // Закрываем меню при клике вне его области
-        document.addEventListener('click', function() {
-            dropdownMenu.classList.remove('open');
-        });
-
-        // Предотвращаем закрытие меню при клике внутри него
-        dropdownMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-</script>
-
-<link rel="icon" href="../../static/image/logos/mini_logo.svg">
-<link rel="stylesheet" href="../../static/css/style.css">
+<link rel="icon" href="/static/image/logos/mini_logo.svg">
+<link rel="stylesheet" href="/static/css/style.css">
 
 <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="panel-1">
-                    <div class="container-for-logo">
-                        <a href=""><img src="../../static/image/logos/logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="header-text">
-                        <a href="../html/List of events.html">Мероприятия</a>
-                    </div>
-                    <div class="search-container">
-                        <input type="text" placeholder="Поиск по сайту" class="header-text">
-                        <button class="header-text"></button>
-                    </div>
+    <div class="container">
+        <div class="header-container">
+            <div class="panel-1">
+                <div class="container-for-logo">
+                    <a href="/"><img src="/static/image/logos/logo.svg" alt="logo"></a>
                 </div>
-                <div class="authorized-panel-1">
-                    <div class="notification-icon">
-                        <a href="#">
-                            <img src="../../static/image/icon/notification.svg" alt="notification">
-                            <span class="notification-count">0</span>
-                        </a>
-                    </div>
-                    <div class="avatar-menu">
-                        <a href="../volunteer-account.html">
-                            <img src="#" alt="avatar" class="avatar">
-                        </a>
-                        <div class="dropdown">
-                            <button class="dropdown-button">
-                                <img src="../../static/image/icon/orange_arrow.svg" alt="orange_arrow">
-                            </button>
-                            <div class="dropdown-menu">
-                                <a href="../volunteer-account.html">
-                                    <div href="../volunteer-account.html" class="avatar-name-dropdown">
+                <div class="header-text">
+                    <a href="/events">Мероприятия</a>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Поиск по сайту" class="header-text">
+                    <button class="header-text"></button>
+                </div> 
+            </div>
+            <div class="authorized-panel-1">
+                <!-- код для оповещений -->
+                <!-- <div class="notification-icon">
+                    <a href="#">
+                        <img src="/static/image/icon/notification.svg" alt="notification">
+                        <span class="notification-count">0</span>
+                    </a>
+                </div> -->
+                <div class="avatar-menu">
+                    <a href="/volunteer/<%= user.id %>">
+                        <img src="<%= user.photo || '/static/image/default-avatar.jpg' %>" alt="avatar" class="avatar">
+                    </a>
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <img src="/static/image/icon/orange_arrow.svg" alt="orange_arrow">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="/volunteer/<%= user.id %>">
+                                <div class="avatar-name-dropdown">
                                     <div>
-                                        <img src="#" alt="avatar" class="avatar">
+                                        <img src="<%= user.photo || '/static/image/default-avatar.jpg' %>" alt="avatar" class="avatar">
                                     </div>
                                     <div>
-                                        <p id="full-name">Фамилия Имя Отчество</p>
+                                        <p id="full-name"><%= user.name %></p>
                                     </div>
                                 </div>
-                                </a>
-                                <a href="../html/edit-volunteer-account.html">Редактировать профиль</a>
-                                <a href="#">Выйти</a>
-                            </div>
+                            </a>
+                            <a href="/volunteer/<%= user.id %>/edit">Редактировать профиль</a>
+                            <form id="logout-form" action="api/auth/logout" method="POST" style="display: none;">
+                            </form>
+                            <a href="/" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выйти</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Управление dropdown-меню
+        const dropdownButton = document.querySelector('.dropdown-button');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', function() {
+            dropdownMenu.classList.remove('open');
+        });
+
+        dropdownMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+       // Функция для выхода из системы
+    async function logout(event) {
+        event.preventDefault();
+        
+        try {
+            const response = await fetch('/auth/logout', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                window.location.href = '/'; // Перенаправление на главную
+            } else {
+                console.error('Ошибка при выходе');
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    }
+
+        // Обновляем аватар и имя пользователя
+        const userAvatar = document.querySelector('.avatar-menu .avatar');
+        const userName = document.getElementById('full-name');
+        
+        if (userAvatar) {
+            userAvatar.src = '<%= user.photo || "/static/image/default-avatar.jpg" %>';
+            userAvatar.alt = '<%= user.name %>';
+        }
+        
+        if (userName) {
+            userName.textContent = '<%= user.name %>';
+        }
+    });
+</script>

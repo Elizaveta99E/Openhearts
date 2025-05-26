@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 const { authMiddleware } = require('./middleware/auth_middleware');
 
 const app = express();
-
+app.use(cookieParser());
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, 'static')));
@@ -20,7 +20,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(cookieParser());
+
 app.use(express.json())
 app.use(authMiddleware);
 app.use('/api', router)

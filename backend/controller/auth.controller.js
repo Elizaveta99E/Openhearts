@@ -103,8 +103,20 @@ class AuthController {
     }
 
     async logout(req, res) {
-        res.clearCookie('token');
-        return res.json({ message: 'Выход выполнен успешно' });
+        try {
+            res.clearCookie('token');
+            
+            // Для API-запросов (AJAX/fetch)
+            if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+                return res.json({ success: true, redirect: '/' });
+            }
+            
+            // Для обычных запросов
+            return res.redirect('/');
+        } catch (e) {
+            console.error('Logout error:', e);
+            return res.redirect('/');
+        }
     }
 
     async check(req, res) {

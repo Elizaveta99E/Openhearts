@@ -20,7 +20,8 @@ const PeculiaritiesRouter = require('../routes/peculiarities_routes')
 const ConditionsRouter = require('../routes/Condition_router')
 const StaffRolesRouter = require('../routes/StaffRoles_router')
 const CourseRouter = require('../routes/course_router')
-
+const volunteerController = require('../controller/volunteerController') // для работы со страницами волонтеров
+const eventController = require('../controller/event.controller')
 const router = new Router();
 
 router.use('/event', EventRouter)
@@ -44,6 +45,9 @@ router.use('/update',updateEvent) //потом убрать
 router.use('/ConditionsOfEvents', ConditionsOfEventsRout)
 router.use('/analitic', analiticRouter) //Для страницы по аналитике
 router.use('/stafftable', Stafftsble) //Для страницы по список сотрудников
-
+// Для волонтеров
+router.get('/volunteer/:id', volunteerController.getVolunteerProfile);
+router.get('/volunteer/:id/edit', volunteerController.getEditVolunteerProfile);
+router.get('/events', eventController.getAll);
 
 module.exports = router

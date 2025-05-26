@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1">
-    <title>Open hearts</title>
-    <link rel="icon" href="../static/image/logos/mini_logo.svg">
-    <link href="../static/css/style.css" rel="stylesheet">
-    <link href="../static/css/style 2.0.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/static/css/for-registration.css">
+    <link rel="icon" href="/static/image/logos/mini_logo.svg">
 </head>
 <body>
-<div class="logo">
-    <img src="../static/image/logos/logo.svg" alt="logo">
+<img src="/static/image/logos/logo.svg" alt="Логотип" class="logo">
+<div class="back-link-container">
+    <a href="/" class="back-link">&lt; Назад</a>
 </div>
 
-<div class="body">
-    <img src="../static/image/logos/logo.svg" alt="Логотип" class="logo">
-    <div class="back-link-container">
-        <a href="/" class="back-link">&lt; Назад</a>
-    </div>
-</div>
+<h1>Вход</h1>
+<p class="subtext">Нет аккаунта? <a href="/api/auth/registration" class="login-link">Зарегистрироваться</a></p>
 
-<div id="comment">
-    Нет аккаунта?
-    <a href="/api/auth/registration">Зарегистрироваться</a>
-</div>
-
-<form action="/login" method="POST" id="log" class="container-input">
-    <div class="inputs">
-        <input id="Email" name="mail" placeholder="Электронная почта" required>
+<form method="POST" action="/api/auth/login">
+    <div class="form-field">
+        <input type="email" name="mail" placeholder="Электронная почта*" required>
     </div>
-    <div class="inputs">
-        <input id="pass" type="password" name="password" placeholder="Пароль" required>
+    <div class="form-field">
+        <input type="password" name="password" placeholder="Пароль*" required>
     </div>
-    <a href="/forgot">Забыли пароль?</a>
-    <div id="buttion">
-        <button type="submit" class="other-buttons">Войти</button>
-    </div>
+    <button type="submit" class="register-button">Войти</button>
 </form>
 </body>
 </html>

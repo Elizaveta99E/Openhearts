@@ -6,7 +6,7 @@ const Error = require('./middleware/error_middleware');
 const path = require('path');
 const cookieParser = require('cookie-parser')
 const PORT = process.env.PORT || 8080;
-
+const { authMiddleware } = require('./middleware/auth_middleware');
 
 const app = express();
 
@@ -22,6 +22,7 @@ app.use(cors({
 
 app.use(cookieParser());
 app.use(express.json())
+app.use(authMiddleware);
 app.use('/api', router)
 app.use('/static', express.static('static'))
 

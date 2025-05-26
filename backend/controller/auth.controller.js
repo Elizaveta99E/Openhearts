@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const ApiError = require('../error/api_error');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
+//генерируется токен (role - волонтер или сотрудник)
 const generateJwt = (id, email, role) => {
     return jwt.sign(
         { id, email, role },
@@ -22,6 +22,7 @@ const setTokenCookie = (res, token) => {
 };
 
 class AuthController {
+    //функция регистрации
     async registration(req, res, next) {
         const t = await sequelize.transaction();
         try {
@@ -65,7 +66,7 @@ class AuthController {
             return next(ApiError.badRequest(e.message || 'Ошибка регистрации'));
         }
     }
-
+//функция входа
     async login(req, res, next) {
         try {
             const { mail, password } = req.body;

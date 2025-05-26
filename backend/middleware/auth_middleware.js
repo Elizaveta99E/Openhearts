@@ -2,49 +2,80 @@ const jwt = require('jsonwebtoken');
 const ApiError = require('../error/api_error');
 const { User, Staff, Volunteer } = require('../models');
 
-// Основная middleware для проверки аутентификации
+/**
+ * Основная middleware для проверки аутентификации
+ * Добавляет user в res.locals для использования в шаблонах
+ */
 const authMiddleware = async (req, res, next) => {
     try {
         const token = req.cookies.token;
-        if (!token) {
-            return next(ApiError.unauthorized('Требуется авторизация'));
+        
+        // Базовый объект пользователя по умолчанию
+        res.locals.user = { isAuth: false };
+        
+        if (token) {
+            const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
+            
+            // Получаем пользователя с минимально необходимыми данными
+            const user = await User.findOne({
+                where: { id: decoded.id },
+                include: [
+                    { 
+                        model: Staff, 
+                        required: false,
+                        attributes: ['name', 'photo'] 
+                    },
+                    { 
+                        model: Volunteer, 
+                        required: false,
+                        attributes: ['name', 'photo', 'cityId'] 
+                    }
+                ],
+                attributes: ['id', 'mail', 'staffId', 'volunteerId']
+            });
+
+            if (user) {
+                // Формируем полные данные пользователя
+                const userData = {
+                    isAuth: true,
+                    id: user.id,
+                    email: user.mail,
+                    role: user.staffId ? 'staff' : 'volunteer',
+                    name: user.staffId ? user.Staff.name : user.Volunteer.name,
+                    photo: user.staffId ? user.Staff.photo : user.Volunteer.photo
+                };
+
+                // Для волонтеров добавляем cityId
+                if (user.volunteerId) {
+                    userData.cityId = user.Volunteer.cityId;
+                }
+
+                res.locals.user = userData;
+                req.user = userData; // Для использования в роутах
+            }
         }
-
-        const decoded = jwt.verify(token, process.env.SECRET_KEY || 'test_secret_key');
-
-        // Получаем актуальные данные пользователя
-        const user = await User.findByPk(decoded.id, {
-            include: [
-                { model: Staff, required: false },
-                { model: Volunteer, required: false }
-            ]
-        });
-
-        if (!user) {
-            return next(ApiError.unauthorized('Пользователь не найден'));
-        }
-
-        req.user = {
-            id: user.id,
-            email: decoded.email,
-            role: user.staffId ? 'staff' : 'volunteer',
-            staffId: user.staffId,
-            volunteerId: user.volunteerId,
-            name: user.staffId ? user.Staff.name : user.Volunteer.name
-        };
-
+        
         next();
     } catch (e) {
-        return next(ApiError.unauthorized('Ошибка авторизации'));
+        console.error('Auth error:', e.message);
+        res.locals.user = { isAuth: false };
+        next();
     }
 };
 
-// Middleware для проверки ролей
+/**
+ * Middleware для проверки ролей
+ */
 const roleMiddleware = (requiredRoles) => {
     return (req, res, next) => {
-        if (!requiredRoles.includes(req.user.role)) {
+        if (!res.locals.user.isAuth) {
+            return next(ApiError.unauthorized('Требуется авторизация'));
+        }
+
+        if (!requiredRoles.includes(res.locals.user.role)) {
             return next(ApiError.forbidden('Доступ запрещен'));
         }
+
         next();
     };
 };

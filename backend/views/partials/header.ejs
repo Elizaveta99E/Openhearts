@@ -1,0 +1,9 @@
+<% if (user.isAuth) { %>
+    <% if (user.role === 'volunteer') { %>
+        <%- include('../Header/volunteer-header.ejs') %>
+    <% } else if (user.role === 'staff') { %>
+        <%- include('../Header/staff-header.ejs') %>
+    <% } %>
+<% } else { %>
+    <%- include('../Header/header-not-authorized.ejs') %>
+<% } %>

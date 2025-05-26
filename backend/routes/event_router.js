@@ -26,6 +26,7 @@ router.put('/:id', EventController.update)
 router.get('/:id', EventController.getOne)
 router.delete('/:id', EventController.delete)
 router.patch('/:id/status', EventController.updateStatus);
+router.get('/filter', EventController.getFiltered);
 
 router.get('/active-count', async (req, res) => {
     try {

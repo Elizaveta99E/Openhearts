@@ -1,6 +1,7 @@
 const ApiError = require('../error/api_error');
 const {Event, Staff, City, Course, Format, EventStatus, Condition, Peculiarity, sequelize} = require('../models');
 const { ConditionsOfEvents, PeculiaritiesOfEvents} = require('../models');
+const { Op } = require('sequelize');
 
 class EventController {
     async create(req, res, next) {
@@ -158,25 +159,25 @@ class EventController {
         }
     }
 
-    async getAll(req, res, next) {
-        try {
-            const events = await Event.findAll({
-                include: [
-                    {model: Staff},
-                    {model: City},
-                    {model: Course},
-                    {model: Format},
-                    {model: EventStatus},
-                    {model: Condition, through: { attributes: [] }},
-                    {model: Peculiarity, through: { attributes: [] }}
-                ],
-                order: [['startDate', 'DESC']]
-            });
-            return res.json(events);
-        } catch (e) {
-            next(ApiError.internal(e.message));
-        }
-    }
+    // async getAll(req, res, next) {
+    //     try {
+    //         const events = await Event.findAll({
+    //             include: [
+    //                 {model: Staff},
+    //                 {model: City},
+    //                 {model: Course},
+    //                 {model: Format},
+    //                 {model: EventStatus},
+    //                 {model: Condition, through: { attributes: [] }},
+    //                 {model: Peculiarity, through: { attributes: [] }}
+    //             ],
+    //             order: [['startDate', 'DESC']]
+    //         });
+    //         return res.json(events);
+    //     } catch (e) {
+    //         next(ApiError.internal(e.message));
+    //     }
+    // }
 
     async getOne(req, res, next) {
         try {
@@ -274,6 +275,140 @@ class EventController {
         }
     }
 
+    async getAll(req, res, next) {
+        try {
+          console.log('Fetching active events...');
+      
+          // Получаем только те события, у которых статус "Активно"
+          const events = await Event.findAll({
+            include: [
+              {
+                model: EventStatus,
+                attributes: ['name'],
+                where: { name: 'Активно' } // Фильтрация по статусу
+              },
+              { model: Course, attributes: ['name'], required: false },
+              { model: City, attributes: ['name'], required: false },
+              { model: Format, attributes: ['name'], required: false }
+            ],
+            order: [['name', 'ASC']]
+          });
+      
+          console.log(`Fetched ${events.length} active events`);
+      
+          const [courses, formats, conditions, peculiarities] = await Promise.all([
+            Course.findAll(),
+            Format.findAll(),
+            Condition.findAll(),
+            Peculiarity.findAll()
+          ]);
+      
+          res.render('events', {
+            events: events || [],
+            courses: courses || [],
+            formats: formats || [],
+            conditions: conditions || [],
+            peculiarities: peculiarities || [],
+            user: req.user || null
+          });
+      
+        } catch (e) {
+          console.error('Error in getAll:', e);
+          next(ApiError.internal(e.message));
+        }
+      }
+      
+    async getFiltered(req, res, next) {
+        try {
+            const { 
+                search, 
+                courses, 
+                formats, 
+                conditions, 
+                peculiarities, 
+                sort, 
+                perPage,
+                page = 1
+            } = req.query;
+    
+            const where = {};
+            const include = [
+                { model: Course, attributes: ['name'] },
+                { model: City, attributes: ['name'] },
+                { model: Format, attributes: ['name'] }
+            ];
+    
+            // Поиск по названию
+            if (search) {
+                where.name = { [Op.iLike]: `%${search}%` };
+            }
+    
+            // Фильтр по направлению (cursoes)
+            if (courses && courses.length) {
+                where.courseId = { [Op.in]: courses.split(',').map(Number) };
+            }
+    
+            // Фильтр по форматам
+            if (formats && formats.length) {
+                where.formatId = { [Op.in]: formats.split(',').map(Number) };
+            }
+    
+            // Фильтр по условиям
+            if (conditions && conditions.length) {
+                include.push({
+                    model: Condition,
+                    through: { attributes: [] },
+                    where: { id: { [Op.in]: conditions.split(',').map(Number) } }
+                });
+            }
+    
+            // Фильтр по особенностям
+            if (peculiarities && peculiarities.length) {
+                include.push({
+                    model: Peculiarity,
+                    through: { attributes: [] },
+                    where: { id: { [Op.in]: peculiarities.split(',').map(Number) } }
+                });
+            }
+    
+            // Сортировка
+            let order;
+            switch(sort) {
+                case 'name-asc': order = [['name', 'ASC']]; break;
+                case 'name-desc': order = [['name', 'DESC']]; break;
+                case 'date-asc': order = [['startDate', 'ASC']]; break;
+                case 'date-desc': order = [['startDate', 'DESC']]; break;
+                default: order = [['name', 'ASC']];
+            }
+    
+            // Пагинация
+            const limit = perPage === 'all' ? null : parseInt(perPage) || 10;
+            const offset = limit ? (parseInt(page) - 1) * limit : 0;
+    
+            const { count, rows: events } = await Event.findAndCountAll({
+                where,
+                include,
+                order,
+                limit,
+                offset,
+                distinct: true
+            });
+    
+            const totalPages = limit ? Math.ceil(count / limit) : 1;
+    
+            res.json({
+                events,
+                pagination: {
+                    currentPage: parseInt(page),
+                    totalPages,
+                    totalItems: count
+                }
+            });
+        } catch (e) {
+            next(ApiError.internal(e.message));
+        }
+
+    }
 }
 
 module.exports = new EventController();

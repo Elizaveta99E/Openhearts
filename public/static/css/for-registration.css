@@ -1,0 +1,157 @@
+body {
+    font-family: 'Instrument Sans', sans-serif;    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+.header-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: flex-start; /* Выровнять по левому краю */
+    width: 100%; /* Занимает всю ширину */
+    padding: 20px; /* Отступы для визуального разделения */
+}
+.logo {
+    margin-bottom: 10px; /* Отступ между логотипом и ссылкой "Назад" */
+}
+.back-link-container {
+    width: 100%; /* Занимает всю ширину */
+    text-align: left; /* Выровнять текст по левому краю */
+    
+}
+.back-link {
+    color: #878787;
+    font-size: 16px;
+    margin-left: 0; /* Убираем отрицательный отступ */
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: flex-start; /* Выровнять по левому краю */
+    width: 100%; /* Занимает всю ширину */
+    padding: 20px; /* Отступы для визуального разделения */
+}
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2D0F12;
+    margin: 20px 0;
+}
+.subtext {
+    font-size: 16px;
+    color: #878787;
+}
+.login-link {
+    color: #FF4A01;
+    text-decoration: none;
+}
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 20px;
+}
+.form-field {
+    margin-bottom: 15px;
+    width: 400px;
+}
+.form-field input, select {
+    height: auto;
+    padding: 16px 35px;
+    border: 1px solid #878787;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 400px;
+    color: #878787;
+}
+.password-hint {
+    width: 350px;
+    background-color:  #C6C6C6;
+    padding: 23px;
+    border-radius: 34px;
+    font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.agreement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 400px;
+    
+}
+.agreement input {
+    margin-right: 10px;
+}
+.register-button {
+    display: inline-block;
+    border: none;
+color: #ffffff;
+font-size: 24px;
+
+margin-top: 7px;
+background-color: #FF4A01;
+border-radius: 10px;
+padding: 20px 23px;
+
+}
+.form-field input[type="date"] {
+color: #878787;
+}
+input[type="checkbox"] {
+display: none; /* Скрываем стандартный чекбокс */
+}
+
+.custom-checkbox {
+width: 34px; /* Ширина кастомного чекбокса */
+height: 34px; /* Высота кастомного чекбокса */
+border: 1px solid #878787; /* Граница кастомного чекбокса */
+border-radius: 7px;
+background: white; /* Фон кастомного чекбокса */
+margin-right: 10px; /* Отступ между чекбоксом и текстом */
+cursor: pointer; /* Курсор при наведении */
+position: relative;
+top: -7px;
+
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+background: #FF4A01; /* Цвет фона при выборе */
+border: none;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::after {
+content: '';
+position: absolute;
+left: 11px; /* Положение галочки */
+top: 1px; /* Положение галочки */
+width: 10px; /* Ширина галочки */
+height: 20px; /* Высота галочки */
+border: solid white; /* Цвет галочки */
+border-width: 0 2px 2px 0; /* Формирование галочки */
+transform: rotate(45deg); /* Поворот для создания галочки */
+border-radius: 2px; /* Закругление углов */
+}
+.form-field {
+    position: relative; /* Позволяет позиционировать иконку относительно поля ввода */
+    margin-bottom: 15px;
+    width: 400px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Отступ от правого края */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    cursor: pointer; /* Курсор при наведении */
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+}

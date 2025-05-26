@@ -1,0 +1,123 @@
+#start-edit-volunteer-account h2{
+    text-align: center;
+}
+
+#comment{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #878787;
+    margin-bottom: 30px;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    padding: 5px 0 5px 0;
+    border: 1px solid #878787;
+    border-radius: 10px;
+}
+
+.password-input input {
+    border: none;
+    padding-left: 22px;
+    
+        position: relative; /* Позволяет позиционировать иконку относительно поля ввода */
+        margin-bottom: 15px;
+        width: 400px;
+    
+}
+
+.password-input input::placeholder{
+    color: #878787;
+}
+
+.password-input input:focus {
+    outline: none; /* Убирает стандартную подсветку */
+}
+
+.password-input button {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+}
+
+.password-toggle{
+    background-color: #ffff;
+
+}
+
+#show-password{
+    background-image: url(/static/image/icon/eye-open.svg);
+    width: 30px;
+    height: 30px;
+}
+
+#hide-password{
+    background-image: url(/static/image/icon/eye-closed.svg);
+    width: 30px;
+    height: 30px;
+}
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Отступ от правого края */
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-50%); /* Центрируем по вертикали */
+    cursor: pointer; /* Курсор при наведении */
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+}
+
+.form-field {
+    position: relative; /* Позволяет позиционировать иконку относительно поля ввода */
+    margin-bottom: 15px;
+    width: 400px;
+    
+}
+.form-field input {
+    height: auto;
+    padding: 16px 35px;
+    border: 1px solid #878787;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 400px;
+   
+}
+.agreement input {
+    margin-right: 10px;
+    
+}
+.password-hint {
+    width: 350px;
+    background-color:  #C6C6C6;
+    padding: 23px;
+    border-radius: 34px;
+    font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.agreement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 400px;
+    
+}
+.agreement input {
+    margin-right: 10px;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 400px;
+    gap: 15px;
+}

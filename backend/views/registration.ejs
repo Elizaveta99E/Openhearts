@@ -45,6 +45,28 @@
             document.getElementById('registration-form').submit();
             return true;
         }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/api/cities');
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки городов');
+                }
+                const cities = await response.json();
+                const citySelect = document.getElementById('cityId');
+
+                cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.id;
+                    option.textContent = city.name;
+                    citySelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Ошибка при загрузке городов:', error);
+                const citySelect = document.getElementById('cityId');
+                citySelect.innerHTML = '<option value="" disabled selected>Ошибка загрузки городов</option>';
+            }
+        });
     </script>
 </head>
 <body>

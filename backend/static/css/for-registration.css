@@ -62,7 +62,7 @@ h1 {
     margin-bottom: 15px;
     width: 400px;
 }
-.form-field input {
+.form-field input, select {
     height: auto;
     padding: 16px 35px;
     border: 1px solid #878787;
@@ -70,6 +70,7 @@ h1 {
     box-sizing: border-box;
     font-size: 16px;
     width: 400px;
+    color: #878787;
 }
 .password-hint {
     width: 350px;

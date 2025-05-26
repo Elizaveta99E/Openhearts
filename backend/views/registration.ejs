@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="../static/css/for-registration.css">
-    <link rel="icon" href="../static/image/logos/mini_logo.svg">
+    <link rel="stylesheet" href="/static/css/for-registration.css">
+    <link rel="icon" href="/static/image/logos/mini_logo.svg">
     <script>
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
             if (input.type === "password") {
                 input.type = "text";
-                icon.src = "../static/image/icon/eye-open.svg";
+                icon.src = "/static/image/icon/eye-open.svg";
             } else {
                 input.type = "password";
-                icon.src = "../static/image/icon/eye-closed.svg";
+                icon.src = "/static/image/icon/eye-closed.svg";
             }
         }
 
-        async function validateForm() {
-            
+        function validateForm(event) {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const errorMessage = document.getElementById('error-message');
             errorMessage.style.display = 'none';
 
+            // Проверка условий для пароля
             const passwordConditions = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
             if (!passwordConditions.test(password)) {
@@ -44,10 +46,12 @@
             return true;
         }
 
-        // Загрузка городов при открытии страницы
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const response = await fetch('/api/cities');
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки городов');
+                }
                 const cities = await response.json();
                 const citySelect = document.getElementById('cityId');
 
@@ -59,28 +63,30 @@
                 });
             } catch (error) {
                 console.error('Ошибка при загрузке городов:', error);
+                const citySelect = document.getElementById('cityId');
+                citySelect.innerHTML = '<option value="" disabled selected>Ошибка загрузки городов</option>';
             }
         });
     </script>
 </head>
 <body>
 <div class="body">
-    <img src="../static/image/logos/logo.svg" alt="Логотип" class="logo">
+    <img src="/static/image/logos/logo.svg" alt="Логотип" class="logo">
     <div class="back-link-container">
         <a href="/" class="back-link">&lt; Назад</a>
     </div>
 </div>
 
 <h1>Регистрация</h1>
-<p class="subtext">Уже есть аккаунт? <a href="login" class="login-link">Войти</a></p>
+<p class="subtext">Уже есть аккаунт? <a href="/api/auth/login" class="login-link">Войти</a></p>
 
-<form id="registration-form" method="POST" action="/registration">
+<form id="registration-form" method="POST" action="/api/auth/registration">
     <div class="form-field">
         <input type="text" name="name" placeholder="ФИО*" required>
     </div>
     <div class="form-field">
         <select name="cityId" id="cityId" required>
-            <option value="" disabled selected>Выберите город</option>
+            <option value="" disabled selected>Город</option>
         </select>
     </div>
     <div class="form-field">
@@ -122,7 +128,7 @@
             <a href="../static/documents/agreement.docx" class="login-link">Пользовательское соглашение*</a>
         </div>
     </div>
-    <button type="button" class="register-button" onclick="validateForm()">Зарегистрироваться</button>
+    <button type="submit" class="register-button" onclick="validateForm(event)">Зарегистрироваться</button>
 </form>
 </body>
 </html>

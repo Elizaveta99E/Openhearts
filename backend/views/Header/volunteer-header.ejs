@@ -9,7 +9,7 @@
                     <a href="/"><img src="/static/image/logos/logo.svg" alt="logo"></a>
                 </div>
                 <div class="header-text">
-                    <a href="/events">Мероприятия</a>
+                    <a href="#">Мероприятия</a>
                 </div>
                 <div class="search-container">
                     <input type="text" placeholder="Поиск по мероприятиям" class="header-text">
@@ -79,7 +79,7 @@
         event.preventDefault();
         
         try {
-            const response = await fetch('/auth/logout', {
+            const response = await fetch('api/auth/logout', {
                 method: 'POST',
                 credentials: 'same-origin',
                 headers: {

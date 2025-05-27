@@ -15,81 +15,80 @@
     <%- include ('Header/volunteer-header'); -%>
   </header>
 
-    <div class="container">
-      <p class="navigation">Личная страничка</p>
-        <div class="columns">
-          <div class="first-column">
-            <div class="info-button-container">
-              <div class="main-info-container">
-                <div class="avatar">
-                  <img id="avatar" src="#" alt="Аватарка пользователя">
-                </div>
-                <h4>Основная информация</h4>
-                <div class="profile-info-container">
-                  <div class="profile-info">
-                    <label>Дата регистрации:</label>
-                    <span id="registration-date">Загрузка...</span>
-                  </div>
-                  <div class="profile-info">
-                      <label>Дата рождения:</label>
-                      <span id="birth-date">Загрузка...</span>
-                  </div>
-                  <div class="profile-info">
-                      <label>Номер телефона:</label>
-                      <span id="phone">Загрузка...</span>
-                  </div>
-                  <div class="profile-info">
-                      <label>Почта:</label>
-                      <span id="email">Загрузка...</span>
-                  </div>
-                </div>
-                <script src="../script.js"></script> <!-- Подключаем JavaScript -->
+  <div class="container">
+    <p class="navigation">Личная страничка</p>
+    <div class="columns">
+      <div class="first-column">
+        <div class="info-button-container">
+          <div class="main-info-container">
+            <div class="avatar">
+              <img id="avatar" src="<%= volunteer.photo || '/static/image/icon/default-avatar.svg' %>" alt="Аватарка пользователя">
+            </div>
+            <h4>Основная информация</h4>
+            <div class="profile-info-container">
+              <div class="profile-info">
+                <label>Дата регистрации:</label>
+                <span id="registration-date"><%= volunteer.regDate %></span>
               </div>
-              <div id="link-and-button">
-                <div id="link-a">
-                  <a href="../html/edit-volunteer-account.html" id="link">Редактировать профиль</a>
-                </div>
-                <div>
-                  <button id="out-button">Выйти</button>
-                </div>
+              <div class="profile-info">
+                <label>Дата рождения:</label>
+                <span id="birth-date"><%= volunteer.birthday %></span>
+              </div>
+              <div class="profile-info">
+                <label>Номер телефона:</label>
+                <span id="phone"><%= volunteer.phone %></span>
+              </div>
+              <div class="profile-info">
+                <label>Почта:</label>
+                <span id="email"><%= userEmail %></span>
               </div>
             </div>
           </div>
-
-          <div class="second-column">
-            <div id="volunteer-info">
-              <h4><span id="full-name">ФИО</span></h4>
-              <h4>ID волонтера: <span id="volunteer-id"></span></h4>
-          </div>
-          <!-- <script>
-            // Пример данных волонтера
-            const volunteerData = {
-                fullName: "Иванов Иван Иванович",
-                volunteerId: "123456"
-            };
-
-            // Функция для загрузки данных волонтера
-            function loadVolunteerData() {
-                document.getElementById('full-name').textContent = volunteerData.fullName;
-                document.getElementById('volunteer-id').textContent = volunteerData.volunteerId;
-            }
-
-            // Загружаем данные при загрузке страницы
-            window.onload = loadVolunteerData;
-          </script>
-             -->
-            <div class="info-container">
-              <h4>Ближайшие мероприятия</h4>
-
+          <div id="link-and-button">
+            <div id="link-a">
+              <a href="/volunteer/<%= volunteer.id %>/edit" id="link">Редактировать профиль</a>
             </div>
-
-            <div class="info-container">
-              <h4>Список пройденных мероприятия</h4>
+            <div>
+              <button id="out-button" onclick="window.location.href='/auth/logout'">Выйти</button>
             </div>
           </div>
+        </div>
+      </div>
 
+      <div class="second-column">
+        <div id="volunteer-info">
+          <h4><span id="full-name"><%= volunteer.name %></span></h4>
+          <h4>ID волонтера: <span id="volunteer-id"><%= volunteer.id %></span></h4>
+        </div>
+
+        <div class="info-container">
+          <h4>Ближайшие мероприятия</h4>
+          <% if (events && events.length > 0) { %>
+            <ul>
+              <% events.forEach(event => { %>
+                <li><%= event.name %> - <%= event.date %></li>
+              <% }); %>
+            </ul>
+          <% } else { %>
+            <p>Нет запланированных мероприятий</p>
+          <% } %>
+        </div>
+
+        <div class="info-container">
+          <h4>Список пройденных мероприятий</h4>
+          <% if (pastEvents && pastEvents.length > 0) { %>
+            <ul>
+              <% pastEvents.forEach(event => { %>
+                <li><%= event.name %> - <%= event.date %></li>
+              <% }); %>
+            </ul>
+          <% } else { %>
+            <p>Нет пройденных мероприятий</p>
+          <% } %>
         </div>
       </div>
     </div>
+  </div>
 
 </body>
+</html>

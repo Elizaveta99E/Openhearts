@@ -4,33 +4,73 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Редактирование профиля</title>
-  <link rel="icon" href="../static/image/logos/mini_logo.svg">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/for-edit-volunteer-account.css">
+  <link rel="icon" href="/static/image/logos/mini_logo.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/for-edit-volunteer-account.css">
 </head>
 
 <body>
 
   <header>
-       <%- include ('Header/volunteer-header'); -%>
-  </header>
+    <%- include ('Header/volunteer-header'); -%>
+</header>
 
     <div class="container" id="container-edit">
 
       <div id="start-edit-volunteer-account">
-        <p class="navigation"><a href="../html/volunteer-account.html">Личная страничка</a>/Редактирование профиля</p>
+        <p class="navigation"><a href="/volunteer/<%= volunteer.id %>">Личная страничка</a>/Редактирование профиля</p>
         <h2>Редактировать профиль</h2>
       </div>
 
       <div class="avatar-container">
         <label for="avatar-upload" class="avatar-wrapper">
-            <img src="default-avatar.jpg" class="avatar" id="avatar-preview">
+            <img src="<%= volunteer.photo || '/static/image/icon/default-avatar.svg' %>" class="avatar" id="avatar-preview">
             <span class="avatar-edit">Изменить фото</span>
         </label>
         <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+      </div>
+
+      <form action="/volunteer/<%= volunteer.id %>/edit" method="POST" class="container-input" enctype="multipart/form-data">
+
+        <div class="inputs">
+          <input type="text" id="country" name="country" placeholder="Страна" value="<%= volunteer.country || '' %>">
+        </div>
+
+        <div class="inputs">
+          <input type="text" id="city" name="city" placeholder="Город" value="<%= volunteer.city || '' %>" required>
+        </div>
+
+        <div class="inputs">
+          <input type="text" id="fullname" name="fullname" placeholder="ФИО" value="<%= volunteer.name %>" required>
+        </div>
+
+        <div class="inputs">
+          <input type="date" id="birthdate" name="birthdate" value="<%= volunteer.birthday %>" required>
+        </div>
+
+        <div class="inputs">
+          <input type="email" id="email" name="email" placeholder="Электронная почта" value="<%= userEmail %>" required>
+        </div>
+
+        <div class="inputs">
+          <input type="tel" id="phone" name="phone" placeholder="Телефон" value="<%= volunteer.phone %>" required>
+        </div>
+
+        <div class="inputs">
+          <button type="submit" class="other-buttons">Сохранить изменения</button>
+        </div>
+
+      </form>
+
+      <div class="footer-edit-volunteer">
+        <a href="/volunteer/<%= volunteer.id %>/change-password" id="button-change-password">Сменить пароль</a>
+        <button id="delete-account" onclick="confirmDelete()">Удалить аккаунт</button>
+      </div>
+
     </div>
 
     <script>
+        // Preview avatar upload
         document.getElementById('avatar-upload').addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -41,45 +81,29 @@
                 reader.readAsDataURL(file);
             }
         });
-      </script>
 
-      <form action="#" class="container-input">
-
-        <div class="inputs">
-          <input type="text" id="country" name="country" placeholder="Страна" required>
-        </div>
-
-        <div class="inputs">
-          <input type="text" id="city" name="city" placeholder="Город" required>
-        </div>
-
-        <div class="inputs">
-          <input type="text" id="fullname" name="fullname" placeholder="ФИО" required>
-        </div>
-
-        <div class="inputs">
-          <input type="date" id="birthdate" name="birthdate" required>
-        </div>
-
-        <div class="inputs">
-          <input type="email" id="email" name="email" placeholder="Электронная почта" required>
-        </div>
-
-        <div class="inputs">
-          <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
-        </div>
-
-        <div class="inputs">
-          <button type="submit" class="other-buttons">Сохранить изменения</button>
-    </div>
-
-      </form>
-
-      <div class="footer-edit-volunteer">
-        <a href="#" id="button-change-password">Сменить пароль</a>
-        <button id="delete-account">Удалить аккаунт</button>
-      </div>
-
-    </div>
-
-  </body>
+        // Confirm account deletion
+        function confirmDelete() {
+            if (confirm('Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.')) {
+                fetch('/volunteer/<%= volunteer.id %>', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/auth/logout';
+                    } else {
+                        alert('Ошибка при удалении аккаунта');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ошибка при удалении аккаунта');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

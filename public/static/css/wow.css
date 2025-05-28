@@ -1,0 +1,688 @@
+.container_for {
+    display: flex;
+    align-items: start;
+}
+
+.for-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-family: 'Instrument Sans', sans-serif;
+    color: #878787;
+    outline: none;
+    width: 250px; /* Ширина поля ввода */
+    font-size: 14px; /* Размер шрифта */
+    color: #2D0F12;
+}
+
+.for-button {
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin-left: -30px;
+    margin-top: 5px;
+    cursor: pointer;
+    background-repeat : no-repeat;
+    border: none;
+    border-radius: 5px;
+    background-image: url("\static\images\search.svg");
+}
+
+.for {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-grow: 1; /* Занимает всё доступное пространство */
+    margin: 0 20px; /* Отступы слева и справа */
+}
+
+h4 {
+    padding: 15px;
+    margin-left:  10px;
+    color: #2D0F12;
+    margin-bottom: -10px;
+}
+
+.container_form {
+    display: flex;
+    align-items: start;
+    margin-left: 12px;
+    padding: 8px 12px;
+    margin-top: -20px;
+    color: #2D0F12;
+}
+
+.form_buttons {
+    display: none;
+}
+
+.form_buttons + label{
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color:#C6C6C6;
+    color: #878787;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form_buttons:checked + label {
+    background-color: #FFC9B3;
+    color:  #FF4A01;
+    font-weight: bold;
+}
+
+.directions-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    margin: 2% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-modal {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.directions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    padding: 5px;
+}
+
+.direction-item {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    white-space: normal;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.direction-item:hover {
+    background: #ffffff;
+    border-color:  #FF4A01;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 5% auto;
+    }
+    
+    .directions-list {
+        grid-template-columns: 1fr;
+    }
+        .directions-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .direction-item {
+        font-size: 16px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+    }
+    .directions-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.direction-item.selected {
+    background: #FF4A01;
+    color: white;
+    border-color:  #FF4A01;
+}
+  .close:hover {background: #ddd;}
+
+  .bee {
+    color: #2D0F12;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .controls-panel {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+    color: #2D0F12;
+}
+
+  .events-page {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+    color: #2D0F12;
+}
+
+/* Фильтры */
+.filters {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-left: 25px; /* Добавим отступ для всей группы */
+}
+
+.filter-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.filter-item {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 30 px;
+}
+
+/* Кастомный чекбокс */
+.filter-item .custom-checkbox {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+/* Галочка (скрыта по умолчанию) */
+.filter-item .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* При активации */
+.filter-item input:checked ~ .custom-checkbox {
+    background: #FF6B00;
+    border-color: #FF6B00;
+}
+
+.filter-item input:checked ~ .custom-checkbox::after {
+    display: block;
+}
+
+/* Ховер эффект */
+.filter-item:hover input:not(:checked) ~ .custom-checkbox {
+    border-color: #FF6B00;
+}
+/* Основной контент */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Управление */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #2D0F12;
+}
+
+        /* Управление сортировкой */
+        .view-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+            margin-right: 15px;
+        }
+
+        .view-controls option{
+            color: #2D0F12;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .select-group {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .select-group option{
+            color: #2D0F12;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        select {
+            padding: 6px 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #878787;
+            background: white;
+        }
+
+/* Карточки */
+.events-list {
+    display: grid;
+    gap: 20px;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.page-item {
+    padding: 8px 12px;
+    border: 1px solid #878787;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-item.active {
+    background: #FF6B00;
+    color: white;
+    border-color: #FF6B00;
+}
+
+@media (max-width: 768px) {
+    .controls-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .select-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    select {
+        padding: 5px 8px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s;
+        line-height: 1.3;
+    }
+}
+
+select:hover {
+    border-color: #FF6B00;
+}
+
+
+.filter-item {
+    position: relative;
+    padding-left: 30px;
+    margin: 8px 0;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    color: #2D0F12;
+    font-size: 18px;
+}
+
+.filter-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 2px;
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border: 2px solid #878787;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    left: 15px;
+}
+
+.filter-item input:checked ~ .custom-checkbox {
+    background: #FF6B00;
+    border-color: #FF6B00;
+}
+
+.filter-item input:checked ~ .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.filter-item:hover .custom-checkbox {
+    border-color: #FF6B00;
+}  
+
+.filter-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 30px;
+    min-height: 24px;
+}
+
+.flatpickr-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 8px;
+    cursor: pointer;
+    color: #2D0F12;
+    font-size: 18px;
+  }
+  
+  .flatpickr-calendar {
+    font-family: inherit;
+    box-shadow: 0 2px 10px #2D0F12(0,0,0,0.1);
+    
+  }
+  
+  .flatpickr-day.selected {
+    background: #2D0F12;
+    border-color: #2D0F12;
+  }
+
+  .alternative-theme {
+    --calendar-primary: #FF6B00;
+    --calendar-accent:  #FFC9B3;
+    --calendar-text: #2B2D42;
+    --calendar-bg: #F8F9FA;
+    --calendar-disabled: #E9ECEF;
+  }
+root {
+  --calendar-primary: #FF6B00;
+  --calendar-accent:  #FFC9B3;
+  --calendar-text: #2B2D42;
+  --calendar-bg: #F8F9FA;
+  --calendar-disabled: #E9ECEF;
+}
+
+.flatpickr-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  
+  .flatpickr-calendar {
+    font-family: inherit;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .flatpickr-day.selected {
+    background: #2D0F12;
+    border-color: #2D0F12;
+  }
+  .flatpickr-calendar {
+    width: 340px !important;
+    font-size: 15px;
+  }
+  
+  .flatpickr-innerContainer {
+    padding: 12px;
+  }
+  
+  .flatpickr-days {
+    width: 100%;
+  }
+  
+  .dayContainer {
+    min-width: 316px;
+    width: 316px;
+  }
+  
+  .flatpickr-day {
+    height: 36px;
+    line-height: 36px;
+    margin: 2px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .flatpickr-current-month {
+    font-size: 16px;
+    padding: 12px 0 !important;
+  }
+  
+  .flatpickr-monthDropdown-months {
+    font-size: 16px !important;
+    height: 28px !important;
+  }
+  
+  .flatpickr-current-month input.cur-year {
+    font-size: 16px !important;
+    height: 28px !important;
+    padding: 0 8px !important;
+  }
+  
+  .flatpickr-weekday {
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+  }
+  
+  .flatpickr-prev-month, 
+  .flatpickr-next-month {
+    padding: 12px !important;
+  }
+  
+  .flatpickr-prev-month svg, 
+  .flatpickr-next-month svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Для двухмесячного отображения */
+  .flatpickr-calendar.showTimeInput.hasTime .dayContainer,
+  .flatpickr-calendar.showTimeInput.noCalendar .dayContainer {
+    border-bottom: 0;
+  }
+  
+  /* Увеличенное поле ввода */
+  .flatpickr-input {
+    padding: 12px 16px;
+    font-size: 15px;
+    min-width: 280px;
+  }
+
+  /* Контейнер календаря */
+.flatpickr-calendar.open {
+    transform: scale(1) !important;
+    animation: none !important;
+  }
+  
+  .flatpickr-calendar.animate.open {
+    animation: none !important;
+  }
+  
+  /* Увеличенные размеры при двух месяцах */
+  .flatpickr-calendar.multiMonth .dayContainer + .dayContainer {
+    border-left: 1px solid var(--calendar-accent);
+  }
+  
+  .flatpickr-calendar.multiMonth {
+    width: 680px !important;
+  }
+  
+  .flatpickr-calendar.multiMonth .flatpickr-days {
+    width: 100%;
+  }
+  
+  .flatpickr-calendar.multiMonth .dayContainer {
+    min-width: 316px;
+    width: 316px;
+  }
+
+  .flatpickr-months {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: var(--calendar-primary);
+    border-radius: 8px 8px 0 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .flatpickr-month {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .flatpickr-current-month {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0 !important;
+    width: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  
+  .flatpickr-monthDropdown-months {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 8px;
+    margin: 0 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .flatpickr-monthDropdown-months:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+  
+  .flatpickr-current-month input.cur-year {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 8px;
+    margin: 0 4px;
+    width: 60px !important;
+    border-radius: 4px;
+  }
+  
+  .flatpickr-current-month input.cur-year:hover,
+  .flatpickr-current-month input.cur-year:focus {
+    background: rgba(255,255,255,0.1);
+  }
+  
+  /* Стили для навигационных стрелок */
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 8px !important;
+    color: white;
+  }
+  
+  .flatpickr-prev-month svg,
+  .flatpickr-next-month svg {
+    fill: white;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .flatpickr-prev-month:hover,
+  .flatpickr-next-month:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }

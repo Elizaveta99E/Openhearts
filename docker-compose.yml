@@ -1,49 +1,12 @@
 version: '3.8'
 
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    environment:
-      - NODE_ENV=development
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_NAME=Openhearts
-      - DB_USER=postgres
-      - DB_PASSWORD=7281
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - app-network
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-
-  adminside:
-    build:
-      context: ./adminside
-      dockerfile: Dockerfile
-    ports:
-      - "5173:5173"
-    environment:
-      - NODE_ENV=production
-      - VITE_API_URL=http://backend:8080/api
-    networks:
-      - app-network
-    volumes:
-      - ./adminside:/app
-      - /app/node_modules
-
   db:
     image: postgres:15
     environment:
-      - POSTGRES_DB=Openhearts
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=7281
+      POSTGRES_DB: Openhearts
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 7281
     ports:
       - "5432:5432"
     volumes:
@@ -55,6 +18,45 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: development
+      DB_HOST: db  # Используем имя сервиса вместо localhost
+      DB_PORT: 5432
+      DB_NAME: Openhearts
+      DB_USER: postgres
+      DB_PASSWORD: 7281
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-network
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+
+  adminside:
+    build:
+      context: ./adminside
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: development  # Для разработки лучше development
+      VITE_API_URL: http://backend:8080/api  # Используем имя сервиса
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    volumes:
+      - ./adminside:/usr/src/app
+      - /usr/src/app/node_modules
 
 networks:
   app-network:

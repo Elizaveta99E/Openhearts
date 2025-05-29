@@ -42,18 +42,11 @@ services:
       - /usr/src/app/node_modules
 
   adminside:
-    build:
-      context: ./adminside
-      dockerfile: Dockerfile
+    build: ./adminside
     ports:
       - "5173:5173"
-    environment:
-      NODE_ENV: development  # Для разработки лучше development
-      VITE_API_URL: http://backend:8080/api  # Используем имя сервиса
     depends_on:
       - backend
-    networks:
-      - app-network
     volumes:
       - ./adminside:/usr/src/app
       - /usr/src/app/node_modules

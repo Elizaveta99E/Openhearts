@@ -15,11 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
-
+app.use(cors({ origin: 'http://adminside:5173' }));
 
 
 app.use(authMiddleware);
